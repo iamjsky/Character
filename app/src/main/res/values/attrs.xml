@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="StripTabLayout">
+        <attr name="stlIndicatorColor" format="color" />
+        <attr name="stlIndicatorHeight" format="dimension" />
+        <attr name="stlUnderlineColor" format="color" />
+        <attr name="stlUnderlineHeight" format="dimension" />
+        <attr name="stlDividerColor" format="color" />
+        <attr name="stlDividerWidth" format="dimension" />
+        <attr name="stlDividerPadding" format="dimension" />
+        <attr name="stlScrollOffset" format="dimension" />
+        <attr name="stlShouldExpand" format="boolean" />
+        <attr name="stlPaddingMiddle" format="boolean" />
+        <attr name="stlTabPaddingLeftRight" format="dimension" />
+        <attr name="stlTabBackground" format="reference" />
+        <attr name="stlTabTextSize" format="dimension" />
+        <attr name="stlTabTextColor" format="reference" />
+        <attr name="stlTabTextStyle" format="reference">
+            <flag name="normal" value="0x0" />
+            <flag name="bold" value="0x1" />
+            <flag name="italic" value="0x2" />
+        </attr>
+        <attr name="stlTabTextAllCaps" format="boolean" />
+        <attr name="stlTabTextAlpha" format="integer" />
+        <attr name="stlTabTextFontFamily" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="CirclePagerIndicator">
+        <attr name="android:gravity" />
+        <attr name="android:orientation" />
+        <attr name="fillColor" />
+        <attr name="pageColor" />
+        <attr name="radius" />
+        <attr name="snap" format="boolean" />
+        <attr name="spacing" />
+        <attr name="strokeColor" />
+        <attr name="strokeWidth" />
+    </declare-styleable>
+
+    <declare-styleable name="RoundImageView">
+        <attr name="round_border_width" format="dimension" />
+        <attr name="round_border_color" format="color" />
+        <attr name="border_radius" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomTextView">
+        <attr name="text" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="ProgressWheel">
+        <attr name="matProg_progressIndeterminate" format="boolean" />
+        <attr name="matProg_barColor" format="color" />
+        <attr name="matProg_rimColor" format="color" />
+        <attr name="matProg_rimWidth" format="dimension" />
+        <attr name="matProg_spinSpeed" format="float" />
+        <attr name="matProg_barSpinCycleTime" format="integer" />
+        <attr name="matProg_circleRadius" format="dimension" />
+        <attr name="matProg_fillRadius" format="boolean" />
+        <attr name="matProg_barWidth" format="dimension" />
+        <attr name="matProg_linearProgress" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="BaseTextView">
+        <attr name="typeface" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="BaseEditText">
+        <attr name="filter" format="enum">
+            <enum name="Hangul" value="0" />
+            <enum name="Alpha" value="1" />
+            <enum name="Numeric" value="2" />
+            <enum name="HangulAlpha" value="3" />
+            <enum name="HangulNumeric" value="4" />
+            <enum name="AlphaNumeric" value="5" />
+            <enum name="HangulAlphaNumeric" value="6" />
+            <enum name="LowerAlphaNumeric" value="7" />
+            <enum name="UpperAlphaOneNumeric" value="8" />
+            <enum name="NumericLine" value="9" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="CircleImageView">
+        <attr name="civ_border_width" format="dimension" />
+        <attr name="civ_border_color" format="color" />
+        <attr name="civ_border_overlay" format="boolean" />
+        <attr name="civ_fill_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="TagsEditText">
+        <attr name="allowSpaceInTag" format="boolean" />
+        <attr name="tagsTextColor" format="color" />
+        <attr name="tagsTextSize" format="dimension" />
+        <attr name="tagsBackground" format="integer" />
+        <attr name="tagsCloseImageLeft" format="integer" />
+        <attr name="tagsCloseImageRight" format="integer" />
+        <attr name="tagsCloseImagePadding" format="dimension" />
+        <attr name="tagsPaddingLeft" format="dimension" />
+        <attr name="tagsPaddingRight" format="dimension" />
+        <attr name="tagsPaddingTop" format="dimension" />
+        <attr name="tagsPaddingBottom" format="dimension" />
+        <attr name="tagsPrefix" format="string" />
+    </declare-styleable>
+
+
+    <declare-styleable name="PagerSlidingTabStrip">
+        <attr name="pstsIndicatorColor" format="color" />
+        <attr name="pstsIndicatorHeight" format="dimension" />
+        <attr name="pstsUnderlineColor" format="color" />
+        <attr name="pstsUnderlineHeight" format="dimension" />
+        <attr name="pstsDividerColor" format="color" />
+        <attr name="pstsDividerWidth" format="dimension" />
+        <attr name="pstsDividerPadding" format="dimension" />
+        <attr name="pstsScrollOffset" format="dimension" />
+        <attr name="pstsShouldExpand" format="boolean" />
+        <attr name="pstsPaddingMiddle" format="boolean" />
+        <attr name="pstsTabPaddingLeftRight" format="dimension" />
+        <attr name="pstsTabMarginLeftRight" format="dimension" />
+        <attr name="pstsTabBackground" format="reference" />
+        <attr name="pstsTabTextSize" format="dimension" />
+        <attr name="pstsTabTextColor" format="reference" />
+        <attr name="pstsTabTextStyle" format="reference">
+            <flag name="normal" value="0x0" />
+            <flag name="bold" value="0x1" />
+            <flag name="italic" value="0x2" />
+        </attr>
+        <attr name="pstsTabTextAllCaps" format="boolean" />
+        <attr name="pstsTabTextAlpha" format="integer" />
+        <attr name="pstsTabTextFontFamily" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="MaxHeightRecyclerView">
+        <attr name="maxHeight" />
+    </declare-styleable>
+</resources>

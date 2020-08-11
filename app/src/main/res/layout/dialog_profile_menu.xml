@@ -1,0 +1,83 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/rly_bg"
+            style="@style/DialogBg" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/color_white"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#f13c4c">
+
+                <TextView
+                    android:id="@+id/tv_nickname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="빨간망토"
+                    android:textColor="@color/color_white"
+                    android:textSize="17sp"
+                    app:fontname="@{`NotoSansCJKkr-Medium.otf`}" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv1"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:text="좋아요"
+                android:textColor="@color/color_black"
+                android:textSize="14sp"
+                app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#f13c4c" />
+
+            <TextView
+                android:id="@+id/tv2"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:text="신고하기"
+                android:textColor="@color/color_black"
+                android:textSize="14sp"
+                app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#f13c4c" />
+
+            <TextView
+                android:id="@+id/tv3"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:text="매력평가"
+                android:textColor="@color/color_black"
+                android:textSize="14sp"
+                app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</layout>

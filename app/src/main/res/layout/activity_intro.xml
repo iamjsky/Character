@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:gravity="center|top"
+        android:id="@+id/containerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+android:background="@color/color_white"
+        android:orientation="vertical"
+        tools:context=".ui.page.intro.IntroActivity">
+
+            <com.antonyt.infiniteviewpager.InfiniteViewPager
+           android:layout_weight="1"
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_300sdp"
+                />
+
+
+
+<LinearLayout
+
+    android:gravity="center|top"
+    android:orientation="vertical"
+    android:layout_weight="1"
+    android:layout_width="match_parent"
+    android:layout_height="0dp">
+    <me.relex.circleindicator.CircleIndicator
+
+        android:id="@+id/pageIndicator"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_20sdp"
+
+        app:ci_drawable="@drawable/img_selected_01"
+        app:ci_drawable_unselected="@drawable/img_unselected_01"
+        app:ci_width="5dp"
+        app:ci_height="5dp"
+        app:ci_margin="5dp" />
+</LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:paddingLeft="@dimen/_50sdp"
+            android:paddingRight="@dimen/_50sdp"
+            android:layout_marginBottom="@dimen/_40sdp"
+         android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/llyLogin"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_36sdp"
+                android:background="@drawable/bg_rounded_03"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:adjustViewBounds="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_15sdp"
+
+                    android:src="@drawable/first_ico_login" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="7dp"
+                    android:text="@string/login"
+                    android:textColor="@color/color_white"
+                    android:textSize="@dimen/_10sdp"
+                   android:fontFamily="@font/nanum_square_b" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/_10sdp"
+                android:id="@+id/llySignup"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_36sdp"
+                android:background="@drawable/bg_rounded_04"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:adjustViewBounds="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_15sdp"
+                    android:src="@drawable/first_ico_signin" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_14sdp"
+                    android:layout_marginStart="7dp"
+                    android:text="@string/signup"
+                    android:textColor="#ff056a"
+                    android:textSize="@dimen/_10sdp"
+                    android:fontFamily="@font/nanum_square_b" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+
+
+
+    </LinearLayout>
+
+</layout>

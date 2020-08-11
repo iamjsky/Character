@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/containerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:orientation="vertical">
+
+        <include layout="@layout/view_top_bar" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/rlHeight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp">
+
+                <TextView
+                    android:id="@+id/tvHeight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="20dp"
+                    android:hint="선택하세요"
+                    android:textColor="@color/color_black"
+                    android:textColorHint="#aaaaaa"
+                    android:textSize="13sp"
+                    app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    android:text="키"
+                    android:textColor="#000000"
+                    android:textSize="13sp"
+                    app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlRegion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp">
+
+                <TextView
+                    android:id="@+id/tvRegion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="20dp"
+                    android:hint="선택하세요"
+                    android:paddingLeft="60dp"
+                    android:textColor="@color/color_black"
+                    android:textColorHint="#aaaaaa"
+                    android:textSize="13sp"
+                    app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    android:text="지역"
+                    android:textColor="#000000"
+                    android:textSize="13sp"
+                    app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlReligion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp">
+
+                <TextView
+                    android:id="@+id/tvReligion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="20dp"
+                    android:hint="선택하세요"
+                    android:textColor="@color/color_black"
+                    android:textColorHint="#aaaaaa"
+                    android:textSize="13sp"
+                    app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    android:text="종교"
+                    android:textColor="#000000"
+                    android:textSize="13sp"
+                    app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlSmoking"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp">
+
+                <TextView
+                    android:id="@+id/tvSmoking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="20dp"
+                    android:hint="선택하세요"
+                    android:textColor="@color/color_black"
+                    android:textColorHint="#aaaaaa"
+                    android:textSize="13sp"
+                    app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    android:text="흡연"
+                    android:textColor="#000000"
+                    android:textSize="13sp"
+                    app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlDrinking"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp">
+
+                <TextView
+                    android:id="@+id/tvDrinking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="20dp"
+                    android:hint="선택하세요"
+                    android:textColor="@color/color_black"
+                    android:textColorHint="#aaaaaa"
+                    android:textSize="13sp"
+                    app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    android:text="음주"
+                    android:textColor="#000000"
+                    android:textSize="13sp"
+                    app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp">
+
+                <TextView
+                    android:id="@+id/tvType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="20dp"
+                    android:hint="선택하세요"
+                    android:textColor="@color/color_black"
+                    android:textColorHint="#aaaaaa"
+                    android:textSize="13sp"
+                    app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    android:text="체형"
+                    android:textColor="#000000"
+                    android:textSize="13sp"
+                    app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlBent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp">
+
+                <TextView
+                    android:id="@+id/tvBent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="20dp"
+                    android:hint="선택하세요"
+                    android:paddingLeft="60dp"
+                    android:textColor="@color/color_black"
+                    android:textColorHint="#aaaaaa"
+                    android:textSize="13sp"
+                    app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    android:text="취향"
+                    android:textColor="#000000"
+                    android:textSize="13sp"
+                    app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp">
+
+                <TextView
+                    android:id="@+id/tvStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="20dp"
+                    android:hint="선택하세요"
+                    android:paddingLeft="100dp"
+                    android:textColor="@color/color_black"
+                    android:textColorHint="#aaaaaa"
+                    android:textSize="13sp"
+                    app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    android:text="연애스타일"
+                    android:textColor="#000000"
+                    android:textSize="13sp"
+                    app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:src="@drawable/btn_bg_pink" />
+
+            <TextView
+                android:id="@+id/tvSave"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="20dp"
+                android:gravity="center"
+                android:text="저장하기"
+                android:textAlignment="center"
+                android:textColor="@color/color_white"
+                android:textSize="15sp"
+                app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="signup_sub_title">
+        <item>@string/account_info</item>
+        <item>@string/account_create</item>
+        <item>@string/profile_register</item>
+        <item></item>
+    </string-array>
+    <string-array name="belief">
+        <item>@string/belief1</item>
+        <item>@string/belief2</item>
+        <item>@string/belief3</item>
+        <item>@string/belief4</item>
+        <item>@string/belief5</item>
+    </string-array>
+    <string-array name="drinking">
+        <item>@string/drinking1</item>
+        <item>@string/drinking2</item>
+        <item>@string/drinking3</item>
+    </string-array>
+    <string-array name="job">
+        <item>무직</item>
+        <item>공무원</item>
+        <item>의료계</item>
+        <item>법조계</item>
+        <item>예술</item>
+        <item>사업가</item>
+        <item>CEO</item>
+        <item>기업</item>
+        <item>중소중견</item>
+        <item>프리랜서</item>
+        <item>연예</item>
+        <item>방송</item>
+        <item>디자이너</item>
+        <item>스포츠</item>
+        <item>마케팅, 홍보</item>
+        <item>운동선수</item>
+        <item>학생</item>
+        <item>여행사</item>
+        <item>요리사</item>
+        <item>부동산</item>
+        <item>IT</item>
+        <item>항공사</item>
+        <item>연구직</item>
+        <item>군인</item>
+        <item>자영업</item>
+        <item>비서</item>
+        <item>교육</item>
+        <item>기술직</item>
+        <item>전기전자</item>
+        <item>영업</item>
+        <item>서비스</item>
+        <item>정치</item>
+        <item>작가</item>
+        <item>금융</item>
+        <item>취업 준비</item>
+    </string-array>
+    <string-array name="smoking">
+        <item>@string/smoking1</item>
+        <item>@string/smoking2</item>
+        <item>@string/smoking3</item>
+    </string-array>
+    <string-array name="body_male">
+        <item>@string/body1</item>
+        <item>@string/body2</item>
+        <item>@string/body3</item>
+        <item>@string/body4</item>
+        <item>@string/body5_male</item>
+        <item>@string/body6_male</item>
+    </string-array>
+    <string-array name="body_female">
+        <item>@string/body1</item>
+        <item>@string/body2</item>
+        <item>@string/body3</item>
+        <item>@string/body4</item>
+        <item>@string/body5_female</item>
+        <item>@string/body6_female</item>
+    </string-array>
+    <string-array name="hobby">
+        <item>체육</item>
+        <item>음악</item>
+        <item>책읽시</item>
+    </string-array>
+    <string-array name="love_style">
+        <item>연상보다 연하</item>
+        <item>연하보다 연상</item>
+        <item>친구 같은 편한 만남</item>
+        <item>성숙한 연애</item>
+        <item>기념일 챙겨는</item>
+        <item>동네친구 좋아</item>
+        <item>장거리도 괜찮아</item>
+        <item>진지해요 궁서체임</item>
+        <item>가벼운 연애</item>
+        <item>얼굴 보다 몸봐요</item>
+        <item>얼굴 많이 봐요</item>
+        <item>같은 취미 즐기는</item>
+        <item>연락은 하루 종일</item>
+        <item>카톡보다 전화 좋아</item>
+        <item>프라이버시 존중</item>
+        <item>연락은 띄엄 띄엄</item>
+        <item>매일매일 설레는</item>
+        <item>애정표현 많이</item>
+        <item>스킨십 좋아</item>
+        <item>사투리 매력 있음</item>
+        <item>애교 좋아</item>
+        <item>서운한 건 바로바로</item>
+        <item>주말이 편해요</item>
+        <item>나만의 시간 꼭 필요함</item>
+        <item>존경할 수 있는 분 좋아</item>
+        <item>성격이 제일 중요</item>
+        <item>게임 같이 하기</item>
+        <item>함께 운동하기</item>
+        <item>함께 스포츠 관람</item>
+        <item>드라이브 좋아</item>
+        <item>함께 공연 관람</item>
+        <item>카페에서 데이트</item>
+    </string-array>
+    <string-array name="email_type">
+        <item>직접입력</item>
+    </string-array>
+    <string-array name="hobby_class_list">
+        <item>영화</item>
+        <item>음악</item>
+        <item>게임</item>
+        <item>운동</item>
+        <item>여행</item>
+        <item>술</item>
+        <item>스포트</item>
+        <item>쇼핑과 패션</item>
+        <item>TV</item>
+        <item>독서와 만화</item>
+        <item>맛집과 카페</item>
+        <item>외국어공부</item>
+        <item>반려동물</item>
+        <item>연애</item>
+        <item>감성취미</item>
+        <item>이색취미</item>
+        <item>나혼자산다</item>
+    </string-array>
+    <string-array name="hobby_list">
+        <item>드라마</item>
+        <item>판타지</item>
+        <item>로멘스/멜로</item>
+        <item>공포</item>
+        <item>스릴러</item>
+        <item>모험</item>
+        <item>SF</item>
+        <item>액션</item>
+        <item>느와르</item>
+        <item>코미디</item>
+        <item>다큐</item>
+        <item>가족</item>
+        <item>전쟁</item>
+        <item>애니매이션</item>
+        <item>뮤지컬</item>
+        <item>판타지</item>
+        <item>마블</item>
+        <item>어벤저스</item>
+
+        <item>클래식</item>
+        <item>힙합</item>
+        <item>트로트</item>
+        <item>감성발라드</item>
+        <item>edm</item>
+        <item>나는흥부자</item>
+        <item>클럽음악</item>
+        <item>락</item>
+        <item>팝송</item>
+        <item>아이돌노래</item>
+        <item>쇼미더머니</item>
+        <item>재즈</item>
+        <item>인디밴드</item>
+        <item>랩</item>
+
+        <item>lol</item>
+        <item>거지키우기</item>
+        <item>디아블로</item>
+        <item>배틀그라운드</item>
+        <item>리니지</item>
+        <item>메이플스토리</item>
+        <item>버스타실분</item>
+        <item>사천성</item>
+        <item>오버워치</item>
+        <item>피시방데이트</item>
+        <item>히오스</item>
+        <item>클래시오브클랜즈</item>
+
+        <item>같이운동해요</item>
+        <item>걷기</item>
+        <item>골프</item>
+        <item>웨이트</item>
+        <item>등산</item>
+        <item>롱보드</item>
+        <item>마라톤</item>
+        <item>배드민턴</item>
+        <item>수영</item>
+        <item>요가</item>
+        <item>자전거</item>
+        <item>춤</item>
+        <item>클라이밍</item>
+        <item>탁구</item>
+        <item>필라테스</item>
+        <item>런닝</item>
+        <item>격투기</item>
+        <item>크로스핏</item>
+
+        <item>국내여행</item>
+        <item>당일치기</item>
+        <item>먹방여행</item>
+        <item>부산</item>
+        <item>유럽</item>
+        <item>세계일주</item>
+        <item>여행은혼자</item>
+        <item>여행친구구함</item>
+        <item>제주도</item>
+        <item>주말여행</item>
+        <item>캠핑</item>
+        <item>템플스테이</item>
+        <item>일본</item>
+        <item>동남아</item>
+        <item>미국</item>
+        <item>남미</item>
+        <item>스페인</item>
+
+        <item>소주</item>
+        <item>과일소주</item>
+        <item>맥주</item>
+        <item>막걸리</item>
+        <item>술 안가림</item>
+        <item>잘마시는 사람 좋아</item>
+        <item>사케</item>
+        <item>위스키</item>
+        <item>와인</item>
+        <item>복분자</item>
+
+        <item>롯데자이언츠</item>
+        <item>KT위즈</item>
+        <item>LG트윈스</item>
+        <item>다이노스</item>
+        <item>와이번스</item>
+        <item>야구</item>
+        <item>레알마드리드</item>
+        <item>수원삼성</item>
+        <item>토트넘</item>
+        <item>축구</item>
+        <item>농구</item>
+        <item>프리미어리그</item>
+
+        <item>무신사</item>
+        <item>비싸도좋은옷</item>
+        <item>세일좋아</item>
+        <item>아디다스덕후</item>
+        <item>아이쇼핑</item>
+        <item>유니클로</item>
+        <item>인터넷쇼핑</item>
+        <item>캠퍼스룩</item>
+        <item>패완몸</item>
+        <item>패완얼</item>
+        <item>편한옷최고</item>
+        <item>후드티좋아</item>
+
+        <item>개그콘서트</item>
+        <item>나혼자산다</item>
+        <item>뉴스</item>
+        <item>동상이몽</item>
+        <item>라디오스타</item>
+        <item>미드</item>
+        <item>사극</item>
+        <item>서프라이즈</item>
+        <item>드라마</item>
+
+        <item>독서광</item>
+        <item>독서모임</item>
+        <item>만화카페</item>
+        <item>미움받을용기</item>
+        <item>북카페</item>
+        <item>웹툰</item>
+        <item>추리소설</item>
+
+        <item>카페거리</item>
+        <item>곱창</item>
+        <item>던거</item>
+        <item>대식가</item>
+        <item>디저트</item>
+        <item>떡볶이</item>
+        <item>마카롱</item>
+        <item>매운음식</item>
+        <item>빵순이</item>
+        <item>아메리카노</item>
+        <item>예쁜카페</item>
+        <item>고기고기</item>
+        <item>채식주의</item>
+        <item>초딩입맛</item>
+        <item>치킨</item>
+        <item>케이크</item>
+
+        <item>영어</item>
+        <item>불어</item>
+        <item>스페인어</item>
+        <item>오픽</item>
+        <item>일본어</item>
+        <item>중국어</item>
+        <item>토익</item>
+        <item>토플</item>
+
+        <item>1일1사고</item>
+        <item>개냥이</item>
+        <item>고슴도치</item>
+        <item>고양이</item>
+        <item>댕댕이</item>
+        <item>애완토끼</item>
+        <item>애완물고기</item>
+        <item>웰시코기</item>
+        <item>시츄</item>
+        <item>집사</item>
+        <item>푸들</item>
+
+        <item>연상/연하</item>
+        <item>대화가 잘 통하는</item>
+        <item>비혼주의</item>
+        <item>모태솔로</item>
+        <item>미팅</item>
+        <item>성격우선</item>
+        <item>방목형연애</item>
+        <item>썸</item>
+        <item>결혼전제</item>
+        <item>매일보고싶어</item>
+
+        <item>가죽소품제작</item>
+        <item>그림그리기</item>
+        <item>꽃꽃이</item>
+        <item>나노블록</item>
+        <item>뜨개질</item>
+        <item>레고</item>
+        <item>만화그리기</item>
+        <item>십자수</item>
+        <item>우쿨랠레</item>
+        <item>시</item>
+        <item>일기</item>
+        <item>일상사진찍기</item>
+        <item>종이접기</item>
+        <item>캘리그라피</item>
+        <item>캠핑</item>
+        <item>사진</item>
+        <item>홈가드닝</item>
+
+        <item>낚시</item>
+        <item>드라이브</item>
+        <item>디제잉</item>
+        <item>번지점프</item>
+        <item>승마</item>
+        <item>사격</item>
+        <item>서핑</item>
+        <item>수상스키</item>
+        <item>스노클링</item>
+        <item>스카이다이빙</item>
+        <item>스킨스쿠버</item>
+        <item>시계모으기</item>
+        <item>외제차수집</item>
+        <item>요트</item>
+        <item>인형뽑기중독</item>
+        <item>카약</item>
+        <item>코스프레</item>
+        <item>패러글라이딩</item>
+        <item>프리다이빙</item>
+        <item>긱사생활</item>
+        <item>늦잠쟁이</item>
+        <item>셀프인테리어</item>
+        <item>소음극혐</item>
+        <item>요리잘함</item>
+        <item>집순(돌)이</item>
+        <item>청소쟁이</item>
+        <item>자취고수</item>
+        <item>미드</item>
+        <item>한드</item>
+        <item>일드</item>
+    </string-array>
+
+    <string-array name="character1">
+        <item>-</item>
+        <item>D</item>
+        <item>I</item>
+        <item>S</item>
+        <item>C</item>
+    </string-array>
+    <string-array name="character2">
+        <item>D</item>
+        <item>I</item>
+        <item>S</item>
+        <item>C</item>
+    </string-array>
+
+    <string-array name="ask_type">
+        <item>가입/로그인</item>
+        <item>아이디/비번찾기</item>
+        <item>오늘의 미팅</item>
+        <item>에너지관련</item>
+        <item>탈퇴</item>
+        <item>기타</item>
+    </string-array>
+
+    <string-array name="community_type">
+        <item>전체</item>
+        <item>대화의 성지</item>
+        <item>친구라도 될걸 그랬어</item>
+        <item>우리 지금 만났어요</item>
+        <item>연애스킬 UP</item>
+    </string-array>
+
+
+    <integer-array name="intro_xml_array">
+        <item>@layout/item_intro_page_01</item>
+        <item>@layout/item_intro_page_02</item>
+        <item>@layout/item_intro_page_03</item>
+    </integer-array>
+</resources>

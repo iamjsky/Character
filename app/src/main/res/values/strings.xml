@@ -1,0 +1,208 @@
+<resources>
+
+    <string name="app_name">성격지상주의</string>
+    <string name="app_finish_message">"'뒤로' 버튼을 한번 더 누르면 종료됩니다."</string>
+    <string name="service_not_ready">서비스 준비중입니다.</string>
+    <string name="permission_request_msg">권한동의후 이용 해 주세요</string>
+    <string name="version">version 1.0.0</string>
+    <string name="copyright">Copyright ⓒ DAYONGELEE All rights reserved.</string>
+
+    <string name="kakao_app_key" translatable="false">1be91113fb53c9b26baedc23593fba7b</string>
+    <string name="kakao_scheme" translatable="false">kakao1be91113fb53c9b26baedc23593fba7b</string>
+    <string name="kakaolink_host" translatable="false">kakaolink</string>
+
+    <string name="facebook_app_id" translatable="false">198716931236115</string>
+    <string name="fb_login_protocol_scheme" translatable="false">fb198716931236115</string>
+
+    <string name="error_parameter">파라미터 오류</string>
+    <string name="error_db">DB 오류</string>
+    <string name="error_cert_code">인증코드가 올바르지 않습니다</string>
+    <string name="error_duplicate">중복되는 정보입니다</string>
+    <string name="error_no_user">회원가입후 이용해 주세요</string>
+    <string name="error_no_info">정보를 블러 올 수 없습니다</string>
+    <string name="error_incorrect_info">정보가 정확하지 않습니다</string>
+    <string name="error_privilege">권한이 없습니다</string>
+    <string name="error_file_upload">파일 업로드에 실패하였습니다</string>
+    <string name="error_withdraw_user">탈퇴한 회원입니다</string>
+    <string name="error_wrong_pwd">비밀번호가 일치하지 않습니다</string>
+    <string name="error_unknown">서버상태가 불안정합니다. 잠시 후 다시 시도해주세요</string>
+    <string name="save_success">저장되었습니다</string>
+    <string name="save">저장하기</string>
+    <string name="data_parse_error">데이터를 분석하는 과정에 오류가 발생하였습니다.</string>
+    <string name="error_unknown_token">현재 네트워크 상태가 불안정하니 다시 시도해 주세요.</string>
+
+    <string name="req_camera_desc">카메라 사용을(를)할 수 있도록\n허용하시겠습니까?</string>
+    <string name="req_album_desc">사진 앨범을(를)에 접근할 수 있도록\n허용하시겠습니까?</string>
+    <string name="photo_max_size">메모리 용량이 5MB 이상이여야 합니다.</string>
+
+    <string name="profile">프로필</string>
+    <string name="camera">카메라</string>
+    <string name="video">동영상</string>
+    <string name="gallery">사진</string>
+    <string name="gallery1">갤러리</string>
+    <string name="delete">삭제</string>
+    <string name="cancel">취소</string>
+    <string name="ok">확 인</string>
+
+    <string name="permission_msg">권한동의후 이용해주세요.</string>
+    <string name="permission_ok">동의하기</string>
+
+    <!--Intro-->
+    <string name="splash_introduction">성격지상주의</string>
+    <string name="splash_text1">솔로들의</string>
+    <string name="splash_text2">성지</string>
+    <string name="login">로그인하기</string>
+    <string name="signup">회원 가입하기</string>
+    <string name="email">이메일</string>
+    <string name="name">이름</string>
+    <string name="input_email">이메일 주소를 입력해주세요.</string>
+    <string name="input_login_email">아이디로 설정한 이메일을 입력해주세요.</string>
+    <string name="input_name">이름을 입력해주세요.</string>
+    <string name="direct_input">직접입력</string>
+    <string name="input_password">비밀번호를 입력해주세요.</string>
+    <string name="facebook_login">페이스북으로 로그인</string>
+    <string name="naver_login">네이버로 로그인</string>
+    <string name="kakao_login">카카오로 로그인</string>
+    <string name="id_find">이메일 찾기</string>
+    <string name="duplicate_confirm">증복확인</string>
+    <string name="password_find">비번 찾기</string>
+    <string name="signup_intro">아직 계정이 없으신가요?</string>
+    <string name="register_cancel">가입취소</string>
+    <string name="email_signup">이메일로 가입하기</string>
+    <string name="facebook_signup">페이스북으로 가입하기</string>
+    <string name="naver_signup">네이버로 가입하기</string>
+    <string name="kakao_signup">카카오로 가입하기</string>
+    <string name="email_begin">이메일로 시작하기</string>
+    <string name="facebook_begin">페이스북으로 시작하기</string>
+    <string name="naver_begin">네이버로 시작하기</string>
+    <string name="kakao_begin">카카오로 시작하기</string>
+
+    <string name="email_duplicate">이메일 중복</string>
+    <string name="email_duplicate_confirm">이메일 중복확인을 해주세요.</string>
+    <string name="email_duplicate_message">입력하신 이메일은 다른 계정으로 사용 중 입니다.\n다른 이메일을 입력해주세요.</string>
+    <string name="email_identify_message">입력하신 이메일은 사용가능한 이메일입니다.</string>
+
+    <string name="phone_duplicate">전화번호 중복</string>
+    <string name="phone_duplicate_message">휴대폰의 전화번호가 다른 계정으로 사용 중 입니다.\n다른 휴대폰번호로 인증해주세요.</string>
+
+    <string name="login_failed">로그인 실패</string>
+    <string name="login_failed_message">이메일 혹은 비밀번호를 확인해주세요.</string>
+
+    <string name="email_find">이메일 찾기</string>
+    <string name="email_find_success">이메일 찾기 성공</string>
+    <string name="pwd_find_success">비밀번호 찾기 성공</string>
+    <string name="email_find_fail">이메일 찾기 실패</string>
+    <string name="pwd_find_fail">비밀번호 찾기 실패</string>
+    <string name="email_find_success_message" formatted="true">회원님의 이메일은 아래와 같습니다.\n%s</string>
+    <string name="pwd_find_success_message" formatted="true">회원님의 임시비밀번호를 다음의 이메일로 전송하였습니다.\n%s</string>
+
+    <string name="signup_cancel">회원가입 취소</string>
+    <string name="signup_cancel_message">회원가입을 취소하시겠습니까?</string>
+
+    <string name="registering">가입하기</string>
+    <string name="happy_signup">가입을 축하드립니다.</string>
+    <string name="app_start">성격지상주의 시작하기</string>
+    <string name="account_info">계정 정보</string>
+    <string name="account_create">계정 생성</string>
+    <string name="profile_register">프로필 작성</string>
+    <string name="gender">성별</string>
+    <string name="select_gender">성별을 선택해주세요.</string>
+    <string name="male">남성</string>
+    <string name="female">여성</string>
+    <string name="password">패스워드</string>
+    <string name="password_hint">영문자+숫자 조합, 6~20자</string>
+    <string name="email_invalid_message">올바르지 않은 이메일 형식입니다.</string>
+    <string name="password_invalid_message">올바르지 않은 패스워드 형식입니다.</string>
+    <string name="password_confirm">패스워드 확인</string>
+    <string name="password_confirm_hint">패스워드를 한번 더 입력해주세요</string>
+    <string name="password_confirm_invalid_message">패스워드와 다릅니다.</string>
+    <string name="profile_upload_guide">프로필 사진은 최소 3장 최대 8장까지 업로드 가능합니다.</string>
+    <string name="main_info">기본정보</string>
+    <string name="detail_info">상세정보</string>
+    <string name="nickname">닉네임</string>
+    <string name="birthday">생년월일</string>
+    <string name="input_nickname">닉네임을 입력하세요.</string>
+    <string name="input_birthday">생년월일을 입력하세요.(예: 19991010)</string>
+    <string name="area">지역</string>
+    <string name="input_area">지역을 입력하세요.</string>
+    <string name="job">직업</string>
+    <string name="select_job">직업을 입력하세요.</string>
+    <string name="select_job_no_space">직업을 스페이스 없이 입력하세요.</string>
+    <string name="select_intro">소개글을 입력하세요.</string>
+    <string name="select_intro_no_space">소개글을 스페이스 없이 입력하세요.</string>
+    <string name="age">나이</string>
+    <string name="select_age">나이를 선택하세요.</string>
+    <string name="school">학교</string>
+    <string name="select_school">학교를 입력하세요.</string>
+    <string name="body">체형</string>
+    <string name="select_body">체형을 선택하세요.</string>
+    <string name="love_style">연애스타일</string>
+    <string name="select_love_style">연애스타일을 선택하세요.</string>
+    <string name="hobby">관심사</string>
+    <string name="select_hobby">관심사를 선택하세요.</string>
+    <string name="tall">키</string>
+    <string name="select_tall">키를 선택하세요.</string>
+    <string name="belief">종교</string>
+    <string name="select_belief">종교를 선택하세요.</string>
+    <string name="drinking">음주</string>
+    <string name="select_drinking">음주를 선택하세요.</string>
+    <string name="smoking">흡연</string>
+    <string name="select_smoking">흡연여부를 선택하세요.</string>
+    <string name="self_introduction">소개글</string>
+    <string name="input_self_introduction">소개글을 입력하세요.</string>
+    <string name="confirm">확인</string>
+
+
+    <string name="belief1">무교</string>
+    <string name="belief2">기독교</string>
+    <string name="belief3">불교</string>
+    <string name="belief4">천주교</string>
+    <string name="belief5">민속신앙</string>
+
+    <string name="drinking1">전혀 마시지 않음</string>
+    <string name="drinking2">적당히 마심</string>
+    <string name="drinking3">즐겨 마심</string>
+
+    <string name="smoking1">비흡연</string>
+    <string name="smoking2">가끔</string>
+    <string name="smoking3">즐겨함</string>
+
+    <string name="body1">마른</string>
+    <string name="body2">슬림탄탄</string>
+    <string name="body3">보통</string>
+    <string name="body4">통통한</string>
+    <string name="body5_male">근육질</string>
+    <string name="body6_male">건장한</string>
+    <string name="body5_female">살짝볼륨</string>
+    <string name="body6_female">글래머</string>
+
+
+    <string name="character_test_disc">성격테스트 DISC</string>
+    <string name="character_confirm">성격확인</string>
+    <string name="prev">이전</string>
+
+    <string name="like_style">나와 맞는 이성은?</string>
+    <string name="like_job">나와 맞는 직업은?</string>
+    <string name="like_office">나와 맞는 직무환경은?</string>
+    <string name="again_test">테스트 다시하기(에너지 20)</string>
+    <string name="start_character">성격지상주의 시작하기</string>
+    <string name="find_model">이상형 찾기</string>
+    <string name="different_opposite">상위 20% 이성</string>
+    <string name="like_character">선호하는 성격</string>
+    <string name="str_body">체형별</string>
+    <string name="new_pay">뉴페이스</string>
+    <string name="neighborhood">동네친구</string>
+    <string name="now_connecting">지금 접속중</string>
+    <string name="religion">종교</string>
+    <string name="drinking_habit">음주습관</string>
+    <string name="interest">관심사</string>
+    <string name="romance_style">연애스타일</string>
+
+    <string name="character_d">강한주도형</string>
+    <string name="character_i">강한사교형</string>
+    <string name="character_s">강한신중형</string>
+    <string name="character_c">강한안정형</string>
+
+    <string name="dot_middle">•</string>
+
+</resources>

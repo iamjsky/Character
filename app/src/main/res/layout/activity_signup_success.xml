@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:id="@+id/containerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_white"
+        android:orientation="vertical"
+        tools:context=".ui.page.intro.SignupSuccessActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/bg_vs_big" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/splash_introduction"
+                android:textColor="@color/color_281f1c"
+                android:textSize="35sp"
+                app:fontname="@{`NotoSansCJKkr-Light.otf`}" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-5dp"
+                android:text="@string/happy_signup"
+                android:textColor="@color/color_light_red"
+                android:textSize="35sp"
+                app:fontname="@{`NotoSansCJKkr-Bold.otf`}" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnStart"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@drawable/btn_bg_pink"
+            android:foreground="?attr/selectableItemBackground"
+            android:paddingBottom="10dp"
+            android:text="@string/app_start"
+            android:textColor="@android:color/white"
+            android:textSize="15sp"
+            app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+    </LinearLayout>
+
+</layout>

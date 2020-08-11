@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#515867</color>
+    <color name="colorPrimaryDark">#fff</color>
+    <color name="colorAccent">#78a1ee</color>
+
+    <color name="color_transparent">#00000000</color>
+    <color name="color_transparent_black">#A0000000</color>
+    <color name="color_white">#FFFFFFFF</color>
+    <color name="color_black">#000000</color>
+    <color name="color_alpha_white">#55FFFFFF</color>
+    <color name="color_alpha_white2">#ddFFFFFF</color>
+    <color name="color_alpha_black">#55000000</color>
+
+    <color name="color_border">@color/color_dfdfdf</color>
+    <color name="color_dark">@color/color_333333</color>
+    <color name="color_light_dark">@color/color_605d5d</color>
+    <color name="color_hint">#545454</color>
+    <color name="color_light_red">@color/color_fe013c</color>
+    <color name="color_error">@color/color_e04343</color>
+    <color name="color_light_blue">@color/color_4267b2</color>
+    <color name="color_light_green">@color/color_0fc044</color>
+    <color name="color_light_yellow">@color/color_f8e500</color>
+    <color name="color_grey">@color/color_908d8d</color>
+    <color name="popup_bg">@color/color_cc383838</color>
+
+    <color name="color_dfdfdf">#dfdfdf</color>
+    <color name="color_333333">#333333</color>
+    <color name="color_281f1c">#281f1c</color>
+    <color name="color_fe013c">#fe013c</color>
+    <color name="color_e04343">#e04343</color>
+    <color name="color_777777">#777777</color>
+    <color name="color_4267b2">#4267b2</color>
+    <color name="color_0fc044">#0fc044</color>
+    <color name="color_f8e500">#f8e500</color>
+    <color name="color_908d8d">#908d8d</color>
+    <color name="color_605d5d">#605d5d</color>
+    <color name="color_ff3e40">#ff3e40</color>
+    <color name="color_cc383838">#cc383838</color>
+    <color name="color_f24756">#f24756</color>
+    <color name="color_f7f7f7">#f7f7f7</color>
+    <color name="color_6b6363">#6b6363</color>
+    <color name="color_fa3d3f">#fa3d3f</color>
+    <color name="color_profile_heart">#a0ffffff</color>
+    <color name="color_808080">#808080</color>
+    <color name="color_fefefe">#fefefe</color>
+    <color name="color_1a1a1a">#1a1a1a</color>
+    <color name="color_ededed">#ededed</color>
+    <color name="color_424242">#424242</color>
+    <color name="color_f13c4c">#f13c4c</color>
+    <color name="color_d6d6d6">#d6d6d6</color>
+
+    <color name="color_d">#000000</color>
+    <color name="color_i">#ff0000</color>
+    <color name="color_s">#00ff00</color>
+    <color name="color_c">#0000ff</color>
+
+</resources>

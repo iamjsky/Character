@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+        <LinearLayout
+            android:id="@+id/lly_userinfo_bg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="141dp">
+
+                <com.character.microblogapp.ui.widget.RoundImageView
+                    android:id="@+id/iv_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/temp_user_round"
+                    app:border_radius="5dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginBottom="54dp"
+                    android:background="@drawable/bg_rect_storke_80ffffff"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:paddingTop="2dp"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txv_character1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textColor="@color/color_dark"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            app:fontname="@{`NanumSquareRoundEB.ttf`}" />
+
+                        <TextView
+                            android:id="@+id/txv_character2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textColor="@color/color_fe013c"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            app:fontname="@{`NanumSquareRoundEB.ttf`}" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/txv_ideal_character"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:paddingStart="6dp"
+                        android:paddingEnd="6dp"
+                        android:paddingBottom="6dp"
+                        android:text=""
+                        android:textAlignment="textStart"
+                        android:textColor="@color/color_black"
+                        android:lineSpacingExtra="2dp"
+                        android:textSize="10sp"
+                        app:fontname="@{`NotoSansCJKkr-Bold.otf`}" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lly_userinfo_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginBottom="3dp"
+                    android:background="@drawable/bg_eval_profile_white"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_profile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="4dp"
+                        android:gravity="center"
+                        android:text="서울, 26세, "
+                        android:textColor="@color/color_424242"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:lines="1"
+                        app:fontname="@{`NotoSansCJKkr-Bold.otf`}" />
+
+                    <TextView
+                        android:id="@+id/tv_height"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="4dp"
+                        android:paddingLeft="5dp"
+                        android:gravity="center"
+                        android:text="168cm"
+                        android:lines="1"
+                        android:textColor="@color/color_424242"
+                        android:textSize="12sp"
+                        app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                    <TextView
+                        android:id="@+id/tv_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="2dp"
+                        android:gravity="center"
+                        android:lines="1"
+                        android:singleLine="true"
+                        android:text="강한 주도형, 강한 안정형"
+                        android:textColor="@color/color_ff3e40"
+                        android:textSize="14sp"
+                        android:visibility="gone"
+                        app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                </LinearLayout>
+            </RelativeLayout>
+
+
+            <Button
+                android:id="@+id/btn_pick"
+                android:layout_width="100dp"
+                android:layout_height="27dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/btn_bg_home_pick"
+                android:text="@string/home_pick"
+                android:textAllCaps="false"
+                android:textColor="@color/color_ff3e40"
+                android:textSize="14sp"
+                app:fontname="@{`NotoSansCJKkr-Regular.otf`}"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/fly_cover"
+            android:layout_width="match_parent"
+            android:layout_height="141dp"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/imv_blur"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_model_main" />
+
+            <ImageView
+                android:id="@+id/imv_backside"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="center"
+                android:src="@drawable/add_img_011" />
+
+            <TextView
+                android:id="@+id/tvType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:text="페이스북"
+                android:textColor="@color/color_dark"
+                android:textSize="12sp"
+                android:visibility="gone"/>
+
+        </FrameLayout>
+
+    </RelativeLayout>
+
+</layout>

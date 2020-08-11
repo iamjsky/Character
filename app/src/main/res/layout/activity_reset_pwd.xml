@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/containerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/view_top_bar" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingStart="16dp"
+                    android:paddingTop="20dp"
+                    android:paddingEnd="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="기존 비밀번호"
+                        android:textColor="@color/color_light_dark"
+                        android:textSize="12sp"
+                        app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                    <EditText
+                        android:id="@+id/etOldPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/underline"
+                        android:drawableStart="@drawable/ic_checkbox"
+                        android:drawablePadding="12dp"
+                        android:hint="기존 비밀번호를 입력해주세요."
+                        android:inputType="textPassword"
+                        android:maxLength="20"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="4dp"
+                        android:textColor="@color/color_light_dark"
+                        android:textColorHint="@color/color_hint"
+                        android:textSize="12sp"
+                        app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                    <TextView
+                        android:id="@+id/tvOldPasswordError"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/password_invalid_message"
+                        android:textColor="@color/color_error"
+                        android:textSize="12sp"
+                        android:visibility="gone"
+                        app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="새 비밀번호"
+                        android:textColor="@color/color_light_dark"
+                        android:textSize="12sp"
+                        app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                    <EditText
+                        android:id="@+id/etPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/underline"
+                        android:drawableStart="@drawable/ic_checkbox"
+                        android:drawablePadding="12dp"
+                        android:hint="@string/password_hint"
+                        android:inputType="textPassword"
+                        android:maxLength="20"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="4dp"
+                        android:textColor="@color/color_light_dark"
+                        android:textColorHint="@color/color_hint"
+                        android:textSize="12sp"
+                        app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                    <TextView
+                        android:id="@+id/tvPasswordError"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/password_invalid_message"
+                        android:textColor="@color/color_error"
+                        android:textSize="12sp"
+                        android:visibility="gone"
+                        app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/password_confirm"
+                        android:textColor="@color/color_light_dark"
+                        android:textSize="12sp"
+                        app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                    <EditText
+                        android:id="@+id/etPasswordConfirm"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/underline"
+                        android:drawableStart="@drawable/ic_checkbox"
+                        android:drawablePadding="12dp"
+                        android:hint="@string/password_confirm_hint"
+                        android:inputType="textPassword"
+                        android:maxLength="20"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="4dp"
+                        android:textColor="@color/color_light_dark"
+                        android:textColorHint="@color/color_hint"
+                        android:textSize="12sp"
+                        app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                    <TextView
+                        android:id="@+id/tvPasswordConfirmError"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/password_confirm_invalid_message"
+                        android:textColor="@color/color_error"
+                        android:textSize="12sp"
+                        android:visibility="gone"
+                        app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_alignParentBottom="true">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentBottom="true"
+                        android:src="@drawable/btn_bg_pink" />
+
+                    <TextView
+                        android:id="@+id/tvChange"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginEnd="20dp"
+                        android:gravity="center"
+                        android:text="변경하기"
+                        android:textAlignment="center"
+                        android:textColor="@color/color_white"
+                        android:textSize="15sp"
+                        app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</layout>

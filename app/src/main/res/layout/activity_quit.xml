@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/containerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:orientation="vertical">
+
+        <include layout="@layout/view_top_bar" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:gravity="center_vertical"
+                android:text="탈퇴 시 유의사항 안내"
+                android:textColor="#101010"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:fontname="@{`NotoSansCJKkr-Bold.otf`}" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="탈퇴 처리될 아이디 : "
+                    android:textColor="#101010"
+                    android:textSize="12sp"
+                    app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                <TextView
+                    android:id="@+id/tvEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:text="greatsoft1@naver.com"
+                    android:textColor="#101010"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:gravity="center_vertical"
+                android:text="- 위 등록 아이디에 대해 탈퇴 처리를 합니다."
+                android:textColor="#101010"
+                android:textSize="12sp"
+                app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:gravity="center_vertical"
+                android:text="- 탈퇴 후 위 아이디로 로그인 할 수 없으며, 본 아이디로 저장되었던 모든 데이터 및 혜택을 사용하실 수 없습니다."
+                android:textColor="#101010"
+                android:textSize="12sp"
+                app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:gravity="center_vertical"
+                android:text="- 멤버십 회원 탈퇴 시 재가입이 불가하며, 기존 보유한 에너지는 모두 소멸됩니다."
+                android:textColor="#101010"
+                android:textSize="12sp"
+                app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical"
+                android:text="개인 정보 삭제에 대한 안내"
+                android:textColor="#101010"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:fontname="@{`NotoSansCJKkr-Bold.otf`}" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:gravity="center_vertical"
+                android:text="- 탈퇴 처리된 아이디는 재가입이 불가능하며, 모든 정보는 탈퇴와 동시에 모두 삭제 처리 됩니다."
+                android:textColor="#101010"
+                android:textSize="12sp"
+                app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:gravity="center_vertical"
+                android:text="- 탈퇴 전 작성하신 게시물 정보는 탈퇴한 후에도 삭제되지 않습니다."
+                android:textColor="#101010"
+                android:textSize="12sp"
+                app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlCheck"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="100dp">
+
+            <ImageButton
+                android:id="@+id/btnCheck"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/btn_check_selected" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="35dp"
+                android:text="모든 유의사항을 확인했으며 탈퇴에 동의합니다."
+                android:textColor="#4a4a4a"
+                android:textSize="12sp"
+                app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:src="@drawable/btn_bg_pink" />
+
+            <TextView
+                android:id="@+id/tvQuit"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="20dp"
+                android:gravity="center"
+                android:text="회원 탈퇴하기"
+                android:textAlignment="center"
+                android:textColor="@color/color_white"
+                android:textSize="15sp"
+                app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</layout>

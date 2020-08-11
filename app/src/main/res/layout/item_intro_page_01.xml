@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:gravity="center"
+    android:paddingTop="@dimen/_30sdp"
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/color_white">
+
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:fontFamily="@font/nanum_square_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_14sdp"
+            android:textColor="#ff056a"
+            android:gravity="center"
+            android:text="성격지상주의"
+            />
+        <TextView
+            android:fontFamily="@font/nanum_square_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_14sdp"
+            android:textColor="#000000"
+            android:gravity="center"
+            android:text="로 성격 맞는 사람 만나자!"
+            />
+    </LinearLayout>
+
+
+    <ImageView
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:src="@drawable/first_01_img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:fontFamily="@font/nanum_square_r"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_12sdp"
+        android:textColor="#000000"
+        android:lineSpacingExtra="6sp"
+        android:gravity="center"
+        android:text="나와 성격 코드가 맞는 이성, 친구를\n소개받을 수 있어요."
+        />
+
+</LinearLayout>

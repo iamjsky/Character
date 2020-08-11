@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_white"
+        android:orientation="vertical"
+        tools:context=".ui.page.profile.ProfileActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:background="@drawable/bg_top_header"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/rlt_back"
+                android:layout_width="58dp"
+                android:layout_height="58dp"
+                android:background="@color/color_transparent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="18dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/ico_back" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/txv_top_nickname"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/color_white"
+                android:textSize="15sp"
+                app:fontname="@{`NotoSansCJKkr-Medium.otf`}" />
+
+            <RelativeLayout
+                android:id="@+id/rlt_info"
+                android:layout_width="58dp"
+                android:layout_height="58dp"
+                android:layout_alignParentEnd="true"
+                android:background="@color/color_transparent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerInParent="true"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/btn_info" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="58dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txv_manner21"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/color_dark"
+                        android:textSize="40sp"
+                        app:fontname="@{`NotoSansCJKkr-Bold.otf`}" />
+
+                    <TextView
+                        android:id="@+id/txv_manner22"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/color_fe013c"
+                        android:textSize="40sp"
+                        app:fontname="@{`NotoSansCJKkr-Bold.otf`}" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txv_manner_desc2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:lineSpacingExtra="6dp"
+                        android:text=""
+                        android:textColor="@color/color_dark"
+                        android:textSize="12sp"
+                        app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="25dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_rect_storke_80ffffff"
+                android:orientation="vertical">
+
+                <ScrollView
+                    android:id="@+id/svDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/txv_manner_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lineSpacingExtra="6dp"
+                        android:text=""
+                        android:textColor="@color/color_light_dark"
+                        android:textSize="15sp"
+                        app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                </ScrollView>
+
+                <LinearLayout
+                    android:id="@+id/llView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvD"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="D"
+                            android:textColor="#333333"
+                            android:textSize="50sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvI"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="I"
+                            android:textColor="#fe013c"
+                            android:textSize="50sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvC"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="C"
+                            android:textColor="#4267b2"
+                            android:textSize="50sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvS"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="S"
+                            android:textColor="#0fc044"
+                            android:textSize="50sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_job1"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/btn_main_bg"
+                android:foreground="?attr/selectableItemBackground"
+                android:text="유형별 직업정보"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+            <Button
+                android:id="@+id/btn_job2"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/btn_main_bg"
+                android:foreground="?attr/selectableItemBackground"
+                android:text="유형별 선호 직무환경"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+            <Button
+                android:id="@+id/btn_character"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/btn_main_bg"
+                android:foreground="?attr/selectableItemBackground"
+                android:text="유형별 선호 성격"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+            <Button
+                android:id="@+id/btn_find_model"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/btn_main_bg"
+                android:foreground="?attr/selectableItemBackground"
+                android:text="확인"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/bg_top_header"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/header_evaluation"
+                    android:textColor="@color/color_white"
+                    android:textSize="15sp"
+                    app:fontname="@{`NotoSansCJKkr-Medium.otf`}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageButton
+                    android:id="@+id/btn_back"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@color/color_transparent"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ico_back"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <ImageButton
+                    android:id="@+id/btn_blame"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:background="@null"
+                    android:src="@drawable/ic_more"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_main"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:visibility="visible"
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="270dp">
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/vpProfiles"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <LinearLayout
+                        android:id="@+id/flt_other_interest"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/bg_rect_storke_80ffffff"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toTopOf="@+id/ll_profile"
+                        app:layout_constraintStart_toStartOf="parent">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="7dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/txv_manner1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:textColor="@color/color_dark"
+                                android:textSize="25sp"
+                                android:textStyle="bold"
+                                app:fontname="@{`NanumSquareRoundEB.ttf`}" />
+
+                            <TextView
+                                android:id="@+id/txv_manner2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:textColor="@color/color_fe013c"
+                                android:textSize="25sp"
+                                android:textStyle="bold"
+                                app:fontname="@{`NanumSquareRoundEB.ttf`}" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/txv_manner_desc1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginRight="4dp"
+                            android:layout_marginBottom="5dp"
+                            android:lineSpacingExtra="3dp"
+                            android:text=""
+                            android:textColor="@color/color_dark"
+                            android:textSize="10sp"
+                            app:fontname="@{`NotoSansCJKkr-Bold.otf`}" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_profile"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/bg_eval_profile_white"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="30dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"></LinearLayout>
+
+                    <com.viewpagerindicator.CirclePageIndicator
+                        android:id="@+id/pageIndicator"
+                        android:layout_width="wrap_content"
+                        android:layout_height="10dp"
+                        android:layout_marginBottom="12dp"
+                        app:fillColor="@color/color_white"
+                        app:layout_constraintBottom_toTopOf="@id/ll_profile"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:pageColor="#acacac"
+                        app:radius="3dp"
+                        app:spacing="15dp"
+                        app:strokeWidth="0.0dip" />
+                </android.support.constraint.ConstraintLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    android:paddingLeft="22dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="22dp"
+                    android:paddingBottom="5dp">
+
+                    <TextView
+                        android:id="@+id/tv_message"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:text=""
+                        android:textColor="@color/color_dark"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:fontname="@{`NotoSansCJKkr-Bold.otf`}" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_nickname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5dp"
+                    android:text=""
+                    android:textColor="@color/color_dark"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:fontname="@{`NotoSansCJKkr-Bold.otf`}" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="3dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_job"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text=""
+                        android:textColor="@color/color_dark"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:fontname="@{`NotoSansCJKkr-Bold.otf`}" />
+
+                    <TextView
+                        android:id="@+id/tv_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text=""
+                        android:textColor="@color/color_dark"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:fontname="@{`NotoSansCJKkr-Bold.otf`}" />
+
+                    <TextView
+                        android:id="@+id/tv_body_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text=""
+                        android:textColor="@color/color_dark"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:fontname="@{`NotoSansCJKkr-Bold.otf`}" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                     />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal">
+
+                    <com.willy.ratingbar.ScaleRatingBar
+                        android:id="@+id/rate"
+                        style="@style/ImageRatingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:numStars="5"
+                        android:stepSize="1"
+                        app:srb_clickable="true"
+                        app:srb_starPadding="5dp"
+                        app:srb_scrollable="true"
+                        app:srb_drawableEmpty="@drawable/ico_heart_eval_black"
+                        app:srb_drawableFilled="@drawable/ico_heart_eval_red"/>
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <CheckBox
+                        android:id="@+id/cb_heart0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:background="@drawable/btn_heart_eval"
+                        android:button="@null" />
+
+                    <CheckBox
+                        android:id="@+id/cb_heart1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:layout_marginLeft="6dp"
+                        android:background="@drawable/btn_heart_eval"
+                        android:button="@null" />
+
+                    <CheckBox
+                        android:id="@+id/cb_heart2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:layout_marginLeft="6dp"
+                        android:background="@drawable/btn_heart_eval"
+                        android:button="@null" />
+
+                    <CheckBox
+                        android:id="@+id/cb_heart3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:layout_marginLeft="6dp"
+                        android:background="@drawable/btn_heart_eval"
+                        android:button="@null" />
+
+                    <CheckBox
+                        android:id="@+id/cb_heart4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:layout_marginLeft="6dp"
+                        android:background="@drawable/btn_heart_eval"
+                        android:button="@null" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="45dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="45dp"
+                    android:layout_marginBottom="33dp"
+                    android:background="@drawable/bg_eval_status_red"
+                    android:gravity="center"
+                    android:text="1.0\n\n너무 매력적입니다."
+                    android:textAlignment="center"
+                    android:textColor="@color/color_white"
+                    android:textSize="14sp"
+                    android:visibility="invisible"
+                    app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/cl_progress"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_transparent"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rly_empty_user"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="60dp"
+            android:background="@color/color_white"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/add_img_010" />
+
+                <TextView
+                    android:id="@+id/tv_empty_user_desc"
+                    android:layout_width="254dp"
+                    android:layout_height="75dp"
+                    android:layout_marginTop="64dp"
+                    android:background="@drawable/bg_sorry_msg"
+                    android:gravity="center"
+                    android:lineSpacingExtra="12dp"
+                    android:text="@string/estimate_empty_user"
+                    android:textColor="@color/color_white"
+                    android:textSize="13sp"
+                    app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_refresh"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/btn_bg_pink"
+                android:gravity="center"
+                android:paddingBottom="9dp"
+                android:text="새로 고침"
+                android:textColor="@color/color_white"
+                android:textSize="13sp"
+                app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+        </RelativeLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

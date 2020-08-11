@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RadioGroup
+        android:id="@+id/navigation_group"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_46sdp"
+        android:background="@color/color_white"
+        android:clickable="true"
+        android:orientation="horizontal">
+
+        <RadioButton
+
+            android:id="@+id/navigation_home"
+            android:layout_width="0.0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            android:background="@color/color_transparent"
+            android:button="@null"
+            android:checked="true"
+            android:drawableTop="@drawable/bottom_tab_home_icon_selector"
+            android:drawablePadding="@dimen/_7sdp"
+            android:fontFamily="@font/nanum_square_r"
+            android:gravity="center_horizontal"
+            android:maxLines="1"
+            android:paddingTop="@dimen/_6sdp"
+            android:singleLine="true"
+            android:tag="0"
+            android:text="@string/tab_home"
+            android:textColor="@drawable/bottom_tab_text_selector"
+            android:textSize="@dimen/_11sdp" />
+
+        <RadioButton
+            android:visibility="gone"
+            android:id="@+id/navigation_history"
+            android:layout_width="0.0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            android:background="@color/color_transparent"
+            android:button="@null"
+            android:drawableTop="@drawable/bottom_tab_history_icon_selector"
+            android:drawablePadding="8dp"
+            android:gravity="center_horizontal"
+            android:maxLines="1"
+            android:paddingTop="20dp"
+            android:singleLine="true"
+            android:tag="1"
+            android:text="@string/tab_history"
+            android:textColor="@drawable/bottom_tab_text_selector"
+            android:textSize="10sp"
+            app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+        <RadioButton
+            android:id="@+id/navigation_eval"
+            android:layout_width="0.0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            android:background="@color/color_transparent"
+            android:button="@null"
+            android:drawableTop="@drawable/bottom_tab_eval_icon_selector"
+            android:drawablePadding="@dimen/_7sdp"
+            android:gravity="center_horizontal"
+            android:maxLines="1"
+            android:paddingTop="@dimen/_6sdp"
+            android:singleLine="true"
+            android:tag="2"
+            android:text="@string/tab_eval"
+            android:textColor="@drawable/bottom_tab_text_selector"
+            android:textSize="@dimen/_11sdp"
+            android:fontFamily="@font/nanum_square_r"/>
+
+        <RadioButton
+            android:visibility="gone"
+            android:id="@+id/navigation_chat"
+            android:layout_width="0.0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            android:background="@color/color_transparent"
+            android:button="@null"
+            android:drawableTop="@drawable/bottom_tab_chat_icon_selector"
+            android:drawablePadding="8dp"
+            android:gravity="center_horizontal"
+            android:maxLines="1"
+            android:paddingTop="20dp"
+            android:singleLine="true"
+            android:tag="3"
+            android:text="@string/tab_chat"
+            android:textColor="@drawable/bottom_tab_text_selector"
+            android:textSize="10sp"
+            app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+        <RadioButton
+            android:id="@+id/navigation_profile"
+            android:layout_width="0.0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            android:background="@color/color_transparent"
+            android:button="@null"
+            android:drawableTop="@drawable/bottom_tab_profile_icon_selector"
+            android:drawablePadding="@dimen/_7sdp"
+            android:gravity="center_horizontal"
+            android:maxLines="1"
+            android:paddingTop="@dimen/_6sdp"
+            android:singleLine="true"
+            android:tag="4"
+            android:text="@string/tab_profile"
+            android:textColor="@drawable/bottom_tab_text_selector"
+            android:textSize="@dimen/_11sdp"
+            android:fontFamily="@font/nanum_square_r" />
+
+    </RadioGroup>
+
+</layout>

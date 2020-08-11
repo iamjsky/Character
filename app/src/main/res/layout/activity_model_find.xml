@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_ededed"
+        android:orientation="vertical"
+        tools:context=".ui.page.model.ModelFindActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:background="@drawable/bg_top_header"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/rlt_back"
+                android:layout_width="58dp"
+                android:layout_height="58dp"
+                android:background="@color/color_transparent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="11dp"
+                    android:layout_height="18dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/ico_back" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:text="@string/find_model"
+                android:textColor="@color/color_white"
+                android:textSize="14sp"
+                app:fontname="@{`NotoSansCJKkr-Medium.otf`}">
+
+            </TextView>
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:paddingTop="24dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="40dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:id="@+id/rlt_different_opposite"
+                            android:layout_width="0dp"
+                            android:layout_height="150dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_model">
+
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="50dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="38dp"
+                                android:background="@drawable/ico_top_20" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="25dp"
+                                android:gravity="center"
+                                android:text="@string/different_opposite"
+                                android:textAlignment="center"
+                                android:textColor="@color/color_1a1a1a"
+                                android:textSize="14sp"
+                                app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rtl_like_character"
+                            android:layout_width="0dp"
+                            android:layout_height="150dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_model"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="46dp"
+                                android:layout_height="41dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="42dp"
+                                android:background="@drawable/ico_pref_person" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="25dp"
+                                android:gravity="center"
+                                android:text="@string/like_character"
+                                android:textAlignment="center"
+                                android:textColor="@color/color_1a1a1a"
+                                android:textSize="14sp"
+                                app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:id="@+id/rlt_body"
+                            android:layout_width="0dp"
+                            android:layout_height="150dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_model">
+
+                            <ImageView
+                                android:layout_width="37dp"
+                                android:layout_height="40dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="48dp"
+                                android:background="@drawable/ico_body_type" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="25dp"
+                                android:gravity="center"
+                                android:text="@string/str_body"
+                                android:textAlignment="center"
+                                android:textColor="@color/color_1a1a1a"
+                                android:textSize="14sp"
+                                app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rlt_new_pay"
+                            android:layout_width="0dp"
+                            android:layout_height="150dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_model"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="46dp"
+                                android:layout_height="46dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="42dp"
+                                android:background="@drawable/ico_new_face" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="25dp"
+                                android:gravity="center"
+                                android:text="@string/new_pay"
+                                android:textAlignment="center"
+                                android:textColor="@color/color_1a1a1a"
+                                android:textSize="14sp"
+                                app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:id="@+id/rlt_neighbor"
+                            android:layout_width="0dp"
+                            android:layout_height="150dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_model">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="40dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="43dp"
+                                android:background="@drawable/ico_neighborhood" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="25dp"
+                                android:gravity="center"
+                                android:text="@string/neighborhood"
+                                android:textAlignment="center"
+                                android:textColor="@color/color_1a1a1a"
+                                android:textSize="14sp"
+                                app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rlt_now_connect"
+                            android:layout_width="0dp"
+                            android:layout_height="150dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_model"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="36dp"
+                                android:layout_height="46dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="39dp"
+                                android:background="@drawable/ico_connecting" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="25dp"
+                                android:gravity="center"
+                                android:text="@string/now_connecting"
+                                android:textAlignment="center"
+                                android:textColor="@color/color_1a1a1a"
+                                android:textSize="14sp"
+                                app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:id="@+id/rlt_region"
+                            android:layout_width="0dp"
+                            android:layout_height="150dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_model">
+
+                            <ImageView
+                                android:layout_width="34dp"
+                                android:layout_height="46dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="40dp"
+                                android:background="@drawable/ico_religion" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="25dp"
+                                android:gravity="center"
+                                android:text="@string/religion"
+                                android:textAlignment="center"
+                                android:textColor="@color/color_1a1a1a"
+                                android:textSize="14sp"
+                                app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rlt_drink"
+                            android:layout_width="0dp"
+                            android:layout_height="150dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_model"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="36dp"
+                                android:layout_height="46dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="39dp"
+                                android:background="@drawable/ico_drinking" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="25dp"
+                                android:gravity="center"
+                                android:text="@string/drinking_habit"
+                                android:textAlignment="center"
+                                android:textColor="@color/color_1a1a1a"
+                                android:textSize="14sp"
+                                app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:id="@+id/rlt_tall"
+                            android:layout_width="0dp"
+                            android:layout_height="150dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_model">
+
+                            <ImageView
+                                android:layout_width="43dp"
+                                android:layout_height="43dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="40dp"
+                                android:background="@drawable/ico_body_height" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="25dp"
+                                android:gravity="center"
+                                android:text="@string/tall"
+                                android:textAlignment="center"
+                                android:textColor="@color/color_1a1a1a"
+                                android:textSize="14sp"
+                                app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rlt_interest"
+                            android:layout_width="0dp"
+                            android:layout_height="150dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_model"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="45dp"
+                                android:layout_height="42dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="45dp"
+                                android:background="@drawable/ico_interest" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="25dp"
+                                android:gravity="center"
+                                android:text="@string/interest"
+                                android:textAlignment="center"
+                                android:textColor="@color/color_1a1a1a"
+                                android:textSize="14sp"
+                                app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:id="@+id/rlt_job"
+                            android:layout_width="0dp"
+                            android:layout_height="150dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_model">
+
+                            <ImageView
+                                android:layout_width="42dp"
+                                android:layout_height="40dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="40dp"
+                                android:background="@drawable/ico_job" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="25dp"
+                                android:gravity="center"
+                                android:text="@string/job"
+                                android:textAlignment="center"
+                                android:textColor="@color/color_1a1a1a"
+                                android:textSize="14sp"
+                                app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rlt_romance_style"
+                            android:layout_width="0dp"
+                            android:layout_height="150dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_model"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="46dp"
+                                android:layout_height="37dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="46dp"
+                                android:background="@drawable/ico_romance_style" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="25dp"
+                                android:gravity="center"
+                                android:text="@string/romance_style"
+                                android:textAlignment="center"
+                                android:textColor="@color/color_1a1a1a"
+                                android:textSize="14sp"
+                                app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</layout>

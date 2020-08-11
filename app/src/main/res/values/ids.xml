@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="zoomable" type="id" />
+    <item name="unzoomable" type="id" />
+    <item name="btnEmail" type="id" />
+    <item name="txv_useterm" type="id" />
+    <item name="txv_privacypolicy" type="id" />
+    <item name="txv_gpsterm" type="id" />
+
+</resources>

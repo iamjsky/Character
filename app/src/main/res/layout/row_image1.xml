@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <android.support.v4.widget.Space
+            android:id="@+id/spaceLeft"
+            android:layout_width="13dp"
+            android:layout_height="wrap_content" />
+
+        <RelativeLayout
+            android:layout_width="72dp"
+            android:layout_height="72dp">
+
+            <ImageButton
+                android:id="@+id/ibAdd"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/color_transparent"
+                android:foreground="?attr/selectableItemBackground"
+                android:src="@drawable/btn_photo_add"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/ivImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/btn_photo_add"
+                android:visibility="gone" />
+
+            <ImageButton
+                android:id="@+id/ibDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:background="@color/color_transparent"
+                android:foreground="?attr/selectableItemBackground"
+                android:src="@drawable/ic_delete"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <android.support.v4.widget.Space
+            android:id="@+id/spaceMiddle"
+            android:layout_width="19dp"
+            android:layout_height="wrap_content" />
+
+        <android.support.v4.widget.Space
+            android:id="@+id/spaceRight"
+            android:layout_width="13dp"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</layout>

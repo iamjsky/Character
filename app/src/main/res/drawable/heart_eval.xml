@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/ratingbar_selector_heart">
+        <padding android:bottom="2dp" android:left="3dp" android:right="3dp" android:top="2dp" />
+    </item>
+</selector>

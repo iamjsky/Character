@@ -1,0 +1,119 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion parent.ext.compileSdkVersion
+    defaultConfig {
+        applicationId parent.ext.applicationId
+        minSdkVersion parent.ext.minSdkVersion
+        targetSdkVersion parent.ext.targetSdkVersion
+        versionCode parent.ext.versionMajor * 10000000 + parent.ext.versionMinor * 100000 +
+                parent.ext.versionPatch * 100 + parent.ext.versionBuild
+
+        versionName "${parent.ext.versionMajor}.${parent.ext.versionMinor}.${parent.ext.versionPatch}"
+        setProperty("archivesBaseName", "character_v$versionName($versionCode)")
+        multiDexEnabled true
+    }
+
+    dexOptions {
+        preDexLibraries false
+//        javaMaxHeapSize "4g"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+    flavorDimensions "default"
+    productFlavors {
+        devwork {
+            dimension 'default'
+            buildConfigField('String', 'WORK_ENV', '"DEVWORK"')
+        }
+        realwork {
+            dimension 'default'
+            buildConfigField('String', 'WORK_ENV', '"REALWORK"')
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    implementation files('libs/naveridlogin_android_sdk_4.2.5.aar')
+    implementation group: 'com.kakao.sdk', name: 'usermgmt', version: "1.15.1"
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "com.android.support:support-v4:$supportVersion"
+    implementation "com.android.support:appcompat-v7:$supportVersion"
+    implementation "com.android.support:design:$supportVersion"
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation "com.android.support:cardview-v7:$supportVersion"
+
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+    implementation 'jp.wasabeef:glide-transformations:3.1.1'
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+    // ButterKnife
+//    implementation(name: 'butterknife-8.7.0', ext: 'aar')
+//    annotationProcessor files('libs/butterknife-annotations-8.7.0.jar')
+//    annotationProcessor files('libs/butterknife-compiler-8.7.0.jar')
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
+    annotationProcessor files('libs/com.squareup-javapoet-1.9.0.jar')
+    annotationProcessor files('libs/auto-common-0.8.jar')
+    annotationProcessor files('libs/guava-19.0.jar')
+
+    implementation(name: 'android-image-cropper-2.7.0', ext: 'aar')
+//    implementation(name: 'album-2.1.3', ext: 'aar')
+//    implementation(name: 'wheelview-1.3.3', ext: 'aar')
+    implementation 'com.yanzhenjie:album:2.1.3'
+
+    implementation(name: 'imagefilters-1.0.7', ext: 'aar')
+//    annotationProcessor files('libs/dexter-4.1.0.jar')
+    implementation 'com.karumi:dexter:4.1.0'
+
+    // for image cropper
+    implementation "com.android.support:exifinterface:$supportVersion"
+
+    implementation 'com.blankj:utilcode:1.22.1'
+    
+//    implementation project(':LibViewpagerIndicator')
+    implementation 'fr.avianey.com.viewpagerindicator:library:2.4.1.1@aar'
+    implementation project(':LibWKVideoPlayer')
+//    implementation project(':LibAdvancedRecycler')
+    implementation 'com.h6ah4i.android.widget.advrecyclerview:advrecyclerview:0.10.1'
+    implementation 'com.github.rey5137:material:1.2.4'
+
+    // should be opened
+    // firebase
+    implementation 'com.google.firebase:firebase-core:16.0.6'
+    implementation 'com.google.firebase:firebase-messaging:17.3.4'
+
+    implementation 'com.facebook.android:facebook-android-sdk:[5,6)'
+
+    implementation 'com.blankj:utilcode:1.22.9'
+
+    implementation 'com.wx.wheelview:wheelview:1.3.3'
+
+    implementation 'com.anjlab.android.iab.v3:library:1.0.44'
+
+    implementation "com.github.ome450901:SimpleRatingBar:1.4.2"
+
+    //sdp
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    //indicator
+    implementation 'com.github.hanihashemi:InfiniteViewPagerWithIndicator:1.1.8'
+
+}
+apply plugin: 'com.google.gms.google-services'
+

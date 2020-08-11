@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/bg_top_header"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/header_history"
+                android:textColor="@color/color_white"
+                android:textSize="15sp"
+                app:fontname="@{`NotoSansCJKkr-Medium.otf`}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@color/color_transparent"
+                android:scaleType="centerInside"
+                android:src="@drawable/ico_back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:visibility="gone"/>
+        </android.support.constraint.ConstraintLayout>
+
+        <com.character.microblogapp.util.PagerSlidingTabStrip
+            android:id="@+id/pager_tabs"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_margin="10dp"
+            android:background="@color/color_white"
+            app:pstsIndicatorColor="@color/color_transparent"
+            app:pstsPaddingMiddle="false"
+            app:pstsTabBackground="@drawable/pager_tab_bg"
+            app:pstsTabTextColor="@drawable/pager_tab_txt" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="95dp" />
+
+            <Button
+                android:id="@+id/btn_find_model"
+                android:layout_width="match_parent"
+                android:layout_height="95dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/btn_bg_pink"
+                android:paddingBottom="10dp"
+                android:text="@string/home_find_model"
+                android:textColor="@color/color_white"
+                app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_white"
+        android:orientation="vertical"
+        tools:context=".ui.page.profile.ProfileActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:background="@drawable/bg_top_header"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/rlt_back"
+                android:layout_width="58dp"
+                android:layout_height="58dp"
+                android:background="@color/color_transparent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="18dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/ico_back" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/txv_top_nickname"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/color_white"
+                android:textSize="15sp"
+                app:fontname="@{`NotoSansCJKkr-Medium.otf`}" />
+
+            <RelativeLayout
+                android:id="@+id/rlt_info"
+                android:layout_width="58dp"
+                android:layout_height="58dp"
+                android:layout_alignParentEnd="true"
+                android:background="@color/color_transparent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerInParent="true"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/btn_info" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="58dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txv_manner21"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/color_dark"
+                        android:textSize="40sp"
+                        app:fontname="@{`NotoSansCJKkr-Bold.otf`}" />
+
+                    <TextView
+                        android:id="@+id/txv_manner22"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/color_fe013c"
+                        android:textSize="40sp"
+                        app:fontname="@{`NotoSansCJKkr-Bold.otf`}" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txv_manner_desc2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:lineSpacingExtra="6dp"
+                        android:text="인간의 행동패턴을 4가지 유형으로 분류하여\n상호 소통에 가장 효과적인 도구입니다."
+                        android:textColor="@color/color_dark"
+                        android:textSize="12sp"
+                        app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="25dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_rect_storke_80ffffff"
+                android:orientation="vertical">
+
+                <ScrollView
+                    android:id="@+id/svDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/ico_disc_temp"
+                            android:scaleType="fitXY"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginTop="10dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:lineSpacingExtra="6dp"
+                                    android:text="외향적(D, I)"
+                                    android:textColor="@color/color_light_dark"
+                                    android:textSize="15sp"
+                                    android:layout_weight="0.3"
+                                    app:fontname="@{`NotoSansCJKkr-Bold.otf`}" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:lineSpacingExtra="6dp"
+                                    android:text=": 말부터 하는, 말이나 행동이 빠르고 급함, 집접적으로 표현하고 드러내는"
+                                    android:textColor="@color/color_light_dark"
+                                    android:textSize="15sp"
+                                    android:layout_weight="0.7"
+                                    app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginTop="5dp">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:lineSpacingExtra="6dp"
+                                    android:text="내향적(S, C)"
+                                    android:textColor="@color/color_light_dark"
+                                    android:textSize="15sp"
+                                    android:layout_weight="0.3"
+                                    app:fontname="@{`NotoSansCJKkr-Bold.otf`}" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:lineSpacingExtra="6dp"
+                                    android:text=": 듣고 생각하고 대답, 느림, 차분하고 침착함, 간접적 표현"
+                                    android:textColor="@color/color_light_dark"
+                                    android:textSize="15sp"
+                                    android:layout_weight="0.7"
+                                    app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginTop="5dp">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:lineSpacingExtra="6dp"
+                                    android:text="일중심적(D, C)"
+                                    android:textColor="@color/color_light_dark"
+                                    android:textSize="15sp"
+                                    android:layout_weight="0.3"
+                                    app:fontname="@{`NotoSansCJKkr-Bold.otf`}" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:lineSpacingExtra="6dp"
+                                    android:text=": 이성적, 체계적, 논리적, 일을 해결하는 것에 집중, 비인적임"
+                                    android:textColor="@color/color_light_dark"
+                                    android:textSize="15sp"
+                                    android:layout_weight="0.7"
+                                    app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginTop="5dp">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:lineSpacingExtra="6dp"
+                                    android:text="사람중심적(I, S)"
+                                    android:textColor="@color/color_light_dark"
+                                    android:textSize="15sp"
+                                    android:layout_weight="0.3"
+                                    app:fontname="@{`NotoSansCJKkr-Bold.otf`}" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:lineSpacingExtra="6dp"
+                                    android:text=": 감성/감정적, 인간적이고 둥글둥글한 사고방식, 비체계적"
+                                    android:textColor="@color/color_light_dark"
+                                    android:textSize="15sp"
+                                    android:layout_weight="0.7"
+                                    app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+
+                </ScrollView>
+
+                <LinearLayout
+                    android:id="@+id/llView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvD"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="D"
+                            android:textColor="#333333"
+                            android:textSize="50sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvI"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="I"
+                            android:textColor="#fe013c"
+                            android:textSize="50sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvC"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="C"
+                            android:textColor="#4267b2"
+                            android:textSize="50sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvS"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="S"
+                            android:textColor="#0fc044"
+                            android:textSize="50sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_style_d"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_main_bg"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:text="D형"
+                        android:textColor="@android:color/white"
+                        android:textSize="15sp"
+                        app:fontname="@{`NotoSansCJKkr-Regular.otf`}"
+                        android:layout_marginRight="3dp"/>
+
+                    <Button
+                        android:id="@+id/btn_style_i"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_main_bg"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:text="I형"
+                        android:textColor="@android:color/white"
+                        android:textSize="15sp"
+                        android:layout_marginLeft="3dp"
+                        app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+
+                    <Button
+                        android:id="@+id/btn_style_c"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_main_bg"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:text="C형"
+                        android:textColor="@android:color/white"
+                        android:textSize="15sp"
+                        app:fontname="@{`NotoSansCJKkr-Regular.otf`}"
+                        android:layout_marginRight="3dp"/>
+
+                    <Button
+                        android:id="@+id/btn_style_s"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_main_bg"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:text="S형"
+                        android:textColor="@android:color/white"
+                        android:textSize="15sp"
+                        android:layout_marginLeft="3dp"
+                        app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</layout>

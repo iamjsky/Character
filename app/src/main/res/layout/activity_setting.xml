@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/containerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/view_top_bar" />
+
+            <!--<TextView-->
+            <!--android:id="@+id/tvCount"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="40dp"-->
+            <!--android:text="보유에너지 10개"-->
+            <!--android:textColor="#000000"-->
+            <!--android:textSize="14dp"-->
+            <!--android:gravity="center"/>-->
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/rlProfile"
+                        android:layout_width="match_parent"
+                        android:layout_height="46dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="20dp"
+                            android:text="프로필수정"
+                            android:textColor="#000000"
+                            android:textSize="13sp"
+                            app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                        <ImageView
+                            android:layout_width="10dp"
+                            android:layout_height="13dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="20dp"
+                            android:src="@drawable/ic_right_forward" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlAlarm"
+                        android:layout_width="match_parent"
+                        android:layout_height="46dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="20dp"
+                            android:text="알림설정"
+                            android:textColor="#000000"
+                            android:textSize="13sp"
+                            app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                        <ImageView
+                            android:layout_width="10dp"
+                            android:layout_height="13dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="20dp"
+                            android:src="@drawable/ic_right_forward" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlSNS"
+                        android:layout_width="match_parent"
+                        android:layout_height="46dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="20dp"
+                            android:text="SNS 계정 설정"
+                            android:textColor="#000000"
+                            android:textSize="13sp"
+                            app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                        <ImageView
+                            android:layout_width="10dp"
+                            android:layout_height="13dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="20dp"
+                            android:src="@drawable/ic_right_forward" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlBlock"
+                        android:layout_width="match_parent"
+                        android:layout_height="46dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="20dp"
+                            android:text="지인 차단"
+                            android:textColor="#000000"
+                            android:textSize="13sp"
+                            app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                        <ImageView
+                            android:layout_width="10dp"
+                            android:layout_height="13dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="20dp"
+                            android:src="@drawable/ic_right_forward" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlService"
+                        android:layout_width="match_parent"
+                        android:layout_height="46dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="20dp"
+                            android:text="서비스약관"
+                            android:textColor="#000000"
+                            android:textSize="13sp"
+                            app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                        <ImageView
+                            android:layout_width="10dp"
+                            android:layout_height="13dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="20dp"
+                            android:src="@drawable/ic_right_forward" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlNotice"
+                        android:layout_width="match_parent"
+                        android:layout_height="46dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="20dp"
+                            android:text="개인정보처리방침"
+                            android:textColor="#000000"
+                            android:textSize="13sp"
+                            app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                        <ImageView
+                            android:layout_width="10dp"
+                            android:layout_height="13dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="20dp"
+                            android:src="@drawable/ic_right_forward" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlMarketing"
+                        android:layout_width="match_parent"
+                        android:layout_height="46dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="20dp"
+                            android:text="마케팅수신동의"
+                            android:textColor="#000000"
+                            android:textSize="13sp" />
+
+                        <ImageView
+                            android:layout_width="10dp"
+                            android:layout_height="13dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="20dp"
+                            android:src="@drawable/ic_right_forward" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlPosition"
+                        android:layout_width="match_parent"
+                        android:layout_height="46dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="20dp"
+                            android:text="위치기반서비스동의"
+                            android:textColor="#000000"
+                            android:textSize="13sp"
+                            app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                        <ImageView
+                            android:layout_width="10dp"
+                            android:layout_height="13dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="20dp"
+                            android:src="@drawable/ic_right_forward" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlPass"
+                        android:layout_width="match_parent"
+                        android:layout_height="46dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="20dp"
+                            android:text="비밀번호 변경"
+                            android:textColor="#000000"
+                            android:textSize="13sp"
+                            app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                        <ImageView
+                            android:layout_width="10dp"
+                            android:layout_height="13dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="20dp"
+                            android:src="@drawable/ic_right_forward" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlConfirm"
+                        android:layout_width="match_parent"
+                        android:layout_height="46dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="20dp"
+                            android:text="공지사항"
+                            android:textColor="#000000"
+                            android:textSize="13sp"
+                            app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                        <ImageView
+                            android:layout_width="10dp"
+                            android:layout_height="13dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="20dp"
+                            android:src="@drawable/ic_right_forward" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlLogout"
+                        android:layout_width="match_parent"
+                        android:layout_height="46dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="20dp"
+                            android:text="로그아웃"
+                            android:textColor="#000000"
+                            android:textSize="13sp"
+                            app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                        <TextView
+                            android:layout_width="90dp"
+                            android:layout_height="25dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="20dp"
+                            android:background="@drawable/btn_bg_logout"
+                            android:gravity="center"
+                            android:text="LOG OUT"
+                            android:textColor="@color/color_white"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlQuit"
+                        android:layout_width="match_parent"
+                        android:layout_height="46dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="20dp"
+                            android:text="회원탈퇴"
+                            android:textColor="#f3582d"
+                            android:textSize="13sp"
+                            app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                        <ImageView
+                            android:layout_width="10dp"
+                            android:layout_height="13dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="20dp"
+                            android:src="@drawable/ic_right_forward" />
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:text="상호명 : 성격지상주의"
+                            android:textColor="#000000"
+                            android:textSize="13sp"
+                            app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:text="대표자 : 양하영"
+                            android:textColor="#000000"
+                            android:textSize="13sp"
+                            app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:text="소재지 : 수잔광역시 남구 용소로 64번길 21, 302호"
+                            android:textColor="#000000"
+                            android:textSize="13sp"
+                            app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:text="사업자등록번호 : 472062-00353"
+                            android:textColor="#000000"
+                            android:textSize="13sp"
+                            app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:text="통신판매업번호 : 2020-부산남구-0278"
+                            android:textColor="#000000"
+                            android:textSize="13sp"
+                            app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:text="고객센터 번호 : 051-929-7125"
+                            android:textColor="#000000"
+                            android:textSize="13sp"
+                            app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:text="이메일 : personalitism@gmail.com"
+                            android:textColor="#000000"
+                            android:textSize="13sp"
+                            app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</layout>
