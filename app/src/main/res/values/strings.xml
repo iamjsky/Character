@@ -116,7 +116,7 @@
     <string name="password_confirm">패스워드 확인</string>
     <string name="password_confirm_hint">패스워드를 한번 더 입력해주세요</string>
     <string name="password_confirm_invalid_message">패스워드와 다릅니다.</string>
-    <string name="profile_upload_guide">프로필 사진은 최소 3장 최대 8장까지 업로드 가능합니다.</string>
+    <string name="profile_upload_guide">프로필 사진은 최소 3장 최대 6장까지 업로드 가능합니다.</string>
     <string name="main_info">기본정보</string>
     <string name="detail_info">상세정보</string>
     <string name="nickname">닉네임</string>

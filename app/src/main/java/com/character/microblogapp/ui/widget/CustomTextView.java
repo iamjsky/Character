@@ -52,5 +52,6 @@ public class CustomTextView extends LinearLayout {
 
     private void initUI() {
         textView.setText(mText);
+
     }
 }

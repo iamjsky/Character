@@ -132,4 +132,12 @@
     <declare-styleable name="MaxHeightRecyclerView">
         <attr name="maxHeight" />
     </declare-styleable>
+
+    <declare-styleable name="SpannedGridLayoutManager">
+        <attr name="android:orientation" />
+        <attr name="spanCount" />
+        <attr name="aspectRatio" format="string" />
+    </declare-styleable>
+
+
 </resources>

@@ -11,6 +11,7 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -99,7 +100,7 @@ public class SignupEmailFragment extends BaseFragment {
         etEmail.setText(m_sEmail);
         etEmail.setFocusable(m_sEmail.equals(""));
         etEmail.setSelected(!m_sEmail.equals(""));
-        tvInvalideEmailError.setVisibility(m_sEmail.equals("") ? View.VISIBLE : View.GONE);
+        tvInvalideEmailError.setVisibility(m_sEmail.equals("") ? View.VISIBLE : View.INVISIBLE);
 
         etEmail.addTextChangedListener(new TextWatcher() {
             @Override
@@ -111,7 +112,7 @@ public class SignupEmailFragment extends BaseFragment {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 emailConfirm = false;
                 boolean isValid = RegexUtil.validateEmail(etEmail.getText().toString());
-                tvInvalideEmailError.setVisibility(isValid ? View.GONE : View.VISIBLE);
+                tvInvalideEmailError.setVisibility(isValid ? View.INVISIBLE : View.VISIBLE);
                 etEmail.setSelected(isValid);
             }
 
@@ -134,7 +135,7 @@ public class SignupEmailFragment extends BaseFragment {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (hasFocus) {
-                    tvPasswordError.setVisibility(View.GONE);
+                    tvPasswordError.setVisibility(View.INVISIBLE);
                 } else {
                     checkPassword();
                 }
@@ -145,16 +146,50 @@ public class SignupEmailFragment extends BaseFragment {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (hasFocus) {
-                    tvPasswordConfirmError.setVisibility(View.GONE);
+                    tvPasswordConfirmError.setVisibility(View.INVISIBLE);
                 } else {
                     checkPasswordConfirm();
                 }
+            }
+        });
+        etPassword.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                checkPassword();
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+        etPasswordConfirm.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                checkPasswordConfirm();
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
             }
         });
 
         SignupActivity signupActivity = (SignupActivity) mParent;
         if (signupActivity == null || signupActivity.gender.isEmpty())
             return;
+
+
         if (signupActivity.gender.equals("male")) {
             tvMale.setSelected(true);
             tvFemale.setSelected(false);
@@ -165,7 +200,7 @@ public class SignupEmailFragment extends BaseFragment {
 
         tvMale.setOnClickListener(null);
         tvFemale.setOnClickListener(null);
-
+        Log.e("char_debug", "tvMale : " + tvMale.isSelected() + " / tvFemale : " + tvFemale.isSelected());
     }
 
     @OnClick(R.id.btnRegistering)
@@ -304,13 +339,13 @@ public class SignupEmailFragment extends BaseFragment {
 
     void checkPassword() {
         boolean isValid = RegexUtil.validatePassword(etPassword.getText().toString());
-        tvPasswordError.setVisibility(isValid ? View.GONE : View.VISIBLE);
+        tvPasswordError.setVisibility(isValid ? View.INVISIBLE : View.VISIBLE);
         etPassword.setSelected(isValid);
     }
 
     void checkPasswordConfirm() {
         boolean isValid = etPassword.getText().toString().equals(etPasswordConfirm.getText().toString());
-        tvPasswordConfirmError.setVisibility(isValid ? View.GONE : View.VISIBLE);
+        tvPasswordConfirmError.setVisibility(isValid ? View.INVISIBLE : View.VISIBLE);
         etPasswordConfirm.setSelected(isValid);
     }
 
@@ -319,6 +354,17 @@ public class SignupEmailFragment extends BaseFragment {
         int id = view.getId();
         tvMale.setSelected(id == R.id.tvMale);
         tvFemale.setSelected(id == R.id.tvFemale);
+        if(id == R.id.tvMale){
+            tvMale.setBackgroundResource(R.drawable.bg_rounded_05);
+            tvMale.setTextColor(getResources().getColor(R.color.color_white));
+            tvFemale.setBackgroundResource(R.drawable.bg_rounded_06);
+            tvFemale.setTextColor(getResources().getColor(R.color.color_char_gray));
+        }else{
+            tvMale.setBackgroundResource(R.drawable.bg_rounded_06);
+            tvMale.setTextColor(getResources().getColor(R.color.color_char_gray));
+            tvFemale.setBackgroundResource(R.drawable.bg_rounded_05);
+            tvFemale.setTextColor(getResources().getColor(R.color.color_white));
+        }
     }
 
 

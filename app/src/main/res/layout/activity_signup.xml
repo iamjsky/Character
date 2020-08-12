@@ -17,7 +17,7 @@
             android:orientation="horizontal"
             android:background="@drawable/bg_top_bar_01"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_46sdp">
+            android:layout_height="@dimen/_40sdp">
 
             <ImageView
                 android:id="@+id/btnBack"
