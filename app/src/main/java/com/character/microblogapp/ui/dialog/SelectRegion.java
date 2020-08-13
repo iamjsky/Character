@@ -51,8 +51,8 @@ public class SelectRegion extends BaseDialog {
     }
 
     public void initUI() {
-        tvType1.setText("Ω√,µµ");
-        tvType2.setText("±∫,±∏");
+        tvType1.setText("Ïãú,ÎèÑ");
+        tvType2.setText("Íµ∞,Íµ¨");
         whvContent1.setWheelAdapter(new ArrayWheelAdapter(getContext()));
         whvContent1.setWheelSize(3);
         whvContent1.setSkin(WheelView.Skin.Holo);

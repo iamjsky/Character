@@ -1,39 +1,49 @@
 package com.character.microblogapp.ui.page.intro.fragment;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.graphics.Bitmap;
+import android.media.Image;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.widget.Space;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.character.microblogapp.GlideApp;
 import com.character.microblogapp.R;
 import com.character.microblogapp.data.BaseInfo;
 import com.character.microblogapp.data.Constant;
 import com.character.microblogapp.data.ImageInfo;
 import com.character.microblogapp.data.MyInfo;
+import com.character.microblogapp.data.NewImageInfo;
 import com.character.microblogapp.model.Interest;
 import com.character.microblogapp.model.MAreaList;
 import com.character.microblogapp.model.MError;
 import com.character.microblogapp.model.MSignup;
 import com.character.microblogapp.model.MUploadFiles;
 import com.character.microblogapp.net.Net;
+import com.character.microblogapp.ui.adapter.ArrayAdapter;
 import com.character.microblogapp.ui.dialog.SelectDialog;
 import com.character.microblogapp.ui.dialog.SelectRegion;
 import com.character.microblogapp.ui.page.BaseFragment;
@@ -57,9 +67,13 @@ import com.theartofdev.edmodo.cropper.CropImage;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
 import butterknife.BindArray;
 import butterknife.BindView;
+import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import okhttp3.MediaType;
@@ -80,8 +94,9 @@ public class SignupProfileRegisterFragment extends BaseFragment {
     EditText etJob;
     @BindView(R.id.tvLove)
     TextView tvLove;
-    @BindView(R.id.tvHobby)
-    TextView tvHobby;
+    /*제거*/
+//    @BindView(R.id.tvHobby)
+//    TextView tvHobby;
     @BindView(R.id.tvAge)
     TextView tvAge;
     @BindView(R.id.etSchool)
@@ -116,13 +131,26 @@ public class SignupProfileRegisterFragment extends BaseFragment {
     @BindArray(R.array.love_style)
     String[] love_style;
 
-    ImageAdapter mAdapter;
+    @BindViews({R.id.iv_profile_01, R.id.iv_profile_02, R.id.iv_profile_03, R.id.iv_profile_04
+            , R.id.iv_profile_05, R.id.iv_profile_06})
+    List<ImageView> iv_profile;
+    @BindViews({R.id.ibDelete_01, R.id.ibDelete_02, R.id.ibDelete_03, R.id.ibDelete_04
+            , R.id.ibDelete_05, R.id.ibDelete_06})
+    List<ImageButton> ibDelete;
+
+
+
 
     MediaManager mediaManager;
 
     private static final int PHOTO_MIN_COUNT = 3;
 
     SelectRegion dlgRegion = null;
+
+    //private NewArrayAdapter mAdapter;
+    private int imgPosition = 0;
+    private List<NewImageInfo> profileImgList = new ArrayList<>();
+    private List<ImageInfo> imageInfoList = new ArrayList<>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -139,22 +167,32 @@ public class SignupProfileRegisterFragment extends BaseFragment {
     protected void initUI() {
         super.initUI();
 
+
+
         mediaManager = new MediaManager(mParent);
         mediaManager.setMediaCallback(new MediaManager.MediaCallback() {
             @Override
             public void onSelected(Boolean isVideo, File file, Bitmap bitmap, String videoPath, String thumbPath) {
-                int insertPosition = mAdapter.getItemCount() - 1;
 
-                if (insertPosition == 8){
+
+                if (profileImgList.size() == 6){
                     Toaster.showShort(getContext(), R.string.profile_upload_guide);
                     return;
                 }
 
-                mAdapter.insert(insertPosition, new ImageInfo(file));
+
+                GlideApp.with(iv_profile.get(imgPosition)).load(file).into(iv_profile.get(imgPosition));
+
+                iv_profile.get(imgPosition).setVisibility(View.VISIBLE);
+                ibDelete.get(imgPosition).setVisibility(View.VISIBLE);
+                NewImageInfo imageInfo = new NewImageInfo();
+                imageInfo.image = file;
+                imageInfo.imgPosition = imgPosition;
+                profileImgList.add(imageInfo);
+                Collections.sort(profileImgList);
 //                if ((mAdapter.getItemCount() - 1) >= PHOTO_MAX_COUNT)
 //                    mAdapter.removeLastObject();
 
-                mAdapter.notifyDataSetChanged();
             }
 
             @Override
@@ -168,27 +206,11 @@ public class SignupProfileRegisterFragment extends BaseFragment {
             }
         });
 
-        mAdapter = new ImageAdapter(getActivity(), new ArrayList<BaseInfo>());
-        mAdapter.setCallback(new ImageAdapter.Callback() {
-            @Override
-            public void onClick(int position, BaseInfo data) {
-                onAddImage();
-            }
 
-            @Override
-            public void onDelete(int position, BaseInfo data) {
-                mAdapter.remove(position);
-                mAdapter.notifyDataSetChanged();
 
-//                if ((mAdapter.getItemCount() - 1) < PHOTO_MAX_COUNT)
-//                    addEmptyPhoto();
 
-            }
-        });
-        rvProfile.setLayoutManager(new GridLayoutManager(getContext(), 4));
-        rvProfile.setAdapter(mAdapter);
 
-//        addEmptyPhoto();
+
 
         etArea.addTextChangedListener(new TextWatcher() {
             @Override
@@ -216,7 +238,7 @@ public class SignupProfileRegisterFragment extends BaseFragment {
 //        etArea.addTextChangedListener(new MyTextWatcher(etArea));
         etJob.addTextChangedListener(new MyTextWatcher(etJob));
         tvLove.addTextChangedListener(new MyTextWatcher(tvLove));
-        tvHobby.addTextChangedListener(new MyTextWatcher(tvHobby));
+//        tvHobby.addTextChangedListener(new MyTextWatcher(tvHobby));
         tvAge.addTextChangedListener(new MyTextWatcher(tvAge));
         etSchool.addTextChangedListener(new MyTextWatcher(etSchool));
         tvBody.addTextChangedListener(new MyTextWatcher(tvBody));
@@ -229,6 +251,7 @@ public class SignupProfileRegisterFragment extends BaseFragment {
         int age = ((SignupActivity)getActivity()).birth;
         tvAge.setText("" + age);
         getAreaList("");
+
     }
 
     ArrayList<String> areaList = new ArrayList<>();
@@ -260,11 +283,7 @@ public class SignupProfileRegisterFragment extends BaseFragment {
                 });
     }
 
-    void addEmptyPhoto() {
-        //이미지 추가 부분
-        mAdapter.add(null);
-        mAdapter.notifyDataSetChanged();
-    }
+
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -278,19 +297,19 @@ public class SignupProfileRegisterFragment extends BaseFragment {
         if (requestCode == 0x0110 && resultCode == RESULT_OK) {
             String type = data.getStringExtra("type");
 
-            if (type.equals("hobby")) {
-                interestList = new ArrayList<>();
-                interestList = data.getParcelableArrayListExtra("data");
-
-                ArrayList<String> parent = new ArrayList<>();
-                for (Interest item : interestList) {
-                    parent.add(item.name);
-                }
-                tvHobby.setText(TextUtils.join(",", parent));
-            } else {
+//            if (type.equals("hobby")) {
+//                interestList = new ArrayList<>();
+//                interestList = data.getParcelableArrayListExtra("data");
+//
+//                ArrayList<String> parent = new ArrayList<>();
+//                for (Interest item : interestList) {
+//                    parent.add(item.name);
+//                }
+//             //   tvHobby.setText(TextUtils.join(",", parent));
+//            } else {
                 String selected = data.getStringExtra("data");
                 tvLove.setText(selected);
-            }
+        //    }
         }
     }
 
@@ -376,9 +395,9 @@ public class SignupProfileRegisterFragment extends BaseFragment {
             case R.id.tvSmoking:
                 arrayList.addAll(Arrays.asList(smoking));
                 break;
-            case R.id.tvHobby:
-                arrayList.addAll(Arrays.asList(hobby));
-                break;
+//            case R.id.tvHobby:
+//                arrayList.addAll(Arrays.asList(hobby));
+//                break;
             case R.id.tvLove:
                 arrayList.addAll(Arrays.asList(love_style));
                 break;
@@ -392,31 +411,34 @@ public class SignupProfileRegisterFragment extends BaseFragment {
         }).show();
     }
 
-    private ArrayList<Interest> interestList = new ArrayList<>();
+  //  private ArrayList<Interest> interestList = new ArrayList<>();
 
-    @OnClick({R.id.tvHobby, R.id.tvLove})
+
+//    @OnClick({R.id.tvHobby, R.id.tvLove})
+@OnClick(R.id.tvLove)
     void onSelectMulti(TextView view) {
         Intent intent = null;
-        if (view.getId() == R.id.tvHobby) {
-            // 관심사선택
-            intent = new Intent(mParent, SelectInterestActivity.class);
-            intent.putExtra("type", "hobby");
-            intent.putParcelableArrayListExtra("data", interestList);
-        } else {
+//        if (view.getId() == R.id.tvHobby) {
+//            // 관심사선택
+//            intent = new Intent(mParent, SelectInterestActivity.class);
+//            intent.putExtra("type", "hobby");
+//            intent.putParcelableArrayListExtra("data", interestList);
+//        } else {
             // 연애스타일선택
             intent = new Intent(mParent, SelectLoveActivity.class);
             intent.putExtra("type", "love");
             intent.putExtra("data", tvLove.getText().toString());
-        }
+       // }
         mParent.startActivityForResult(intent, 0x0110);
     }
 
     void uploadImages() {
         mParent.showProgress(mParent);
-        MultipartBody.Part[] images = new MultipartBody.Part[mAdapter.getItems().size()];
+        MultipartBody.Part[] images = new MultipartBody.Part[profileImgList.size()];
         int n = 0;
-        for (Object info : mAdapter.getItems()) {
-            ImageInfo imageInfo = (ImageInfo) info;
+
+        for (NewImageInfo imageInfo : profileImgList) {
+           // ImageInfo imageInfo = (ImageInfo) info;
             if (imageInfo != null && imageInfo.image.exists()) {
                 RequestBody photo = RequestBody.create(MediaType.parse("image/*"), imageInfo.image);
                 images[n++] = MultipartBody.Part.createFormData("uploadfile[]", imageInfo.image.getName(), photo);
@@ -431,11 +453,12 @@ public class SignupProfileRegisterFragment extends BaseFragment {
                         mParent.hideProgress();
 
                         if (response.arr_name != null) {
+
                             for (int i = 0; i < response.arr_name.length; i++) {
-                                ImageInfo info = (ImageInfo) mAdapter.getItem(i);
-                                if (info != null) {
-                                    info.img_url = response.arr_name[i];
-                                }
+                              profileImgList.get(i).img_url = response.arr_name[i];
+
+
+
                             }
                         }
 
@@ -453,6 +476,7 @@ public class SignupProfileRegisterFragment extends BaseFragment {
 
     @OnClick(R.id.btnRegistering)
     void onRegistering() {
+
         SignupActivity signupActivity = (SignupActivity) mParent;
         if (signupActivity == null)
             return;
@@ -463,7 +487,7 @@ public class SignupProfileRegisterFragment extends BaseFragment {
 //        String age = tvAge.getText().toString();
         String school = etSchool.getText().toString();
 
-        if (mAdapter.getItemCount() < PHOTO_MIN_COUNT) {
+        if (profileImgList.size() < PHOTO_MIN_COUNT) {
             Toaster.showShort(mParent, R.string.profile_upload_guide);
             return;
         }
@@ -539,7 +563,7 @@ public class SignupProfileRegisterFragment extends BaseFragment {
                 return;
             }
         }
-		
+
         if (etJob.getText().toString().trim().equals("")) {
             Toaster.showShort(mParent, R.string.select_job);
             return;
@@ -565,10 +589,10 @@ public class SignupProfileRegisterFragment extends BaseFragment {
             return;
         }
 
-        if (tvHobby.getText().toString().trim().equals("")) {
-            Toaster.showShort(mParent, R.string.select_hobby);
-            return;
-        }
+//        if (tvHobby.getText().toString().trim().equals("")) {
+//            Toaster.showShort(mParent, R.string.select_hobby);
+//            return;
+//        }
 
         if (tvLove.getText().toString().trim().equals("")) {
             Toaster.showShort(mParent, R.string.select_love_style);
@@ -614,6 +638,14 @@ public class SignupProfileRegisterFragment extends BaseFragment {
 //        }
 
         mParent.showProgress(mParent);
+        Log.e("char_debug", new Gson().toJson(profileImgList));
+        Log.e("char_debug", new Gson().toJson(imageInfoList));
+        for(int i=0; i < profileImgList.size(); i++){
+            ImageInfo info = new ImageInfo(profileImgList.get(i).img_url);
+            imageInfoList.add(info);
+
+        }
+        Log.e("char_debug", new Gson().toJson(imageInfoList));
         Net.instance().api.signup(signupActivity.loginType,
                 signupActivity.sns_id,
                 signupActivity.email,
@@ -623,7 +655,7 @@ public class SignupProfileRegisterFragment extends BaseFragment {
                 nickname,
                 Integer.valueOf(tall),
                 tvAge.getText().toString(),
-                new Gson().toJson(mAdapter.getItems()),
+                new Gson().toJson(imageInfoList),
                 area,
                 school,
                 etJob.getText().toString().trim(),
@@ -631,7 +663,7 @@ public class SignupProfileRegisterFragment extends BaseFragment {
                 tvDrinking.getText().toString(),
                 tvSmoking.getText().toString(),
                 tvBody.getText().toString(),
-                new Gson().toJson(interestList),
+                "",
                 tvLove.getText().toString(),
                 etSelfIntroduction.getText().toString().trim(),
                 signupActivity.phone,
@@ -639,7 +671,8 @@ public class SignupProfileRegisterFragment extends BaseFragment {
                 latitude,
                 longitude,
                 MyInfo.getInstance().fcm_token,
-                signupActivity.certname)
+                "테스트1")
+//                signupActivity.certname)
                 .enqueue(new Net.ResponseCallBack<MSignup>() {
                     @Override
                     public void onSuccess(MSignup response) {
@@ -693,5 +726,109 @@ public class SignupProfileRegisterFragment extends BaseFragment {
 
         }
     }
+
+    @OnClick(R.id.iv_addPhoto_01)
+    public void iv_addPhoto_01Clicked(){
+       imgPosition = 0;
+        onAddImage();
+
+    }
+    @OnClick(R.id.iv_addPhoto_02)
+    public void iv_addPhoto_02Clicked(){
+        imgPosition = 1;
+        onAddImage();
+    }
+    @OnClick(R.id.iv_addPhoto_03)
+    public void iv_addPhoto_03Clicked(){
+        imgPosition = 2;
+        onAddImage();
+    }
+    @OnClick(R.id.iv_addPhoto_04)
+    public void iv_addPhoto_04Clicked(){
+        imgPosition = 3;
+        onAddImage();
+    }
+    @OnClick(R.id.iv_addPhoto_05)
+    public void iv_addPhoto_05Clicked(){
+        imgPosition = 4;
+        onAddImage();
+    }
+    @OnClick(R.id.iv_addPhoto_06)
+    public void iv_addPhoto_06Clicked(){
+        imgPosition = 5;
+        onAddImage();
+    }
+    @OnClick(R.id.ibDelete_01)
+    public void ibDelete_01Clicked(){
+        for(int i=0; i < profileImgList.size(); i++){
+            if(profileImgList.get(i).imgPosition == 0){
+                profileImgList.remove(i);
+                Collections.sort(profileImgList);
+                break;
+            }
+        }
+    }
+    @OnClick(R.id.ibDelete_02)
+    public void ibDelete_02Clicked(){
+        for(int i=0; i < profileImgList.size(); i++){
+            if(profileImgList.get(i).imgPosition == 1){
+                profileImgList.remove(i);
+                Collections.sort(profileImgList);
+                break;
+            }
+        }
+    }
+    @OnClick(R.id.ibDelete_03)
+    public void ibDelete_03Clicked(){
+        for(int i=0; i < profileImgList.size(); i++){
+            if(profileImgList.get(i).imgPosition == 2){
+                profileImgList.remove(i);
+                Collections.sort(profileImgList);
+                break;
+            }
+        }
+
+    }
+    @OnClick(R.id.ibDelete_04)
+    public void ibDelete_04Clicked(){
+        for(int i=0; i < profileImgList.size(); i++){
+            if(profileImgList.get(i).imgPosition == 3){
+                profileImgList.remove(i);
+                Collections.sort(profileImgList);
+                break;
+            }
+        }
+    }
+    @OnClick(R.id.ibDelete_05)
+    public void ibDelete_05Clicked(){
+        for(int i=0; i < profileImgList.size(); i++){
+            if(profileImgList.get(i).imgPosition == 4){
+                profileImgList.remove(i);
+                Collections.sort(profileImgList);
+                break;
+            }
+        }
+    }
+    @OnClick(R.id.ibDelete_06)
+    public void ibDelete_06Clicked(){
+        for(int i=0; i < profileImgList.size(); i++){
+            if(profileImgList.get(i).imgPosition == 5){
+                profileImgList.remove(i);
+                Collections.sort(profileImgList);
+                break;
+            }
+        }
+    }
+    @OnClick(R.id.tv_info)
+            public void tv_infoClicked(){
+    for(int i=0; i < profileImgList.size(); i++){
+        Log.e("char_debug", "profileImgList" + profileImgList.get(i).imgPosition);
+    }
+
+    }
+
+
+
+
 }
 

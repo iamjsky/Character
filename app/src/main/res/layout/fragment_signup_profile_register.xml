@@ -20,8 +20,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:paddingTop="@dimen/_38sdp"
-                android:paddingBottom="@dimen/_20sdp"
+                android:paddingTop="@dimen/_20sdp"
+                android:paddingBottom="@dimen/_30sdp"
 
                 >
 
@@ -33,6 +33,7 @@
                     android:paddingRight="@dimen/_42sdp">
 
                     <TextView
+                        android:id="@+id/tv_info"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_20sdp"
@@ -75,11 +76,21 @@
                         android:background="@drawable/shadow_154628">
 
                         <ImageView
+                            android:id="@+id/iv_addPhoto_01"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@drawable/bg_squared_01"
                             android:padding="@dimen/_36sdp"
                             android:src="@drawable/signin_ico_addphoto" />
+                        <ImageView
+                            android:id="@+id/iv_profile_01"
+                            android:visibility="gone"
+                            android:adjustViewBounds="true"
+
+                            android:padding="@dimen/_1sdp"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -92,6 +103,17 @@
                             android:text="대표"
                             android:textColor="#ff2167"
                             android:textSize="@dimen/_12sdp" />
+                        <ImageButton
+                            android:id="@+id/ibDelete_01"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:background="@color/color_transparent"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:src="@drawable/ic_delete"
+                            android:visibility="gone" />
                     </RelativeLayout>
 
                     <RelativeLayout
@@ -103,11 +125,31 @@
                         android:background="@drawable/shadow_145821">
 
                         <ImageView
+                            android:id="@+id/iv_addPhoto_02"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@drawable/bg_squared_02"
                             android:padding="@dimen/_13sdp"
                             android:src="@drawable/signin_ico_addphoto_2" />
+                        <ImageView
+                            android:id="@+id/iv_profile_02"
+                            android:visibility="gone"
+                            android:adjustViewBounds="true"
+
+                            android:padding="@dimen/_1sdp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                        <ImageButton
+                            android:id="@+id/ibDelete_02"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:background="@color/color_transparent"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:src="@drawable/ic_delete"
+                            android:visibility="gone" />
                     </RelativeLayout>
 
                     <RelativeLayout
@@ -120,11 +162,31 @@
                         android:background="@drawable/shadow_145821">
 
                         <ImageView
+                            android:id="@+id/iv_addPhoto_03"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@drawable/bg_squared_02"
                             android:padding="@dimen/_13sdp"
                             android:src="@drawable/signin_ico_addphoto_2" />
+                        <ImageView
+                            android:id="@+id/iv_profile_03"
+                            android:visibility="gone"
+                            android:adjustViewBounds="true"
+
+                            android:padding="@dimen/_1sdp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                        <ImageButton
+                            android:id="@+id/ibDelete_03"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:background="@color/color_transparent"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:src="@drawable/ic_delete"
+                            android:visibility="gone" />
                     </RelativeLayout>
 
                     <RelativeLayout
@@ -137,11 +199,31 @@
                         android:background="@drawable/shadow_145821">
 
                         <ImageView
+                            android:id="@+id/iv_addPhoto_04"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@drawable/bg_squared_02"
                             android:padding="@dimen/_13sdp"
                             android:src="@drawable/signin_ico_addphoto_2" />
+                        <ImageView
+                            android:id="@+id/iv_profile_04"
+                            android:visibility="gone"
+                            android:adjustViewBounds="true"
+
+                            android:padding="@dimen/_1sdp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                        <ImageButton
+                            android:id="@+id/ibDelete_04"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:background="@color/color_transparent"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:src="@drawable/ic_delete"
+                            android:visibility="gone" />
                     </RelativeLayout>
                     <RelativeLayout
                         android:layout_width="@dimen/_81sdp"
@@ -153,11 +235,31 @@
                         android:background="@drawable/shadow_145821">
 
                         <ImageView
+                            android:id="@+id/iv_addPhoto_05"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@drawable/bg_squared_02"
                             android:padding="@dimen/_13sdp"
                             android:src="@drawable/signin_ico_addphoto_2" />
+                        <ImageView
+                            android:id="@+id/iv_profile_05"
+                            android:visibility="gone"
+                            android:adjustViewBounds="true"
+
+                            android:padding="@dimen/_1sdp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                        <ImageButton
+                            android:id="@+id/ibDelete_05"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:background="@color/color_transparent"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:src="@drawable/ic_delete"
+                            android:visibility="gone" />
                     </RelativeLayout>
                     <RelativeLayout
                         android:layout_width="@dimen/_81sdp"
@@ -169,11 +271,31 @@
                         android:background="@drawable/shadow_145821">
 
                         <ImageView
+                            android:id="@+id/iv_addPhoto_06"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@drawable/bg_squared_02"
                             android:padding="@dimen/_13sdp"
                             android:src="@drawable/signin_ico_addphoto_2" />
+                        <ImageView
+                            android:id="@+id/iv_profile_06"
+                            android:visibility="gone"
+                            android:adjustViewBounds="true"
+
+                            android:padding="@dimen/_1sdp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                        <ImageButton
+                            android:id="@+id/ibDelete_06"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:background="@color/color_transparent"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:src="@drawable/ic_delete"
+                            android:visibility="gone" />
                     </RelativeLayout>
                 </RelativeLayout>
 <LinearLayout

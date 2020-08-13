@@ -200,7 +200,7 @@ public class SignupEmailFragment extends BaseFragment {
 
         tvMale.setOnClickListener(null);
         tvFemale.setOnClickListener(null);
-        Log.e("char_debug", "tvMale : " + tvMale.isSelected() + " / tvFemale : " + tvFemale.isSelected());
+
     }
 
     @OnClick(R.id.btnRegistering)
@@ -238,12 +238,12 @@ public class SignupEmailFragment extends BaseFragment {
         signupActivity.email = etEmail.getText().toString();
 
         //TODO: 본인인증 (이때 전화번호와 생년월일 정보를 가져온다)
-//        signupActivity.phone = "123123213";
-//        signupActivity.birthday = "19940502";
+        signupActivity.phone = "123123213";
+        signupActivity.birthday = "19940502";
 
 
 
-
+        Log.e("char_debug", "tvMale : " + tvMale.isSelected() + " / tvFemale : " + tvFemale.isSelected());
         signupActivity.showProfileRegisterFragment();
 
 
