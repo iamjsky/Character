@@ -204,5 +204,7 @@
     <string name="character_c">강한안정형</string>
 
     <string name="dot_middle">•</string>
+    <string name="character_before"><![CDATA[< 이전]]></string>
+    <string name="character_next"><![CDATA[다음 >]]></string>
 
 </resources>

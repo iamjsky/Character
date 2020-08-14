@@ -5,21 +5,27 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <RelativeLayout
-        android:layout_width="match_parent"
+        android:padding="@dimen/_5sdp"
+        android:background="@color/color_transparent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-        <com.character.microblogapp.ui.widget.BaseTextView
-            android:id="@+id/tv_question"
-            android:layout_width="203dp"
-            android:layout_height="73dp"
-            android:layout_centerInParent="true"
-            android:background="@drawable/btn_bg_test_answer1"
-            android:paddingTop="22dp"
-            android:text="asdfasdf"
-            android:textAlignment="center"
-            android:textColor="@color/color_f24756"
-            android:textSize="15sp"
-            app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+
+        <TextView
+            android:lineSpacingExtra="@dimen/_2sdp"
+            android:maxLines="3"
+            android:padding="@dimen/_10sdp"
+            android:fontFamily="@font/jalnan_n"
+            android:gravity="center"
+            android:textColor="#545454"
+            android:textSize="@dimen/_20sdp"
+            android:text="만족해하는만족해하는만족해하는만족해하는만족해하는만족해하는만족해하는만족해하는만족해하는"
+           android:id="@+id/tv_question"
+            android:background="@drawable/bg_rounded_white_01"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_100sdp"
+     />
+
 
     </RelativeLayout>
 

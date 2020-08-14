@@ -5,45 +5,86 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout
+        android:background="@color/color_transparent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:paddingBottom="38dp"
         tools:context=".ui.page.character.fragment.CharacterFragment">
-
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:paddingLeft="25dp"
-            android:paddingRight="25dp">
+            android:layout_marginRight="@dimen/_14sdp"
+            android:layout_marginLeft="@dimen/_14sdp"
+            android:paddingLeft="@dimen/_26sdp"
 
+            android:paddingRight="@dimen/_26sdp"
+            android:paddingTop="@dimen/_20sdp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_104sdp"
+
+            android:background="@drawable/bg_rounded_white_01"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_count"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/jalnan_n"
+                    android:gravity="center|left"
+                    android:text="09."
+                    android:textColor="#545454"
+                    android:textSize="@dimen/_20sdp" />
+
+                <TextView
+                    android:id="@+id/tv_totalCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/nanum_square_r"
+                    android:gravity="center|top"
+                    android:text="9/28"
+                    android:textColor="#545454"
+                    android:textSize="@dimen/_10sdp" />
+            </LinearLayout>
             <TextView
                 android:id="@+id/txt_character_question"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:lineSpacingExtra="4dp"
-                android:textColor="@color/color_dark"
-                android:textSize="19sp"
-                android:textAlignment="center"
-                android:textStyle="bold" />
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:lineSpacingExtra="@dimen/_2sdp"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:gravity="top|left"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textColor="#000000"
+                android:fontFamily="@font/nanum_square_r"
+                android:textSize="@dimen/_10sdp"
+                android:text="네가지 보기 중 자신을 가장 잘 설명 한다고 생각하는 단어를 한 가지 선택하세요."
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"/>
+        </LinearLayout>
+
+
+
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_weight="1"
+            android:layout_marginRight="@dimen/_9sdp"
+            android:layout_marginLeft="@dimen/_9sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            tools:listitem="@layout/item_character_test"
+            android:id="@+id/rcv_character_question"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+        </android.support.v7.widget.RecyclerView>
+
+
 
         </LinearLayout>
 
-        <FrameLayout
-            android:id="@+id/flContainer"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"></FrameLayout>
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/rcv_character_question"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-        </android.support.v7.widget.RecyclerView>
-    </LinearLayout>
 
 </layout>

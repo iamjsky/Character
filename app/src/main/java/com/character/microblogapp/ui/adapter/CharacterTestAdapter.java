@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.character.microblogapp.R;
 import com.character.microblogapp.model.MCharacter;
@@ -43,7 +44,7 @@ public class CharacterTestAdapter extends ArrayAdapter {
 
     class ItemViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.tv_question)
-        BaseTextView m_tvQuestion;
+        TextView m_tvQuestion;
 
         MCharacter.Answer m_info;
         int position = 0;

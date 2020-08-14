@@ -278,9 +278,9 @@ public class MainActivity extends BaseActivity {
 
     public void selectLine(int idx) {
         img1.setVisibility(View.INVISIBLE);
-        img2.setVisibility(View.INVISIBLE);
+        img2.setVisibility(View.GONE);
         img3.setVisibility(View.INVISIBLE);
-        img4.setVisibility(View.INVISIBLE);
+        img4.setVisibility(View.GONE);
         img5.setVisibility(View.INVISIBLE);
 
         switch (idx) {

@@ -13,6 +13,12 @@
     <color name="color_alpha_black">#55000000</color>
     <color name="color_char_gray">#545454</color>
 
+    <color name="char_main_color">#ff056a</color>
+    <color name="char_d_color">#000000</color>
+    <color name="char_i_color">#ff056a</color>
+    <color name="char_s_color">#1faf00</color>
+    <color name="char_c_color">#487cff</color>
+
     <color name="color_border">@color/color_dfdfdf</color>
     <color name="color_dark">@color/color_333333</color>
     <color name="color_light_dark">@color/color_605d5d</color>

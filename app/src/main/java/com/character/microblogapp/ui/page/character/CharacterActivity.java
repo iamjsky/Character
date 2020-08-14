@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
+import com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar;
 import com.character.microblogapp.R;
 import com.character.microblogapp.model.MCharacter;
 import com.character.microblogapp.model.MError;
@@ -28,21 +29,30 @@ import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 public class CharacterActivity extends BaseActivity {
 
-    @BindView(R.id.btn_character_next)
-    TextView tvCharacterNext;
+
 
     @BindView(R.id.flContainer)
     FrameLayout flContainer;
 
     CharacterFragment characterFragment;
+//
+//    @BindView(R.id.btn_character_before)
+//    Button btnCharacterBefore;
 
-    @BindView(R.id.btn_character_before)
-    Button btnCharacterBefore;
+    @BindView(R.id.tv_bottomCount)
+    TextView tv_bottomCount;
+    @BindView(R.id.tv_bottomTotalCount)
+    TextView tv_bottomTotalCount;
+    @BindView(R.id.tv_bottomCountText)
+    TextView tv_bottomCountText;
+
+    RoundCornerProgressBar pb_countBar;
+
 
 //    @BindView(R.id.tv_test_result)
 //    TextView tvTestResult;
 
-    int mViewIndex = 0;
+    public int mViewIndex = 0;
 
     int dSum = 0;
     int iSum = 0;
@@ -52,8 +62,8 @@ public class CharacterActivity extends BaseActivity {
     String oldAdd = "";
 
     int go = 0;
-
-    ArrayList<MCharacter.Character> character_list = new ArrayList<>();
+    int totalCount = -1;
+   public ArrayList<MCharacter.Character> character_list = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,8 +77,8 @@ public class CharacterActivity extends BaseActivity {
 
         go = getIntent().getIntExtra("go", 0);
 
-        btnCharacterBefore.setVisibility(View.GONE);
-
+//        btnCharacterBefore.setVisibility(View.GONE);
+        pb_countBar = (RoundCornerProgressBar) findViewById(R.id.pb_countBar);
         initData();
     }
 
@@ -553,7 +563,7 @@ public class CharacterActivity extends BaseActivity {
 
     @SuppressLint("DefaultLocale")
     public void showCharacterFragment() {
-        tvCharacterNext.setText(String.format("이전(%d/%d)", mViewIndex + 1, character_list.size()));
+
 
         characterFragment = CharacterFragment.newInstance();
         characterFragment.setData(character_list.get(mViewIndex));
@@ -584,5 +594,19 @@ public class CharacterActivity extends BaseActivity {
         } else {
             showCharacterBefore();
         }
+    }
+
+    public void setCountProgressBar(){
+        int index = mViewIndex+1;
+
+        if(totalCount == -1){
+            totalCount = character_list.size();
+            tv_bottomTotalCount.setText(totalCount+"");
+            pb_countBar.setMax(totalCount);
+        }
+
+        pb_countBar.setProgress(index);
+        tv_bottomCount.setText(index+"");
+        tv_bottomCountText.setText(index+"번째");
     }
 }

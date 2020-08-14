@@ -12,32 +12,33 @@
         android:orientation="vertical"
         tools:context=".ui.page.intro.SignupActivity">
 
+
         <LinearLayout
-            android:gravity="center|left"
-            android:orientation="horizontal"
-            android:background="@drawable/bg_top_bar_01"
+            android:paddingRight="@dimen/_14sdp"
+            android:paddingLeft="@dimen/_14sdp"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_40sdp">
+            android:layout_height="@dimen/_40sdp"
+            android:background="@drawable/bg_top_bar_01"
+            android:gravity="center|left"
+            android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/btnBack"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:src="@drawable/comm_ico_back"
-                android:layout_marginLeft="@dimen/_14sdp"
-                android:layout_marginRight="@dimen/_8sdp"
-              />
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="@dimen/_16sdp"
+
+                android:layout_marginRight="@dimen/_10sdp"
+                android:src="@drawable/comm_ico_back" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/nanum_square_b"
                 android:text="회원가입"
                 android:textColor="@color/color_white"
-                android:textSize="@dimen/_14sdp"
-               android:fontFamily="@font/nanum_square_b" />
+                android:textSize="@dimen/_14sdp" />
 
         </LinearLayout>
-
 
         <FrameLayout
             android:id="@+id/flContainer"

@@ -16,46 +16,217 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:gravity="center"
+            android:gravity="center|top"
             android:orientation="vertical">
+            <LinearLayout
+                android:layout_marginTop="@dimen/_30sdp"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textColor="@color/char_d_color"
+                    android:fontFamily="@font/nanum_square_b"
+                    android:textSize="@dimen/_14sdp"
+                    android:text="D"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:textColor="@color/char_i_color"
+                    android:fontFamily="@font/nanum_square_b"
+                    android:textSize="@dimen/_14sdp"
+                    android:text="I"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:textColor="@color/char_s_color"
+                    android:fontFamily="@font/nanum_square_b"
+                    android:textSize="@dimen/_14sdp"
+                    android:text="S"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:textColor="@color/char_c_color"
+                    android:fontFamily="@font/nanum_square_b"
+                    android:textSize="@dimen/_14sdp"
+                    android:text="C"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:textColor="#000000"
+                    android:fontFamily="@font/nanum_square_b"
+                    android:textSize="@dimen/_14sdp"
+                    android:text="란?"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <TextView
+                android:gravity="center"
+                android:layout_marginTop="@dimen/_22sdp"
+                android:textColor="#000000"
+                android:fontFamily="@font/nanum_square_r"
+                android:textSize="@dimen/_13sdp"
+                android:text="나의 행동패턴(Behavior Pattern)또는"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:textColor="#000000"
+                    android:fontFamily="@font/nanum_square_r"
+                    android:textSize="@dimen/_13sdp"
+                    android:text="행동 스타일(Behavior Style)을"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:textColor="@color/char_main_color"
+                    android:fontFamily="@font/nanum_square_r"
+                    android:textSize="@dimen/_13sdp"
+                    android:text="네 가지로 분류"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:textColor="#000000"
+                    android:fontFamily="@font/nanum_square_r"
+                    android:textSize="@dimen/_13sdp"
+                    android:text="한"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="@dimen/_2sdp"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:gravity="center"
+
+                    android:textColor="#000000"
+                    android:fontFamily="@font/nanum_square_r"
+                    android:textSize="@dimen/_13sdp"
+                    android:text="것으로써 현재 국내 대기업 및 공조직,"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:gravity="center"
+
+                    android:textColor="@color/char_main_color"
+                    android:fontFamily="@font/nanum_square_r"
+                    android:textSize="@dimen/_13sdp"
+                    android:text="전 세계"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="@dimen/_2sdp"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:gravity="center"
+
+                    android:textColor="@color/char_main_color"
+                    android:fontFamily="@font/nanum_square_r"
+                    android:textSize="@dimen/_13sdp"
+                    android:text="50여 개 국가"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:gravity="center"
+
+                    android:textColor="#000000"
+                    android:fontFamily="@font/nanum_square_r"
+                    android:textSize="@dimen/_13sdp"
+                    android:text="에서 널리 활용하는 성격진단도구"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+            <TextView
+                android:layout_marginTop="@dimen/_16sdp"
+                android:gravity="center"
+
+                android:textColor="#545454"
+                android:fontFamily="@font/nanum_square_r"
+                android:textSize="@dimen/_11sdp"
+                android:text="*창시자 : William Moulton Marston 박사(1928년)"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/_26sdp"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textColor="@color/char_d_color"
+                    android:fontFamily="@font/nanum_square_b"
+                    android:textSize="@dimen/_14sdp"
+                    android:text="D"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:textColor="@color/char_i_color"
+                    android:fontFamily="@font/nanum_square_b"
+                    android:textSize="@dimen/_14sdp"
+                    android:text="I"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:textColor="@color/char_s_color"
+                    android:fontFamily="@font/nanum_square_b"
+                    android:textSize="@dimen/_14sdp"
+                    android:text="S"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:textColor="@color/char_c_color"
+                    android:fontFamily="@font/nanum_square_b"
+                    android:textSize="@dimen/_14sdp"
+                    android:text="C"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:textColor="#000000"
+                    android:fontFamily="@font/nanum_square_b"
+                    android:textSize="@dimen/_14sdp"
+                    android:text="의 구성"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:src="@drawable/bg_vs_big" />
+                android:layout_marginTop="@dimen/_30sdp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/disc_img"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="wrap_content"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="@string/splash_introduction"
-                android:textColor="@color/color_281f1c"
-                android:textSize="35sp"
-                app:fontname="@{`NotoSansCJKkr-Light.otf`}" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="-5dp"
-                android:text="@string/happy_signup"
-                android:textColor="@color/color_light_red"
-                android:textSize="35sp"
-                app:fontname="@{`NotoSansCJKkr-Bold.otf`}" />
 
         </LinearLayout>
 
         <Button
+            android:layout_marginBottom="@dimen/_30sdp"
+            android:layout_gravity="center"
             android:id="@+id/btnStart"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:background="@drawable/btn_bg_pink"
-            android:foreground="?attr/selectableItemBackground"
-            android:paddingBottom="10dp"
+            android:layout_width="@dimen/_224sdp"
+            android:layout_height="@dimen/_38sdp"
+            android:background="@drawable/bg_rounded_03"
             android:text="@string/app_start"
             android:textColor="@android:color/white"
-            android:textSize="15sp"
-            app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+            android:textSize="@dimen/_12sdp"
+           android:fontFamily="@font/nanum_square_b" />
 
     </LinearLayout>
 

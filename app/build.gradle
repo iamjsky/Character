@@ -113,6 +113,8 @@ dependencies {
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
     //indicator
     implementation 'com.github.hanihashemi:InfiniteViewPagerWithIndicator:1.1.8'
+    //progress bar
+    implementation 'com.akexorcist:round-corner-progress-bar:2.1.0'
 
 }
 apply plugin: 'com.google.gms.google-services'
