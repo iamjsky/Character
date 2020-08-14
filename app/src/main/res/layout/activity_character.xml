@@ -112,7 +112,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/nanum_square_b"
 
-                    android:text="19번째"
+                    android:text="1번째"
                     android:textColor="@color/char_main_color"
                     android:textSize="@dimen/_10sdp" />
 
