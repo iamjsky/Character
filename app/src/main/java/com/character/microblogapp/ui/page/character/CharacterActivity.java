@@ -119,41 +119,8 @@ public class CharacterActivity extends BaseActivity {
 
         do {
 
-            if (d >= 20) {
-                ret = "D";
-                break;
-            }
-            if (i >= 20) {
-                ret = "I";
-                break;
-            }
-            if (s >= 20) {
-                ret = "S";
-                break;
-            }
-            if (c >= 20) {
-                ret = "C";
-                break;
-            }
 
-            ArrayList<Disc> tempList = new ArrayList<>();
-            ArrayList<Disc> discList = new ArrayList<>();
-            Disc discD = new Disc();
-            discD.setTypeCount(d);
-            discD.setTypeText("D");
-            tempList.add(discD);
-            Disc discI = new Disc();
-            discI.setTypeCount(i);
-            discI.setTypeText("I");
-            tempList.add(discI);
-            Disc discS = new Disc();
-            discS.setTypeCount(s);
-            discS.setTypeText("S");
-            tempList.add(discS);
-            Disc discC = new Disc();
-            discC.setTypeCount(c);
-            discC.setTypeText("C");
-            tempList.add(discC);
+
 
 
 
@@ -189,288 +156,288 @@ public class CharacterActivity extends BaseActivity {
             }
 
 
-//            if (d >= 11 && i >= 7) {
-//                if(i >= 7 && i <= 10 && s <= 6 && c <= 6){
-//                    ret = "Di";
-//                    break;
-//                } else if(i >= 7 && i <= 10 && s >= 7 && s <= 10 && c <= 6){
-//                    ret = s > i ? "Dsi" : "Dis";
-//                    break;
-//                } else if(i >= 7 && i <= 10 && c >= 7 && c <= 10 && s <= 6){
-//                    ret = c > i ? "Dci" : "Dic";
-//                    break;
-//                }
-//            }
-//
-//            if (d >= 11 && s >= 7) {
-//                if(s >= 7 && s <= 10 && c >= 7 && c <= 10 && i <= 6){
-//                    ret = c > s ? "Dcs" : "Dsc";
-//                    break;
-//                } else if(s >= 7 && s <= 10 && i <= 6 && c <= 6){
-//                    ret = "Ds";
-//                    break;
-//                }
-//            }
-//
-//            if (d >= 11 && c >= 7) {
-//                if(c >= 7 && c <= 10 && i <= 6 && s <= 6){
-//                    ret = "Dc";
-//                    break;
-//                }
-//            }
-//
-//            if (i >= 11 && d >= 7) {
-//                if(d >= 7 && d <= 10 && s <= 6 && c <= 6){
-//                    ret = "Id";
-//                    break;
-//                } else if(d >= 7 && d <= 10 && s >= 7 && s <= 10 && c <= 6){
-//                    ret = s > d ? "Isd" : "Ids";
-//                    break;
-//                } else if(d >= 7 && d <= 10 && c >= 7 && c <= 10 && s <= 6){
-//                    ret = c > d ? "Icd" : "Idc";
-//                    break;
-//                }
-//            }
-//
-//            if (i >= 11 && s >= 7) {
-//                if(s >= 7 && s <= 10 && c >= 7 && c <= 10 && d <= 6){
-//                    ret = c > s ? "Ics" : "Isc";
-//                    break;
-//                } else if(s >= 7 && s <= 10 && d <= 6 && c <= 6){
-//                    ret = "Is";
-//                    break;
-//                }
-//            }
-//
-//            if (i >= 11 && c >= 7) {
-//                if(c >= 7 && c <= 10 && d <= 6 && s <= 6 ){
-//                    ret = "Ic";
-//                    break;
-//                }
-//            }
-//
-//            if (s >= 11 && d >= 7) {
-//                if(d >= 7 && d <= 10 && i >= 7 && i <= 10 && c <= 6){
-//                    ret = i > d ? "Sid" : "Sdi";
-//                    break;
-//                } else if(d >= 7 && d <= 10 && c >= 7 && c <= 10 && i <= 6){
-//                    ret = c > d ? "Scd" : "Sdc";
-//                    break;
-//                } else if(d >= 7 && d <= 10 && i <= 6 && c <= 6){
-//                    ret = "Sd";
-//                    break;
-//                }
-//            }
-//
-//            if (s >= 11 && i >= 7) {
-//                if(i >= 7 && i <= 10 && c >= 7 && c <= 10 && d <= 6){
-//                    ret = c > i ? "Sci" : "Sic";
-//                    break;
-//                } else if(i >= 7 && i <= 10 && d <= 6 && c <= 6){
-//                    ret = "Si";
-//                    break;
-//                }
-//            }
-//
-//            if (s >= 11 && c >= 7) {
-//                if(c >= 7 && c <= 10 && d <= 6 && i <= 6){
-//                    ret =  "Sc";
-//                    break;
-//                }
-//            }
-//
-//            if (c >= 11 && d >= 7) {
-//                if(d >= 7 && d <= 10 && i >= 7 && i <= 10 && s <= 6){
-//                    ret = i > d ? "Cid" : "Cdi";
-//                    break;
-//                } else if(d >= 7 && d <= 10 && s >= 7 && s <= 10 && i <= 6){
-//                    ret = s > d ? "Csd" : "Cds";
-//                    break;
-//                } else if(d >= 7 && d <= 10 && i <= 6 && s <= 6){
-//                    ret = "Cd";
-//                    break;
-//                }
-//            }
-//
-//            if (c >= 11 && i >= 7) {
-//                if(i >= 7 && i <= 10 && s >= 7 && s <= 10 && d <= 6){
-//                    ret = s > i ? "Csi" : "Cis";
-//                    break;
-//                } else if(i >= 7 && i <= 10 && d <= 6 && s <= 6){
-//                    ret = "Ci";
-//                    break;
-//                }
-//            }
-//
-//            if (c >= 11 && s >= 7) {
-//                if(s >= 7 && s <= 10 && d <= 6 && i <= 6){
-//                    ret = "Cs";
-//                    break;
-//                }
-//            }
-//
-//            if (d == 10 && i == 6 && s == 6 && c == 6) {
-//                ret = "Disc";
-//                break;
-//            }
-//
-//            if (i == 10 && d == 6 && s == 6 && c == 6) {
-//                ret = "Idsc";
-//                break;
-//            }
-//
-//            if (s == 10 && i == 6 && d == 6 && c == 6) {
-//                ret = "Sdic";
-//                break;
-//            }
-//
-//            if (c == 10 && i == 6 && s == 6 && d == 6) {
-//                ret = "Cdis";
-//                break;
-//            }
-//
-//            if (d >= 6 && d <= 8 && i >= 6 && i <= 8 && s >= 6 && s <= 8 && c >= 6 && c <= 8) {
-//                ret = "disc";
-//                break;
-//            }
-//
-//            if( d >= 7 && d <= 10 && i >= 7 && i <= 10){
-//                if(s <= 6 && c <= 6) {
-//                    ret = i > d ? "id" : "di";
-//                    break;
-//                }
-//            }
-//
-//            if(d >= 7 && d <= 10 && s >= 7 && s <= 10) {
-//                if(i <= 6 && c <= 6){
-//                    ret = s > d ? "sd" : "ds";
-//                    break;
-//                }
-//            }
-//
-//            if (d >= 7 && d <= 10 && c >= 7 && c <= 10) {
-//                if(i <= 6 && s <= 6){
-//                    ret = c > d ? "cd" : "dc";
-//                    break;
-//                }
-//            }
-//
-//            if(i >= 7 && i <= 10 && s >= 7 && s <= 10) {
-//                if(d <= 6 && c <= 6){
-//                    ret = s > i ? "si" : "is";
-//                    break;
-//                }
-//            }
-//
-//            if(i >= 7 && i <= 10 && c >= 7 && c <= 10) {
-//                if(d <= 6 && s <= 6) {
-//                    ret = c > i ? "ci" : "ic";
-//                    break;
-//                }
-//            }
-//
-//            if(s >= 7 && s <= 10 && c >= 7 && c <= 10) {
-//                if(d <= 6 && i <= 6) {
-//                    ret = c > s ? "cs" : "sc";
-//                    break;
-//                }
-//            }
-//
-//
-//            if (d >= 7 && d <= 10 && i >= 7 && i <= 10) {
-//                if (s >= 7 && s <= 10 && c <= 6) {
-//                    if(s > d && d >= i){
-//                        ret = "sdi";
-//                        break;
-//                    } else if( s > i && i > d) {
-//                        ret = "sid";
-//                        break;
-//                    } else if(d >= s && s > i) {
-//                        ret = "dsi";
-//                        break;
-//                    } else if( d >= i && i >= s) {
-//                        ret = "dis";
-//                        break;
-//                    } else if( i > d && d >= s) {
-//                        ret = "ids";
-//                        break;
-//                    } else if(i >= s && s > d ) {
-//                        ret = "isd";
-//                        break;
-//                    }
-//                } else if (c >= 7 && c <= 10 && s <= 6) {
-//                    if(c > i && i > d){
-//                        ret = "cid";
-//                        break;
-//                    } else if(c > d && d >= i) {
-//                        ret = "cdi";
-//                        break;
-//                    } else if(d >= c && c > i) {
-//                        ret = "dci";
-//                        break;
-//                    } else if(d >= i && i >= c) {
-//                        ret = "dic";
-//                        break;
-//                    } else if(i > d && d >= c) {
-//                        ret = "idc";
-//                        break;
-//                    } else if(i >= c && c > d) {
-//                        ret = "icd";
-//                        break;
-//                    }
-//                }
-//            }
-//
-//            if (d >= 7 && d <= 10 && s >= 7 && s <= 10) {
-//                if (c >= 7 && c <= 10 && i <= 6) {
-//                    if(c > d && d >= s){
-//                        ret = "cds";
-//                        break;
-//                    } else if(c > s && s > d){
-//                        ret = "csd";
-//                        break;
-//                    } else if(d >= c && c > s){
-//                        ret = "dcs";
-//                        break;
-//                    } else if(d >= s && s >= c) {
-//                        ret = "dsc";
-//                        break;
-//                    } else if(s > d && d >= c) {
-//                        ret = "sdc";
-//                        break;
-//                    } else if(s >= c && c > d){
-//                        ret = "scd";
-//                        break;
-//                    }
-//                }
-//            }
-//
-//            if(i >= 7 && i <= 10 && s >= 7 && s <= 10 && c >= 7 && c <= 10){
-//                if(d <= 6 ){
-//                    if(i >= s && s >= c){
-//                        ret = "isc";
-//                        break;
-//                    } else if(i >= c && c > s) {
-//                        ret = "ics";
-//                        break;
-//                    } else if(s > i && i >= c){
-//                        ret = "sic";
-//                        break;
-//                    } else if(s >= c && c > i) {
-//                        ret = "sci";
-//                        break;
-//                    } else if(c > i && i >= s){
-//                        ret = "cis";
-//                        break;
-//                    } else if(c > s && s > i){
-//                        ret = "csi";
-//                        break;
-//                    }
-//                }
-//            }
+            if (d >= 11 && i >= 7) {
+                if(i >= 7 && i <= 10 && s <= 6 && c <= 6){
+                    ret = "DI";
+                    break;
+                } else if(i >= 7 && i <= 10 && s >= 7 && s <= 10 && c <= 6){
+                    ret = s > i ? "DS" : "DI";
+                    break;
+                } else if(i >= 7 && i <= 10 && c >= 7 && c <= 10 && s <= 6){
+                    ret = c > i ? "DC" : "DI";
+                    break;
+                }
+            }
+
+            if (d >= 11 && s >= 7) {
+                if(s >= 7 && s <= 10 && c >= 7 && c <= 10 && i <= 6){
+                    ret = c > s ? "DC" : "DS";
+                    break;
+                } else if(s >= 7 && s <= 10 && i <= 6 && c <= 6){
+                    ret = "DS";
+                    break;
+                }
+            }
+
+            if (d >= 11 && c >= 7) {
+                if(c >= 7 && c <= 10 && i <= 6 && s <= 6){
+                    ret = "DC";
+                    break;
+                }
+            }
+
+            if (i >= 11 && d >= 7) {
+                if(d >= 7 && d <= 10 && s <= 6 && c <= 6){
+                    ret = "ID";
+                    break;
+                } else if(d >= 7 && d <= 10 && s >= 7 && s <= 10 && c <= 6){
+                    ret = s > d ? "IS" : "ID";
+                    break;
+                } else if(d >= 7 && d <= 10 && c >= 7 && c <= 10 && s <= 6){
+                    ret = c > d ? "IC" : "ID";
+                    break;
+                }
+            }
+
+            if (i >= 11 && s >= 7) {
+                if(s >= 7 && s <= 10 && c >= 7 && c <= 10 && d <= 6){
+                    ret = c > s ? "IC" : "IS";
+                    break;
+                } else if(s >= 7 && s <= 10 && d <= 6 && c <= 6){
+                    ret = "IS";
+                    break;
+                }
+            }
+
+            if (i >= 11 && c >= 7) {
+                if(c >= 7 && c <= 10 && d <= 6 && s <= 6 ){
+                    ret = "IC";
+                    break;
+                }
+            }
+
+            if (s >= 11 && d >= 7) {
+                if(d >= 7 && d <= 10 && i >= 7 && i <= 10 && c <= 6){
+                    ret = i > d ? "SI" : "SD";
+                    break;
+                } else if(d >= 7 && d <= 10 && c >= 7 && c <= 10 && i <= 6){
+                    ret = c > d ? "SC" : "SD";
+                    break;
+                } else if(d >= 7 && d <= 10 && i <= 6 && c <= 6){
+                    ret = "SD";
+                    break;
+                }
+            }
+
+            if (s >= 11 && i >= 7) {
+                if(i >= 7 && i <= 10 && c >= 7 && c <= 10 && d <= 6){
+                    ret = c > i ? "SC" : "SI";
+                    break;
+                } else if(i >= 7 && i <= 10 && d <= 6 && c <= 6){
+                    ret = "SI";
+                    break;
+                }
+            }
+
+            if (s >= 11 && c >= 7) {
+                if(c >= 7 && c <= 10 && d <= 6 && i <= 6){
+                    ret =  "SC";
+                    break;
+                }
+            }
+
+            if (c >= 11 && d >= 7) {
+                if(d >= 7 && d <= 10 && i >= 7 && i <= 10 && s <= 6){
+                    ret = i > d ? "CI" : "CD";
+                    break;
+                } else if(d >= 7 && d <= 10 && s >= 7 && s <= 10 && i <= 6){
+                    ret = s > d ? "CS" : "CD";
+                    break;
+                } else if(d >= 7 && d <= 10 && i <= 6 && s <= 6){
+                    ret = "CD";
+                    break;
+                }
+            }
+
+            if (c >= 11 && i >= 7) {
+                if(i >= 7 && i <= 10 && s >= 7 && s <= 10 && d <= 6){
+                    ret = s > i ? "CS" : "CI";
+                    break;
+                } else if(i >= 7 && i <= 10 && d <= 6 && s <= 6){
+                    ret = "CI";
+                    break;
+                }
+            }
+
+            if (c >= 11 && s >= 7) {
+                if(s >= 7 && s <= 10 && d <= 6 && i <= 6){
+                    ret = "CS";
+                    break;
+                }
+            }
+
+            if (d == 10 && i == 6 && s == 6 && c == 6) {
+                ret = "DI";
+                break;
+            }
+
+            if (i == 10 && d == 6 && s == 6 && c == 6) {
+                ret = "ID";
+                break;
+            }
+
+            if (s == 10 && i == 6 && d == 6 && c == 6) {
+                ret = "SD";
+                break;
+            }
+
+            if (c == 10 && i == 6 && s == 6 && d == 6) {
+                ret = "CD";
+                break;
+            }
+
+            if (d >= 6 && d <= 8 && i >= 6 && i <= 8 && s >= 6 && s <= 8 && c >= 6 && c <= 8) {
+                ret = "DI";
+                break;
+            }
+
+            if( d >= 7 && d <= 10 && i >= 7 && i <= 10){
+                if(s <= 6 && c <= 6) {
+                    ret = i > d ? "ID" : "DI";
+                    break;
+                }
+            }
+
+            if(d >= 7 && d <= 10 && s >= 7 && s <= 10) {
+                if(i <= 6 && c <= 6){
+                    ret = s > d ? "SD" : "DS";
+                    break;
+                }
+            }
+
+            if (d >= 7 && d <= 10 && c >= 7 && c <= 10) {
+                if(i <= 6 && s <= 6){
+                    ret = c > d ? "CD" : "DC";
+                    break;
+                }
+            }
+
+            if(i >= 7 && i <= 10 && s >= 7 && s <= 10) {
+                if(d <= 6 && c <= 6){
+                    ret = s > i ? "SI" : "IS";
+                    break;
+                }
+            }
+
+            if(i >= 7 && i <= 10 && c >= 7 && c <= 10) {
+                if(d <= 6 && s <= 6) {
+                    ret = c > i ? "CI" : "IC";
+                    break;
+                }
+            }
+
+            if(s >= 7 && s <= 10 && c >= 7 && c <= 10) {
+                if(d <= 6 && i <= 6) {
+                    ret = c > s ? "CS" : "SC";
+                    break;
+                }
+            }
+
+
+            if (d >= 7 && d <= 10 && i >= 7 && i <= 10) {
+                if (s >= 7 && s <= 10 && c <= 6) {
+                    if(s > d && d >= i){
+                        ret = "SD";
+                        break;
+                    } else if( s > i && i > d) {
+                        ret = "SI";
+                        break;
+                    } else if(d >= s && s > i) {
+                        ret = "DS";
+                        break;
+                    } else if( d >= i && i >= s) {
+                        ret = "DI";
+                        break;
+                    } else if( i > d && d >= s) {
+                        ret = "ID";
+                        break;
+                    } else if(i >= s && s > d ) {
+                        ret = "IS";
+                        break;
+                    }
+                } else if (c >= 7 && c <= 10 && s <= 6) {
+                    if(c > i && i > d){
+                        ret = "CI";
+                        break;
+                    } else if(c > d && d >= i) {
+                        ret = "CD";
+                        break;
+                    } else if(d >= c && c > i) {
+                        ret = "DC";
+                        break;
+                    } else if(d >= i && i >= c) {
+                        ret = "DI";
+                        break;
+                    } else if(i > d && d >= c) {
+                        ret = "ID";
+                        break;
+                    } else if(i >= c && c > d) {
+                        ret = "IC";
+                        break;
+                    }
+                }
+            }
+
+            if (d >= 7 && d <= 10 && s >= 7 && s <= 10) {
+                if (c >= 7 && c <= 10 && i <= 6) {
+                    if(c > d && d >= s){
+                        ret = "CD";
+                        break;
+                    } else if(c > s && s > d){
+                        ret = "CS";
+                        break;
+                    } else if(d >= c && c > s){
+                        ret = "DC";
+                        break;
+                    } else if(d >= s && s >= c) {
+                        ret = "DS";
+                        break;
+                    } else if(s > d && d >= c) {
+                        ret = "SD";
+                        break;
+                    } else if(s >= c && c > d){
+                        ret = "SC";
+                        break;
+                    }
+                }
+            }
+
+            if(i >= 7 && i <= 10 && s >= 7 && s <= 10 && c >= 7 && c <= 10){
+                if(d <= 6 ){
+                    if(i >= s && s >= c){
+                        ret = "IS";
+                        break;
+                    } else if(i >= c && c > s) {
+                        ret = "IC";
+                        break;
+                    } else if(s > i && i >= c){
+                        ret = "SI";
+                        break;
+                    } else if(s >= c && c > i) {
+                        ret = "SC";
+                        break;
+                    } else if(c > i && i >= s){
+                        ret = "CI";
+                        break;
+                    } else if(c > s && s > i){
+                        ret = "CS";
+                        break;
+                    }
+                }
+            }
 
             if (d >= 11 && d <= 19 && i <= 6 && s <= 6 && c <= 6) {
-                ret = "D=";
+                ret = "D";
                 break;
             }
 
@@ -480,7 +447,7 @@ public class CharacterActivity extends BaseActivity {
             }
 
             if (i >= 11 && i <= 19 && d <= 6 && s <= 6 && c <= 6) {
-                ret = "I=";
+                ret = "I";
                 break;
             }
 
@@ -490,7 +457,7 @@ public class CharacterActivity extends BaseActivity {
             }
 
             if (s >= 11 && s <= 19 && d <= 6 && i <= 6 && c <= 6) {
-                ret = "S=";
+                ret = "S";
                 break;
             }
             if (s >= 20 && d <= 6 && i <= 6 && c <= 6) {
@@ -499,7 +466,7 @@ public class CharacterActivity extends BaseActivity {
             }
 
             if (c >= 11 && c <= 19 && d <= 6 && i <= 6 && s <= 6) {
-                ret = "C=";
+                ret = "C";
                 break;
             }
 

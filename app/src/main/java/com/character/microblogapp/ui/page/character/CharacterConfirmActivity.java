@@ -8,6 +8,8 @@ import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
 import android.util.Log;
+import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.character.microblogapp.R;
@@ -50,6 +52,10 @@ public class CharacterConfirmActivity extends BaseActivity {
     TextView tv_charDis;
     @BindView(R.id.tv_charAdvice)
     TextView tv_charAdvice;
+    @BindView(R.id.tv_plus)
+            TextView tv_plus;
+    @BindView(R.id.layer_char_02)
+    LinearLayout layer_char_02;
 
     String character = "";
 
@@ -196,8 +202,8 @@ public class CharacterConfirmActivity extends BaseActivity {
 
 
         //add
-         String personality1 = result.personality1;
-         String personality2 = result.personality2;
+         String personality1 = result.personality1+"";
+         String personality2 = result.personality2+"";
          String personality_title1 = result.personality_title1;
          String personality_title2 = result.personality_title2;
          String name = result.name;
@@ -211,9 +217,21 @@ public class CharacterConfirmActivity extends BaseActivity {
          String job_env2 = result.job_env2;
 
         tv_char_01.setText(personality1);
-        tv_char_02.setText(personality2);
         tv_charText_01.setText(personality_title1);
-        tv_charText_02.setText(personality_title2);
+
+         if(personality2.equals("")){
+             tv_plus.setVisibility(View.GONE);
+             layer_char_02.setVisibility(View.GONE);
+             tv_char_02.setVisibility(View.GONE);
+
+         }else{
+             tv_plus.setVisibility(View.VISIBLE);
+             layer_char_02.setVisibility(View.VISIBLE);
+             tv_char_02.setText(personality2);
+             tv_charText_02.setText(personality_title2);
+         }
+
+
         tv_charType_01.setText(name);
         tv_charFact_01.setText(factor);
         tv_charInfo.setText(personality_char);

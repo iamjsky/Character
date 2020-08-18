@@ -128,6 +128,7 @@
                                 android:orientation="horizontal">
 
                                 <LinearLayout
+                                    android:id="@+id/layer_char_01"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
@@ -153,26 +154,26 @@
                                         android:layout_height="wrap_content" />
 
                                 </LinearLayout>
+                                <TextView
 
+                                    android:id="@+id/tv_plus"
+                                    android:layout_margin="@dimen/_10sdp"
+                                    android:textColor="#545454"
+                                    android:textSize="@dimen/_20sdp"
+                                    android:text="+"
+                                    android:fontFamily="@font/jalnan_n"
+                                    android:gravity="center"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
                                 <LinearLayout
+                                    android:id="@+id/layer_char_02"
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:gravity="center"
-                                    android:orientation="horizontal">
-                                    <TextView
-                                        android:layout_margin="@dimen/_10sdp"
-                                        android:textColor="#545454"
-                                        android:textSize="@dimen/_20sdp"
-                                        android:text="+"
-                                        android:fontFamily="@font/jalnan_n"
-                                        android:gravity="center"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"/>
-                                    <LinearLayout
-                                        android:orientation="vertical"
-                                        android:layout_width="0dp"
-                                        android:layout_height="wrap_content">
+                                    android:orientation="vertical">
+
+
                                         <TextView
                                             android:id="@+id/tv_charText_02"
                                             android:layout_width="wrap_content"
@@ -191,7 +192,6 @@
                                             android:layout_width="@dimen/_100sdp"
                                             android:layout_height="wrap_content" />
 
-                                    </LinearLayout>
 
 
                                 </LinearLayout>
