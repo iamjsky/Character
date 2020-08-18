@@ -413,4 +413,7 @@
         <item>@layout/item_intro_page_02</item>
         <item>@layout/item_intro_page_03</item>
     </integer-array>
+
+
+
 </resources>

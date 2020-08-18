@@ -1,10 +1,13 @@
 package com.character.microblogapp.ui.page.character;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
+import android.util.Log;
 import android.widget.TextView;
 
 import com.character.microblogapp.R;
@@ -23,9 +26,30 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
+
 public class CharacterConfirmActivity extends BaseActivity {
+
+    @BindView(R.id.tv_char_01)
+    TextView tv_char_01;
+    @BindView(R.id.tv_char_02)
+    TextView tv_char_02;
+    @BindView(R.id.tv_charText_01)
+    TextView tv_charText_01;
+    @BindView(R.id.tv_charText_02)
+    TextView tv_charText_02;
+    @BindView(R.id.tv_charType_01)
+    TextView tv_charType_01;
+    @BindView(R.id.tv_charFact_01)
+    TextView tv_charFact_01;
+    @BindView(R.id.tv_charInfo)
+    TextView tv_charInfo;
+    @BindView(R.id.tv_charDis)
+    TextView tv_charDis;
+    @BindView(R.id.tv_charAdvice)
+    TextView tv_charAdvice;
 
     String character = "";
 
@@ -34,7 +58,7 @@ public class CharacterConfirmActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ViewDataBinding binding = DataBindingUtil.setContentView(this,R.layout.activity_character_confirm);
+        ViewDataBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_character_confirm);
 
         character = getIntent().getStringExtra("result");
         saveCharacterInfo();
@@ -86,6 +110,7 @@ public class CharacterConfirmActivity extends BaseActivity {
         }
 
         txv_desc.setText(String.format("%s", result.job_env));
+
     }
 
     @BindView(R.id.txv_character)
@@ -105,6 +130,7 @@ public class CharacterConfirmActivity extends BaseActivity {
                     public void onSuccess(MCharacterInfo response) {
                         hideProgress();
                         result = response.character;
+                        Log.e("char_debug", "result : " + result);
                         setUI();
                     }
 
@@ -116,19 +142,20 @@ public class CharacterConfirmActivity extends BaseActivity {
                 });
     }
 
+
     void setUI() {
         if (result == null) {
             return;
         }
 
         String w_type = result.type;
-        if(w_type.equals("D=")){
+        if (w_type.equals("D=")) {
             w_type = "D";
-        } else if(w_type.equals("I=")){
+        } else if (w_type.equals("I=")) {
             w_type = "I";
-        } else if(w_type.equals("S=")){
+        } else if (w_type.equals("S=")) {
             w_type = "S";
-        } else if(w_type.equals("C=")){
+        } else if (w_type.equals("C=")) {
             w_type = "C";
         }
 
@@ -137,19 +164,25 @@ public class CharacterConfirmActivity extends BaseActivity {
 
         for (int ind = 0; ind < w_type.length(); ind++) {
             String item = w_type.substring(ind, ind + 1);
+            Log.e("char_debug", "item : " + item);
             switch (item) {
                 case "D":
                 case "d":
+
                     sb.setSpan(new ForegroundColorSpan(getColor(R.color.color_d)), ind, ind + 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 //                    summary.add(getString(R.string.character_d));
                     break;
                 case "I":
                 case "i":
+
+
                     sb.setSpan(new ForegroundColorSpan(getColor(R.color.color_i)), ind, ind + 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 //                    summary.add(getString(R.string.character_i));
                     break;
                 case "C":
                 case "c":
+
+
                     sb.setSpan(new ForegroundColorSpan(getColor(R.color.color_c)), ind, ind + 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 //                    summary.add(getString(R.string.character_c));
                     break;
@@ -161,10 +194,43 @@ public class CharacterConfirmActivity extends BaseActivity {
             }
         }
 
+
+        //add
+         String personality1 = result.personality1;
+         String personality2 = result.personality2;
+         String personality_title1 = result.personality_title1;
+         String personality_title2 = result.personality_title2;
+         String name = result.name;
+         String factor = result.factor;
+         String keyword1 = result.keyword1;
+         String keyword2 = result.keyword2;
+         String personality_char = result.personality_char;
+         String weakness = result.weakness;
+         String advice = result.advice;
+         String job_env1 = result.job_env1;
+         String job_env2 = result.job_env2;
+
+        tv_char_01.setText(personality1);
+        tv_char_02.setText(personality2);
+        tv_charText_01.setText(personality_title1);
+        tv_charText_02.setText(personality_title2);
+        tv_charType_01.setText(name);
+        tv_charFact_01.setText(factor);
+        tv_charInfo.setText(personality_char);
+        tv_charDis.setText(weakness);
+        tv_charAdvice.setText(advice);
+
+
+
+
         txv_character.setText(sb);
+
+
 //        txv_character_ko.setText(TextUtils.join("\n", summary));
         txv_character_ko.setText(result.name);
+
         txv_desc.setText(result.desc);
+
     }
 
     void doLogin() {
