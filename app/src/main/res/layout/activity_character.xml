@@ -30,7 +30,7 @@
                 android:paddingRight="@dimen/_14sdp"
                 android:paddingLeft="@dimen/_14sdp"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_40sdp"
+                android:layout_height="@dimen/_45sdp"
                 android:gravity="center|left"
                 android:orientation="horizontal">
 

@@ -48,6 +48,7 @@
             />
     </LinearLayout>
     <TextView
+        android:layout_marginTop="@dimen/_4sdp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="@dimen/_14sdp"
@@ -69,6 +70,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
             <ImageView
+                android:adjustViewBounds="true"
                 android:layout_marginRight="@dimen/_5sdp"
                 android:src="@drawable/first_02_img_photo"
                 android:layout_width="@dimen/_34sdp"
@@ -194,6 +196,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <ImageView
+                    android:adjustViewBounds="true"
                     android:layout_marginRight="@dimen/_5sdp"
                     android:src="@drawable/first_02_img_photo"
                     android:layout_width="@dimen/_34sdp"

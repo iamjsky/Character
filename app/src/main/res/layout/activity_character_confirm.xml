@@ -2,6 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
     <ScrollView
 
         android:id="@+id/sv_charTestResult"
@@ -9,174 +10,193 @@
         android:layout_height="match_parent"
 
         android:visibility="visible">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#F6F6F6"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        tools:context=".ui.page.character.CharacterConfirmActivity">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="#f6f6f6"
-            android:orientation="horizontal"
-            android:visibility="visible">
+            android:layout_height="wrap_content"
+            android:background="#F6F6F6"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            tools:context=".ui.page.character.CharacterConfirmActivity">
 
-            <ImageView
-
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_122sdp"
-                android:background="@drawable/bg_img" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_40sdp"
-                android:gravity="center|left"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="#f6f6f6"
                 android:orientation="horizontal"
-                android:paddingLeft="@dimen/_14sdp"
-                android:paddingRight="@dimen/_14sdp">
+                android:visibility="visible">
 
                 <ImageView
-                    android:id="@+id/rlt_back"
-                    android:layout_width="@dimen/_16sdp"
-                    android:layout_height="@dimen/_16sdp"
 
-                    android:layout_marginRight="@dimen/_10sdp"
-                    android:src="@drawable/comm_ico_back" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/nanum_square_b"
-                    android:text="DISC 성격테스트 결과"
-                    android:textColor="@color/color_white"
-                    android:textSize="@dimen/_14sdp" />
-
-            </LinearLayout>
-
-
-
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_122sdp"
+                    android:background="@drawable/bg_img" />
 
                 <LinearLayout
-                    android:layout_marginLeft="@dimen/_6sdp"
-                    android:layout_marginRight="@dimen/_6sdp"
-                    android:layout_marginTop="@dimen/_53sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:gravity="center|left"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/_14sdp"
+                    android:paddingRight="@dimen/_14sdp">
+
+                    <ImageView
+                        android:id="@+id/rlt_back"
+                        android:layout_width="@dimen/_16sdp"
+                        android:layout_height="@dimen/_16sdp"
+
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:src="@drawable/comm_ico_back" />
+
+                    <TextView
+                        android:id="@+id/tv_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nanum_square_b"
+                        android:text="DISC 성격테스트 결과"
+                        android:textColor="@color/color_white"
+                        android:textSize="@dimen/_14sdp" />
+
+                </LinearLayout>
+
+                <!--disc 결과-->
+                <LinearLayout
+                    android:id="@+id/layout_discResult"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/bg_rounded_pink_panel_01"
-                    android:orientation="vertical">
+                    android:layout_marginLeft="@dimen/_4sdp"
+                    android:layout_marginTop="@dimen/_52sdp"
+                    android:layout_marginRight="@dimen/_4sdp"
+                    android:orientation="vertical"
+                    android:visibility="visible">
 
-                    <RelativeLayout
+                    <LinearLayout
 
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
 
+                        android:background="@drawable/bg_rounded_pink_panel_01"
+                        android:orientation="vertical">
 
-<!--<ImageView-->
-<!--    android:background="@drawable/bg_rounded_white_panel_01"-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="@dimen/_400sdp"/>-->
+                        <RelativeLayout
 
-                        <LinearLayout
-                            android:paddingTop="@dimen/_30sdp"
-                            android:paddingRight="@dimen/_40sdp"
-                            android:paddingLeft="@dimen/_40sdp"
-                            android:paddingBottom="@dimen/_140sdp"
-                            android:background="@drawable/bg_rounded_white_panel_02"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                          >
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/iv_bg"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_300sdp"
+                                android:background="@drawable/bg_rounded_white_panel_02" />
 
                             <LinearLayout
+
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
 
-                                android:gravity="center"
-                                android:orientation="horizontal">
+                                android:orientation="vertical"
 
-                                <TextView
-                                    android:id="@+id/tv_char_01"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/jalnan_n"
-                                    android:gravity="center"
-                                    android:text="I"
-                                    android:textColor="@color/char_i_color"
-                                    android:textSize="@dimen/_26sdp" />
-                                <TextView
-                                    android:id="@+id/tv_char_02"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/jalnan_n"
-                                    android:gravity="center"
-                                    android:text="c"
-                                    android:textColor="@color/char_i_color"
-                                    android:textSize="@dimen/_26sdp" />
-
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_marginTop="@dimen/_20sdp"
-                                android:gravity="center"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
+                                android:paddingLeft="@dimen/_40sdp"
+                                android:paddingTop="@dimen/_30sdp"
+                                android:paddingRight="@dimen/_40sdp"
+                                android:paddingBottom="@dimen/_38sdp">
 
                                 <LinearLayout
-                                    android:id="@+id/layer_char_01"
-                                    android:layout_width="0dp"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_weight="1"
+
                                     android:gravity="center"
-                                    android:orientation="vertical">
+                                    android:orientation="horizontal">
 
                                     <TextView
-                                        android:id="@+id/tv_charText_01"
+                                        android:id="@+id/tv_char_01"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:fontFamily="@font/jalnan_n"
                                         android:gravity="center"
-                                        android:text="쌉관종"
-                                        android:textColor="#545454"
-                                        android:textSize="@dimen/_14sdp" />
+                                        android:text="I"
+                                        android:textColor="@color/color_char_gray"
+                                        android:textSize="@dimen/_26sdp" />
 
-                                    <ImageView
-                                        android:layout_marginTop="@dimen/_14sdp"
-                                        android:id="@+id/iv_charImg_01"
-                                        android:adjustViewBounds="true"
-                                        android:src="@drawable/ico_menu_home"
-                                        android:layout_width="@dimen/_100sdp"
-                                        android:layout_height="wrap_content" />
+                                    <TextView
+                                        android:id="@+id/tv_char_02"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/jalnan_n"
+                                        android:gravity="center"
+                                        android:text="C"
+                                        android:textColor="@color/color_char_gray"
+                                        android:textSize="@dimen/_26sdp" />
+
 
                                 </LinearLayout>
-                                <TextView
 
-                                    android:id="@+id/tv_plus"
-                                    android:layout_margin="@dimen/_10sdp"
-                                    android:textColor="#545454"
-                                    android:textSize="@dimen/_20sdp"
-                                    android:text="+"
-                                    android:fontFamily="@font/jalnan_n"
-                                    android:gravity="center"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"/>
                                 <LinearLayout
-                                    android:id="@+id/layer_char_02"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:gravity="center"
-                                    android:orientation="vertical">
+                                    android:id="@+id/layout_char"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_18sdp"
+
+                                    android:orientation="horizontal">
+
+                                    <LinearLayout
+                                        android:id="@+id/layout_char_01"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:id="@+id/tv_charText_01"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/jalnan_n"
+                                            android:gravity="center"
+                                            android:text="쌉관종"
+                                            android:textColor="#545454"
+                                            android:textSize="@dimen/_14sdp" />
+
+                                        <ImageView
+                                            android:id="@+id/iv_charImg_01"
+                                            android:layout_width="@dimen/_90sdp"
+                                            android:layout_height="@dimen/_90sdp"
+                                            android:layout_marginTop="@dimen/_15sdp"
+                                            android:adjustViewBounds="true"
+                                            android:src="@drawable/ico_menu_home" />
+
+                                    </LinearLayout>
+
+
+                                    <TextView
+                                        android:id="@+id/tv_plus"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginLeft="@dimen/_10sdp"
+
+                                        android:layout_marginTop="@dimen/_10sdp"
+                                        android:layout_marginRight="@dimen/_10sdp"
+                                        android:fontFamily="@font/jalnan_n"
+                                        android:gravity="center"
+                                        android:text="+"
+                                        android:textColor="#545454"
+                                        android:textSize="@dimen/_20sdp" />
+
+                                    <LinearLayout
+
+                                        android:id="@+id/layout_char_02"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:orientation="vertical">
 
 
                                         <TextView
                                             android:id="@+id/tv_charText_02"
-                                            android:layout_width="wrap_content"
+                                            android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
                                             android:fontFamily="@font/jalnan_n"
                                             android:gravity="center"
@@ -185,456 +205,678 @@
                                             android:textSize="@dimen/_14sdp" />
 
                                         <ImageView
-                                            android:layout_marginTop="@dimen/_14sdp"
                                             android:id="@+id/iv_charImg_02"
+                                            android:layout_width="@dimen/_90sdp"
+                                            android:layout_height="@dimen/_90sdp"
+                                            android:layout_marginTop="@dimen/_15sdp"
                                             android:adjustViewBounds="true"
-                                            android:src="@drawable/ico_menu_home"
-                                            android:layout_width="@dimen/_100sdp"
-                                            android:layout_height="wrap_content" />
+                                            android:src="@drawable/ico_menu_home" />
 
+
+                                    </LinearLayout>
 
 
                                 </LinearLayout>
-
-                            </LinearLayout>
-                        </LinearLayout>
-                        <LinearLayout
-                            android:paddingRight="@dimen/_40sdp"
-                            android:paddingLeft="@dimen/_40sdp"
-                            android:paddingBottom="@dimen/_40sdp"
-
-                            android:layout_marginTop="@dimen/_250sdp"
-                            android:orientation="vertical"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <LinearLayout
-
-                                android:orientation="vertical"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
 
                                 <LinearLayout
-                                    android:paddingLeft="@dimen/_14sdp"
-                                    android:paddingRight="@dimen/_14sdp"
-                                    android:paddingTop="@dimen/_10sdp"
-                                    android:paddingBottom="@dimen/_10sdp"
-                                    android:background="@drawable/bg_rounded_09"
-                                    android:orientation="vertical"
+
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content">
+                                    android:layout_height="wrap_content"
+
+                                    android:layout_marginTop="@dimen/_20sdp"
+                                    android:orientation="vertical">
 
                                     <LinearLayout
-                                        android:orientation="horizontal"
+
                                         android:layout_width="match_parent"
-                                        android:layout_height="wrap_content">
-                                        <TextView
-                                            android:layout_marginRight="@dimen/_2sdp"
-                                            android:textColor="#000000"
-                                            android:textSize="@dimen/_12sdp"
-                                            android:fontFamily="@font/nanum_square_r"
-                                            android:text="성격유형 :"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"/>
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
 
-                                        <TextView
-                                            android:id="@+id/tv_charType_01"
-                                            android:ellipsize="end"
-                                            android:singleLine="true"
-                                            android:layout_weight="1"
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:background="@drawable/bg_rounded_09"
+                                            android:orientation="vertical"
+                                            android:paddingLeft="@dimen/_10sdp"
+                                            android:paddingTop="@dimen/_10sdp"
+                                            android:paddingRight="@dimen/_10sdp"
+                                            android:paddingBottom="@dimen/_5sdp">
 
-                                            android:textColor="#000000"
-                                            android:textSize="@dimen/_12sdp"
-                                            android:fontFamily="@font/nanum_square_b"
-                                            android:text="사교형 (I) + 안정형 (S)"
-                                            android:layout_width="0dp"
-                                            android:layout_height="wrap_content"/>
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:orientation="horizontal">
+
+                                                <TextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginRight="@dimen/_2sdp"
+                                                    android:fontFamily="@font/nanum_square_r"
+                                                    android:text="성격유형 :"
+                                                    android:textColor="#000000"
+                                                    android:textSize="@dimen/_12sdp" />
+
+                                                <TextView
+                                                    android:id="@+id/tv_charType_01"
+                                                    android:layout_width="0dp"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_weight="1"
+
+                                                    android:ellipsize="end"
+                                                    android:fontFamily="@font/nanum_square_b"
+                                                    android:singleLine="true"
+                                                    android:text="사교형 (I) + 안정형 (S)"
+                                                    android:textColor="#000000"
+                                                    android:textSize="@dimen/_12sdp" />
+
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="@dimen/_2sdp"
+                                                android:orientation="horizontal">
+
+                                                <TextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginRight="@dimen/_2sdp"
+                                                    android:fontFamily="@font/nanum_square_r"
+                                                    android:text="동기요인 :"
+                                                    android:textColor="#000000"
+                                                    android:textSize="@dimen/_10sdp" />
+
+                                                <TextView
+                                                    android:id="@+id/tv_charFact_01"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:fontFamily="@font/nanum_square_b"
+                                                    android:text="사회적 인정"
+                                                    android:textColor="#000000"
+                                                    android:textSize="@dimen/_10sdp" />
+
+
+                                            </LinearLayout>
+
+                                            <com.nex3z.flowlayout.FlowLayout
+
+                                                android:id="@+id/layout_charTagArea_01"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="@dimen/_5sdp"
+                                                android:gravity="center|left"
+                                                android:orientation="vertical">
+
+
+                                            </com.nex3z.flowlayout.FlowLayout>
+
+                                            <com.nex3z.flowlayout.FlowLayout
+                                                android:visibility="gone"
+                                                android:id="@+id/layout_charTagArea_02"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="@dimen/_5sdp"
+                                                android:gravity="center|left"
+                                                android:orientation="vertical">
+
+                                                <TextView
+                                                    android:layout_marginBottom="@dimen/_4sdp"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginRight="@dimen/_4sdp"
+                                                    android:background="@drawable/bg_rounded_char_02"
+                                                    android:paddingLeft="@dimen/_8sdp"
+                                                    android:paddingTop="@dimen/_2sdp"
+                                                    android:paddingRight="@dimen/_8sdp"
+                                                    android:paddingBottom="@dimen/_2sdp"
+                                                    android:text="안정적"
+                                                    android:textColor="@color/color_white"
+                                                    android:textSize="@dimen/_9sdp" />
+
+                                                <TextView
+                                                    android:layout_marginBottom="@dimen/_4sdp"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginRight="@dimen/_4sdp"
+                                                    android:background="@drawable/bg_rounded_char_02"
+                                                    android:paddingLeft="@dimen/_8sdp"
+                                                    android:paddingTop="@dimen/_2sdp"
+                                                    android:paddingRight="@dimen/_8sdp"
+                                                    android:paddingBottom="@dimen/_2sdp"
+                                                    android:text="안정적"
+                                                    android:textColor="@color/color_white"
+                                                    android:textSize="@dimen/_9sdp" />
+                                                <TextView
+                                                    android:layout_marginBottom="@dimen/_4sdp"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginRight="@dimen/_4sdp"
+                                                    android:background="@drawable/bg_rounded_char_02"
+                                                    android:paddingLeft="@dimen/_8sdp"
+                                                    android:paddingTop="@dimen/_2sdp"
+                                                    android:paddingRight="@dimen/_8sdp"
+                                                    android:paddingBottom="@dimen/_2sdp"
+                                                    android:text="안정적"
+                                                    android:textColor="@color/color_white"
+                                                    android:textSize="@dimen/_9sdp" />
+                                                <TextView
+                                                    android:layout_marginBottom="@dimen/_4sdp"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginRight="@dimen/_4sdp"
+                                                    android:background="@drawable/bg_rounded_char_02"
+                                                    android:paddingLeft="@dimen/_8sdp"
+                                                    android:paddingTop="@dimen/_2sdp"
+                                                    android:paddingRight="@dimen/_8sdp"
+                                                    android:paddingBottom="@dimen/_2sdp"
+                                                    android:text="안정적"
+                                                    android:textColor="@color/color_white"
+                                                    android:textSize="@dimen/_9sdp" />
+                                                <TextView
+                                                    android:layout_marginBottom="@dimen/_4sdp"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginRight="@dimen/_4sdp"
+                                                    android:background="@drawable/bg_rounded_char_02"
+                                                    android:paddingLeft="@dimen/_8sdp"
+                                                    android:paddingTop="@dimen/_2sdp"
+                                                    android:paddingRight="@dimen/_8sdp"
+                                                    android:paddingBottom="@dimen/_2sdp"
+                                                    android:text="안정적"
+                                                    android:textColor="@color/color_white"
+                                                    android:textSize="@dimen/_9sdp" />
+                                                <TextView
+                                                    android:layout_marginBottom="@dimen/_4sdp"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginRight="@dimen/_4sdp"
+                                                    android:background="@drawable/bg_rounded_char_02"
+                                                    android:paddingLeft="@dimen/_8sdp"
+                                                    android:paddingTop="@dimen/_2sdp"
+                                                    android:paddingRight="@dimen/_8sdp"
+                                                    android:paddingBottom="@dimen/_2sdp"
+                                                    android:text="안정적"
+                                                    android:textColor="@color/color_white"
+                                                    android:textSize="@dimen/_9sdp" />
+                                            </com.nex3z.flowlayout.FlowLayout>
+                                        </LinearLayout>
+
 
                                     </LinearLayout>
 
-                                    <LinearLayout
-                                        android:layout_marginTop="@dimen/_2sdp"
-                                        android:orientation="horizontal"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content">
-                                        <TextView
-                                            android:layout_marginRight="@dimen/_2sdp"
-                                            android:textColor="#000000"
-                                            android:textSize="@dimen/_10sdp"
-                                            android:fontFamily="@font/nanum_square_r"
-                                            android:text="동기요인 :"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"/>
 
-                                        <TextView
-                                            android:id="@+id/tv_charFact_01"
-                                            android:textColor="#000000"
-                                            android:textSize="@dimen/_10sdp"
-                                            android:fontFamily="@font/nanum_square_b"
-                                            android:text="사회적 인정"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"/>
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/_24sdp"
+                                        android:fontFamily="@font/nanum_square_r"
+                                        android:text="성격특징"
+                                        android:textColor="#ff056a"
+                                        android:textSize="@dimen/_14sdp" />
 
-
-
-                                    </LinearLayout>
-                                    <LinearLayout
-                                        android:layout_marginTop="@dimen/_5sdp"
-                                        android:gravity="center|left"
-                                        android:id="@+id/layout_charTagArea_01"
-                                        android:orientation="horizontal"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content">
-                                        <TextView
-                                            android:layout_marginRight="@dimen/_4sdp"
-                                            android:textSize="@dimen/_10sdp"
-                                            android:textColor="@color/color_white"
-                                            android:text="낙천적"
-                                            android:background="@drawable/bg_rounded_char_01"
-                                            android:paddingTop="@dimen/_2sdp"
-                                            android:paddingBottom="@dimen/_2sdp"
-                                            android:paddingLeft="@dimen/_8sdp"
-                                            android:paddingRight="@dimen/_8sdp"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"/>
-                                        <TextView
-                                            android:layout_marginRight="@dimen/_4sdp"
-                                            android:textSize="@dimen/_10sdp"
-                                            android:textColor="@color/color_white"
-                                            android:text="낙천적"
-                                            android:background="@drawable/bg_rounded_char_01"
-                                            android:paddingTop="@dimen/_2sdp"
-                                            android:paddingBottom="@dimen/_2sdp"
-                                            android:paddingLeft="@dimen/_8sdp"
-                                            android:paddingRight="@dimen/_8sdp"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"/>
-                                        <TextView
-                                            android:layout_marginRight="@dimen/_4sdp"
-                                            android:textSize="@dimen/_10sdp"
-                                            android:textColor="@color/color_white"
-                                            android:text="낙천적"
-                                            android:background="@drawable/bg_rounded_char_01"
-                                            android:paddingTop="@dimen/_2sdp"
-                                            android:paddingBottom="@dimen/_2sdp"
-                                            android:paddingLeft="@dimen/_8sdp"
-                                            android:paddingRight="@dimen/_8sdp"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"/>
-                                        <TextView
-                                            android:layout_marginRight="@dimen/_4sdp"
-                                            android:textSize="@dimen/_10sdp"
-                                            android:textColor="@color/color_white"
-                                            android:text="낙천적"
-                                            android:background="@drawable/bg_rounded_char_01"
-                                            android:paddingTop="@dimen/_2sdp"
-                                            android:paddingBottom="@dimen/_2sdp"
-                                            android:paddingLeft="@dimen/_8sdp"
-                                            android:paddingRight="@dimen/_8sdp"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"/>
-
-                                    </LinearLayout>
-                                    <LinearLayout
-                                        android:layout_marginTop="@dimen/_5sdp"
-                                        android:gravity="center|left"
-                                        android:id="@+id/layout_charTagArea_02"
-                                        android:orientation="horizontal"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content">
-                                        <TextView
-                                            android:layout_marginRight="@dimen/_4sdp"
-                                            android:textSize="@dimen/_10sdp"
-                                            android:textColor="@color/color_white"
-                                            android:text="안정적"
-                                            android:background="@drawable/bg_rounded_char_02"
-                                            android:paddingTop="@dimen/_2sdp"
-                                            android:paddingBottom="@dimen/_2sdp"
-                                            android:paddingLeft="@dimen/_8sdp"
-                                            android:paddingRight="@dimen/_8sdp"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"/>
-                                        <TextView
-                                            android:layout_marginRight="@dimen/_4sdp"
-                                            android:textSize="@dimen/_10sdp"
-                                            android:textColor="@color/color_white"
-                                            android:text="안정적"
-                                            android:background="@drawable/bg_rounded_char_02"
-                                            android:paddingTop="@dimen/_2sdp"
-                                            android:paddingBottom="@dimen/_2sdp"
-                                            android:paddingLeft="@dimen/_8sdp"
-                                            android:paddingRight="@dimen/_8sdp"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"/>
-                                        <TextView
-                                            android:textSize="@dimen/_10sdp"
-                                            android:textColor="@color/color_white"
-                                            android:text="안정적"
-                                            android:background="@drawable/bg_rounded_char_02"
-                                            android:paddingTop="@dimen/_2sdp"
-                                            android:paddingBottom="@dimen/_2sdp"
-                                            android:paddingLeft="@dimen/_8sdp"
-                                            android:paddingRight="@dimen/_8sdp"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"/>
-                                    </LinearLayout>
-                                </LinearLayout>
-
-
-                            </LinearLayout>
-
-
-
-                                <TextView
-                                    android:layout_marginTop="@dimen/_24sdp"
-                                    android:textColor="#ff056a"
-                                    android:textSize="@dimen/_14sdp"
-                                    android:fontFamily="@font/nanum_square_r"
-                                    android:text="성격특징"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"/>
-                            <TextView
-                                android:id="@+id/tv_charInfo"
-                                android:lineSpacingExtra="@dimen/_2sdp"
-                                android:layout_marginTop="@dimen/_10sdp"
-                                android:textColor="#000000"
-                                android:textSize="@dimen/_10sdp"
-                                android:fontFamily="@font/nanum_square_r"
-                                android:text="
+                                    <TextView
+                                        android:id="@+id/tv_charInfo"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/_10sdp"
+                                        android:fontFamily="@font/nanum_square_r"
+                                        android:lineSpacingExtra="@dimen/_2sdp"
+                                        android:text="
 - IS는 사교형과 안정형의 결합으로 따뜻하고 사교적이며 다정하다.\n\n
 - 온화하며 동정심과 이해심이 많다는 인상을 준다.\n\n
 - 다른 사람을 위한 연민의 정이 있어서 그들과 돈독하고 지속적인 관계를 쉽고 빠르게 맺을 수 있다. 왜? 상대는 당신이 재미있는 동시에 편안하고 따뜻하다고 느끼기 때문이다.\n\n
 - 호감형이며 호불호가 잘 갈리지 않는 인간관계에 유리한 성격\n\n
 - 적극적으로 남을 돕고 타고난 스승이자 상담사이다.\n\n
 - 대표적인 연예인은 장도연"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"/>
-                            <TextView
-                                android:layout_marginTop="@dimen/_16sdp"
-                                android:textColor="#545454"
-                                android:textSize="@dimen/_14sdp"
-                                android:fontFamily="@font/nanum_square_r"
-                                android:text="단점"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"/>
-                            <TextView
-                                android:id="@+id/tv_charDis"
-                                android:lineSpacingExtra="@dimen/_2sdp"
-                                android:layout_marginTop="@dimen/_10sdp"
-                                android:textColor="#000000"
-                                android:textSize="@dimen/_10sdp"
-                                android:fontFamily="@font/nanum_square_r"
-                                android:text="
+                                        android:textColor="#000000"
+                                        android:textSize="@dimen/_10sdp" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/_16sdp"
+                                        android:fontFamily="@font/nanum_square_r"
+                                        android:text="단점"
+                                        android:textColor="#545454"
+                                        android:textSize="@dimen/_14sdp" />
+
+                                    <TextView
+                                        android:id="@+id/tv_charDis"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/_10sdp"
+                                        android:fontFamily="@font/nanum_square_r"
+                                        android:lineSpacingExtra="@dimen/_2sdp"
+                                        android:text="
 - 하지만 사람들의 가장 좋은 면을 보는 천성적인 성향 때문에 타인의 의도를 잘못 읽고 남을 지나치게 신뢰할 수 있다. 또한 갈등을 싫어해서 시간이 지날수록
   악화 되기만 하는 문제도 무시할 수 있다.\n\n
 - 결과적으로는 관계가 틀어졌을 때 상처를 받거나 배신감을 느낀다."
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"/>
+                                        android:textColor="#000000"
+                                        android:textSize="@dimen/_10sdp" />
 
-                            <LinearLayout
-                                android:layout_marginTop="@dimen/_16sdp"
-                                android:orientation="vertical"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/_16sdp"
+                                        android:orientation="vertical">
 
-                                <LinearLayout
-                                    android:paddingLeft="@dimen/_12sdp"
-                                    android:paddingRight="@dimen/_12sdp"
-                                    android:paddingTop="@dimen/_14sdp"
-                                    android:paddingBottom="@dimen/_14sdp"
-                                    android:background="@drawable/bg_rounded_09"
-                                    android:orientation="vertical"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content">
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:background="@drawable/bg_rounded_09"
+                                            android:orientation="vertical"
+                                            android:paddingLeft="@dimen/_12sdp"
+                                            android:paddingTop="@dimen/_14sdp"
+                                            android:paddingRight="@dimen/_12sdp"
+                                            android:paddingBottom="@dimen/_14sdp">
+
+                                            <TextView
+
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:fontFamily="@font/nanum_square_r"
+                                                android:text="조언"
+                                                android:textColor="#545454"
+                                                android:textSize="@dimen/_14sdp" />
+
+                                            <TextView
+                                                android:id="@+id/tv_charAdvice"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="@dimen/_14sdp"
+                                                android:layout_marginBottom="@dimen/_4sdp"
+                                                android:fontFamily="@font/nanum_square_r"
+                                                android:lineSpacingExtra="@dimen/_2sdp"
+                                                android:text="부드러움도 좋지만 때로는 확신을 줄 수 있는 명확함이 필요하다. 너무 퍼주거나 관심을 많이 주면 내가 피곤해짐을 기억하자."
+                                                android:textColor="#000000"
+                                                android:textSize="@dimen/_10sdp" />
+
+
+                                        </LinearLayout>
+
+
+                                    </LinearLayout>
+
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/_20sdp"
+                                        android:gravity="center"
+                                        android:orientation="horizontal">
 
                                         <TextView
-
-                                            android:textColor="#545454"
-                                            android:textSize="@dimen/_14sdp"
+                                            android:gravity="center"
+                                            android:id="@+id/tv_job"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginRight="@dimen/_10sdp"
+                                            android:layout_weight="1"
+                                            android:background="@drawable/bg_rounded_11"
                                             android:fontFamily="@font/nanum_square_r"
-                                            android:text="조언"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"/>
-                                    <TextView
-                                        android:id="@+id/tv_charAdvice"
-                                        android:lineSpacingExtra="@dimen/_2sdp"
-                                        android:layout_marginTop="@dimen/_14sdp"
-                                        android:layout_marginBottom="@dimen/_4sdp"
-                                        android:textColor="#000000"
-                                        android:textSize="@dimen/_10sdp"
-                                        android:fontFamily="@font/nanum_square_r"
-                                        android:text="부드러움도 좋지만 때로는 확신을 줄 수 있는 명확함이 필요하다. 너무 퍼주거나 관심을 많이 주면 내가 피곤해짐을 기억하자."
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"/>
 
+                                            android:paddingTop="@dimen/_8sdp"
 
+                                            android:paddingBottom="@dimen/_8sdp"
+                                            android:text="선호 직업 정보"
+                                            android:textColor="@color/char_main_color"
+                                            android:textSize="@dimen/_12sdp" />
+
+                                        <TextView
+                                            android:gravity="center"
+                                            android:id="@+id/tv_office"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:background="@drawable/bg_rounded_11"
+                                            android:fontFamily="@font/nanum_square_r"
+
+                                            android:paddingTop="@dimen/_8sdp"
+
+                                            android:paddingBottom="@dimen/_8sdp"
+                                            android:text="선호 직무 환경"
+                                            android:textColor="@color/char_main_color"
+                                            android:textSize="@dimen/_12sdp" />
+
+                                    </LinearLayout>
 
 
                                 </LinearLayout>
-
-
                             </LinearLayout>
+
+
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_24sdp"
+                        android:layout_marginBottom="@dimen/_30sdp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/btn_share"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/_24sdp"
+                            android:background="@drawable/bg_rounded_10"
+                            android:fontFamily="@font/nanum_square_r"
+                            android:paddingLeft="@dimen/_24sdp"
+                            android:paddingTop="@dimen/_10sdp"
+                            android:paddingRight="@dimen/_24sdp"
+                            android:paddingBottom="@dimen/_10sdp"
+                            android:text="공유하기"
+                            android:textColor="@color/char_main_color"
+                            android:textSize="@dimen/_12sdp" />
+
+                        <TextView
+                            android:id="@+id/btn_again_test"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_rounded_03"
+                            android:fontFamily="@font/nanum_square_b"
+                            android:paddingLeft="@dimen/_24sdp"
+                            android:paddingTop="@dimen/_10sdp"
+                            android:paddingRight="@dimen/_24sdp"
+                            android:paddingBottom="@dimen/_10sdp"
+                            android:text="시작하기"
+                            android:textColor="@color/color_white"
+                            android:textSize="@dimen/_12sdp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!--선호직무환경-->
+                <LinearLayout
+                    android:id="@+id/layout_jobEnv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_4sdp"
+                    android:layout_marginTop="@dimen/_52sdp"
+                    android:layout_marginRight="@dimen/_4sdp"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/_6sdp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:id="@+id/layout_jobEnvList_01"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_rounded_white_panel_03"
+                        android:orientation="vertical"
+                        android:paddingLeft="@dimen/_34sdp"
+                        android:paddingTop="@dimen/_30sdp"
+                        android:paddingRight="@dimen/_34sdp"
+                        android:paddingBottom="@dimen/_30sdp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_char_03"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="@dimen/_5sdp"
+                                android:fontFamily="@font/jalnan_n"
+                                android:text="I"
+                                android:textColor="@color/color_char_gray"
+                                android:textSize="@dimen/_20sdp" />
+
+                            <TextView
+                                android:id="@+id/tv_charText_03"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/jalnan_n"
+                                android:text="사교형"
+                                android:textColor="@color/color_char_gray"
+                                android:textSize="@dimen/_20sdp" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_jobEnvList_01"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_14sdp"
+                            android:fontFamily="@font/nanum_square_r"
+                            android:lineSpacingExtra="@dimen/_15sdp"
+                            android:text="01. 열정적이고 빠른 관계형성\n02. 사회적 인정과 긍정적 피드백\n01. 열정적이고 빠른 관계형성\n01. 열정적이고 빠른 관계형성\n01. 열정적이고 빠른 관계형성"
+                            android:textColor="#000000"
+                            android:textSize="@dimen/_12sdp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layout_jobEnvList_02"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_rounded_white_panel_03"
+                        android:orientation="vertical"
+                        android:paddingLeft="@dimen/_34sdp"
+                        android:paddingTop="@dimen/_30sdp"
+                        android:paddingRight="@dimen/_34sdp"
+                        android:paddingBottom="@dimen/_30sdp"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_char_04"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="@dimen/_5sdp"
+                                android:fontFamily="@font/jalnan_n"
+                                android:text="S"
+                                android:textColor="@color/color_char_gray"
+                                android:textSize="@dimen/_20sdp" />
+
+                            <TextView
+                                android:id="@+id/tv_charText_04"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/jalnan_n"
+                                android:text="안정형"
+                                android:textColor="@color/color_char_gray"
+                                android:textSize="@dimen/_20sdp" />
+
                         </LinearLayout>
 
 
+                        <TextView
+                            android:id="@+id/tv_jobEnvList_02"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_14sdp"
+                            android:fontFamily="@font/nanum_square_r"
+                            android:lineSpacingExtra="@dimen/_15sdp"
+                            android:text="01. 열정적이고 빠른 관계형성\n02.사회적 인정과 긍정적 피드백\n01. 열정적이고 빠른 관계형성\n\n01. 열정적이고 빠른 관계형성\n\n01. 열정적이고 빠른 관계형성"
+                            android:textColor="#000000"
+                            android:textSize="@dimen/_12sdp" />
 
+                    </LinearLayout>
+                </LinearLayout>
 
-
-
-        </RelativeLayout>
-
-
-        <TextView
-            android:id="@+id/txv_character"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="27dp"
-            android:text="IS"
-            android:textColor="@color/color_black"
-            android:textSize="32sp"
-            android:textStyle="bold"
-            android:visibility="gone"
-            app:fontname="@{`NotoSansCJKkr-Bold.otf`}" />
-
-        <TextView
-            android:id="@+id/txv_character_ko"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:lineSpacingExtra="2dp"
-            android:textColor="#333333"
-            android:textSize="15sp"
-            android:visibility="gone"
-            app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:visibility="gone">
-
-            <ScrollView
-
-                android:id="@+id/svDetail"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="10dp"
-                android:visibility="gone">
-
-                <TextView
-                    android:id="@+id/txv_desc"
+                <!--선호 직업정보-->
+                <LinearLayout
+                    android:id="@+id/layout_job"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="3dp"
-                    android:lineSpacingExtra="6dp"
-                    android:textColor="#6a6262"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
-            </ScrollView>
+                    android:layout_marginLeft="@dimen/_4sdp"
+                    android:layout_marginTop="@dimen/_52sdp"
+                    android:layout_marginRight="@dimen/_4sdp"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/_6sdp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_rounded_white_panel_01"
+                        android:orientation="horizontal"
+                        android:paddingLeft="@dimen/_10sdp"
+                        android:paddingTop="@dimen/_30sdp"
+                        android:paddingRight="@dimen/_10sdp"
+                        android:paddingBottom="@dimen/_30sdp">
+
+                        <LinearLayout
+                            android:id="@+id/layout_jobList_01"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="top|center"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center|top"
+                                android:orientation="horizontal">
+
+                                <TextView
+
+                                    android:id="@+id/tv_char_05"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="@dimen/_5sdp"
+                                    android:fontFamily="@font/jalnan_n"
+                                    android:text="I"
+                                    android:textColor="@color/color_char_gray"
+                                    android:textSize="@dimen/_20sdp" />
+
+                                <TextView
+
+                                    android:id="@+id/tv_charText_05"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/jalnan_n"
+                                    android:text="사교형"
+                                    android:textColor="@color/color_char_gray"
+                                    android:textSize="@dimen/_20sdp" />
+
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/tv_jobList_01"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_20sdp"
+                                android:fontFamily="@font/nanum_square_r"
+                                android:gravity="center|top"
+                                android:lineSpacingExtra="@dimen/_12sdp"
+                                android:text="영화배우\n
+탤런트\n
+코미디언\n
+방송인\n
+사회자(MC)\n
+방송리포터\n
+영업사원\n
+연예오락산업\n
+마케팅, 홍보\n
+성직자(설교)\n
+연설가\n
+교사\n
+여행사\n
+웨딩 컨설턴트"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/_12sdp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/view_jobLine"
+                            android:layout_width="@dimen/_1sdp"
+                            android:layout_height="match_parent"
+                            android:background="#dddddd"
+
+                            android:visibility="gone" />
+
+                        <LinearLayout
+                            android:id="@+id/layout_jobList_02"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="top|center"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center|top"
+                                android:orientation="horizontal">
+
+                                <TextView
+
+                                    android:id="@+id/tv_char_06"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="@dimen/_5sdp"
+                                    android:fontFamily="@font/jalnan_n"
+                                    android:text="S"
+                                    android:textColor="@color/color_char_gray"
+                                    android:textSize="@dimen/_20sdp" />
+
+                                <TextView
+
+                                    android:id="@+id/tv_charText_06"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/jalnan_n"
+                                    android:text="안정형"
+                                    android:textColor="@color/color_char_gray"
+                                    android:textSize="@dimen/_20sdp" />
+
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/tv_jobList_02"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_20sdp"
+                                android:fontFamily="@font/nanum_square_r"
+                                android:gravity="center"
+                                android:lineSpacingExtra="@dimen/_12sdp"
+                                android:text="영화배우\n
+탤런트\n
+코미디언\n
+방송인\n
+사회자(MC)\n
+방송리포터\n
+영업사원\n
+연예오락산업\n
+마케팅, 홍보\n
+성직자(설교)\n
+연설가\n
+교사\n
+여행사\n
+웨딩 컨설턴트\n"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/_12sdp" />
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
 
         </LinearLayout>
-
-        <com.character.microblogapp.ui.widget.BaseTextView
-            android:id="@+id/tv_style"
-            android:layout_width="203dp"
-            android:layout_height="53dp"
-            android:layout_centerInParent="true"
-            android:background="@drawable/btn_bg_test_answer1"
-            android:paddingTop="12dp"
-            android:text="@string/like_style"
-            android:textAlignment="center"
-            android:textColor="@color/color_f24756"
-            android:textSize="15sp"
-            android:visibility="gone"
-            app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
-
-        <com.character.microblogapp.ui.widget.BaseTextView
-            android:id="@+id/tv_job"
-            android:layout_width="203dp"
-            android:layout_height="53dp"
-            android:layout_centerInParent="true"
-            android:background="@drawable/btn_bg_test_answer1"
-            android:paddingTop="12dp"
-            android:text="@string/like_job"
-            android:textAlignment="center"
-            android:textColor="@color/color_f24756"
-            android:textSize="15sp"
-            android:visibility="gone"
-            app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
-
-        <com.character.microblogapp.ui.widget.BaseTextView
-            android:id="@+id/tv_office"
-            android:layout_width="203dp"
-            android:layout_height="53dp"
-            android:layout_centerInParent="true"
-            android:background="@drawable/btn_bg_test_answer1"
-            android:paddingTop="12dp"
-            android:text="@string/like_office"
-            android:textAlignment="center"
-            android:textColor="@color/color_f24756"
-            android:textSize="15sp"
-            android:visibility="gone"
-            app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
-
-        <Button
-            android:id="@+id/btn_again_test"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:background="@drawable/btn_bg_pink"
-            android:foreground="?attr/selectableItemBackground"
-            android:paddingBottom="10dp"
-            android:text="@string/start_character"
-            android:textColor="@android:color/white"
-            android:textSize="15sp"
-            android:visibility="gone"
-            app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
-
-    </LinearLayout>
-        </RelativeLayout>
-
-        <LinearLayout
-            android:layout_marginTop="@dimen/_24sdp"
-            android:layout_marginBottom="@dimen/_30sdp"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_marginRight="@dimen/_24sdp"
-                android:paddingLeft="@dimen/_24sdp"
-                android:paddingRight="@dimen/_24sdp"
-                android:paddingBottom="@dimen/_10sdp"
-                android:paddingTop="@dimen/_10sdp"
-                android:background="@drawable/bg_rounded_10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="공유하기"
-                android:textColor="@color/char_main_color"
-                android:textSize="@dimen/_12sdp"
-                android:fontFamily="@font/nanum_square_r" />
-            <TextView
-                android:paddingLeft="@dimen/_24sdp"
-                android:paddingRight="@dimen/_24sdp"
-                android:paddingBottom="@dimen/_10sdp"
-                android:paddingTop="@dimen/_10sdp"
-                android:background="@drawable/bg_rounded_03"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="시작하기"
-                android:textColor="@color/color_white"
-                android:textSize="@dimen/_12sdp"
-                android:fontFamily="@font/nanum_square_b" />
-
-        </LinearLayout>
-
-
-    </LinearLayout>
 
     </ScrollView>
 </layout>

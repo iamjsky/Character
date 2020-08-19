@@ -1,15 +1,20 @@
 package com.character.microblogapp.ui.page.character;
 
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
+import android.support.v4.content.ContextCompat;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.character.microblogapp.R;
@@ -23,6 +28,7 @@ import com.character.microblogapp.ui.page.BaseActivity;
 import com.character.microblogapp.ui.page.intro.IntroActivity;
 import com.character.microblogapp.ui.page.main.MainActivity;
 import com.character.microblogapp.util.Toaster;
+import com.nex3z.flowlayout.FlowLayout;
 
 import java.util.ArrayList;
 
@@ -38,10 +44,26 @@ public class CharacterConfirmActivity extends BaseActivity {
     TextView tv_char_01;
     @BindView(R.id.tv_char_02)
     TextView tv_char_02;
+    @BindView(R.id.tv_char_03)
+    TextView tv_char_03;
+    @BindView(R.id.tv_char_04)
+    TextView tv_char_04;
+    @BindView(R.id.tv_char_05)
+    TextView tv_char_05;
+    @BindView(R.id.tv_char_06)
+    TextView tv_char_06;
     @BindView(R.id.tv_charText_01)
     TextView tv_charText_01;
     @BindView(R.id.tv_charText_02)
     TextView tv_charText_02;
+    @BindView(R.id.tv_charText_03)
+    TextView tv_charText_03;
+    @BindView(R.id.tv_charText_04)
+    TextView tv_charText_04;
+    @BindView(R.id.tv_charText_05)
+    TextView tv_charText_05;
+    @BindView(R.id.tv_charText_06)
+    TextView tv_charText_06;
     @BindView(R.id.tv_charType_01)
     TextView tv_charType_01;
     @BindView(R.id.tv_charFact_01)
@@ -53,13 +75,51 @@ public class CharacterConfirmActivity extends BaseActivity {
     @BindView(R.id.tv_charAdvice)
     TextView tv_charAdvice;
     @BindView(R.id.tv_plus)
-            TextView tv_plus;
-    @BindView(R.id.layer_char_02)
-    LinearLayout layer_char_02;
+    TextView tv_plus;
+    @BindView(R.id.layout_char_02)
+    LinearLayout layout_char_02;
+
+    @BindView(R.id.tv_title)
+    TextView tv_title;
+
+    @BindView(R.id.layout_discResult)
+    LinearLayout layout_discResult;
+    @BindView(R.id.layout_jobEnv)
+    LinearLayout layout_jobEnv;
+    @BindView(R.id.layout_job)
+    LinearLayout layout_job;
+    @BindView(R.id.layout_jobEnvList_01)
+    LinearLayout layout_jobEnvList_01;
+    @BindView(R.id.layout_jobEnvList_02)
+    LinearLayout layout_jobEnvList_02;
+    @BindView(R.id.tv_jobEnvList_01)
+    TextView tv_jobEnvList_01;
+    @BindView(R.id.tv_jobEnvList_02)
+    TextView tv_jobEnvList_02;
+    @BindView(R.id.tv_jobList_01)
+    TextView tv_jobList_01;
+    @BindView(R.id.tv_jobList_02)
+    TextView tv_jobList_02;
+
+    @BindView(R.id.view_jobLine)
+    View view_jobLine;
+    @BindView(R.id.layout_jobList_01)
+    LinearLayout layout_jobList_01;
+    @BindView(R.id.layout_jobList_02)
+    LinearLayout layout_jobList_02;
+
+    @BindView(R.id.sv_charTestResult)
+    ScrollView sv_charTestResult;
+
+    @BindView(R.id.layout_charTagArea_01)
+    FlowLayout layout_charTagArea_01;
+    @BindView(R.id.layout_charTagArea_02)
+    FlowLayout layout_charTagArea_02;
 
     String character = "";
 
     int go = 0;
+    int nowPage = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,27 +146,47 @@ public class CharacterConfirmActivity extends BaseActivity {
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        goBack();
+    }
+
     @OnClick(R.id.rlt_back)
     void goBack() {
-        finish();
-    }
+        switch (nowPage){
 
-    @OnClick(R.id.tv_style)
-    void findStyle() {
-        if (result == null) {
-            return;
+            case 0:
+                finish();
+                break;
+
+            default:
+                setUI();
+                break;
         }
 
-        txv_desc.setText(String.format("%s\n%s\n%s", result.gender1, result.gender2, result.gender3));
     }
+
+//    @OnClick(R.id.tv_style)
+//    void findStyle() {
+//        if (result == null) {
+//            return;
+//        }
+//
+//        txv_desc.setText(String.format("%s\n%s\n%s", result.gender1, result.gender2, result.gender3));
+//    }
+
 
     @OnClick(R.id.tv_job)
     void findJob() {
         if (result == null) {
             return;
         }
-
-        txv_desc.setText(String.format("%s\n%s\n%s", result.job1, result.job2, result.job3));
+        nowPage = 1;
+        layout_discResult.setVisibility(View.GONE);
+        layout_job.setVisibility(View.VISIBLE);
+        layout_jobEnv.setVisibility(View.GONE);
+        tv_title.setText("선호 직업정보");
+        sv_charTestResult.setScrollY(0);
     }
 
     @OnClick(R.id.tv_office)
@@ -114,17 +194,17 @@ public class CharacterConfirmActivity extends BaseActivity {
         if (result == null) {
             return;
         }
+        nowPage = 2;
+        layout_discResult.setVisibility(View.GONE);
+        layout_job.setVisibility(View.GONE);
+        layout_jobEnv.setVisibility(View.VISIBLE);
+        tv_title.setText("선호 직무환경");
 
-        txv_desc.setText(String.format("%s", result.job_env));
+        sv_charTestResult.setScrollY(0);
 
     }
 
-    @BindView(R.id.txv_character)
-    TextView txv_character;
-    @BindView(R.id.txv_character_ko)
-    TextView txv_character_ko;
-    @BindView(R.id.txv_desc)
-    TextView txv_desc;
+
 
     MCharacterInfo.Info result = null;
 
@@ -153,101 +233,141 @@ public class CharacterConfirmActivity extends BaseActivity {
         if (result == null) {
             return;
         }
-
-        String w_type = result.type;
-        if (w_type.equals("D=")) {
-            w_type = "D";
-        } else if (w_type.equals("I=")) {
-            w_type = "I";
-        } else if (w_type.equals("S=")) {
-            w_type = "S";
-        } else if (w_type.equals("C=")) {
-            w_type = "C";
-        }
-
-        Spannable sb = new SpannableString(w_type);
-        ArrayList<String> summary = new ArrayList<>();
-
-        for (int ind = 0; ind < w_type.length(); ind++) {
-            String item = w_type.substring(ind, ind + 1);
-            Log.e("char_debug", "item : " + item);
-            switch (item) {
-                case "D":
-                case "d":
-
-                    sb.setSpan(new ForegroundColorSpan(getColor(R.color.color_d)), ind, ind + 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-//                    summary.add(getString(R.string.character_d));
-                    break;
-                case "I":
-                case "i":
-
-
-                    sb.setSpan(new ForegroundColorSpan(getColor(R.color.color_i)), ind, ind + 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-//                    summary.add(getString(R.string.character_i));
-                    break;
-                case "C":
-                case "c":
-
-
-                    sb.setSpan(new ForegroundColorSpan(getColor(R.color.color_c)), ind, ind + 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-//                    summary.add(getString(R.string.character_c));
-                    break;
-                case "S":
-                case "s":
-                    sb.setSpan(new ForegroundColorSpan(getColor(R.color.color_s)), ind, ind + 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-//                    summary.add(getString(R.string.character_s));
-                    break;
-            }
-        }
-
-
+        nowPage = 0;
+        sv_charTestResult.setScrollY(0);
         //add
-         String personality1 = result.personality1+"";
-         String personality2 = result.personality2+"";
-         String personality_title1 = result.personality_title1;
-         String personality_title2 = result.personality_title2;
-         String name = result.name;
-         String factor = result.factor;
-         String keyword1 = result.keyword1;
-         String keyword2 = result.keyword2;
-         String personality_char = result.personality_char;
-         String weakness = result.weakness;
-         String advice = result.advice;
-         String job_env1 = result.job_env1;
-         String job_env2 = result.job_env2;
+        String personality1 = result.personality1 + "";
+        String personality2 = result.personality2 + "";
+        String personality_title1 = result.personality_title1;
+        String personality_title2 = result.personality_title2;
+        String name = result.name;
+        String factor = result.factor;
+        String keyword1 = result.keyword1;
+        String keyword2 = result.keyword2;
+        String personality_char = result.personality_char;
+        String weakness = result.weakness;
+        String advice = result.advice;
+        String job1 = result.job1;
+        String job2 = result.job2;
+        String job_env1 = result.job_env1;
+        String job_env2 = result.job_env2;
+
+        layout_discResult.setVisibility(View.VISIBLE);
+        layout_job.setVisibility(View.GONE);
+        layout_jobEnv.setVisibility(View.GONE);
+        tv_title.setText("DISC 성격테스트 결과");
+
 
         tv_char_01.setText(personality1);
+        tv_char_03.setText(personality1);
+        tv_char_05.setText(personality1);
+
         tv_charText_01.setText(personality_title1);
-
-         if(personality2.equals("")){
-             tv_plus.setVisibility(View.GONE);
-             layer_char_02.setVisibility(View.GONE);
-             tv_char_02.setVisibility(View.GONE);
-
-         }else{
-             tv_plus.setVisibility(View.VISIBLE);
-             layer_char_02.setVisibility(View.VISIBLE);
-             tv_char_02.setText(personality2);
-             tv_charText_02.setText(personality_title2);
-         }
+        tv_charText_03.setText(personality_title1);
+        tv_charText_05.setText(personality_title1);
 
 
         tv_charType_01.setText(name);
         tv_charFact_01.setText(factor);
+
+
+
+        if(!keyword1.equals("")) {
+            String[] keyword1Arr = keyword1.split(",");
+            for (int i = 0; i < keyword1Arr.length; i++) {
+                ViewGroup keywordView = (ViewGroup) getLayoutInflater().inflate(R.layout.view_charinfo_keyword_item, null, false);
+                TextView tv_keyword = (TextView) keywordView.findViewById(R.id.tv_keyword);
+                tv_keyword.setBackgroundResource(R.drawable.bg_rounded_char_01);
+                tv_keyword.setText(keyword1Arr[i].trim());
+                layout_charTagArea_01.addView(keywordView);
+            }
+        }
+        if(!keyword2.equals("")){
+            String[]  keyword2Arr = keyword2.split(",");
+            for (int i=0; i < keyword2Arr.length; i++){
+                ViewGroup keywordView = (ViewGroup) getLayoutInflater().inflate(R.layout.view_charinfo_keyword_item, null, false);
+                TextView tv_keyword = (TextView) keywordView.findViewById(R.id.tv_keyword);
+                tv_keyword.setBackgroundResource(R.drawable.bg_rounded_char_02);
+                tv_keyword.setText(keyword2Arr[i].trim());
+                layout_charTagArea_02.addView(keywordView);
+            }
+        }
+
+
+
+
         tv_charInfo.setText(personality_char);
         tv_charDis.setText(weakness);
         tv_charAdvice.setText(advice);
 
+        tv_jobEnvList_01.setText(job_env1);
+        tv_jobList_01.setText(job1);
+
+        if (personality2.equals("")) {
+
+            tv_plus.setVisibility(View.GONE);
+            layout_char_02.setVisibility(View.GONE);
+            tv_char_02.setVisibility(View.GONE);
+            view_jobLine.setVisibility(View.GONE);
+            layout_jobList_02.setVisibility(View.GONE);
+            layout_jobEnvList_02.setVisibility(View.GONE);
+            layout_charTagArea_02.setVisibility(View.GONE);
 
 
 
-        txv_character.setText(sb);
+        } else {
+            tv_plus.setVisibility(View.VISIBLE);
+            layout_char_02.setVisibility(View.VISIBLE);
+            view_jobLine.setVisibility(View.VISIBLE);
+            layout_jobList_02.setVisibility(View.VISIBLE);
+            layout_jobEnvList_02.setVisibility(View.VISIBLE);
+            tv_char_02.setText(personality2);
+            tv_char_04.setText(personality2);
+            tv_char_06.setText(personality2);
+            tv_charText_02.setText(personality_title2);
+            tv_charText_04.setText(personality_title2);
+            tv_charText_06.setText(personality_title2);
+            tv_jobList_02.setText(job2);
+            tv_jobEnvList_02.setText(job_env2);
+            layout_charTagArea_02.setVisibility(View.VISIBLE);
+
+        }
+        String[] personalityArr = {personality1, personality2};
+        for (int ind = 0; ind < personalityArr.length; ind++) {
+            int discColor;
+            switch (personalityArr[ind]) {
+                case "D":
+                    discColor = ContextCompat.getColor(getApplicationContext(), R.color.char_d_color);
+
+                    break;
+                case "I":
+                    discColor = ContextCompat.getColor(getApplicationContext(), R.color.char_i_color);
+
+                    break;
+                case "C":
+                    discColor = ContextCompat.getColor(getApplicationContext(), R.color.char_c_color);
+
+                    break;
+                case "S":
+                    discColor = ContextCompat.getColor(getApplicationContext(), R.color.char_s_color);
+                    break;
+                default:
+                    discColor = ContextCompat.getColor(getApplicationContext(), R.color.color_char_gray);
+
+            }
+            if (ind == 0) {
+                tv_char_01.setTextColor(discColor);
+                tv_char_03.setTextColor(discColor);
+                tv_char_05.setTextColor(discColor);
+            } else {
+                tv_char_02.setTextColor(discColor);
+                tv_char_04.setTextColor(discColor);
+                tv_char_06.setTextColor(discColor);
+            }
+        }
 
 
-//        txv_character_ko.setText(TextUtils.join("\n", summary));
-        txv_character_ko.setText(result.name);
 
-        txv_desc.setText(result.desc);
 
     }
 

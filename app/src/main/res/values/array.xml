@@ -413,6 +413,10 @@
         <item>@layout/item_intro_page_02</item>
         <item>@layout/item_intro_page_03</item>
     </integer-array>
+    <integer-array name="inspecting_xml_array">
+        <item>@layout/item_inspecting_page_01</item>
+        <item>@layout/item_inspecting_page_02</item>
+    </integer-array>
 
 
 

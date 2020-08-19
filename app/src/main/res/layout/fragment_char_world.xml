@@ -5,401 +5,402 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout
-        android:background="#f6f6f6"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#f6f6f6"
         android:orientation="vertical">
-<android.support.v4.widget.NestedScrollView
-    android:layout_weight="1"
-    android:layout_width="match_parent"
-    android:layout_height="0dp">
-    <RelativeLayout
-        android:paddingBottom="@dimen/_10sdp"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
 
-
-        <ImageView
-
+        <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_122sdp"
-            android:background="@drawable/bg_img" />
+            android:layout_height="match_parent"
+         >
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_15sdp"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:layout_marginRight="@dimen/_15sdp"
-            android:gravity="center"
-            android:orientation="horizontal">
+              >
 
-            <TextView
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:gravity="center|left"
-                android:text="성격지상주의"
-                android:textColor="@color/color_white"
-                android:textSize="@dimen/_15sdp"
-                android:fontFamily="@font/jalnan_n" />
-
-            <LinearLayout
-                android:id="@+id/layout_myPoint"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-
-                android:gravity="center|right"
-                android:orientation="horizontal">
 
                 <ImageView
 
-                    android:layout_width="wrap_content"
-                    android:layout_height="@dimen/_26sdp"
-                    android:layout_marginRight="@dimen/_1sdp"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/main_top_energy" />
-
-                <TextView
-                    android:fontFamily="@font/nanum_square_b"
-                    android:id="@+id/tv_my_point"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center|right"
-                    android:text="100"
-                    android:textColor="@color/color_white"
-                    android:textSize="@dimen/_15sdp" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_310sdp"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="@dimen/_14sdp"
-                    android:layout_marginTop="@dimen/_62sdp"
-                    android:layout_marginRight="@dimen/_14sdp"
-                    android:layout_marginBottom="@dimen/_10sdp"
-                    android:background="@drawable/bg_rounded_white_01">
+                    android:layout_height="@dimen/_122sdp"
+                    android:background="@drawable/bg_img" />
 
-                    <ImageView
-                        android:layout_marginTop="@dimen/_88sdp"
 
-                        android:id="@+id/iv_worldImg"
-                        android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_15sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignParentBottom="true"
-                        android:adjustViewBounds="true"
-                        android:src="@drawable/world_img_resize" />
+                        android:layout_weight="1"
+                        android:fontFamily="@font/jalnan_n"
+                        android:gravity="center|left"
+                        android:text="성격지상주의"
+                        android:textColor="@color/color_white"
+                        android:textSize="@dimen/_15sdp" />
 
                     <LinearLayout
-                        android:layout_alignParentTop="true"
-                        android:layout_marginRight="@dimen/_28sdp"
-                        android:layout_marginLeft="@dimen/_28sdp"
-                        android:layout_marginTop="@dimen/_16sdp"
+                        android:id="@+id/layout_myPoint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
 
+                        android:gravity="center|right"
+                        android:orientation="horizontal">
+
+                        <ImageView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/_26sdp"
+                            android:layout_marginRight="@dimen/_1sdp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/main_top_energy" />
+
+                        <TextView
+                            android:id="@+id/tv_my_point"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/nanum_square_b"
+                            android:gravity="center|right"
+                            android:text="100"
+                            android:textColor="@color/color_white"
+                            android:textSize="@dimen/_15sdp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_marginTop="@dimen/_57sdp"
+                        android:layout_marginLeft="@dimen/_4sdp"
+                        android:layout_marginRight="@dimen/_4sdp"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/_265sdp"
                         android:gravity="center"
                         android:orientation="vertical">
 
                         <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
 
-                            android:background="@color/color_transparent">
+                            android:background="@drawable/world_img"
+                            android:padding="@dimen/_20sdp">
 
-                            <TextView
-                                android:id="@+id/tv_title"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:background="@color/color_transparent"
-                                android:fontFamily="@font/jalnan_n"
-                                android:gravity="center"
-                                android:text="TITLE"
-                                android:textColor="#ff0000"
-
-                                android:textSize="@dimen/_20sdp" />
+                            <!--                    <ImageView-->
+                            <!--                        android:visibility="gone"-->
+                            <!--                        android:paddingBottom="@dimen/_12sdp"-->
+                            <!--                        android:paddingRight="@dimen/_40sdp"-->
+                            <!--                        android:paddingLeft="@dimen/_40sdp"-->
+                            <!--                        android:layout_alignParentBottom="true"-->
+                            <!--                        android:id="@+id/iv_worldImg"-->
+                            <!--                        android:layout_width="match_parent"-->
+                            <!--                        android:layout_height="wrap_content"-->
+                            <!--                        android:adjustViewBounds="true"-->
+                            <!--                        android:src="@drawable/world_img_resize" />-->
 
                             <LinearLayout
-
                                 android:layout_width="match_parent"
+
+
                                 android:layout_height="wrap_content"
-                                android:layout_alignBottom="@+id/tv_title"
+                                android:layout_alignParentTop="true"
                                 android:gravity="center"
+                                android:orientation="vertical">
 
-                                android:paddingRight="@dimen/_2sdp">
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
 
-                                <View
+                                    android:background="@color/color_transparent">
 
-                                    android:layout_width="@dimen/_57sdp"
-                                    android:layout_height="@dimen/_5sdp"
+                                    <TextView
+                                        android:id="@+id/tv_title"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@color/color_transparent"
+                                        android:fontFamily="@font/jalnan_n"
+                                        android:gravity="center"
+                                        android:text="TITLE"
+                                        android:textColor="#ff0000"
 
-                                    android:background="#1AFF0000" />
+                                        android:textSize="@dimen/_20sdp" />
+
+                                    <LinearLayout
+
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignBottom="@+id/tv_title"
+                                        android:gravity="center"
+
+                                        android:paddingRight="@dimen/_2sdp">
+
+                                        <View
+
+                                            android:layout_width="@dimen/_57sdp"
+                                            android:layout_height="@dimen/_5sdp"
+
+                                            android:background="#1AFF0000" />
+                                    </LinearLayout>
+
+
+                                </RelativeLayout>
+
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_9sdp"
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/nanum_square_b"
+
+                                        android:gravity="center"
+                                        android:text="성격월드"
+                                        android:textColor="#000000"
+                                        android:textSize="@dimen/_10sdp" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/nanum_square_r"
+                                        android:gravity="center"
+                                        android:text="에 오신 것을 환영합니다!"
+                                        android:textColor="#000000"
+                                        android:textSize="@dimen/_10sdp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_2sdp"
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/nanum_square_b"
+                                        android:gravity="center"
+                                        android:text="성격월드"
+                                        android:textColor="#000000"
+                                        android:textSize="@dimen/_10sdp" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/nanum_square_r"
+                                        android:gravity="center"
+                                        android:text="에 대한 간단한 텍스트가 들어갑니다."
+                                        android:textColor="#000000"
+                                        android:textSize="@dimen/_10sdp" />
+                                </LinearLayout>
+
+
                             </LinearLayout>
-
 
                         </RelativeLayout>
 
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_9sdp"
-                            android:gravity="center"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/nanum_square_b"
-
-                                android:gravity="center"
-                                android:text="성격월드"
-                                android:textColor="#000000"
-                                android:textSize="@dimen/_10sdp" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/nanum_square_r"
-                                android:gravity="center"
-                                android:text="에 오신 것을 환영합니다!"
-                                android:textColor="#000000"
-                                android:textSize="@dimen/_10sdp" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_2sdp"
-                            android:gravity="center"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/nanum_square_b"
-                                android:gravity="center"
-                                android:text="성격월드"
-                                android:textColor="#000000"
-                                android:textSize="@dimen/_10sdp" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/nanum_square_r"
-                                android:gravity="center"
-                                android:text="에 대한 간단한 텍스트가 들어갑니다."
-                                android:textColor="#000000"
-                                android:textSize="@dimen/_10sdp" />
-                        </LinearLayout>
-
-
-                    </LinearLayout>
-
-                </RelativeLayout>
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_weight="1"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:gravity="center|top"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_175sdp"
-                    android:layout_marginLeft="@dimen/_14sdp"
-                    android:layout_marginRight="@dimen/_14sdp"
-                    android:orientation="vertical">
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_marginBottom="@dimen/_10sdp"
-                        android:layout_weight="1"
-                        android:orientation="horizontal">
-
-                        <LinearLayout
-                            android:id="@+id/layout_charInfo"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginRight="@dimen/_4sdp"
-                            android:layout_weight="1"
-                            android:background="@drawable/bg_rounded_white_01"
-                            android:gravity="center"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_marginLeft="@dimen/_10sdp"
-                                android:layout_marginTop="@dimen/_10sdp"
-                                android:layout_marginBottom="@dimen/_10sdp"
-                                android:adjustViewBounds="true"
-                                android:src="@drawable/world_ico_01_info" />
-
-                            <TextView
-                                android:fontFamily="@font/nanum_square_r"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:paddingRight="@dimen/_4sdp"
-                                android:text="성격\n정보"
-                                android:textColor="@color/color_black"
-                                android:textSize="@dimen/_14sdp" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:id="@+id/layout_relation"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginLeft="@dimen/_4sdp"
-                            android:layout_weight="1"
-                            android:background="@drawable/bg_rounded_white_01"
-                            android:gravity="center"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_marginLeft="@dimen/_10sdp"
-                                android:layout_marginTop="@dimen/_10sdp"
-                                android:layout_marginBottom="@dimen/_10sdp"
-                                android:adjustViewBounds="true"
-                                android:src="@drawable/world_ico_02_relation" />
-
-                            <TextView
-                                android:fontFamily="@font/nanum_square_r"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:gravity="center"
-
-                                android:paddingRight="@dimen/_4sdp"
-                                android:text="성격\n궁합"
-                                android:textColor="@color/color_black"
-                                android:textSize="@dimen/_14sdp" />
-
-                        </LinearLayout>
-
                     </LinearLayout>
 
                     <LinearLayout
+                        android:layout_marginLeft="@dimen/_12sdp"
+                        android:layout_marginRight="@dimen/_12sdp"
                         android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:orientation="horizontal">
+                        android:layout_height="@dimen/_170sdp"
+                        android:gravity="center|top"
+                        android:orientation="vertical">
 
                         <LinearLayout
-                            android:id="@+id/layout_charTest"
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginRight="@dimen/_4sdp"
-                            android:layout_weight="1"
-                            android:background="@drawable/bg_rounded_white_01"
-                            android:gravity="center"
-                            android:orientation="horizontal">
+                            android:orientation="vertical">
 
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_marginLeft="@dimen/_10sdp"
-                                android:layout_marginTop="@dimen/_10sdp"
+
+                            <LinearLayout
                                 android:layout_marginBottom="@dimen/_10sdp"
-                                android:adjustViewBounds="true"
-                                android:src="@drawable/world_ico_03_test" />
-
-                            <TextView
-                                android:fontFamily="@font/nanum_square_r"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
                                 android:layout_weight="1"
-                                android:gravity="center"
+                                android:orientation="horizontal">
 
-                                android:paddingRight="@dimen/_4sdp"
-                                android:text="성격\n테스트"
-                                android:textColor="@color/color_black"
-                                android:textSize="@dimen/_14sdp" />
+                                <LinearLayout
+                                    android:layout_marginRight="@dimen/_10sdp"
+                                    android:id="@+id/layout_charInfo"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/bg_rounded_white_01"
+                                    android:gravity="center"
+                                    android:orientation="horizontal"
+                                    android:paddingLeft="@dimen/_14sdp"
+                                    android:paddingTop="@dimen/_14sdp"
 
-                        </LinearLayout>
+                                    android:paddingBottom="@dimen/_14sdp">
 
-                        <LinearLayout
-                            android:id="@+id/layout_community"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginLeft="@dimen/_4sdp"
-                            android:layout_weight="1"
-                            android:background="@drawable/bg_rounded_white_01"
-                            android:gravity="center"
-                            android:orientation="horizontal">
+                                    <ImageView
 
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:layout_marginLeft="@dimen/_10sdp"
-                                android:layout_marginTop="@dimen/_10sdp"
-                                android:layout_marginBottom="@dimen/_10sdp"
-                                android:adjustViewBounds="true"
-                                android:src="@drawable/world_ico_04_community" />
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
 
-                            <TextView
-                                android:fontFamily="@font/nanum_square_r"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
+                                        android:adjustViewBounds="true"
+                                        android:src="@drawable/world_ico_01_info" />
+
+                                    <TextView
+
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/nanum_square_r"
+                                        android:gravity="center"
+
+                                        android:text="성격\n정보"
+                                        android:textColor="@color/color_black"
+                                        android:textSize="@dimen/_14sdp" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:paddingTop="@dimen/_14sdp"
+                                    android:paddingBottom="@dimen/_14sdp"
+                                    android:paddingLeft="@dimen/_14sdp"
+
+                                    android:id="@+id/layout_relation"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+
+                                    android:layout_weight="1"
+                                    android:background="@drawable/bg_rounded_white_01"
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+
+                                        android:adjustViewBounds="true"
+                                        android:src="@drawable/world_ico_02_relation" />
+
+                                    <TextView
+
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/nanum_square_r"
+                                        android:gravity="center"
+
+                                        android:text="성격\n궁합"
+                                        android:textColor="@color/color_black"
+                                        android:textSize="@dimen/_14sdp" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
                                 android:layout_weight="1"
-                                android:gravity="center"
-                                android:paddingRight="@dimen/_4sdp"
-                                android:text="커뮤\n니티"
-                                android:textColor="@color/color_black"
-                                android:textSize="@dimen/_14sdp" />
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_marginRight="@dimen/_10sdp"
+                                    android:paddingTop="@dimen/_14sdp"
+                                    android:paddingBottom="@dimen/_14sdp"
+                                    android:paddingLeft="@dimen/_14sdp"
+
+                                    android:id="@+id/layout_charTest"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/bg_rounded_white_01"
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+
+                                        android:adjustViewBounds="true"
+                                        android:src="@drawable/world_ico_03_test" />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/nanum_square_r"
+                                        android:gravity="center"
+
+                                        android:text="성격\n테스트"
+                                        android:textColor="@color/color_black"
+                                        android:textSize="@dimen/_14sdp" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:paddingTop="@dimen/_14sdp"
+                                    android:paddingBottom="@dimen/_14sdp"
+                                    android:paddingLeft="@dimen/_14sdp"
+
+                                    android:id="@+id/layout_community"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/bg_rounded_white_01"
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+
+                                        android:adjustViewBounds="true"
+                                        android:src="@drawable/world_ico_04_community" />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/nanum_square_r"
+                                        android:gravity="center"
+                                        android:text="커뮤\n니티"
+                                        android:textColor="@color/color_black"
+                                        android:textSize="@dimen/_14sdp" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
 
                         </LinearLayout>
 
                     </LinearLayout>
-
 
                 </LinearLayout>
 
-            </LinearLayout>
 
-        </LinearLayout>
+            </RelativeLayout>
 
-
-
-
-    </RelativeLayout>
-
-</android.support.v4.widget.NestedScrollView>
-
-
+        </android.support.v4.widget.NestedScrollView>
 
 
     </LinearLayout>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:gravity="center"
+    android:paddingTop="@dimen/_30sdp"
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/color_white">
+
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:fontFamily="@font/nanum_square_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_14sdp"
+            android:textColor="#ff056a"
+            android:gravity="center"
+            android:text="성격매칭"
+            />
+        <TextView
+            android:fontFamily="@font/nanum_square_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_14sdp"
+            android:textColor="#000000"
+            android:gravity="center"
+            android:text="(데이팅) 기능이 곧 개시됩니다!"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="@dimen/_20sdp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_marginRight="@dimen/_2sdp"
+            android:fontFamily="@font/nanum_square_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_14sdp"
+            android:textColor="#000000"
+            android:gravity="center"
+            android:text="가입 유지 유저에게는"
+            />
+
+        <TextView
+            android:fontFamily="@font/nanum_square_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_14sdp"
+            android:textColor="#ff056a"
+            android:gravity="center"
+            android:text="3만원 상당의"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:fontFamily="@font/nanum_square_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_14sdp"
+            android:textColor="#ff056a"
+            android:gravity="center"
+            android:text="에너지"
+            />
+        <TextView
+            android:fontFamily="@font/nanum_square_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_14sdp"
+            android:textColor="#000000"
+            android:gravity="center"
+            android:text="(결제단위)를 지급해드립니다."
+            />
+    </LinearLayout>
+
+    <ImageView
+        android:adjustViewBounds="true"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:src="@drawable/wait_01_img"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_300sdp"/>
+
+
+</LinearLayout>
