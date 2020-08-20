@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     android:orientation="vertical"
-    android:gravity="center"
-    android:paddingTop="@dimen/_30sdp"
+    android:gravity="center|top"
+    android:paddingTop="@dimen/_34sdp"
 
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -10,7 +10,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/color_white">
     <TextView
-        android:layout_marginBottom="@dimen/_2sdp"
+        android:layout_marginBottom="@dimen/_3sdp"
         android:fontFamily="@font/nanum_square_b"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -21,7 +21,7 @@
         />
 
     <LinearLayout
-        android:layout_marginBottom="@dimen/_2sdp"
+        android:layout_marginBottom="@dimen/_3sdp"
         android:gravity="center"
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -49,7 +49,7 @@
 
     </LinearLayout>
     <LinearLayout
-        android:layout_marginBottom="@dimen/_2sdp"
+        android:layout_marginBottom="@dimen/_3sdp"
         android:gravity="center"
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -86,7 +86,9 @@
         android:text="콘텐츠를 즐길 수 있어요"
         />
     <ImageView
-        android:layout_marginBottom="@dimen/_20sdp"
+        android:adjustViewBounds="true"
+        android:layout_marginLeft="@dimen/_30sdp"
+        android:layout_marginRight="@dimen/_30sdp"
         android:layout_marginTop="@dimen/_30sdp"
         android:src="@drawable/first_03_img"
         android:layout_width="match_parent"

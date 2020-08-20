@@ -87,8 +87,8 @@
 
                     <LinearLayout
                         android:layout_marginTop="@dimen/_57sdp"
-                        android:layout_marginLeft="@dimen/_4sdp"
-                        android:layout_marginRight="@dimen/_4sdp"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_265sdp"
                         android:gravity="center"
@@ -223,8 +223,8 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_marginLeft="@dimen/_12sdp"
-                        android:layout_marginRight="@dimen/_12sdp"
+                        android:layout_marginLeft="@dimen/_13sdp"
+                        android:layout_marginRight="@dimen/_13sdp"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_170sdp"
                         android:gravity="center|top"

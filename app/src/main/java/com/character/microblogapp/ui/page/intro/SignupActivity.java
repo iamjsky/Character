@@ -138,11 +138,7 @@ public class SignupActivity extends BaseActivity {
                         return;
                     }
 
-                    BaseFragment fragment = (BaseFragment) manager.getFragments()
-                            .get(backStackEntryCount - 1);
-                    fragment.onFragmentActivated();
 
-                    setStep(backStackEntryCount);
                 }
             }
         };

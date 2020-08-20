@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     android:orientation="vertical"
-    android:gravity="center"
-    android:paddingTop="@dimen/_30sdp"
+    android:gravity="center|top"
+    android:paddingTop="@dimen/_34sdp"
 
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -117,8 +117,7 @@
         android:adjustViewBounds="true"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/_300sdp"
-        android:layout_marginTop="@dimen/_20sdp"
-        android:layout_marginBottom="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_30sdp"
         android:src="@drawable/wait_02_img_2" />
 
 

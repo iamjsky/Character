@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     android:orientation="vertical"
-    android:gravity="center"
-    android:paddingTop="@dimen/_30sdp"
+    android:gravity="center|top"
+    android:paddingTop="@dimen/_34sdp"
 
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -11,6 +11,7 @@
     android:background="@color/color_white">
 
     <LinearLayout
+
         android:gravity="center"
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -38,12 +39,14 @@
 
 
     <ImageView
+        android:layout_marginLeft="@dimen/_30sdp"
+        android:layout_marginRight="@dimen/_30sdp"
         android:adjustViewBounds="true"
-        android:layout_marginBottom="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_15sdp"
         android:layout_marginTop="@dimen/_20sdp"
         android:src="@drawable/first_01_img"
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/_240sdp"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
     <TextView
         android:fontFamily="@font/nanum_square_r"
         android:layout_width="match_parent"

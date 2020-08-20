@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f6f6f6"
+        android:orientation="vertical">
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="#f6f6f6"
+                android:orientation="horizontal"
+                android:visibility="visible"
+
+                >
+
+                <ImageView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_122sdp"
+                    android:background="@drawable/bg_img" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:gravity="center|left"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/_14sdp"
+                    android:paddingRight="@dimen/_14sdp">
+
+                    <ImageView
+                        android:id="@+id/rlt_back"
+                        android:layout_width="@dimen/_16sdp"
+                        android:layout_height="@dimen/_16sdp"
+
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:src="@drawable/comm_ico_back" />
+
+                    <TextView
+                        android:id="@+id/tv_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nanum_square_b"
+                        android:text="성격정보"
+                        android:textColor="@color/color_white"
+                        android:textSize="@dimen/_14sdp" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_4sdp"
+                    android:layout_marginTop="@dimen/_52sdp"
+                    android:layout_marginRight="@dimen/_4sdp"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/_6sdp"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_rounded_white_panel_04"
+                        android:gravity="center|top"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_25sdp">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="D"
+                                android:textColor="@color/char_d_color"
+                                android:textSize="@dimen/_20sdp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="I"
+                                android:textColor="@color/char_s_color"
+                                android:textSize="@dimen/_20sdp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="S"
+                                android:textColor="@color/char_i_color"
+                                android:textSize="@dimen/_20sdp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="C"
+                                android:textColor="@color/char_c_color"
+                                android:textSize="@dimen/_20sdp" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:fontFamily="@font/nanum_square_r"
+                            android:gravity="center"
+                            android:text="나의 행동패턴(Behavior Pattern)또는"
+                            android:textColor="#000000"
+                            android:textSize="@dimen/_10sdp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:fontFamily="@font/nanum_square_r"
+                                android:gravity="center"
+                                android:text="행동 스타일(Behavior Style)을"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/_10sdp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="네 가지로 분류"
+                                android:textColor="@color/char_main_color"
+                                android:textSize="@dimen/_10sdp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:fontFamily="@font/nanum_square_r"
+                                android:gravity="center"
+                                android:text="한"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/_10sdp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_r"
+                                android:gravity="center"
+                                android:text="것으로써 현재 국내 대기업 및 공조직,"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/_10sdp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="전 세계"
+                                android:textColor="@color/char_main_color"
+                                android:textSize="@dimen/_10sdp" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="50여 개 국가"
+                                android:textColor="@color/char_main_color"
+                                android:textSize="@dimen/_10sdp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_r"
+                                android:gravity="center"
+                                android:text="에서 널리 활용하는 성격진단도구"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/_10sdp" />
+
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:fontFamily="@font/nanum_square_r"
+                            android:gravity="center"
+                            android:text="*창시자 : William Moulton Marston 박사(1928년)"
+                            android:textColor="#000000"
+                            android:textSize="@dimen/_10sdp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="DISC"
+                                android:textColor="@color/char_main_color"
+                                android:textSize="@dimen/_12sdp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="의 구성"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/_12sdp" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="D"
+                                android:textColor="@color/char_d_color"
+                                android:textSize="@dimen/_10sdp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="@dimen/_2sdp"
+                                android:fontFamily="@font/nanum_square_r"
+                                android:gravity="center"
+                                android:text="(Dominance)"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/_10sdp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="주도형"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/_10sdp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/_2sdp"
+                                android:layout_marginRight="@dimen/_2sdp"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="/"
+                                android:textColor="@color/char_d_color"
+                                android:textSize="@dimen/_10sdp" />
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="I"
+                                android:textColor="@color/char_i_color"
+                                android:textSize="@dimen/_10sdp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="@dimen/_2sdp"
+                                android:fontFamily="@font/nanum_square_r"
+                                android:gravity="center"
+                                android:text="(Influence)"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/_10sdp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="사교형"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/_10sdp" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="S"
+                                android:textColor="@color/char_s_color"
+                                android:textSize="@dimen/_10sdp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="@dimen/_2sdp"
+                                android:fontFamily="@font/nanum_square_r"
+                                android:gravity="center"
+                                android:text="(Steadiness)"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/_10sdp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="안정형"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/_10sdp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/_2sdp"
+                                android:layout_marginRight="@dimen/_2sdp"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="/"
+                                android:textColor="@color/char_d_color"
+                                android:textSize="@dimen/_10sdp" />
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="C"
+                                android:textColor="@color/char_c_color"
+                                android:textSize="@dimen/_10sdp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="@dimen/_2sdp"
+                                android:fontFamily="@font/nanum_square_r"
+                                android:gravity="center"
+                                android:text="(Conscientiousness)"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/_10sdp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="신중형"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/_10sdp" />
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_rounded_white_panel_04"
+                            android:fontFamily="@font/jalnan_n"
+                            android:gravity="center"
+                            android:padding="@dimen/_32sdp"
+                            android:text="D"
+                            android:textColor="@color/char_d_color"
+                            android:textSize="@dimen/_30sdp" />
+
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_rounded_white_panel_04"
+                            android:fontFamily="@font/jalnan_n"
+                            android:gravity="center"
+                            android:padding="@dimen/_32sdp"
+                            android:text="I"
+                            android:textColor="@color/char_i_color"
+                            android:textSize="@dimen/_30sdp" />
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_rounded_white_panel_04"
+                            android:fontFamily="@font/jalnan_n"
+                            android:gravity="center"
+                            android:padding="@dimen/_32sdp"
+                            android:text="S"
+                            android:textColor="@color/char_s_color"
+                            android:textSize="@dimen/_30sdp" />
+
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_rounded_white_panel_04"
+                            android:fontFamily="@font/jalnan_n"
+                            android:gravity="center"
+                            android:padding="@dimen/_32sdp"
+                            android:text="C"
+                            android:textColor="@color/char_c_color"
+                            android:textSize="@dimen/_30sdp" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+
+
+    </LinearLayout>
+
+
+</layout>

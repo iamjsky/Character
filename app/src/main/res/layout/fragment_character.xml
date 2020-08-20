@@ -11,16 +11,15 @@
         android:orientation="vertical"
         tools:context=".ui.page.character.fragment.CharacterFragment">
         <LinearLayout
-            android:layout_marginRight="@dimen/_14sdp"
-            android:layout_marginLeft="@dimen/_14sdp"
+            android:layout_marginRight="@dimen/_4sdp"
+            android:layout_marginLeft="@dimen/_4sdp"
             android:paddingLeft="@dimen/_26sdp"
-
             android:paddingRight="@dimen/_26sdp"
             android:paddingTop="@dimen/_20sdp"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_104sdp"
+            android:layout_height="@dimen/_110sdp"
 
-            android:background="@drawable/bg_rounded_white_01"
+            android:background="@drawable/bg_rounded_white_panel_03"
             android:orientation="vertical">
 
             <LinearLayout
@@ -74,7 +73,7 @@
             android:layout_weight="1"
             android:layout_marginRight="@dimen/_9sdp"
             android:layout_marginLeft="@dimen/_9sdp"
-            android:layout_marginTop="@dimen/_5sdp"
+
             tools:listitem="@layout/item_character_test"
             android:id="@+id/rcv_character_question"
             android:layout_width="match_parent"

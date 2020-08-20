@@ -271,7 +271,8 @@ public class CharacterConfirmActivity extends BaseActivity {
         tv_charFact_01.setText(factor);
 
 
-
+        layout_charTagArea_01.removeAllViews();
+        layout_charTagArea_02.removeAllViews();
         if(!keyword1.equals("")) {
             String[] keyword1Arr = keyword1.split(",");
             for (int i = 0; i < keyword1Arr.length; i++) {

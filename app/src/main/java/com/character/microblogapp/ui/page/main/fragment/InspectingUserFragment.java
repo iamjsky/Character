@@ -8,6 +8,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v4.view.PagerAdapter;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,7 +42,14 @@ public class InspectingUserFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         createView(inflater, container, R.layout.fragment_inspecting);
+        pageRes = getResources().obtainTypedArray(R.array.inspecting_xml_array);
 
+        viewPager.setOffscreenPageLimit(pageRes.length());
+        inpectingUserPagerAdapter = new InpectingUserPagerAdapter();
+        inpectingUserPagerAdapter.res = pageRes;
+        PagerAdapter wrappedAdapter = new InfinitePagerAdapter(inpectingUserPagerAdapter);
+        viewPager.setAdapter(wrappedAdapter);
+        pageIndicator.setViewPager(viewPager);
         return mRoot;
     }
 
@@ -53,14 +61,7 @@ public class InspectingUserFragment extends BaseFragment {
     }
 
     void initVC() {
-        pageRes = getResources().obtainTypedArray(R.array.inspecting_xml_array);
 
-        viewPager.setOffscreenPageLimit(pageRes.length());
-        inpectingUserPagerAdapter = new InpectingUserPagerAdapter();
-        inpectingUserPagerAdapter.res = pageRes;
-        PagerAdapter wrappedAdapter = new InfinitePagerAdapter(inpectingUserPagerAdapter);
-        viewPager.setAdapter(wrappedAdapter);
-        pageIndicator.setViewPager(viewPager);
 
     }
 

@@ -24,6 +24,7 @@ import com.character.microblogapp.ui.page.BaseActivity;
 import com.character.microblogapp.ui.page.main.fragment.CharInfoFragment;
 import com.character.microblogapp.ui.page.main.fragment.CharWorldFragment;
 import com.character.microblogapp.ui.page.main.fragment.ChatFragment;
+import com.character.microblogapp.ui.page.main.fragment.DISCInfoMainFragment;
 import com.character.microblogapp.ui.page.main.fragment.EvaluationFragment;
 import com.character.microblogapp.ui.page.main.fragment.HistoryFragment;
 import com.character.microblogapp.ui.page.main.fragment.HomeFragment;
@@ -54,6 +55,9 @@ public class MainActivity extends BaseActivity {
     private final static int PROFILE_REJECT = 7;
     /*200721, add*/
     private final static int MAIN_CHAR_INFO = 8;
+    /*200818, add*/
+    private final static int MAIN_DISC_INFO_MAIN = 9;
+
 
     RadioGroup btTabGroup;
 
@@ -140,6 +144,10 @@ public class MainActivity extends BaseActivity {
 //            super.onBackPressed();
 //        }
         if(mCurrentTabIdx == MAIN_CHAR_INFO){
+            fragment = new CharWorldFragment();
+            selectLine(0);
+            selectTab(0);
+        }else if(mCurrentTabIdx == MAIN_DISC_INFO_MAIN){
             fragment = new CharWorldFragment();
             selectLine(0);
             selectTab(0);
@@ -341,6 +349,10 @@ public class MainActivity extends BaseActivity {
                 break;
             case MAIN_CHAR_INFO:
                 fragment = new CharInfoFragment();
+                tag = "성격정보";
+                break;
+            case MAIN_DISC_INFO_MAIN:
+                fragment = new DISCInfoMainFragment();
                 tag = "성격정보";
                 break;
         }

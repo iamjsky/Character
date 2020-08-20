@@ -764,6 +764,9 @@ public class SignupProfileRegisterFragment extends BaseFragment {
             if(profileImgList.get(i).imgPosition == 0){
                 profileImgList.remove(i);
                 Collections.sort(profileImgList);
+                iv_profile.get(imgPosition).setBackgroundResource(R.color.color_transparent);
+                iv_profile.get(imgPosition).setVisibility(View.GONE);
+                ibDelete.get(imgPosition).setVisibility(View.GONE);
                 break;
             }
         }
@@ -774,6 +777,9 @@ public class SignupProfileRegisterFragment extends BaseFragment {
             if(profileImgList.get(i).imgPosition == 1){
                 profileImgList.remove(i);
                 Collections.sort(profileImgList);
+                iv_profile.get(imgPosition).setBackgroundResource(R.color.color_transparent);
+                iv_profile.get(imgPosition).setVisibility(View.GONE);
+                ibDelete.get(imgPosition).setVisibility(View.GONE);
                 break;
             }
         }
@@ -784,6 +790,9 @@ public class SignupProfileRegisterFragment extends BaseFragment {
             if(profileImgList.get(i).imgPosition == 2){
                 profileImgList.remove(i);
                 Collections.sort(profileImgList);
+                iv_profile.get(imgPosition).setBackgroundResource(R.color.color_transparent);
+                iv_profile.get(imgPosition).setVisibility(View.GONE);
+                ibDelete.get(imgPosition).setVisibility(View.GONE);
                 break;
             }
         }
@@ -795,6 +804,9 @@ public class SignupProfileRegisterFragment extends BaseFragment {
             if(profileImgList.get(i).imgPosition == 3){
                 profileImgList.remove(i);
                 Collections.sort(profileImgList);
+                iv_profile.get(imgPosition).setBackgroundResource(R.color.color_transparent);
+                iv_profile.get(imgPosition).setVisibility(View.GONE);
+                ibDelete.get(imgPosition).setVisibility(View.GONE);
                 break;
             }
         }
@@ -805,6 +817,9 @@ public class SignupProfileRegisterFragment extends BaseFragment {
             if(profileImgList.get(i).imgPosition == 4){
                 profileImgList.remove(i);
                 Collections.sort(profileImgList);
+                iv_profile.get(imgPosition).setBackgroundResource(R.color.color_transparent);
+                iv_profile.get(imgPosition).setVisibility(View.GONE);
+                ibDelete.get(imgPosition).setVisibility(View.GONE);
                 break;
             }
         }
@@ -815,6 +830,9 @@ public class SignupProfileRegisterFragment extends BaseFragment {
             if(profileImgList.get(i).imgPosition == 5){
                 profileImgList.remove(i);
                 Collections.sort(profileImgList);
+                iv_profile.get(imgPosition).setBackgroundResource(R.color.color_transparent);
+                iv_profile.get(imgPosition).setVisibility(View.GONE);
+                ibDelete.get(imgPosition).setVisibility(View.GONE);
                 break;
             }
         }
