@@ -67,7 +67,18 @@ public void layout_discInfoClicked(){
     mainActivity.selectLine(0);
     mainActivity.selectTab(9);
 }
-
+    @OnClick(R.id.layout_charInfo)
+    public void layout_charInfoClicked(){
+        MainActivity mainActivity = (MainActivity) getActivity();
+        mainActivity.selectLine(0);
+        mainActivity.selectTab(14);
+    }
+    @OnClick(R.id.layout_loverInfo)
+    public void layout_loverInfoClicked(){
+        MainActivity mainActivity = (MainActivity) getActivity();
+        mainActivity.selectLine(0);
+        mainActivity.selectTab(15);
+    }
 @OnClick(R.id.rlt_back)
     public void rlt_backClicked(){
     MainActivity mainActivity = (MainActivity) getActivity();

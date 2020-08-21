@@ -25,10 +25,12 @@ import com.character.microblogapp.ui.page.main.fragment.CharInfoFragment;
 import com.character.microblogapp.ui.page.main.fragment.CharWorldFragment;
 import com.character.microblogapp.ui.page.main.fragment.ChatFragment;
 import com.character.microblogapp.ui.page.main.fragment.DISCInfoMainFragment;
+import com.character.microblogapp.ui.page.main.fragment.DISCInfoTypeFragment;
 import com.character.microblogapp.ui.page.main.fragment.EvaluationFragment;
 import com.character.microblogapp.ui.page.main.fragment.HistoryFragment;
 import com.character.microblogapp.ui.page.main.fragment.HomeFragment;
 import com.character.microblogapp.ui.page.main.fragment.InspectingUserFragment;
+import com.character.microblogapp.ui.page.main.fragment.MyCharInfoFragment;
 import com.character.microblogapp.ui.page.main.fragment.PassedInspectionFragment;
 import com.character.microblogapp.ui.page.main.fragment.ProfileFragment;
 import com.character.microblogapp.ui.page.main.fragment.RejectFragment;
@@ -57,6 +59,14 @@ public class MainActivity extends BaseActivity {
     private final static int MAIN_CHAR_INFO = 8;
     /*200818, add*/
     private final static int MAIN_DISC_INFO_MAIN = 9;
+    private final static int MAIN_DISC_INFO_TYPE_D = 10;
+    private final static int MAIN_DISC_INFO_TYPE_I = 11;
+    private final static int MAIN_DISC_INFO_TYPE_S = 12;
+    private final static int MAIN_DISC_INFO_TYPE_C = 13;
+
+    private final static int MAIN_CHAR_INFO_MY_CHAR = 14;
+    private final static int MAIN_CHAR_INFO_LOVER = 15;
+
 
 
     RadioGroup btTabGroup;
@@ -148,10 +158,11 @@ public class MainActivity extends BaseActivity {
             selectLine(0);
             selectTab(0);
         }else if(mCurrentTabIdx == MAIN_DISC_INFO_MAIN){
-            fragment = new CharWorldFragment();
+            fragment = new CharInfoFragment();
             selectLine(0);
-            selectTab(0);
-        }else{
+            selectTab(MAIN_CHAR_INFO);
+
+        }else if(mCurrentTabIdx == MAIN_TAB_HOME){
             super.onBackPressed();
         }
     }
@@ -353,8 +364,34 @@ public class MainActivity extends BaseActivity {
                 break;
             case MAIN_DISC_INFO_MAIN:
                 fragment = new DISCInfoMainFragment();
-                tag = "성격정보";
+                tag = "성격정보2";
                 break;
+            case MAIN_DISC_INFO_TYPE_D:
+                fragment = new DISCInfoTypeFragment();
+                tag = "D";
+                break;
+            case MAIN_DISC_INFO_TYPE_I:
+                fragment = new DISCInfoTypeFragment();
+                tag = "I";
+                break;
+            case MAIN_DISC_INFO_TYPE_S:
+                fragment = new DISCInfoTypeFragment();
+                tag = "S";
+                break;
+            case MAIN_DISC_INFO_TYPE_C:
+                fragment = new DISCInfoTypeFragment();
+                tag = "C";
+                break;
+            case MAIN_CHAR_INFO_MY_CHAR:
+                fragment = new MyCharInfoFragment();
+                tag = "내 성격정보 결과";
+                break;
+            case MAIN_CHAR_INFO_LOVER:
+                fragment = new DISCInfoTypeFragment();
+                tag = "나와 잘 맞는 성격";
+                break;
+
+
         }
 
         mCurrentTabIdx = idx;

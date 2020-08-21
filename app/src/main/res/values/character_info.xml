@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    <string name="char_d">D</string>
     <string name="char_d_text">노빠꾸</string>
+    <string name="char_d_title">"노빠꾸가 어때서? 이게 내 스타일이야!"</string>
+    <string name="char_d_type">주도형</string>
     <string name="char_d_factor">목적 성취</string>
     <string-array name="char_d_tags_array">
         <item>자기중심적</item>
@@ -10,13 +12,16 @@
         <item>경쟁적</item>
         <item>위험을 감수함</item>
     </string-array>
-    <string-array name="char_d_job_env_array">
-        <item>01. 권위가 있는 환경</item>
-        <item>02. 업무의 결정권 극대화</item>
-        <item>03. 빠른 속도, 결과지향</item>
-        <item>04. 결과에 대한 보상</item>
-        <item>05. 프로젝트를 통제할 기회</item>
-
+    <string name="char_d_star">(여) 이효리 / (남) 강호동</string>
+    <string name="char_d_info">- 목적의식이 투철하여 도전정신이 강하고 변화와 자신이 성장할 수 있는 기회가 있는 환경을 좋아한다.\n
+- D형은 과정보다는 결과를 우선시 한다. 따라서 상대와 대화를 나눌 때, 상대가 너무 장황하게 얘기하거나 천천히 말을 하면, “됐고, 결론이 뭐야” 라고 묻는, 빠른 결과를 원한다.\n
+- 상황 판단이 빠르고 과단성이 있으며 결단력이 있다.\n
+- 타고난 자신감을 갖고 단호하고 확신에 찬 어투로 자신의 의견을 말하므로 카리스마와 리더쉽이 느껴진다.</string>
+    <string name="char_d_weakness">통제권을 잃어버리거나 남에게 이끌려가는 것, 약하게 보이는 것</string>
+    <string-array name="char_d_weakness_array">
+        <item>상대방에 대한 인간적 배려 부족</item>
+        <item>소소한 감정에 신경 못쓰고 결정내림</item>
+        <item>화가 났을 때 공격적임, 압도하려 함.</item>
     </string-array>
     <!---->
 
@@ -75,8 +80,6 @@
         <item>05. 수치를 활용할 수 있는 정확성을 요하는 환경</item>
 
     </string-array>
-
-
 
 
     <string name="char_ic_disadvantage">- 집단 활동을 좋아하지만 혼자서 충전하는 시간도 가져야 한다.</string>

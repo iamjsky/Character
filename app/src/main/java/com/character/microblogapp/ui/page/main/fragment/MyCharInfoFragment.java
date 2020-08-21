@@ -1,44 +1,39 @@
-package com.character.microblogapp.ui.page.character;
+package com.character.microblogapp.ui.page.main.fragment;
 
-import android.content.Intent;
-import android.content.res.Resources;
-import android.graphics.Color;
-import android.os.Build;
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.annotation.RequiresApi;
 import android.support.v4.content.ContextCompat;
-import android.text.Spannable;
-import android.text.SpannableString;
-import android.text.style.ForegroundColorSpan;
 import android.util.Log;
+import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.character.microblogapp.R;
-import com.character.microblogapp.data.Constant;
 import com.character.microblogapp.data.MyInfo;
-import com.character.microblogapp.model.MCharacterInfo;
+import com.character.microblogapp.model.MCharacterInfo2;
 import com.character.microblogapp.model.MError;
-import com.character.microblogapp.model.MUser;
 import com.character.microblogapp.net.Net;
-import com.character.microblogapp.ui.page.BaseActivity;
-import com.character.microblogapp.ui.page.intro.IntroActivity;
+import com.character.microblogapp.ui.page.BaseFragment;
 import com.character.microblogapp.ui.page.main.MainActivity;
+import com.character.microblogapp.util.PrefMgr;
 import com.character.microblogapp.util.Toaster;
 import com.nex3z.flowlayout.FlowLayout;
-
-import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 
-import android.databinding.DataBindingUtil;
-import android.databinding.ViewDataBinding;
+import static com.facebook.FacebookSdk.getApplicationContext;
 
-public class CharacterConfirmActivity extends BaseActivity {
+@SuppressLint("ValidFragment")
+public class MyCharInfoFragment extends BaseFragment {
 
     @BindView(R.id.tv_char_01)
     TextView tv_char_01;
@@ -116,65 +111,69 @@ public class CharacterConfirmActivity extends BaseActivity {
     @BindView(R.id.layout_charTagArea_02)
     FlowLayout layout_charTagArea_02;
 
-    String character = "";
+    PrefMgr m_prefMgr;
 
-    int go = 0;
+    String type = "";
     int nowPage = 0;
 
+
+
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        ViewDataBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_character_confirm);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
 
-        character = getIntent().getStringExtra("result");
-        saveCharacterInfo();
+        createView(inflater, container, R.layout.fragment_my_charinfo);
+        SharedPreferences prefs = getActivity().getSharedPreferences(PrefMgr.APP_PREFS,
+                Context.MODE_PRIVATE);
+        m_prefMgr = new PrefMgr(prefs);
 
-        go = getIntent().getIntExtra("go", 0);
+        type = MyInfo.getInstance().character;
+//You need to add the following line for this solution to work; thanks skayred
+
+        mRoot.setFocusableInTouchMode(true);
+        mRoot.requestFocus();
+
+        mRoot.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+
+                if (keyCode == KeyEvent.KEYCODE_BACK) {
+                    if (event.getAction() == KeyEvent.ACTION_UP) {
+                        rlt_backClicked();
+                        return true;
+                    }
+                }
+
+                return false;
+            }
+        });
+
+        getInfo();
+
+        return mRoot;
     }
+
 
     @Override
     protected void initUI() {
-        super.initUI();
+
+
     }
 
-    @OnClick(R.id.btn_again_test)
-    void showProfilePage() {
-        if (go == 1) {
-            apiInfo();
-        } else {
-            doLogin();
-        }
-    }
-
-    @Override
-    public void onBackPressed() {
-        goBack();
-    }
 
     @OnClick(R.id.rlt_back)
-    void goBack() {
-        switch (nowPage){
-
-            case 0:
-                finish();
-                break;
-
-            default:
-                setUI();
-                break;
+    public void rlt_backClicked() {
+        MainActivity mainActivity = (MainActivity) getActivity();
+        mainActivity.selectLine(0);
+        if (nowPage == 0) {
+            mainActivity.selectTab(8);
+        } else {
+            setUI();
         }
 
+
     }
-
-//    @OnClick(R.id.tv_style)
-//    void findStyle() {
-//        if (result == null) {
-//            return;
-//        }
-//
-//        txv_desc.setText(String.format("%s\n%s\n%s", result.gender1, result.gender2, result.gender3));
-//    }
-
 
     @OnClick(R.id.tv_job)
     void findJob() {
@@ -204,33 +203,10 @@ public class CharacterConfirmActivity extends BaseActivity {
 
     }
 
-
-
-    MCharacterInfo.Info result = null;
-
-    void saveCharacterInfo() {
-        showProgress(this);
-        Net.instance().api.save_character_info(MyInfo.getInstance().uid, character)
-                .enqueue(new Net.ResponseCallBack<MCharacterInfo>() {
-                    @Override
-                    public void onSuccess(MCharacterInfo response) {
-                        hideProgress();
-                        result = response.character;
-                        MyInfo.getInstance().result = result;
-                        Log.e("char_debug", "result : " + result);
-                        setUI();
-                    }
-
-                    @Override
-                    public void onFailure(MError response) {
-                        hideProgress();
-                        Toaster.showShort(CharacterConfirmActivity.this, "등록된 데이터가 없습니다.");
-                    }
-                });
-    }
-
-
     void setUI() {
+        if (result == null) {
+            return;
+        }
         if (result == null) {
             return;
         }
@@ -256,7 +232,7 @@ public class CharacterConfirmActivity extends BaseActivity {
         layout_discResult.setVisibility(View.VISIBLE);
         layout_job.setVisibility(View.GONE);
         layout_jobEnv.setVisibility(View.GONE);
-        tv_title.setText("DISC 성격테스트 결과");
+        tv_title.setText("내 성격정보 결과");
 
 
         tv_char_01.setText(personality1);
@@ -371,70 +347,137 @@ public class CharacterConfirmActivity extends BaseActivity {
 
 
 
+
     }
 
-    void doLogin() {
 
-        String email = MyInfo.getInstance().email;
-        String password = MyInfo.getInstance().pwd;
-        int loginType = MyInfo.getInstance().login_type;
-        if (loginType != LOGIN_EMAIL)
-            email = MyInfo.getInstance().sns_id;
+    MCharacterInfo2.Info result = null;
 
-        showProgress(this);
-        Net.instance().api.login(email, password, loginType, MyInfo.getInstance().fcm_token)
-                .enqueue(new Net.ResponseCallBack<MUser>() {
-                    @Override
-                    public void onSuccess(MUser response) {
-                        super.onSuccess(response);
-                        hideProgress();
+    private int getDISCColor(String type) {
+        int discColor;
+        switch (type) {
 
-                        MyInfo.getInstance().uid = response.info.uid;
-                        MyInfo.getInstance().transformData(response);
+            case "D":
+                discColor = ContextCompat.getColor(getApplicationContext(), R.color.char_d_color);
 
-                        Intent it = new Intent(CharacterConfirmActivity.this, MainActivity.class);
-                        it.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                        startActivity(it);
-                        finish();
-                    }
+                break;
+            case "I":
+                discColor = ContextCompat.getColor(getApplicationContext(), R.color.char_i_color);
 
-                    @Override
-                    public void onFailure(MError response) {
-                        super.onFailure(response);
-                        hideProgress();
+                break;
+            case "C":
+                discColor = ContextCompat.getColor(getApplicationContext(), R.color.char_c_color);
 
-                        startActivity(CharacterConfirmActivity.this, IntroActivity.class);
-                        finish();
-                    }
-                });
+                break;
+            case "S":
+                discColor = ContextCompat.getColor(getApplicationContext(), R.color.char_s_color);
+                break;
+            default:
+                discColor = ContextCompat.getColor(getApplicationContext(), R.color.color_char_gray);
+
+
+        }
+        return discColor;
     }
 
-    void apiInfo() {
-        Net.instance().api.get_my_profile_info(MyInfo.getInstance().uid)
-                .enqueue(new Net.ResponseCallBack<MUser>() {
+    private Drawable getDISCBackground(String type, int layout) {
+        Drawable drawable = null;
+        switch (type) {
+
+            case "D":
+                if (layout == 0) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_d_01);
+                } else if (layout == 1) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_d_02);
+                } else if (layout == 2) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_keyword_d_02);
+                } else if (layout == 3) {
+                    drawable = getResources().getDrawable(R.drawable.bg_d_img);
+                } else if (layout == 4) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_keyword_d_01);
+                } else if (layout == 5) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_panel_d_01);
+                }
+
+
+                break;
+            case "I":
+                if (layout == 0) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_i_01);
+                } else if (layout == 1) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_i_02);
+                } else if (layout == 2) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_keyword_i_02);
+                } else if (layout == 3) {
+                    drawable = getResources().getDrawable(R.drawable.bg_i_img);
+                } else if (layout == 4) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_keyword_i_01);
+                } else if (layout == 5) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_panel_i_01);
+                }
+
+
+                break;
+            case "C":
+                if (layout == 0) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_c_01);
+                } else if (layout == 1) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_c_02);
+                } else if (layout == 2) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_keyword_c_02);
+                } else if (layout == 3) {
+                    drawable = getResources().getDrawable(R.drawable.bg_c_img);
+                } else if (layout == 4) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_keyword_c_01);
+                } else if (layout == 5) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_panel_c_01);
+                }
+
+
+                break;
+            case "S":
+                if (layout == 0) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_s_01);
+                } else if (layout == 1) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_s_02);
+                } else if (layout == 2) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_keyword_s_02);
+                } else if (layout == 3) {
+                    drawable = getResources().getDrawable(R.drawable.bg_s_img);
+                } else if (layout == 4) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_keyword_s_01);
+                } else if (layout == 5) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_panel_s_01);
+                }
+
+                break;
+
+
+        }
+        return drawable;
+    }
+
+    private void getInfo() {
+
+        Net.instance().api.get_character_info_style2(type)
+                .enqueue(new Net.ResponseCallBack<MCharacterInfo2>() {
                     @Override
-                    public void onSuccess(MUser response) {
-                        super.onSuccess(response);
-                        hideProgress();
+                    public void onSuccess(MCharacterInfo2 response) {
 
-                        MyInfo.getInstance().status = response.info.status;
-                        MyInfo.getInstance().uid = response.info.uid;
-                        MyInfo.getInstance().transformData(response);
-
-                        finish();
-                    }
-
-                    @Override
-                    public void onFailure(MError response) {
-                        super.onFailure(response);
-                        hideProgress();
-
-                        if (response.resultcode == 500) {
-                            networkErrorOccupied(response);
-                        } else {
-                            Toaster.showShort(CharacterConfirmActivity.this, "오류입니다.");
+                        if (response.info != null) {
+                            result = response.info;
+                            Log.e("char_debug", "type : " + type + " / info : " + result);
+                            setUI();
                         }
                     }
+
+                    @Override
+                    public void onFailure(MError response) {
+
+                        Toaster.showShort(getActivity(), "등록된 데이터가 없습니다.");
+                    }
                 });
     }
+
+
 }

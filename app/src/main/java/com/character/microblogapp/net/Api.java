@@ -8,6 +8,7 @@ import com.character.microblogapp.model.MBase;
 import com.character.microblogapp.model.MBlock;
 import com.character.microblogapp.model.MCharacter;
 import com.character.microblogapp.model.MCharacterInfo;
+import com.character.microblogapp.model.MCharacterInfo2;
 import com.character.microblogapp.model.MChat;
 import com.character.microblogapp.model.MChatRoom;
 import com.character.microblogapp.model.MComment;
@@ -525,6 +526,11 @@ public interface Api {
     @FormUrlEncoded
     @POST("./User/get_character_info_style")
     Call<MVersion> get_character_info_style(
+            @Field("character") String character
+    );
+    @FormUrlEncoded
+    @POST("./User/get_character_info_style2")
+    Call<MCharacterInfo2> get_character_info_style2(
             @Field("character") String character
     );
 

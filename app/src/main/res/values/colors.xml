@@ -15,8 +15,11 @@
 
     <color name="char_main_color">#ff056a</color>
     <color name="char_d_color">#000000</color>
+
     <color name="char_i_color">#ff056a</color>
+
     <color name="char_s_color">#1faf00</color>
+
     <color name="char_c_color">#487cff</color>
 
     <color name="color_border">@color/color_dfdfdf</color>

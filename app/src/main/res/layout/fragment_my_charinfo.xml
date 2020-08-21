@@ -54,7 +54,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/nanum_square_b"
-                        android:text="DISC 성격테스트 결과"
+                        android:text="내 성격정보 결과"
                         android:textColor="@color/color_white"
                         android:textSize="@dimen/_14sdp" />
 
@@ -80,7 +80,7 @@
                         android:orientation="vertical">
 
                         <RelativeLayout
-android:layout_weight="1"
+                            android:layout_weight="1"
                             android:layout_width="match_parent"
                             android:layout_height="0dp">
 
@@ -153,7 +153,7 @@ android:layout_weight="1"
                                         <TextView
                                             android:maxLines="1"
                                             android:ellipsize="end"
-                                          android:layout_weight="1"
+                                            android:layout_weight="1"
                                             android:lineSpacingExtra="@dimen/_2sdp"
                                             android:id="@+id/tv_charText_01"
                                             android:layout_width="match_parent"
@@ -494,7 +494,7 @@ android:layout_weight="1"
                             android:id="@+id/btn_share"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginRight="@dimen/_24sdp"
+
                             android:background="@drawable/bg_rounded_10"
                             android:fontFamily="@font/nanum_square_r"
                             android:paddingLeft="@dimen/_24sdp"
@@ -505,19 +505,7 @@ android:layout_weight="1"
                             android:textColor="@color/char_main_color"
                             android:textSize="@dimen/_12sdp" />
 
-                        <TextView
-                            android:id="@+id/btn_again_test"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bg_rounded_03"
-                            android:fontFamily="@font/nanum_square_b"
-                            android:paddingLeft="@dimen/_24sdp"
-                            android:paddingTop="@dimen/_10sdp"
-                            android:paddingRight="@dimen/_24sdp"
-                            android:paddingBottom="@dimen/_10sdp"
-                            android:text="시작하기"
-                            android:textColor="@color/color_white"
-                            android:textSize="@dimen/_12sdp" />
+
 
                     </LinearLayout>
                 </LinearLayout>

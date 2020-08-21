@@ -3,6 +3,7 @@ package com.character.microblogapp.data;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.character.microblogapp.model.MCharacterInfo;
 import com.character.microblogapp.model.MUser;
 import com.character.microblogapp.util.PrefMgr;
 
@@ -39,6 +40,7 @@ public class MyInfo extends BaseUserInfo {
     public int status;// 회원상태(1-정상, 0-탈퇴회원, 2-정지회원)
     public String birthday;
     public String status_memo;
+    public MCharacterInfo.Info result;
 
     public int select_man = 0;
     public int star_value = 0;
