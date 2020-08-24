@@ -61,6 +61,13 @@ public class MyCharInfoFragment extends BaseFragment {
     TextView tv_charText_06;
     @BindView(R.id.tv_charType_01)
     TextView tv_charType_01;
+    @BindView(R.id.tv_charType_02)
+    TextView tv_charType_02;
+    @BindView(R.id.tv_charType_03)
+    TextView tv_charType_03;
+    @BindView(R.id.tv_charType_04)
+    TextView tv_charType_04;
+
     @BindView(R.id.tv_charFact_01)
     TextView tv_charFact_01;
     @BindView(R.id.tv_charInfo)
@@ -111,11 +118,14 @@ public class MyCharInfoFragment extends BaseFragment {
     @BindView(R.id.layout_charTagArea_02)
     FlowLayout layout_charTagArea_02;
 
+    @BindView(R.id.layout_charType_secondArea)
+            LinearLayout layout_charType_secondArea;
+
     PrefMgr m_prefMgr;
 
     String type = "";
     int nowPage = 0;
-
+    int pageType = -1;
 
 
 
@@ -128,7 +138,15 @@ public class MyCharInfoFragment extends BaseFragment {
                 Context.MODE_PRIVATE);
         m_prefMgr = new PrefMgr(prefs);
 
-        type = MyInfo.getInstance().character;
+
+        if(getTag().equals("myInfo")){
+            type = MyInfo.getInstance().character;
+            pageType = 0;
+        }else{
+            type = getTag();
+            pageType = 1;
+        }
+
 //You need to add the following line for this solution to work; thanks skayred
 
         mRoot.setFocusableInTouchMode(true);
@@ -166,11 +184,20 @@ public class MyCharInfoFragment extends BaseFragment {
     public void rlt_backClicked() {
         MainActivity mainActivity = (MainActivity) getActivity();
         mainActivity.selectLine(0);
-        if (nowPage == 0) {
-            mainActivity.selectTab(8);
-        } else {
-            setUI();
+        if(pageType == 0){
+            if (nowPage == 0) {
+                mainActivity.selectTab(8);
+            } else {
+                setUI();
+            }
+        }else{
+            if (nowPage == 0) {
+                mainActivity.selectTab(16);
+            } else {
+                setUI();
+            }
         }
+
 
 
     }
@@ -218,6 +245,7 @@ public class MyCharInfoFragment extends BaseFragment {
         String personality_title1 = result.personality_title1;
         String personality_title2 = result.personality_title2;
         String name = result.name;
+        String name2 = result.name2;
         String factor = result.factor;
         String keyword1 = result.keyword1;
         String keyword2 = result.keyword2;
@@ -232,7 +260,12 @@ public class MyCharInfoFragment extends BaseFragment {
         layout_discResult.setVisibility(View.VISIBLE);
         layout_job.setVisibility(View.GONE);
         layout_jobEnv.setVisibility(View.GONE);
-        tv_title.setText("내 성격정보 결과");
+        if(pageType == 0){
+            tv_title.setText("내 성격정보 결과");
+        }else{
+            tv_title.setText("성격정보 - " + type + "형");
+        }
+
 
 
         tv_char_01.setText(personality1);
@@ -240,11 +273,13 @@ public class MyCharInfoFragment extends BaseFragment {
         tv_char_05.setText(personality1);
 
         tv_charText_01.setText(personality_title1);
-        tv_charText_03.setText(personality_title1);
-        tv_charText_05.setText(personality_title1);
+        tv_charText_03.setText(name);
+        tv_charText_05.setText(name);
 
 
         tv_charType_01.setText(name);
+        tv_charType_03.setText(personality1);
+
         tv_charFact_01.setText(factor);
 
 
@@ -290,6 +325,7 @@ public class MyCharInfoFragment extends BaseFragment {
             layout_jobList_02.setVisibility(View.GONE);
             layout_jobEnvList_02.setVisibility(View.GONE);
             layout_charTagArea_02.setVisibility(View.GONE);
+            layout_charType_secondArea.setVisibility(View.GONE);
 
 
 
@@ -299,14 +335,17 @@ public class MyCharInfoFragment extends BaseFragment {
             view_jobLine.setVisibility(View.VISIBLE);
             layout_jobList_02.setVisibility(View.VISIBLE);
             layout_jobEnvList_02.setVisibility(View.VISIBLE);
+            layout_charType_secondArea.setVisibility(View.VISIBLE);
             tv_char_02.setText(personality2);
             tv_char_04.setText(personality2);
             tv_char_06.setText(personality2);
             tv_charText_02.setText(personality_title2);
-            tv_charText_04.setText(personality_title2);
-            tv_charText_06.setText(personality_title2);
+            tv_charText_04.setText(name2);
+            tv_charText_06.setText(name2);
             tv_jobList_02.setText(job2);
             tv_jobEnvList_02.setText(job_env2);
+            tv_charType_02.setText(name2);
+            tv_charType_04.setText(personality2);
             layout_charTagArea_02.setVisibility(View.VISIBLE);
 
         }
@@ -335,10 +374,12 @@ public class MyCharInfoFragment extends BaseFragment {
             }
             if (ind == 0) {
                 tv_char_01.setTextColor(discColor);
+                tv_charText_01.setTextColor(discColor);
                 tv_char_03.setTextColor(discColor);
                 tv_char_05.setTextColor(discColor);
             } else {
                 tv_char_02.setTextColor(discColor);
+                tv_charText_02.setTextColor(discColor);
                 tv_char_04.setTextColor(discColor);
                 tv_char_06.setTextColor(discColor);
             }

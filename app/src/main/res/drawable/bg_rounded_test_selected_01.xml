@@ -11,7 +11,7 @@
                 android:right="@dimen/_1sdp"
                 android:top="@dimen/_1sdp" />
 
-            <solid android:color="#00CCCCCC" />
+            <solid android:color="#13ff056a" />
         </shape>
     </item>
     <item>
@@ -24,7 +24,7 @@
                 android:right="@dimen/_1sdp"
                 android:top="@dimen/_1sdp" />
 
-            <solid android:color="#10CCCCCC" />
+            <solid android:color="#23ff056a" />
         </shape>
     </item>
     <item>
@@ -37,7 +37,7 @@
                 android:right="@dimen/_1sdp"
                 android:top="@dimen/_1sdp" />
 
-            <solid android:color="#20d5d5d5" />
+            <solid android:color="#33ff056a" />
         </shape>
     </item>
 
@@ -49,8 +49,8 @@
             <gradient
                 android:type="linear"
                 android:angle="0"
-                android:startColor="#ffffff"
-                android:endColor="#ffffff" />
+                android:startColor="#ff056a"
+                android:endColor="#ff5161" />
             <corners android:radius="@dimen/_12sdp" />
         </shape>
     </item>

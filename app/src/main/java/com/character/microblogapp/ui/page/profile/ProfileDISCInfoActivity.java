@@ -35,17 +35,7 @@ import butterknife.OnClick;
 
 public class ProfileDISCInfoActivity extends BaseActivity {
 
-    @BindView(R.id.txv_top_nickname)
-    TextView txvTopNickName;
 
-    @BindView(R.id.txv_manner21)
-    TextView txvManner21;
-
-    @BindView(R.id.txv_manner_desc2)
-    TextView txvMannerDesc2;
-
-    @BindView(R.id.rlt_info)
-    RelativeLayout rlInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,53 +47,9 @@ public class ProfileDISCInfoActivity extends BaseActivity {
 
     MUser user = null;
 
-    @Override
-    protected void initUI() {
-        super.initUI();
 
-//        txvMannerDesc2.setVisibility(View.INVISIBLE);
-        rlInfo.setVisibility(View.GONE);
 
-        updateUI();
-    }
 
-    void updateUI() {
-
-        txvTopNickName.setText(R.string.character_test_disc);  //타이틀
-
-        txvManner21.setText("DISC란?");
-        txvManner21.setTextSize(TypedValue.COMPLEX_UNIT_PX, 60);
-        //tvCharacterText.setText(user.info.character_text);
-
-//        getInfo();
-    }
-
-//    private void getInfo() {
-//
-//        showProgress(this);
-//        Net.instance().api.get_disc_info()
-//                .enqueue(new Net.ResponseCallBack<MVersion>() {
-//                    @Override
-//                    public void onSuccess(MVersion response) {
-//                        super.onSuccess(response);
-//                        hideProgress();
-//
-//                        tvCharacterText.setText(response.info);
-//                    }
-//
-//                    @Override
-//                    public void onFailure(MError response) {
-//                        super.onFailure(response);
-//                        hideProgress();
-//
-//                        if (response.resultcode == 500) {
-//                            networkErrorOccupied(response);
-//                        } else {
-//                            new AlertDialog.Builder(ProfileDISCInfoActivity.this).setTitle("").setMessage(response.res_msg).setPositiveButton(R.string.confirm, null).show();
-//                        }
-//                    }
-//                });
-//    }
 
     @OnClick(R.id.rlt_back)
     void goBack() {

@@ -58,6 +58,10 @@ public class DISCInfoTypeFragment extends BaseFragment {
 
     @BindView(R.id.tv_charType_01)
     TextView tv_charType_01;
+    @BindView(R.id.tv_charType_03)
+    TextView tv_charType_03;
+
+
     @BindView(R.id.tv_charFact_01)
     TextView tv_charFact_01;
     @BindView(R.id.tv_charInfo)
@@ -242,11 +246,12 @@ public class DISCInfoTypeFragment extends BaseFragment {
         tv_char_05.setText(personality1);
 
         tv_charText_01.setText(personality_title1);
-        tv_charText_03.setText(personality_title1);
-        tv_charText_05.setText(personality_title1);
+        tv_charText_03.setText(name);
+        tv_charText_05.setText(name);
 
 
         tv_charType_01.setText(name);
+        tv_charType_03.setText(personality1);
         tv_charFact_01.setText(factor);
 
         tv_charStar.setText(celeb);

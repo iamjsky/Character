@@ -75,6 +75,7 @@ public class CharacterFragment extends BaseFragment {
             public void onDetail(int pos) {
 
                 if (characterActivity != null) {
+
                     characterActivity.showCharacterNext(character.answers.get(pos));
                 }
             }

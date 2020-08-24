@@ -138,7 +138,7 @@ android:layout_weight="1"
                                     android:id="@+id/layout_char"
                                     android:layout_width="match_parent"
                                     android:layout_height="@dimen/_125sdp"
-                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:layout_marginTop="@dimen/_5sdp"
 
                                     android:orientation="horizontal">
 
@@ -162,7 +162,7 @@ android:layout_weight="1"
                                             android:gravity="center"
                                             android:text="쌉관종쌉관종쌉관종쌉관종쌉관종쌉관종"
                                             android:textColor="#545454"
-                                            android:textSize="@dimen/_14sdp" />
+                                            android:textSize="@dimen/_20sdp" />
 
                                         <ImageView
 
@@ -212,7 +212,7 @@ android:layout_weight="1"
 
                                             android:text="핵고구마"
                                             android:textColor="#545454"
-                                            android:textSize="@dimen/_14sdp" />
+                                            android:textSize="@dimen/_20sdp" />
 
                                         <ImageView
                                             android:id="@+id/iv_charImg_02"
@@ -268,16 +268,97 @@ android:layout_weight="1"
 
                                                 <TextView
                                                     android:id="@+id/tv_charType_01"
-                                                    android:layout_width="0dp"
+                                                    android:layout_width="wrap_content"
                                                     android:layout_height="wrap_content"
-                                                    android:layout_weight="1"
-
-                                                    android:ellipsize="end"
                                                     android:fontFamily="@font/nanum_square_b"
                                                     android:singleLine="true"
-                                                    android:text="사교형 (I) + 안정형 (S)"
+                                                    android:text="사교형"
                                                     android:textColor="#000000"
                                                     android:textSize="@dimen/_12sdp" />
+                                                <TextView
+
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:fontFamily="@font/nanum_square_b"
+                                                    android:singleLine="true"
+                                                    android:text="("
+                                                    android:textColor="#000000"
+                                                    android:textSize="@dimen/_12sdp" />
+                                                <TextView
+                                                    android:id="@+id/tv_charType_03"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:fontFamily="@font/nanum_square_b"
+                                                    android:singleLine="true"
+                                                    android:text="I"
+                                                    android:textColor="#000000"
+                                                    android:textSize="@dimen/_12sdp" />
+                                                <TextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:fontFamily="@font/nanum_square_b"
+                                                    android:singleLine="true"
+                                                    android:text=")"
+                                                    android:textColor="#000000"
+                                                    android:textSize="@dimen/_12sdp" />
+                                                <LinearLayout
+                                                    android:visibility="gone"
+                                                    android:layout_marginLeft="@dimen/_2sdp"
+                                                    android:id="@+id/layout_charType_secondArea"
+                                                    android:orientation="horizontal"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content">
+                                                    <TextView
+                                                        android:layout_marginRight="@dimen/_2sdp"
+                                                        android:id="@+id/tv_charType_plus"
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:fontFamily="@font/nanum_square_b"
+                                                        android:singleLine="true"
+                                                        android:text="+"
+                                                        android:textColor="#000000"
+                                                        android:textSize="@dimen/_12sdp" />
+                                                    <TextView
+                                                        android:id="@+id/tv_charType_02"
+                                                        android:layout_width="0dp"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_weight="1"
+
+                                                        android:ellipsize="end"
+                                                        android:fontFamily="@font/nanum_square_b"
+                                                        android:singleLine="true"
+                                                        android:text="안정형"
+                                                        android:textColor="#000000"
+                                                        android:textSize="@dimen/_12sdp" />
+                                                    <TextView
+
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:fontFamily="@font/nanum_square_b"
+                                                        android:singleLine="true"
+                                                        android:text="("
+                                                        android:textColor="#000000"
+                                                        android:textSize="@dimen/_12sdp" />
+                                                    <TextView
+                                                        android:id="@+id/tv_charType_04"
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:fontFamily="@font/nanum_square_b"
+                                                        android:singleLine="true"
+                                                        android:text="D"
+                                                        android:textColor="#000000"
+                                                        android:textSize="@dimen/_12sdp" />
+                                                    <TextView
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:fontFamily="@font/nanum_square_b"
+                                                        android:singleLine="true"
+                                                        android:text=")"
+                                                        android:textColor="#000000"
+                                                        android:textSize="@dimen/_12sdp" />
+
+                                                </LinearLayout>
+
 
                                             </LinearLayout>
 

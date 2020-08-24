@@ -1,0 +1,1455 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f6f6f6"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:background="@drawable/bg_top_bar_01"
+            android:gravity="center|left"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/_14sdp"
+            android:paddingRight="@dimen/_14sdp">
+
+            <ImageView
+                android:id="@+id/rlt_back"
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="@dimen/_16sdp"
+
+                android:layout_marginRight="@dimen/_10sdp"
+                android:src="@drawable/comm_ico_back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nanum_square_b"
+                android:text="성격 유형 리스트"
+                android:textColor="@color/color_white"
+                android:textSize="@dimen/_14sdp" />
+
+        </LinearLayout>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/layout_list"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/_4sdp"
+                android:paddingTop="@dimen/_10sdp"
+                android:paddingRight="@dimen/_4sdp"
+                android:paddingBottom="@dimen/_10sdp"
+                android:visibility="visible">
+
+                <!--D-->
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_rounded_white_panel_03"
+                    android:gravity="center|top"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/_24sdp"
+                    android:paddingTop="@dimen/_24sdp"
+                    android:paddingRight="@dimen/_24sdp"
+                    android:paddingBottom="@dimen/_24sdp">
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center|left"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/_40sdp"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_marginRight="@dimen/_15sdp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/bg_badge" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/jalnan_n"
+                            android:gravity="center"
+                            android:text="노빠꾸"
+                            android:textColor="#000000"
+                            android:textSize="@dimen/_20sdp" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:layout_marginBottom="@dimen/_15sdp"
+                        android:background="#dddddd" />
+
+                    <LinearLayout
+                        android:layout_marginBottom="@dimen/_25sdp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center|left"
+                        android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_marginRight="@dimen/_5sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/jalnan_n"
+                        android:gravity="center"
+                        android:text="D"
+                        android:textColor="@color/char_d_color"
+                        android:textSize="@dimen/_20sdp" />
+                </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="노빠꾸 of 노빠꾸"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/_14sdp" />
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="매우 강한 주도형"
+                                android:textColor="#545454"
+                                android:textSize="@dimen/_12sdp" />
+
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_showChar_01"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_rounded_14"
+                            android:fontFamily="@font/nanum_square_b"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/_8sdp"
+                            android:paddingTop="@dimen/_4sdp"
+                            android:paddingRight="@dimen/_8sdp"
+                            android:paddingBottom="@dimen/_4sdp"
+                            android:text="보기"
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/_10sdp" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginBottom="@dimen/_25sdp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center|left"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_marginRight="@dimen/_5sdp"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="@dimen/_35sdp"
+                            android:layout_height="wrap_content">
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:fontFamily="@font/jalnan_n"
+                            android:gravity="center"
+                            android:text="D"
+                            android:textColor="@color/char_d_color"
+                            android:textSize="@dimen/_20sdp" />
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:fontFamily="@font/jalnan_n"
+                            android:gravity="center"
+                            android:text="I"
+                            android:textColor="@color/char_i_color"
+                            android:textSize="@dimen/_20sdp" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="노빠꾸 쌉관종"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/_14sdp" />
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="주도형 + 사교형"
+                                android:textColor="#545454"
+                                android:textSize="@dimen/_12sdp" />
+
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_showChar_02"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_rounded_14"
+                            android:fontFamily="@font/nanum_square_b"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/_8sdp"
+                            android:paddingTop="@dimen/_4sdp"
+                            android:paddingRight="@dimen/_8sdp"
+                            android:paddingBottom="@dimen/_4sdp"
+                            android:text="보기"
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/_10sdp" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginBottom="@dimen/_25sdp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_marginRight="@dimen/_5sdp"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="@dimen/_35sdp"
+                            android:layout_height="wrap_content">
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:fontFamily="@font/jalnan_n"
+                            android:gravity="center"
+                            android:text="D"
+                            android:textColor="@color/char_d_color"
+                            android:textSize="@dimen/_20sdp" />
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:fontFamily="@font/jalnan_n"
+                            android:gravity="center"
+                            android:text="S"
+                            android:textColor="@color/char_s_color"
+                            android:textSize="@dimen/_20sdp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="노빠꾸 핵고구마"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/_14sdp" />
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="주도형 + 안정형"
+                                android:textColor="#545454"
+                                android:textSize="@dimen/_12sdp" />
+
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_showChar_03"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_rounded_14"
+                            android:fontFamily="@font/nanum_square_b"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/_8sdp"
+                            android:paddingTop="@dimen/_4sdp"
+                            android:paddingRight="@dimen/_8sdp"
+                            android:paddingBottom="@dimen/_4sdp"
+                            android:text="보기"
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/_10sdp" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center|left"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_marginRight="@dimen/_5sdp"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="@dimen/_35sdp"
+                            android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:fontFamily="@font/jalnan_n"
+                            android:gravity="center"
+                            android:text="D"
+                            android:textColor="@color/char_d_color"
+                            android:textSize="@dimen/_20sdp" />
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/jalnan_n"
+                            android:gravity="center"
+                            android:text="C"
+                            android:textColor="@color/char_c_color"
+                            android:textSize="@dimen/_20sdp" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="노빠꾸 핵노잼"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/_14sdp" />
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="주도형 + 신중형"
+                                android:textColor="#545454"
+                                android:textSize="@dimen/_12sdp" />
+
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_showChar_04"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_rounded_14"
+                            android:fontFamily="@font/nanum_square_b"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/_8sdp"
+                            android:paddingTop="@dimen/_4sdp"
+                            android:paddingRight="@dimen/_8sdp"
+                            android:paddingBottom="@dimen/_4sdp"
+                            android:text="보기"
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/_10sdp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                <!--I-->
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_rounded_white_panel_03"
+                    android:gravity="center|top"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/_24sdp"
+                    android:paddingTop="@dimen/_24sdp"
+                    android:paddingRight="@dimen/_24sdp"
+                    android:paddingBottom="@dimen/_24sdp">
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center|left"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/_40sdp"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_marginRight="@dimen/_15sdp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/bg_badge" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/jalnan_n"
+                            android:gravity="center"
+                            android:text="쌉관종"
+                            android:textColor="#000000"
+                            android:textSize="@dimen/_20sdp" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:layout_marginBottom="@dimen/_15sdp"
+                        android:background="#dddddd" />
+
+                    <LinearLayout
+                        android:layout_marginBottom="@dimen/_25sdp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center|left"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_marginRight="@dimen/_5sdp"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="@dimen/_35sdp"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/jalnan_n"
+                                android:gravity="center"
+                                android:text="I"
+                                android:textColor="@color/char_i_color"
+                                android:textSize="@dimen/_20sdp" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="쌉관종 of 쌉관종"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/_14sdp" />
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="매우 강한 사교형"
+                                android:textColor="#545454"
+                                android:textSize="@dimen/_12sdp" />
+
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_showChar_05"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_rounded_14"
+                            android:fontFamily="@font/nanum_square_b"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/_8sdp"
+                            android:paddingTop="@dimen/_4sdp"
+                            android:paddingRight="@dimen/_8sdp"
+                            android:paddingBottom="@dimen/_4sdp"
+                            android:text="보기"
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/_10sdp" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginBottom="@dimen/_25sdp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center|left"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_marginRight="@dimen/_5sdp"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="@dimen/_35sdp"
+                            android:layout_height="wrap_content">
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:fontFamily="@font/jalnan_n"
+                                android:gravity="center"
+                                android:text="I"
+                                android:textColor="@color/char_i_color"
+                                android:textSize="@dimen/_20sdp" />
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:fontFamily="@font/jalnan_n"
+                                android:gravity="center"
+                                android:text="D"
+                                android:textColor="@color/char_d_color"
+                                android:textSize="@dimen/_20sdp" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="쌉관종 노빠꾸"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/_14sdp" />
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="사교형 + 주도형"
+                                android:textColor="#545454"
+                                android:textSize="@dimen/_12sdp" />
+
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_showChar_06"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_rounded_14"
+                            android:fontFamily="@font/nanum_square_b"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/_8sdp"
+                            android:paddingTop="@dimen/_4sdp"
+                            android:paddingRight="@dimen/_8sdp"
+                            android:paddingBottom="@dimen/_4sdp"
+                            android:text="보기"
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/_10sdp" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginBottom="@dimen/_25sdp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_marginRight="@dimen/_5sdp"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="@dimen/_35sdp"
+                            android:layout_height="wrap_content">
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:fontFamily="@font/jalnan_n"
+                                android:gravity="center"
+                                android:text="I"
+                                android:textColor="@color/char_i_color"
+                                android:textSize="@dimen/_20sdp" />
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:fontFamily="@font/jalnan_n"
+                                android:gravity="center"
+                                android:text="S"
+                                android:textColor="@color/char_s_color"
+                                android:textSize="@dimen/_20sdp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="쌉관종 핵고구마"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/_14sdp" />
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="사교형 + 안정형"
+                                android:textColor="#545454"
+                                android:textSize="@dimen/_12sdp" />
+
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_showChar_07"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_rounded_14"
+                            android:fontFamily="@font/nanum_square_b"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/_8sdp"
+                            android:paddingTop="@dimen/_4sdp"
+                            android:paddingRight="@dimen/_8sdp"
+                            android:paddingBottom="@dimen/_4sdp"
+                            android:text="보기"
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/_10sdp" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center|left"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_marginRight="@dimen/_5sdp"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="@dimen/_35sdp"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:fontFamily="@font/jalnan_n"
+                                android:gravity="center"
+                                android:text="I"
+                                android:textColor="@color/char_i_color"
+                                android:textSize="@dimen/_20sdp" />
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/jalnan_n"
+                                android:gravity="center"
+                                android:text="C"
+                                android:textColor="@color/char_c_color"
+                                android:textSize="@dimen/_20sdp" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="쌉관종 핵노잼"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/_14sdp" />
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="사교형 + 신중형"
+                                android:textColor="#545454"
+                                android:textSize="@dimen/_12sdp" />
+
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_showChar_08"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_rounded_14"
+                            android:fontFamily="@font/nanum_square_b"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/_8sdp"
+                            android:paddingTop="@dimen/_4sdp"
+                            android:paddingRight="@dimen/_8sdp"
+                            android:paddingBottom="@dimen/_4sdp"
+                            android:text="보기"
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/_10sdp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                <!--S-->
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_rounded_white_panel_03"
+                    android:gravity="center|top"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/_24sdp"
+                    android:paddingTop="@dimen/_24sdp"
+                    android:paddingRight="@dimen/_24sdp"
+                    android:paddingBottom="@dimen/_24sdp">
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center|left"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/_40sdp"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_marginRight="@dimen/_15sdp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/bg_badge" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/jalnan_n"
+                            android:gravity="center"
+                            android:text="핵고구마"
+                            android:textColor="#000000"
+                            android:textSize="@dimen/_20sdp" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:layout_marginBottom="@dimen/_15sdp"
+                        android:background="#dddddd" />
+
+                    <LinearLayout
+                        android:layout_marginBottom="@dimen/_25sdp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center|left"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_marginRight="@dimen/_5sdp"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="@dimen/_35sdp"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/jalnan_n"
+                                android:gravity="center"
+                                android:text="S"
+                                android:textColor="@color/char_s_color"
+                                android:textSize="@dimen/_20sdp" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="핵고구마 of 핵고구마"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/_14sdp" />
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="매우 강한 안정형"
+                                android:textColor="#545454"
+                                android:textSize="@dimen/_12sdp" />
+
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_showChar_09"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_rounded_14"
+                            android:fontFamily="@font/nanum_square_b"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/_8sdp"
+                            android:paddingTop="@dimen/_4sdp"
+                            android:paddingRight="@dimen/_8sdp"
+                            android:paddingBottom="@dimen/_4sdp"
+                            android:text="보기"
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/_10sdp" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginBottom="@dimen/_25sdp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center|left"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_marginRight="@dimen/_5sdp"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="@dimen/_35sdp"
+                            android:layout_height="wrap_content">
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:fontFamily="@font/jalnan_n"
+                                android:gravity="center"
+                                android:text="S"
+                                android:textColor="@color/char_s_color"
+                                android:textSize="@dimen/_20sdp" />
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:fontFamily="@font/jalnan_n"
+                                android:gravity="center"
+                                android:text="D"
+                                android:textColor="@color/char_d_color"
+                                android:textSize="@dimen/_20sdp" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="핵고구마 노빠꾸"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/_14sdp" />
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="안정형 + 주도형"
+                                android:textColor="#545454"
+                                android:textSize="@dimen/_12sdp" />
+
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_showChar_10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_rounded_14"
+                            android:fontFamily="@font/nanum_square_b"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/_8sdp"
+                            android:paddingTop="@dimen/_4sdp"
+                            android:paddingRight="@dimen/_8sdp"
+                            android:paddingBottom="@dimen/_4sdp"
+                            android:text="보기"
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/_10sdp" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginBottom="@dimen/_25sdp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_marginRight="@dimen/_5sdp"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="@dimen/_35sdp"
+                            android:layout_height="wrap_content">
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:fontFamily="@font/jalnan_n"
+                                android:gravity="center"
+                                android:text="S"
+                                android:textColor="@color/char_s_color"
+                                android:textSize="@dimen/_20sdp" />
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:fontFamily="@font/jalnan_n"
+                                android:gravity="center"
+                                android:text="I"
+                                android:textColor="@color/char_i_color"
+                                android:textSize="@dimen/_20sdp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="핵고구마 쌉관종"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/_14sdp" />
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="안정형 + 사교형"
+                                android:textColor="#545454"
+                                android:textSize="@dimen/_12sdp" />
+
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_showChar_11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_rounded_14"
+                            android:fontFamily="@font/nanum_square_b"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/_8sdp"
+                            android:paddingTop="@dimen/_4sdp"
+                            android:paddingRight="@dimen/_8sdp"
+                            android:paddingBottom="@dimen/_4sdp"
+                            android:text="보기"
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/_10sdp" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center|left"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_marginRight="@dimen/_5sdp"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="@dimen/_35sdp"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:fontFamily="@font/jalnan_n"
+                                android:gravity="center"
+                                android:text="S"
+                                android:textColor="@color/char_s_color"
+                                android:textSize="@dimen/_20sdp" />
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/jalnan_n"
+                                android:gravity="center"
+                                android:text="C"
+                                android:textColor="@color/char_c_color"
+                                android:textSize="@dimen/_20sdp" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="핵고구마 핵노잼"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/_14sdp" />
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="안정형 + 신중형"
+                                android:textColor="#545454"
+                                android:textSize="@dimen/_12sdp" />
+
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_showChar_12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_rounded_14"
+                            android:fontFamily="@font/nanum_square_b"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/_8sdp"
+                            android:paddingTop="@dimen/_4sdp"
+                            android:paddingRight="@dimen/_8sdp"
+                            android:paddingBottom="@dimen/_4sdp"
+                            android:text="보기"
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/_10sdp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                <!--C-->
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_rounded_white_panel_03"
+                    android:gravity="center|top"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/_24sdp"
+                    android:paddingTop="@dimen/_24sdp"
+                    android:paddingRight="@dimen/_24sdp"
+                    android:paddingBottom="@dimen/_24sdp">
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center|left"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/_40sdp"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_marginRight="@dimen/_15sdp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/bg_badge" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/jalnan_n"
+                            android:gravity="center"
+                            android:text="핵노잼"
+                            android:textColor="#000000"
+                            android:textSize="@dimen/_20sdp" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:layout_marginBottom="@dimen/_15sdp"
+                        android:background="#dddddd" />
+
+                    <LinearLayout
+                        android:layout_marginBottom="@dimen/_25sdp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center|left"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_marginRight="@dimen/_5sdp"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="@dimen/_35sdp"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/jalnan_n"
+                                android:gravity="center"
+                                android:text="C"
+                                android:textColor="@color/char_c_color"
+                                android:textSize="@dimen/_20sdp" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="핵노잼 of 핵노잼"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/_14sdp" />
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="매우 강한 신중형"
+                                android:textColor="#545454"
+                                android:textSize="@dimen/_12sdp" />
+
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_showChar_13"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_rounded_14"
+                            android:fontFamily="@font/nanum_square_b"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/_8sdp"
+                            android:paddingTop="@dimen/_4sdp"
+                            android:paddingRight="@dimen/_8sdp"
+                            android:paddingBottom="@dimen/_4sdp"
+                            android:text="보기"
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/_10sdp" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginBottom="@dimen/_25sdp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center|left"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_marginRight="@dimen/_5sdp"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="@dimen/_35sdp"
+                            android:layout_height="wrap_content">
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:fontFamily="@font/jalnan_n"
+                                android:gravity="center"
+                                android:text="C"
+                                android:textColor="@color/char_c_color"
+                                android:textSize="@dimen/_20sdp" />
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:fontFamily="@font/jalnan_n"
+                                android:gravity="center"
+                                android:text="D"
+                                android:textColor="@color/char_d_color"
+                                android:textSize="@dimen/_20sdp" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="핵노잼 노빠꾸"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/_14sdp" />
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="신중형 + 주도형"
+                                android:textColor="#545454"
+                                android:textSize="@dimen/_12sdp" />
+
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_showChar_14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_rounded_14"
+                            android:fontFamily="@font/nanum_square_b"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/_8sdp"
+                            android:paddingTop="@dimen/_4sdp"
+                            android:paddingRight="@dimen/_8sdp"
+                            android:paddingBottom="@dimen/_4sdp"
+                            android:text="보기"
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/_10sdp" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginBottom="@dimen/_25sdp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_marginRight="@dimen/_5sdp"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="@dimen/_35sdp"
+                            android:layout_height="wrap_content">
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:fontFamily="@font/jalnan_n"
+                                android:gravity="center"
+                                android:text="C"
+                                android:textColor="@color/char_c_color"
+                                android:textSize="@dimen/_20sdp" />
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:fontFamily="@font/jalnan_n"
+                                android:gravity="center"
+                                android:text="I"
+                                android:textColor="@color/char_i_color"
+                                android:textSize="@dimen/_20sdp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="핵노잼 쌉관종"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/_14sdp" />
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="신중형 + 사교형"
+                                android:textColor="#545454"
+                                android:textSize="@dimen/_12sdp" />
+
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_showChar_15"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_rounded_14"
+                            android:fontFamily="@font/nanum_square_b"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/_8sdp"
+                            android:paddingTop="@dimen/_4sdp"
+                            android:paddingRight="@dimen/_8sdp"
+                            android:paddingBottom="@dimen/_4sdp"
+                            android:text="보기"
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/_10sdp" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center|left"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_marginRight="@dimen/_5sdp"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:layout_width="@dimen/_35sdp"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:fontFamily="@font/jalnan_n"
+                                android:gravity="center"
+                                android:text="C"
+                                android:textColor="@color/char_c_color"
+                                android:textSize="@dimen/_20sdp" />
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/jalnan_n"
+                                android:gravity="center"
+                                android:text="S"
+                                android:textColor="@color/char_s_color"
+                                android:textSize="@dimen/_20sdp" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="핵노잼 핵고구마"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/_14sdp" />
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nanum_square_b"
+                                android:gravity="center"
+                                android:text="신중형 + 안정형"
+                                android:textColor="#545454"
+                                android:textSize="@dimen/_12sdp" />
+
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_showChar_16"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_rounded_14"
+                            android:fontFamily="@font/nanum_square_b"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/_8sdp"
+                            android:paddingTop="@dimen/_4sdp"
+                            android:paddingRight="@dimen/_8sdp"
+                            android:paddingBottom="@dimen/_4sdp"
+                            android:text="보기"
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/_10sdp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</layout>

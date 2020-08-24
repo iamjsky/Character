@@ -25,6 +25,17 @@ import com.character.microblogapp.ui.page.BaseActivity;
 import com.character.microblogapp.ui.page.character.CharacterActivity;
 import com.character.microblogapp.ui.page.main.MainActivity;
 import com.character.microblogapp.util.PrefMgr;
+import com.kakao.kakaolink.v2.KakaoLinkResponse;
+import com.kakao.kakaolink.v2.KakaoLinkService;
+import com.kakao.message.template.ButtonObject;
+import com.kakao.message.template.ContentObject;
+import com.kakao.message.template.FeedTemplate;
+import com.kakao.message.template.LinkObject;
+import com.kakao.network.ErrorResult;
+import com.kakao.network.callback.ResponseCallback;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import butterknife.BindView;
 
@@ -62,6 +73,7 @@ public class Intro2Activity extends BaseActivity {
         prefMgr.put(SHOW_HOME_BTN_START, 0);
         nextStep();
         doAutoLogin();
+
     }
 
     @Override
@@ -185,4 +197,6 @@ public class Intro2Activity extends BaseActivity {
                     }
                 });
     }
+
+
 }

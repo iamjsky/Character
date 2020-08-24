@@ -6,6 +6,7 @@ public class MCharacterInfo extends MBase {
         public int uid;
         public String type;
         public String name;
+        public String name2;
         public String desc;
         public String gender1;
         public String gender2;

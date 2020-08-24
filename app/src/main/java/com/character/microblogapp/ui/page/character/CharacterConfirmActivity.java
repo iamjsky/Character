@@ -28,6 +28,14 @@ import com.character.microblogapp.ui.page.BaseActivity;
 import com.character.microblogapp.ui.page.intro.IntroActivity;
 import com.character.microblogapp.ui.page.main.MainActivity;
 import com.character.microblogapp.util.Toaster;
+import com.kakao.kakaolink.v2.KakaoLinkResponse;
+import com.kakao.kakaolink.v2.KakaoLinkService;
+import com.kakao.message.template.ButtonObject;
+import com.kakao.message.template.ContentObject;
+import com.kakao.message.template.FeedTemplate;
+import com.kakao.message.template.LinkObject;
+import com.kakao.network.ErrorResult;
+import com.kakao.network.callback.ResponseCallback;
 import com.nex3z.flowlayout.FlowLayout;
 
 import java.util.ArrayList;
@@ -66,6 +74,12 @@ public class CharacterConfirmActivity extends BaseActivity {
     TextView tv_charText_06;
     @BindView(R.id.tv_charType_01)
     TextView tv_charType_01;
+    @BindView(R.id.tv_charType_02)
+    TextView tv_charType_02;
+    @BindView(R.id.tv_charType_03)
+    TextView tv_charType_03;
+    @BindView(R.id.tv_charType_04)
+    TextView tv_charType_04;
     @BindView(R.id.tv_charFact_01)
     TextView tv_charFact_01;
     @BindView(R.id.tv_charInfo)
@@ -116,6 +130,8 @@ public class CharacterConfirmActivity extends BaseActivity {
     @BindView(R.id.layout_charTagArea_02)
     FlowLayout layout_charTagArea_02;
 
+    @BindView(R.id.layout_charType_secondArea)
+    LinearLayout layout_charType_secondArea;
     String character = "";
 
     int go = 0;
@@ -156,7 +172,7 @@ public class CharacterConfirmActivity extends BaseActivity {
         switch (nowPage){
 
             case 0:
-                finish();
+                showProfilePage();
                 break;
 
             default:
@@ -204,7 +220,23 @@ public class CharacterConfirmActivity extends BaseActivity {
 
     }
 
+    @OnClick(R.id.btn_share)
+    void btn_shareClicked() {
+        Intent intent = new Intent(android.content.Intent.ACTION_SEND);
 
+        intent.setType("text/plain");
+
+
+        String text = "http://www.personalitism.com/resultDI--.html";
+
+        intent.putExtra(Intent.EXTRA_TEXT, text);
+
+
+        Intent chooser = Intent.createChooser(intent, "공유하기");
+        startActivity(chooser);
+
+
+    }
 
     MCharacterInfo.Info result = null;
 
@@ -242,6 +274,7 @@ public class CharacterConfirmActivity extends BaseActivity {
         String personality_title1 = result.personality_title1;
         String personality_title2 = result.personality_title2;
         String name = result.name;
+        String name2 = result.name2;
         String factor = result.factor;
         String keyword1 = result.keyword1;
         String keyword2 = result.keyword2;
@@ -264,11 +297,13 @@ public class CharacterConfirmActivity extends BaseActivity {
         tv_char_05.setText(personality1);
 
         tv_charText_01.setText(personality_title1);
-        tv_charText_03.setText(personality_title1);
-        tv_charText_05.setText(personality_title1);
+        tv_charText_03.setText(name);
+        tv_charText_05.setText(name);
 
 
         tv_charType_01.setText(name);
+        tv_charType_03.setText(personality1);
+
         tv_charFact_01.setText(factor);
 
 
@@ -314,7 +349,7 @@ public class CharacterConfirmActivity extends BaseActivity {
             layout_jobList_02.setVisibility(View.GONE);
             layout_jobEnvList_02.setVisibility(View.GONE);
             layout_charTagArea_02.setVisibility(View.GONE);
-
+            layout_charType_secondArea.setVisibility(View.GONE);
 
 
         } else {
@@ -323,15 +358,19 @@ public class CharacterConfirmActivity extends BaseActivity {
             view_jobLine.setVisibility(View.VISIBLE);
             layout_jobList_02.setVisibility(View.VISIBLE);
             layout_jobEnvList_02.setVisibility(View.VISIBLE);
+
             tv_char_02.setText(personality2);
             tv_char_04.setText(personality2);
             tv_char_06.setText(personality2);
             tv_charText_02.setText(personality_title2);
-            tv_charText_04.setText(personality_title2);
-            tv_charText_06.setText(personality_title2);
+            tv_charText_04.setText(name2);
+            tv_charText_06.setText(name2);
             tv_jobList_02.setText(job2);
             tv_jobEnvList_02.setText(job_env2);
+            tv_charType_02.setText(name2);
+            tv_charType_04.setText(personality2);
             layout_charTagArea_02.setVisibility(View.VISIBLE);
+            layout_charType_secondArea.setVisibility(View.VISIBLE);
 
         }
         String[] personalityArr = {personality1, personality2};
@@ -359,10 +398,12 @@ public class CharacterConfirmActivity extends BaseActivity {
             }
             if (ind == 0) {
                 tv_char_01.setTextColor(discColor);
+                tv_charText_01.setTextColor(discColor);
                 tv_char_03.setTextColor(discColor);
                 tv_char_05.setTextColor(discColor);
             } else {
                 tv_char_02.setTextColor(discColor);
+                tv_charText_02.setTextColor(discColor);
                 tv_char_04.setTextColor(discColor);
                 tv_char_06.setTextColor(discColor);
             }
@@ -437,4 +478,5 @@ public class CharacterConfirmActivity extends BaseActivity {
                     }
                 });
     }
+
 }

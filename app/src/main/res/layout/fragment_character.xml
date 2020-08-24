@@ -13,11 +13,11 @@
         <LinearLayout
             android:layout_marginRight="@dimen/_4sdp"
             android:layout_marginLeft="@dimen/_4sdp"
-            android:paddingLeft="@dimen/_26sdp"
-            android:paddingRight="@dimen/_26sdp"
-            android:paddingTop="@dimen/_20sdp"
+            android:paddingLeft="@dimen/_34sdp"
+            android:paddingRight="@dimen/_34sdp"
+            android:paddingTop="@dimen/_30sdp"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_110sdp"
+            android:layout_height="@dimen/_120sdp"
 
             android:background="@drawable/bg_rounded_white_panel_03"
             android:orientation="vertical">
@@ -56,7 +56,7 @@
                 android:maxLines="2"
                 android:ellipsize="end"
                 android:gravity="top|left"
-                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
                 android:textColor="#000000"
                 android:fontFamily="@font/nanum_square_r"
                 android:textSize="@dimen/_10sdp"

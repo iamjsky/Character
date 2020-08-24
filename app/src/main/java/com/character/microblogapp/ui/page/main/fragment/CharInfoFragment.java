@@ -79,6 +79,14 @@ public void layout_discInfoClicked(){
         mainActivity.selectLine(0);
         mainActivity.selectTab(15);
     }
+    @OnClick(R.id.layout_charList)
+    public void layout_charListClicked(){
+        MainActivity mainActivity = (MainActivity) getActivity();
+        mainActivity.parentFrag = "CharInfoFragment";
+        mainActivity.selectLine(0);
+        mainActivity.selectTab(16);
+    }
+
 @OnClick(R.id.rlt_back)
     public void rlt_backClicked(){
     MainActivity mainActivity = (MainActivity) getActivity();

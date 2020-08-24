@@ -2,67 +2,76 @@
 <LinearLayout
 
     android:orientation="vertical"
-    android:gravity="center|top"
-    android:paddingTop="@dimen/_34sdp"
+
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/color_white">
 
-
+<RelativeLayout
+    android:paddingTop="@dimen/_34sdp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <LinearLayout
-        android:gravity="center"
-        android:orientation="horizontal"
+        android:id="@+id/layout_chat"
+        android:gravity="center|top"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:fontFamily="@font/nanum_square_b"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_14sdp"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:text="채팅 시"
+                />
+            <TextView
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:layout_marginRight="@dimen/_4sdp"
+                android:fontFamily="@font/nanum_square_b"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_14sdp"
+                android:textColor="#ff056a"
+                android:gravity="center"
+                android:text="성격유형 별"
+                />
+
+            <TextView
+                android:fontFamily="@font/nanum_square_b"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_14sdp"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:text="대화 방법을"
+                />
+        </LinearLayout>
         <TextView
             android:fontFamily="@font/nanum_square_b"
+            android:layout_marginTop="@dimen/_3sdp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/_14sdp"
             android:textColor="#000000"
             android:gravity="center"
-            android:text="채팅 시"
+            android:text="제공 받을 수 있어요"
             />
-        <TextView
-            android:layout_marginLeft="@dimen/_4sdp"
-            android:layout_marginRight="@dimen/_4sdp"
-            android:fontFamily="@font/nanum_square_b"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/_14sdp"
-            android:textColor="#ff056a"
-            android:gravity="center"
-            android:text="성격유형 별"
-            />
-
-        <TextView
-            android:fontFamily="@font/nanum_square_b"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/_14sdp"
-            android:textColor="#000000"
-            android:gravity="center"
-            android:text="대화 방법을"
-            />
-    </LinearLayout>
-    <TextView
-        android:fontFamily="@font/nanum_square_b"
-        android:layout_marginTop="@dimen/_3sdp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/_14sdp"
-        android:textColor="#000000"
-        android:gravity="center"
-        android:text="제공 받을 수 있어요"
-        />
 
         <LinearLayout
 
-            android:layout_marginLeft="@dimen/_30sdp"
-          android:layout_marginRight="@dimen/_30sdp"
+            android:layout_marginLeft="@dimen/_32sdp"
+            android:layout_marginRight="@dimen/_32sdp"
             android:layout_marginTop="@dimen/_30sdp"
             android:orientation="vertical"
             android:layout_width="match_parent"
@@ -73,18 +82,22 @@
                 android:orientation="horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
-            <ImageView
-                android:adjustViewBounds="true"
-                android:layout_marginRight="@dimen/_10sdp"
-                android:src="@drawable/first_02_img_photo"
-                android:layout_width="@dimen/_38sdp"
-                android:layout_height="@dimen/_38sdp"/>
+                <ImageView
+                    android:visibility="invisible"
+                    android:id="@+id/iv_chat_00"
+                    android:adjustViewBounds="true"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:src="@drawable/first_02_img_photo"
+                    android:layout_width="@dimen/_38sdp"
+                    android:layout_height="@dimen/_38sdp"/>
                 <LinearLayout
                     android:layout_marginTop="@dimen/_5sdp"
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <TextView
+                        android:visibility="invisible"
+                        android:id="@+id/tv_chat_01"
                         android:paddingBottom="@dimen/_8sdp"
                         android:paddingTop="@dimen/_8sdp"
                         android:paddingLeft="@dimen/_12sdp"
@@ -97,28 +110,38 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="@dimen/_6sdp"/>
-                    <TextView
-                        android:paddingBottom="@dimen/_8sdp"
-                        android:paddingTop="@dimen/_8sdp"
-                        android:paddingLeft="@dimen/_12sdp"
-                        android:paddingRight="@dimen/_12sdp"
-                        android:background="@drawable/bg_rounded_01"
-                        android:textSize="@dimen/_11sdp"
-                        android:textColor="#000000"
-                        android:fontFamily="@font/nanum_square_r"
-                        android:text="저는 주도적인 D형 남자를 선호해요"
+                    <LinearLayout
+                        android:visibility="invisible"
+                        android:id="@+id/layout_chat_02"
+                        android:orientation="vertical"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/_6sdp"/>
-                    <TextView
+                        android:layout_height="wrap_content">
 
-                        android:fontFamily="@font/nanum_square_b"
-                        android:gravity="center|right"
-                        android:textColor="#545454"
-                        android:textSize="@dimen/_9sdp"
-                        android:text="오후 03:53"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_6sdp"
+                            android:background="@drawable/bg_rounded_01"
+                            android:fontFamily="@font/nanum_square_r"
+                            android:paddingLeft="@dimen/_12sdp"
+                            android:paddingTop="@dimen/_8sdp"
+                            android:paddingRight="@dimen/_12sdp"
+                            android:paddingBottom="@dimen/_8sdp"
+                            android:text="저는 주도적인 D형 남자를 선호해요"
+                            android:textColor="#000000"
+                            android:textSize="@dimen/_11sdp" />
+
+                        <TextView
+                            android:fontFamily="@font/nanum_square_b"
+                            android:gravity="center|right"
+                            android:textColor="#545454"
+                            android:textSize="@dimen/_9sdp"
+                            android:text="오후 03:53"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
 
                 </LinearLayout>
 
@@ -128,26 +151,62 @@
 
 
 
+            <LinearLayout
+                android:layout_marginTop="@dimen/_10sdp"
+                android:gravity="right|center"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:visibility="invisible"
+                    android:id="@+id/tv_chat_03"
+                    android:paddingBottom="@dimen/_8sdp"
+                    android:paddingTop="@dimen/_8sdp"
+                    android:paddingLeft="@dimen/_12sdp"
+                    android:paddingRight="@dimen/_12sdp"
+                    android:background="@drawable/bg_rounded_02"
+                    android:textSize="@dimen/_11sdp"
+                    android:textColor="#545454"
+                    android:fontFamily="@font/nanum_square_r"
+                    android:text="네 안녕하세요!"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_6sdp"/>
+                <TextView
+                    android:visibility="invisible"
+                    android:layout_marginTop="@dimen/_1sdp"
+                    android:id="@+id/tv_chat_04"
+                    android:paddingBottom="@dimen/_8sdp"
+                    android:paddingTop="@dimen/_8sdp"
+                    android:paddingLeft="@dimen/_12sdp"
+                    android:paddingRight="@dimen/_12sdp"
+                    android:background="@drawable/bg_rounded_02"
+                    android:textSize="@dimen/_11sdp"
+                    android:textColor="#545454"
+                    android:fontFamily="@font/nanum_square_r"
+                    android:text="저는 사교적인 I형이 제 이상형이에요~"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_6sdp"/>
+
                 <LinearLayout
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:gravity="right|center"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
+                    android:visibility="invisible"
+                    android:id="@+id/layout_chat_05"
+                    android:gravity="center|right"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:paddingBottom="@dimen/_8sdp"
-                        android:paddingTop="@dimen/_8sdp"
-                        android:paddingLeft="@dimen/_12sdp"
-                        android:paddingRight="@dimen/_12sdp"
-                        android:background="@drawable/bg_rounded_02"
-                        android:textSize="@dimen/_11sdp"
+                        android:fontFamily="@font/nanum_square_b"
+                        android:layout_marginRight="@dimen/_4sdp"
+                        android:gravity="bottom"
                         android:textColor="#545454"
-                        android:fontFamily="@font/nanum_square_r"
-                        android:text="네 안녕하세요!"
+                        android:textSize="@dimen/_9sdp"
+                        android:text="오후 03:54"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/_6sdp"/>
+                        android:layout_height="match_parent"/>
                     <TextView
                         android:paddingBottom="@dimen/_8sdp"
                         android:paddingTop="@dimen/_8sdp"
@@ -157,43 +216,16 @@
                         android:textSize="@dimen/_11sdp"
                         android:textColor="#545454"
                         android:fontFamily="@font/nanum_square_r"
-                        android:text="저는 사교적인 I형이 제 이상형이에요~"
+                        android:text="저랑 잘 맞을 것 같아요!!"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/_6sdp"/>
-
-                    <LinearLayout
-                        android:gravity="center|right"
-                        android:orientation="horizontal"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:fontFamily="@font/nanum_square_b"
-                            android:layout_marginRight="@dimen/_4sdp"
-                            android:gravity="bottom"
-                            android:textColor="#545454"
-                            android:textSize="@dimen/_9sdp"
-                            android:text="오후 03:54"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"/>
-                        <TextView
-                            android:paddingBottom="@dimen/_8sdp"
-                            android:paddingTop="@dimen/_8sdp"
-                            android:paddingLeft="@dimen/_12sdp"
-                            android:paddingRight="@dimen/_12sdp"
-                            android:background="@drawable/bg_rounded_02"
-                            android:textSize="@dimen/_11sdp"
-                            android:textColor="#545454"
-                            android:fontFamily="@font/nanum_square_r"
-                            android:text="저랑 잘 맞을 것 같아요!!"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                       />
-                    </LinearLayout>
+                        />
                 </LinearLayout>
+            </LinearLayout>
 
             <LinearLayout
+                android:visibility="invisible"
+                android:id="@+id/layout_chat_06"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:gravity="top|left"
                 android:orientation="horizontal"
@@ -206,11 +238,13 @@
                     android:layout_width="@dimen/_38sdp"
                     android:layout_height="@dimen/_38sdp"/>
                 <LinearLayout
+
                     android:layout_marginTop="@dimen/_5sdp"
                     android:orientation="vertical"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                     <TextView
+
                         android:paddingBottom="@dimen/_8sdp"
                         android:paddingTop="@dimen/_8sdp"
                         android:paddingLeft="@dimen/_12sdp"
@@ -241,6 +275,251 @@
             </LinearLayout>
 
         </LinearLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/iv_talk"
+        android:src="@drawable/first_02_ico_talk"
+        android:layout_marginRight="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:layout_alignParentRight="true"
+        android:adjustViewBounds="true"
+        android:layout_width="@dimen/_70sdp"
+        android:layout_height="@dimen/_70sdp"/>
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/layout_result"
+        android:padding="@dimen/_30sdp"
+        android:background="@drawable/bg_rounded_white_panel_03"
+        android:layout_marginTop="@dimen/_60sdp"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:gravity="center"
+            android:textSize="@dimen/_14sdp"
+            android:textColor="#000000"
+            android:fontFamily="@font/nanum_square_b"
+            android:text="결론!"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_6sdp"/>
+        <LinearLayout
+            android:gravity="top"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_60sdp">
+            <TextView
+                android:gravity="top"
+                android:textSize="@dimen/_24sdp"
+                android:textColor="#000000"
+                android:fontFamily="@font/jalnan_n"
+                android:text="D"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+              />
+            <View
+                android:layout_marginTop="@dimen/_9sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:background="#e0e0e0"
+                android:layout_width="@dimen/_1sdp"
+                android:layout_height="@dimen/_12sdp"/>
+            <TextView
+                android:lineSpacingExtra="@dimen/_2sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:gravity="top"
+                android:textSize="@dimen/_10sdp"
+                android:textColor="#000000"
+                android:fontFamily="@font/nanum_square_r"
+                android:text="'목적'이 동기요인인 D형은 결론부터 얘기해주세요! 질~질 끌거나 지나치게 디테일하게 말하면 못 참고 얘기를 끊습니다.'결론만 말해!'"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+             />
+        </LinearLayout>
+        <TextView
+            android:layout_marginTop="@dimen/_15sdp"
+            android:lineSpacingExtra="@dimen/_2sdp"
+            android:textSize="@dimen/_10sdp"
+            android:textColor="#000000"
+            android:fontFamily="@font/nanum_square_b"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="이것만 기억하자!"
+            />
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/_8sdp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_marginRight="@dimen/_2sdp"
+                android:lineSpacingExtra="@dimen/_2sdp"
+                android:textSize="@dimen/_10sdp"
+                android:textColor="#000000"
+                android:fontFamily="@font/nanum_square_r"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="- 핵심사항만"
+                />
+            <TextView
+
+                android:lineSpacingExtra="@dimen/_2sdp"
+                android:textSize="@dimen/_10sdp"
+                android:textColor="#ff056a"
+                android:fontFamily="@font/nanum_square_b"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="간단명료"
+                />
+            <TextView
+
+                android:lineSpacingExtra="@dimen/_2sdp"
+                android:textSize="@dimen/_10sdp"
+                android:textColor="#000000"
+                android:fontFamily="@font/nanum_square_r"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="하게!"
+                />
+        </LinearLayout>
+        <TextView
+            android:layout_marginTop="@dimen/_1sdp"
+            android:lineSpacingExtra="@dimen/_2sdp"
+            android:textSize="@dimen/_10sdp"
+            android:textColor="#000000"
+            android:fontFamily="@font/nanum_square_r"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="- 인사치레나 장황한 부연설명은 No!"
+            />
+        <LinearLayout
+            android:layout_marginTop="@dimen/_1sdp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+
+                android:lineSpacingExtra="@dimen/_2sdp"
+                android:textSize="@dimen/_10sdp"
+                android:textColor="#000000"
+                android:fontFamily="@font/nanum_square_r"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="- "
+                />
+            <TextView
+                android:lineSpacingExtra="@dimen/_2sdp"
+                android:textSize="@dimen/_10sdp"
+                android:textColor="#ff056a"
+                android:fontFamily="@font/nanum_square_b"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="예의"
+                />
+
+            <TextView
+                android:lineSpacingExtra="@dimen/_2sdp"
+                android:textSize="@dimen/_10sdp"
+                android:textColor="#000000"
+                android:fontFamily="@font/nanum_square_r"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="를 갖추고(VIP대우) 말하기"
+                />
+        </LinearLayout>
+
+        <TextView
+            android:layout_marginTop="@dimen/_1sdp"
+            android:lineSpacingExtra="@dimen/_2sdp"
+            android:textSize="@dimen/_10sdp"
+            android:textColor="#000000"
+            android:fontFamily="@font/nanum_square_r"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="- 나부터 먼저 자신감을 갖고, 확신에 찬 어투로 말하기"
+            />
+        <LinearLayout
+            android:layout_marginTop="@dimen/_1sdp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_marginRight="@dimen/_2sdp"
+                android:lineSpacingExtra="@dimen/_2sdp"
+                android:textSize="@dimen/_10sdp"
+                android:textColor="#000000"
+                android:fontFamily="@font/nanum_square_r"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="- 결정시에는"
+                />
+            <TextView
+
+                android:lineSpacingExtra="@dimen/_2sdp"
+                android:textSize="@dimen/_10sdp"
+                android:textColor="#ff056a"
+                android:fontFamily="@font/nanum_square_b"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="상대가 결정하게"
+                />
+            <TextView
+
+                android:lineSpacingExtra="@dimen/_2sdp"
+                android:textSize="@dimen/_10sdp"
+                android:textColor="#000000"
+                android:fontFamily="@font/nanum_square_r"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="함"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="@dimen/_1sdp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_marginRight="@dimen/_2sdp"
+                android:lineSpacingExtra="@dimen/_2sdp"
+                android:textSize="@dimen/_10sdp"
+                android:textColor="#000000"
+                android:fontFamily="@font/nanum_square_r"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="- 결정 이후"
+                />
+            <TextView
+
+                android:lineSpacingExtra="@dimen/_2sdp"
+                android:textSize="@dimen/_10sdp"
+                android:textColor="#ff056a"
+                android:fontFamily="@font/nanum_square_b"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="신속"
+                />
+            <TextView
+
+                android:lineSpacingExtra="@dimen/_2sdp"
+                android:textSize="@dimen/_10sdp"
+                android:textColor="#000000"
+                android:fontFamily="@font/nanum_square_r"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="한 행동 보여주기"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
 
 
 

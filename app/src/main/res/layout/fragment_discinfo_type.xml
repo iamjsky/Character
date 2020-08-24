@@ -16,8 +16,7 @@
             android:layout_height="wrap_content"
             android:background="#F6F6F6"
             android:gravity="center_horizontal"
-            android:orientation="vertical"
-            tools:context=".ui.page.character.CharacterConfirmActivity">
+            android:orientation="vertical"           >
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -209,6 +208,7 @@
                                             android:paddingBottom="@dimen/_5sdp">
 
                                             <LinearLayout
+                                                android:gravity="center|left"
                                                 android:layout_width="match_parent"
                                                 android:layout_height="wrap_content"
                                                 android:orientation="horizontal">
@@ -224,14 +224,38 @@
 
                                                 <TextView
                                                     android:id="@+id/tv_charType_01"
-                                                    android:layout_width="0dp"
+                                                    android:layout_width="wrap_content"
                                                     android:layout_height="wrap_content"
-                                                    android:layout_weight="1"
 
-                                                    android:ellipsize="end"
                                                     android:fontFamily="@font/nanum_square_b"
                                                     android:singleLine="true"
                                                     android:text="안정형"
+                                                    android:textColor="#000000"
+                                                    android:textSize="@dimen/_12sdp" />
+                                                <TextView
+                                                    android:layout_marginLeft="@dimen/_2sdp"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:fontFamily="@font/nanum_square_b"
+                                                    android:singleLine="true"
+                                                    android:text="("
+                                                    android:textColor="#000000"
+                                                    android:textSize="@dimen/_12sdp" />
+                                                <TextView
+                                                    android:id="@+id/tv_charType_03"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:fontFamily="@font/nanum_square_b"
+                                                    android:singleLine="true"
+                                                    android:text="I"
+                                                    android:textColor="#000000"
+                                                    android:textSize="@dimen/_12sdp" />
+                                                <TextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:fontFamily="@font/nanum_square_b"
+                                                    android:singleLine="true"
+                                                    android:text=")"
                                                     android:textColor="#000000"
                                                     android:textSize="@dimen/_12sdp" />
 

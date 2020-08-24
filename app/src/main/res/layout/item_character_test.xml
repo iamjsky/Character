@@ -9,21 +9,32 @@
         android:background="@color/color_transparent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
-
-
+        <ImageView
+            android:id="@+id/iv_default"
+            android:visibility="visible"
+            android:background="@drawable/bg_rounded_white_01"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_100sdp"/>
+<ImageView
+    android:id="@+id/iv_selected"
+    android:visibility="invisible"
+    android:background="@drawable/bg_rounded_test_selected_01"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_100sdp"/>
         <TextView
+            android:padding="@dimen/_10sdp"
             android:lineSpacingExtra="@dimen/_2sdp"
             android:maxLines="3"
-            android:padding="@dimen/_8sdp"
+            android:paddingRight="@dimen/_20sdp"
+            android:paddingLeft="@dimen/_20sdp"
             android:fontFamily="@font/jalnan_n"
             android:gravity="center"
             android:textColor="#545454"
             android:textSize="@dimen/_20sdp"
-            android:text="만족해gksms"
+            android:text="남을 격려하는남을 격려하fffffffffffdfdfadfdafds는남을 격려하는남을 격려하는남을 격려하는남을 격려하는남을 격려하는남을 격려하는"
            android:id="@+id/tv_question"
-            android:background="@drawable/bg_rounded_white_01"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_90sdp"
+            android:layout_height="@dimen/_100sdp"
      />
 
 

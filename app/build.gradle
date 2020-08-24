@@ -50,6 +50,7 @@ android {
 dependencies {
     implementation files('libs/naveridlogin_android_sdk_4.2.5.aar')
     implementation group: 'com.kakao.sdk', name: 'usermgmt', version: "1.15.1"
+    implementation group: 'com.kakao.sdk', name: 'kakaolink', version: "1.15.1"
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "com.android.support:support-v4:$supportVersion"
     implementation "com.android.support:appcompat-v7:$supportVersion"

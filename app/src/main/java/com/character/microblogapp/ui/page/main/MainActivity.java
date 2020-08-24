@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RadioButton;
@@ -24,8 +25,10 @@ import com.character.microblogapp.ui.page.BaseActivity;
 import com.character.microblogapp.ui.page.main.fragment.CharInfoFragment;
 import com.character.microblogapp.ui.page.main.fragment.CharWorldFragment;
 import com.character.microblogapp.ui.page.main.fragment.ChatFragment;
+import com.character.microblogapp.ui.page.main.fragment.DISCCharListFragment;
 import com.character.microblogapp.ui.page.main.fragment.DISCInfoMainFragment;
 import com.character.microblogapp.ui.page.main.fragment.DISCInfoTypeFragment;
+import com.character.microblogapp.ui.page.main.fragment.DISCMyLoverFragment;
 import com.character.microblogapp.ui.page.main.fragment.EvaluationFragment;
 import com.character.microblogapp.ui.page.main.fragment.HistoryFragment;
 import com.character.microblogapp.ui.page.main.fragment.HomeFragment;
@@ -66,6 +69,10 @@ public class MainActivity extends BaseActivity {
 
     private final static int MAIN_CHAR_INFO_MY_CHAR = 14;
     private final static int MAIN_CHAR_INFO_LOVER = 15;
+    private final static int MAIN_CHAR_LIST = 16;
+
+    public String parentFrag = "";
+    public String charListType = "";
 
 
 
@@ -384,13 +391,28 @@ public class MainActivity extends BaseActivity {
                 break;
             case MAIN_CHAR_INFO_MY_CHAR:
                 fragment = new MyCharInfoFragment();
-                tag = "내 성격정보 결과";
+
+                if(charListType.equals("")){
+                    tag = "myInfo";
+                }else{
+                    tag = charListType;
+                    charListType = "";
+                }
+                Log.e("char_debug", "charListType : " + charListType + " / tag : " + tag);
                 break;
             case MAIN_CHAR_INFO_LOVER:
-                fragment = new DISCInfoTypeFragment();
+                fragment = new DISCMyLoverFragment();
                 tag = "나와 잘 맞는 성격";
                 break;
+            case MAIN_CHAR_LIST:
+                fragment = new DISCCharListFragment();
+                if(parentFrag.equals("CharInfoFragment")){
+                    tag = "CharInfoFragment";
+                }else if(parentFrag.equals("DISCMyLoverFragment")){
+                    tag = "DISCMyLoverFragment";
+                }
 
+                break;
 
         }
 
