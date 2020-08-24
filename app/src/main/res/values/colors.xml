@@ -13,6 +13,11 @@
     <color name="color_alpha_black">#55000000</color>
     <color name="color_char_gray">#545454</color>
 
+    <color name="chemistry_percent_color_90_99">#1eaf00</color>
+    <color name="chemistry_percent_color_60_80">#0a00dd</color>
+    <color name="chemistry_percent_color_20_40">#ff5097</color>
+    <color name="chemistry_percent_color_5_10">#ff056a</color>
+
     <color name="char_main_color">#ff056a</color>
     <color name="char_d_color">#000000</color>
 

@@ -114,6 +114,14 @@ public class CharWorldFragment extends BaseFragment {
         mainActivity.selectTab(8);
 
     }
+    @OnClick(R.id.layout_relation)
+    void layout_relationClicked(){
+        MainActivity mainActivity = (MainActivity) getActivity();
+        mainActivity.selectLine(0);
+        mainActivity.selectTab(17);
+
+    }
+
     @OnClick(R.id.layout_community)
     void layout_communityClicked(){
         // 커뮤니티페이지로 이동

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+
+
     <string name="char_d">D</string>
     <string name="char_d_text">노빠꾸</string>
     <string name="char_d_title">"노빠꾸가 어때서? 이게 내 스타일이야!"</string>

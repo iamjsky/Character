@@ -31,7 +31,6 @@ public class DISCInfoMainFragment extends BaseFragment {
         SharedPreferences prefs = getActivity().getSharedPreferences(PrefMgr.APP_PREFS,
                 Context.MODE_PRIVATE);
         m_prefMgr = new PrefMgr(prefs);
-        Log.e("char_debug", "char : " + MyInfo.getInstance().character );
 
 
         return mRoot;

@@ -25,6 +25,7 @@ import com.character.microblogapp.ui.page.BaseActivity;
 import com.character.microblogapp.ui.page.main.fragment.CharInfoFragment;
 import com.character.microblogapp.ui.page.main.fragment.CharWorldFragment;
 import com.character.microblogapp.ui.page.main.fragment.ChatFragment;
+import com.character.microblogapp.ui.page.main.fragment.ChemistryFragment;
 import com.character.microblogapp.ui.page.main.fragment.DISCCharListFragment;
 import com.character.microblogapp.ui.page.main.fragment.DISCInfoMainFragment;
 import com.character.microblogapp.ui.page.main.fragment.DISCInfoTypeFragment;
@@ -70,6 +71,7 @@ public class MainActivity extends BaseActivity {
     private final static int MAIN_CHAR_INFO_MY_CHAR = 14;
     private final static int MAIN_CHAR_INFO_LOVER = 15;
     private final static int MAIN_CHAR_LIST = 16;
+    private final static int MAIN_CHEMISTRY = 17;
 
     public String parentFrag = "";
     public String charListType = "";
@@ -411,6 +413,13 @@ public class MainActivity extends BaseActivity {
                 }else if(parentFrag.equals("DISCMyLoverFragment")){
                     tag = "DISCMyLoverFragment";
                 }
+
+                break;
+            case MAIN_CHEMISTRY:
+                fragment = new ChemistryFragment();
+                    tag = "ChemistryFragment";
+
+
 
                 break;
 
