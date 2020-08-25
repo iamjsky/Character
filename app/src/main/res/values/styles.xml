@@ -57,15 +57,15 @@
     </style>
 
     <style name="ImageRatingBar" parent="@android:style/Widget.RatingBar">
-        <item name="android:progressDrawable">@drawable/ratingbar_selector_heart</item>
-        <item name="android:minHeight">36dp</item>
-        <item name="android:maxHeight">36dp</item>
+        <item name="android:progressDrawable">@drawable/like_ico_star</item>
+        <item name="android:minHeight">@dimen/_60sdp</item>
+        <item name="android:maxHeight">@dimen/_60sdp</item>
     </style>
 
     <style name="ImageRatingStarBar" parent="@android:style/Widget.RatingBar">
-        <item name="android:progressDrawable">@drawable/ratingbar_selector_star</item>
-        <item name="android:minHeight">25dp</item>
-        <item name="android:maxHeight">25dp</item>
+        <item name="android:progressDrawable">@drawable/like_ico_star</item>
+        <item name="android:minHeight">@dimen/_60sdp</item>
+        <item name="android:maxHeight">@dimen/_60sdp</item>
     </style>
 
 </resources>

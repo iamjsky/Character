@@ -1,6 +1,7 @@
 package com.character.microblogapp.ui.page.main.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -8,9 +9,12 @@ import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.character.microblogapp.R;
 import com.character.microblogapp.data.MyInfo;
@@ -30,12 +34,42 @@ public class ChemistryFragment extends BaseFragment {
     LinearLayout layout_charSelectPopup;
 
     @BindView(R.id.layout_main)
-            LinearLayout layout_main;
+    LinearLayout layout_main;
     @BindView(R.id.layout_result)
     LinearLayout layout_result;
 
+    @BindView(R.id.iv_percent)
+    ImageView iv_percent;
+    @BindView(R.id.tv_charMan_01)
+    TextView tv_charMan_01;
+    @BindView(R.id.tv_charMan_02)
+    TextView tv_charMan_02;
+    @BindView(R.id.tv_charWoman_01)
+    TextView tv_charWoman_01;
+    @BindView(R.id.tv_charWoman_02)
+    TextView tv_charWoman_02;
+    @BindView(R.id.tv_charPercent)
+    TextView tv_charPercent;
+    @BindView(R.id.tv_desc)
+    TextView tv_desc;
+
+    @BindView(R.id.layout_charMan)
+    LinearLayout layout_charMan;
+    @BindView(R.id.layout_charWoman)
+    LinearLayout layout_charWoman;
+    @BindView(R.id.tv_charSelectMan)
+    TextView tv_charSelectMan;
+    @BindView(R.id.tv_charSelectWoman)
+    TextView tv_charSelectWoman;
+
     PrefMgr m_prefMgr;
-    int popUpState = 0;
+    /**
+     * 0 main
+     * 1 popup man select
+     * 2 woman select
+     * 3 result
+     */
+    int pageState = 0;
 
     /**
      * d i s c -> 0 1 2 3
@@ -67,7 +101,22 @@ public class ChemistryFragment extends BaseFragment {
                 return false;
             }
         });
-
+        layout_charSelectPopup.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent e) {
+                pageState = 0;
+                selectedCharMan = -1;
+                selectedCharWoman = -1;
+                tv_charSelectMan.setText("");
+                tv_charSelectWoman.setText("");
+                layout_charMan.setVisibility(View.VISIBLE);
+                layout_charWoman.setVisibility(View.VISIBLE);
+                tv_charSelectMan.setVisibility(View.GONE);
+                tv_charSelectWoman.setVisibility(View.GONE);
+                layout_charSelectPopup.setVisibility(View.GONE);
+                return true;
+            }
+        });
         return mRoot;
     }
 
@@ -75,6 +124,12 @@ public class ChemistryFragment extends BaseFragment {
     @Override
     protected void initUI() {
         layout_main.setVisibility(View.VISIBLE);
+        tv_charSelectMan.setText("");
+        tv_charSelectWoman.setText("");
+        layout_charMan.setVisibility(View.VISIBLE);
+        layout_charWoman.setVisibility(View.VISIBLE);
+        tv_charSelectMan.setVisibility(View.GONE);
+        tv_charSelectWoman.setVisibility(View.GONE);
         layout_result.setVisibility(View.GONE);
     }
 
@@ -83,86 +138,179 @@ public class ChemistryFragment extends BaseFragment {
     public void rlt_backClicked() {
         MainActivity mainActivity = (MainActivity) getActivity();
         mainActivity.selectLine(0);
-        if(popUpState == 0){
+        if (pageState == 0) {
             selectedCharMan = -1;
             selectedCharWoman = -1;
             mainActivity.selectTab(0);
 
-        }else{
+        } else if (pageState == 3) {
+            selectedCharMan = -1;
+            selectedCharWoman = -1;
+            layout_main.setVisibility(View.VISIBLE);
+            layout_result.setVisibility(View.GONE);
+            pageState = 0;
+
+        } else {
+
             layout_charSelectPopup.setVisibility(View.GONE);
-            popUpState = 0;
+            pageState = 0;
             selectedCharMan = -1;
             selectedCharWoman = -1;
         }
 
+        tv_charSelectMan.setText("");
+        tv_charSelectWoman.setText("");
+        layout_charMan.setVisibility(View.VISIBLE);
+        layout_charWoman.setVisibility(View.VISIBLE);
+        tv_charSelectMan.setVisibility(View.GONE);
+        tv_charSelectWoman.setVisibility(View.GONE);
     }
+
+    @OnClick(R.id.btn_share)
+    void btn_shareClicked() {
+        Intent intent = new Intent(android.content.Intent.ACTION_SEND);
+
+        intent.setType("text/plain");
+
+
+        String text = "http://www.personalitism.com/resultDI--.html";
+
+        intent.putExtra(Intent.EXTRA_TEXT, text);
+
+
+        Intent chooser = Intent.createChooser(intent, "공유하기");
+        startActivity(chooser);
+
+
+    }
+
 
     @OnClick(R.id.btn_checkChemistry)
     public void btn_checkChemistryClicked() {
-        if(selectedCharMan != -1 && selectedCharWoman != -1){
+        if (selectedCharMan != -1 && selectedCharWoman != -1) {
             ChemistryModel chemistryModel = (ChemistryModel) getChemistryResult();
 
+            iv_percent.setImageDrawable(chemistryModel.imgRes);
+            tv_charMan_01.setText(chemistryModel.charMan);
+            tv_charMan_01.setTextColor(chemistryModel.manColor);
+            tv_charMan_02.setText(chemistryModel.charMan);
+            tv_charMan_02.setTextColor(chemistryModel.manColor);
+
+            tv_charWoman_01.setText(chemistryModel.charWoman);
+            tv_charWoman_01.setTextColor(chemistryModel.womanColor);
+            tv_charWoman_02.setText(chemistryModel.charWoman);
+            tv_charWoman_02.setTextColor(chemistryModel.womanColor);
+
+            tv_charPercent.setText(chemistryModel.percent);
+            tv_charPercent.setTextColor(chemistryModel.percentColor);
+
+            tv_desc.setText(chemistryModel.desc);
             layout_main.setVisibility(View.GONE);
             layout_result.setVisibility(View.VISIBLE);
-
-        }else{
+            pageState = 3;
+        } else {
             Toaster.showShort(mParent, "DISC 유형을 모두 선택해 주세요.");
         }
 
     }
 
-    @OnClick(R.id.layout_charMan)
+    @OnClick(R.id.layout_charManArea)
     public void layout_charManClicked() {
-        popUpState = 1;
+        pageState = 1;
         layout_charSelectPopup.setVisibility(View.VISIBLE);
     }
 
-    @OnClick(R.id.layout_charWoman)
+    @OnClick(R.id.layout_charWomanArea)
     public void layout_charWomanClicked() {
-        popUpState = 2;
+        pageState = 2;
         layout_charSelectPopup.setVisibility(View.VISIBLE);
     }
 
     @OnClick(R.id.tv_d)
-    public void tv_dClicked(){
-        if(popUpState == 1){
-          selectedCharMan = 0;
-        }else{
-          selectedCharWoman = 0;
+    public void tv_dClicked() {
+        if (pageState == 1) {
+            selectedCharMan = 0;
+            tv_charSelectMan.setText(getDISCChar(selectedCharMan));
+            tv_charSelectMan.setTextColor(getDISCColor(selectedCharMan));
+            layout_charMan.setVisibility(View.GONE);
+            tv_charSelectMan.setVisibility(View.VISIBLE);
+
+        } else {
+            selectedCharWoman = 0;
+            tv_charSelectWoman.setText(getDISCChar(selectedCharWoman));
+            tv_charSelectWoman.setTextColor(getDISCColor(selectedCharWoman));
+            layout_charWoman.setVisibility(View.GONE);
+            tv_charSelectWoman.setVisibility(View.VISIBLE);
         }
-    }
-    @OnClick(R.id.tv_i)
-    public void tv_iClicked(){
-        if(popUpState == 1){
-            selectedCharMan = 1;
-        }else{
-            selectedCharWoman = 1;
-        }
-    }
-    @OnClick(R.id.tv_s)
-    public void tv_sClicked(){
-        if(popUpState == 1){
-            selectedCharMan = 2;
-        }else{
-            selectedCharWoman = 2;
-        }
-    }
-    @OnClick(R.id.tv_c)
-    public void tv_cClicked(){
-        if(popUpState == 1){
-            selectedCharMan = 3;
-        }else{
-            selectedCharWoman = 3;
-        }
+        pageState = 0;
+        layout_charSelectPopup.setVisibility(View.GONE);
     }
 
-    private ChemistryModel getChemistryResult(){
+    @OnClick(R.id.tv_i)
+    public void tv_iClicked() {
+        if (pageState == 1) {
+            selectedCharMan = 1;
+            tv_charSelectMan.setText(getDISCChar(selectedCharMan));
+            tv_charSelectMan.setTextColor(getDISCColor(selectedCharMan));
+            layout_charMan.setVisibility(View.GONE);
+            tv_charSelectMan.setVisibility(View.VISIBLE);
+        } else {
+            selectedCharWoman = 1;
+            tv_charSelectWoman.setText(getDISCChar(selectedCharWoman));
+            tv_charSelectWoman.setTextColor(getDISCColor(selectedCharWoman));
+            layout_charWoman.setVisibility(View.GONE);
+            tv_charSelectWoman.setVisibility(View.VISIBLE);
+        }
+        pageState = 0;
+
+        layout_charSelectPopup.setVisibility(View.GONE);
+    }
+
+    @OnClick(R.id.tv_s)
+    public void tv_sClicked() {
+        if (pageState == 1) {
+            selectedCharMan = 2;
+            tv_charSelectMan.setText(getDISCChar(selectedCharMan));
+            tv_charSelectMan.setTextColor(getDISCColor(selectedCharMan));
+            layout_charMan.setVisibility(View.GONE);
+            tv_charSelectMan.setVisibility(View.VISIBLE);
+        } else {
+            selectedCharWoman = 2;
+            tv_charSelectWoman.setText(getDISCChar(selectedCharWoman));
+            tv_charSelectWoman.setTextColor(getDISCColor(selectedCharWoman));
+            layout_charWoman.setVisibility(View.GONE);
+            tv_charSelectWoman.setVisibility(View.VISIBLE);
+        }
+        pageState = 0;
+        layout_charSelectPopup.setVisibility(View.GONE);
+    }
+
+    @OnClick(R.id.tv_c)
+    public void tv_cClicked() {
+        if (pageState == 1) {
+            selectedCharMan = 3;
+            tv_charSelectMan.setText(getDISCChar(selectedCharMan));
+            tv_charSelectMan.setTextColor(getDISCColor(selectedCharMan));
+            layout_charMan.setVisibility(View.GONE);
+            tv_charSelectMan.setVisibility(View.VISIBLE);
+        } else {
+            selectedCharWoman = 3;
+            tv_charSelectWoman.setText(getDISCChar(selectedCharWoman));
+            tv_charSelectWoman.setTextColor(getDISCColor(selectedCharWoman));
+            layout_charWoman.setVisibility(View.GONE);
+            tv_charSelectWoman.setVisibility(View.VISIBLE);
+        }
+        pageState = 0;
+        layout_charSelectPopup.setVisibility(View.GONE);
+    }
+
+    private ChemistryModel getChemistryResult() {
         int gender = MyInfo.getInstance().gender;
         int percent = 0;
         String desc = "";
-        if(gender == 1){
-            if(selectedCharMan == 0){
-                switch (selectedCharWoman){
+        if (gender == 1) {
+            if (selectedCharMan == 0) {
+                switch (selectedCharWoman) {
                     case 0:
                         desc = getString(R.string.dd);
                         percent = 95;
@@ -182,8 +330,8 @@ public class ChemistryFragment extends BaseFragment {
                         break;
 
                 }
-            }else if(selectedCharMan == 1){
-                switch (selectedCharWoman){
+            } else if (selectedCharMan == 1) {
+                switch (selectedCharWoman) {
                     case 0:
                         desc = getString(R.string.id);
                         percent = 80;
@@ -202,8 +350,8 @@ public class ChemistryFragment extends BaseFragment {
                         break;
 
                 }
-            }else if(selectedCharMan == 2){
-                switch (selectedCharWoman){
+            } else if (selectedCharMan == 2) {
+                switch (selectedCharWoman) {
                     case 0:
                         desc = getString(R.string.sd);
                         percent = 40;
@@ -222,8 +370,8 @@ public class ChemistryFragment extends BaseFragment {
                         break;
 
                 }
-            }else if(selectedCharMan == 3){
-                switch (selectedCharWoman){
+            } else if (selectedCharMan == 3) {
+                switch (selectedCharWoman) {
                     case 0:
                         desc = getString(R.string.cd);
                         percent = 20;
@@ -243,9 +391,9 @@ public class ChemistryFragment extends BaseFragment {
 
                 }
             }
-        }else if(gender == 2){
-            if(selectedCharMan == 0){
-                switch (selectedCharWoman){
+        } else if (gender == 2) {
+            if (selectedCharMan == 0) {
+                switch (selectedCharWoman) {
                     case 0:
                         desc = getString(R.string.dd);
                         percent = 98;
@@ -264,8 +412,8 @@ public class ChemistryFragment extends BaseFragment {
                         break;
 
                 }
-            }else if(selectedCharMan == 1){
-                switch (selectedCharWoman){
+            } else if (selectedCharMan == 1) {
+                switch (selectedCharWoman) {
                     case 0:
                         desc = getString(R.string.id);
                         percent = 80;
@@ -284,8 +432,8 @@ public class ChemistryFragment extends BaseFragment {
                         break;
 
                 }
-            }else if(selectedCharMan == 2){
-                switch (selectedCharWoman){
+            } else if (selectedCharMan == 2) {
+                switch (selectedCharWoman) {
                     case 0:
                         desc = getString(R.string.sd);
                         percent = 70;
@@ -304,8 +452,8 @@ public class ChemistryFragment extends BaseFragment {
                         break;
 
                 }
-            }else if(selectedCharMan == 3){
-                switch (selectedCharWoman){
+            } else if (selectedCharMan == 3) {
+                switch (selectedCharWoman) {
                     case 0:
                         desc = getString(R.string.cd);
                         percent = 10;
@@ -327,13 +475,14 @@ public class ChemistryFragment extends BaseFragment {
             }
         }
 
-        ChemistryModel chemistryModel = new ChemistryModel("D", "D",
-                getDISCColor(selectedCharMan), getDISCColor(selectedCharWoman), percent+"%", getPercentColor(percent), getPercentImg(percent), desc);
+
+        ChemistryModel chemistryModel = new ChemistryModel(getDISCChar(selectedCharMan), getDISCChar(selectedCharWoman),
+                getDISCColor(selectedCharMan), getDISCColor(selectedCharWoman), percent + "%", getPercentColor(percent), getPercentImg(percent), desc);
         return chemistryModel;
 
     }
 
-    class ChemistryModel{
+    class ChemistryModel {
         public String charMan;
         public String charWoman;
         public int manColor;
@@ -355,6 +504,33 @@ public class ChemistryFragment extends BaseFragment {
             this.desc = desc;
         }
     }
+
+    private String getDISCChar(int type) {
+        String disc = "";
+        switch (type) {
+
+            case 0:
+                disc = "D";
+
+                break;
+            case 1:
+                disc = "I";
+
+                break;
+            case 2:
+                disc = "S";
+                break;
+            case 3:
+                disc = "C";
+
+                break;
+
+
+        }
+
+        return disc;
+    }
+
     private int getDISCColor(int type) {
         int discColor;
         switch (type) {
@@ -382,6 +558,7 @@ public class ChemistryFragment extends BaseFragment {
         }
         return discColor;
     }
+
     private Drawable getPercentImg(int percent) {
         Drawable drawable = null;
         switch (percent) {
@@ -429,19 +606,17 @@ public class ChemistryFragment extends BaseFragment {
 
     private int getPercentColor(int percent) {
         int percentColor;
-       if(percent >= 90) {
-           percentColor = ContextCompat.getColor(getApplicationContext(), R.color.chemistry_percent_color_90_99);
-       }else if(percent >= 80) {
-           percentColor = ContextCompat.getColor(getApplicationContext(), R.color.chemistry_percent_color_60_80);
-       }else if(percent >= 20) {
-           percentColor = ContextCompat.getColor(getApplicationContext(), R.color.chemistry_percent_color_20_40);
-       }else if(percent >= 5) {
-           percentColor = ContextCompat.getColor(getApplicationContext(), R.color.chemistry_percent_color_5_10);
-       }else{
-           percentColor = ContextCompat.getColor(getApplicationContext(), R.color.color_char_gray);
-       }
-
-
+        if (percent >= 90) {
+            percentColor = ContextCompat.getColor(getApplicationContext(), R.color.chemistry_percent_color_90_99);
+        } else if (percent >= 80) {
+            percentColor = ContextCompat.getColor(getApplicationContext(), R.color.chemistry_percent_color_60_80);
+        } else if (percent >= 20) {
+            percentColor = ContextCompat.getColor(getApplicationContext(), R.color.chemistry_percent_color_20_40);
+        } else if (percent >= 5) {
+            percentColor = ContextCompat.getColor(getApplicationContext(), R.color.chemistry_percent_color_5_10);
+        } else {
+            percentColor = ContextCompat.getColor(getApplicationContext(), R.color.color_char_gray);
+        }
 
 
         return percentColor;

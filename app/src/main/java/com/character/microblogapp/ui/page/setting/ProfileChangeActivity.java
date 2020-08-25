@@ -630,10 +630,10 @@ public class ProfileChangeActivity extends BaseActivity {
             return;
         }
 
-        if (tvHobby.getText().toString().trim().equals("")) {
-            Toaster.showShort(this, R.string.select_hobby);
-            return;
-        }
+//        if (tvHobby.getText().toString().trim().equals("")) {
+//            Toaster.showShort(this, R.string.select_hobby);
+//            return;
+//        }
 
         if (tvLove.getText().toString().trim().equals("")) {
             Toaster.showShort(this, R.string.select_love_style);
@@ -672,7 +672,7 @@ public class ProfileChangeActivity extends BaseActivity {
                 tvDrinking.getText().toString(),
                 tvSmoking.getText().toString(),
                 tvBody.getText().toString(),
-                new Gson().toJson(interestList),
+                "",
                 tvLove.getText().toString(),
                 etSelfIntroduction.getText().toString()
         )

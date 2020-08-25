@@ -4,63 +4,69 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <RelativeLayout
+    <LinearLayout
+
+
+        android:gravity="center|left"
         android:id="@+id/navigation_group"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="@dimen/_40sdp"
         android:background="@drawable/bg_top_header"
         android:orientation="horizontal">
 
         <ImageButton
-            android:id="@+id/btnBack"
-            android:layout_width="60dp"
-            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:layout_marginLeft="@dimen/_14sdp"
             android:background="@null"
-            android:src="@drawable/ico_back" />
+            android:id="@+id/btnBack"
+            android:layout_width="@dimen/_16sdp"
+            android:layout_height="match_parent"
+            android:src="@drawable/comm_ico_back" />
 
         <TextView
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:fontFamily="@font/nanum_square_b"
+            android:layout_weight="1"
             android:id="@+id/tvTitle"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginStart="60dp"
-            android:layout_marginEnd="60dp"
-            android:gravity="center"
+            android:gravity="center|left"
             android:text="톱바"
             android:textColor="@color/color_white"
-            android:textSize="15sp"
+            android:textSize="@dimen/_14sdp"
             android:textStyle="bold"
-            app:fontname="@{`NotoSansCJKkr-Medium.otf`}" />
+            />
 
         <Button
+            android:fontFamily="@font/nanum_square_b"
             android:id="@+id/btnTitle"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_alignParentEnd="true"
             android:background="@null"
             android:text="이용 내역"
             android:textColor="@color/color_white"
-            android:textSize="14sp"
+            android:textSize="@dimen/_14sdp"
             android:visibility="gone" />
 
         <ImageButton
+            android:fontFamily="@font/nanum_square_b"
             android:id="@+id/btnMenu"
-            android:layout_width="60dp"
+            android:layout_width="@dimen/_40sdp"
             android:layout_height="match_parent"
-            android:layout_alignParentEnd="true"
             android:background="@null"
             android:src="@drawable/ico_menu_right" />
 
         <TextView
+            android:fontFamily="@font/nanum_square_b"
             android:id="@+id/txvMenu"
-            android:layout_width="60dp"
+            android:layout_width="@dimen/_40sdp"
             android:layout_height="match_parent"
-            android:layout_alignParentEnd="true"
             android:gravity="center"
             android:text="완료"
             android:textColor="@color/color_white"
-            android:textSize="14sp"
+            android:textSize="@dimen/_14sdp"
             android:visibility="gone" />
 
-    </RelativeLayout>
+    </LinearLayout>
 
 </layout>

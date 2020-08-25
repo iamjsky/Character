@@ -41,6 +41,8 @@ import com.character.microblogapp.ui.page.setting.EnergyupActivity;
 import com.character.microblogapp.ui.page.setting.dialog.BlameDialog;
 import com.character.microblogapp.util.Util;
 import com.viewpagerindicator.CirclePageIndicator;
+import com.willy.ratingbar.BaseRatingBar;
+import com.willy.ratingbar.ScaleRatingBar;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -163,7 +165,7 @@ public class ProfileActivity extends BaseActivity {
     ImageView ivStar5;
 
     @BindView(R.id.rate)
-    RatingBar ratingBar;
+    ScaleRatingBar ratingBar;
 
     @BindView(R.id.rvImg)
     RecyclerView rvImg;
@@ -339,9 +341,9 @@ public class ProfileActivity extends BaseActivity {
 
     private void updateRating() {
         ratingBar.setRating(user.info.rate_byme);
-        ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+        ratingBar.setOnRatingChangeListener(new ScaleRatingBar.OnRatingChangeListener() {
             @Override
-            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+            public void onRatingChange(BaseRatingBar ratingBar, float rating) {
                 user.info.rate_byme = (int)rating;
 
                 reqEval();

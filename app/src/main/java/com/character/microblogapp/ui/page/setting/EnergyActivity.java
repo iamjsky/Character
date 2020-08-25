@@ -43,17 +43,12 @@ public class EnergyActivity extends BaseActivity implements BillingProcessor.IBi
     @BindView(R.id.btnBack)
     ImageButton btnBack;
 
-    @BindView(R.id.btnTitle)
-    Button btnTitle;
+
 
     @BindView(R.id.tvCount)
     TextView tvCount;
 
-    @BindView(R.id.lly_warning_msg_bg)
-    LinearLayout llyWarningMsgBg;
 
-    @BindView(R.id.txv_warning_msg)
-    TextView tvWarningMsg;
 
     @BindView(R.id.rvContent)
     RecyclerView rvContent;
@@ -84,15 +79,8 @@ public class EnergyActivity extends BaseActivity implements BillingProcessor.IBi
         Intent intent = getIntent();
         String nickname = intent.getStringExtra("nickname");
 
-        if (nickname != null) {
-            llyWarningMsgBg.setVisibility(View.VISIBLE);
-            tvWarningMsg.setText("\"" + nickname + "님을 놓칠수 있습니다.\"");
-        } else {
-            llyWarningMsgBg.setVisibility(View.GONE);
-        }
 
-        btnTitle.setText("이용 내역");
-        btnTitle.setVisibility(View.VISIBLE);
+
 
         arrContent.add("");
         arrContent.add("");
@@ -111,7 +99,7 @@ public class EnergyActivity extends BaseActivity implements BillingProcessor.IBi
 
         rvContent.setAdapter(adapter);
 
-        GridLayoutManager layout_manager = new GridLayoutManager(this, 3);
+        LinearLayoutManager layout_manager = new LinearLayoutManager(this);
         rvContent.setLayoutManager(layout_manager);
 
         apiInfo();
@@ -137,12 +125,7 @@ public class EnergyActivity extends BaseActivity implements BillingProcessor.IBi
         finish();
     }
 
-    @OnClick(R.id.btnTitle)
-    void onTitle() {
-        Intent intent = new Intent(EnergyActivity.this, ReceiveEnergyActivity.class);
-        intent.putExtra("count", receiveCount);
-        startActivity(intent);
-    }
+
 
     void apiInfo() {
         showProgress(this);
@@ -153,7 +136,7 @@ public class EnergyActivity extends BaseActivity implements BillingProcessor.IBi
                         super.onSuccess(response);
                         hideProgress();
 
-                        tvCount.setText(Util.numberFormatString(response.energy) + "개");
+                        tvCount.setText(Util.numberFormatString(response.energy));
                         receiveCount = response.energy;
                         MyInfo.getInstance().energy = receiveCount;
                     }

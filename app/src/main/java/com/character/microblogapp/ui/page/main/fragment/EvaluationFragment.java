@@ -12,6 +12,7 @@ import android.support.v4.view.ViewPager;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,6 +42,7 @@ import com.character.microblogapp.ui.page.model.ModelFindActivity;
 import com.character.microblogapp.ui.page.profile.ProfileActivity;
 import com.character.microblogapp.ui.page.setting.dialog.BlameDialog;
 import com.character.microblogapp.util.Util;
+import com.jackandphantom.circularimageview.RoundedImage;
 import com.viewpagerindicator.CirclePageIndicator;
 import com.willy.ratingbar.BaseRatingBar;
 import com.willy.ratingbar.ScaleRatingBar;
@@ -68,6 +70,8 @@ public class EvaluationFragment extends BaseFragment {
 
     @BindView(R.id.txv_manner_desc1)
     TextView txvMannerDesc1;
+    @BindView(R.id.txv_manner_desc2)
+    TextView txvMannerDesc2;
 
     @BindView(R.id.cb_heart0)
     CheckBox cbHeart0;
@@ -95,6 +99,8 @@ public class EvaluationFragment extends BaseFragment {
 
     @BindView(R.id.tv_job)
     TextView tv_job;
+    @BindView(R.id.tv_age)
+    TextView tv_age;
 
     @BindView(R.id.tv_message)
     TextView tvMessage;
@@ -113,6 +119,12 @@ public class EvaluationFragment extends BaseFragment {
 
     @BindView(R.id.rly_empty_user)
     RelativeLayout clEmptyUser;
+
+    @BindView(R.id.layout_vpCover)
+            LinearLayout layout_vpCover;
+
+    @BindView(R.id.tv_totalCount)
+            TextView tv_totalCount;
 
     MyApplication mApp = null;
     ImagePagerAdapter mUsersAdapter = null;
@@ -157,28 +169,31 @@ public class EvaluationFragment extends BaseFragment {
     }
 
     private void initStar() {
-        String value = String.format("%.1f", Float.valueOf(MyInfo.getInstance().star_value)) + "\n\n";
-
+        String value = String.format("%.1f", Float.valueOf(MyInfo.getInstance().star_value));
+        tv_totalCount.setText(value);
+        tv_totalCount.setGravity(Gravity.CENTER_VERTICAL);
         switch (MyInfo.getInstance().star_value) {
             case 1:
-                tvStatus.setText(value + getString(R.string.estimate_user_point_1));
+                tvStatus.setText(getString(R.string.estimate_user_point_1));
                 break;
             case 2:
-                tvStatus.setText(value + getString(R.string.estimate_user_point_2));
+                tvStatus.setText(getString(R.string.estimate_user_point_2));
                 break;
             case 3:
-                tvStatus.setText(value + getString(R.string.estimate_user_point_3));
+                tvStatus.setText(getString(R.string.estimate_user_point_3));
                 break;
             case 4:
-                tvStatus.setText(value + getString(R.string.estimate_user_point_4));
+                tvStatus.setText(getString(R.string.estimate_user_point_4));
                 break;
             case 5:
-                tvStatus.setText(value + getString(R.string.estimate_user_point_5));
+                tvStatus.setText(getString(R.string.estimate_user_point_5));
                 break;
+
         }
         mark = MyInfo.getInstance().star_value;
 
         tvStatus.setVisibility(MyInfo.getInstance().star_value != 0 ? View.VISIBLE : View.INVISIBLE);
+        layout_vpCover.setVisibility(MyInfo.getInstance().star_value != 0 ? View.VISIBLE : View.GONE);
     }
 
     private void initData() {
@@ -206,13 +221,14 @@ public class EvaluationFragment extends BaseFragment {
         tvMessage.setText(mEstimateUser.intro);
         tvMessage.setVisibility(View.GONE);
         tvNickname.setText(mEstimateUser.nickname);
-        tvAddress.setText(mEstimateUser.address + " | "); //  지역
+        tv_age.setText(mEstimateUser.age+"세");
+        tvAddress.setText(mEstimateUser.address); //  지역
         if (mEstimateUser.job != null && !mEstimateUser.job.isEmpty()) { // 직업
-            tv_job.setText(mEstimateUser.job  + " | ");
+            tv_job.setText(mEstimateUser.job);
         }
 
         if (!(mEstimateUser.body_type + "").isEmpty()) { // 체형
-            tvBody.setText(" " + mEstimateUser.body_type);
+            tvBody.setText(mEstimateUser.body_type);
         }
 //        if (mEstimateUser.school != null && !mEstimateUser.school.isEmpty()) { // 학교
 //            tv_school.setText(" " + getString(R.string.dot_middle) + "  " +  mEstimateUser.school);
@@ -227,7 +243,23 @@ public class EvaluationFragment extends BaseFragment {
             w_type = "S";
         } else if(w_type.equals("C=")){
             w_type = "C";
+        } else if(w_type.equals("d")){
+            w_type = "D";
+        } else if(w_type.equals("i")){
+            w_type = "I";
+        } else if(w_type.equals("s")){
+            w_type = "S";
+        } else if(w_type.equals("c")){
+            w_type = "C";
         }
+        w_type = w_type.replace("d","D");
+        w_type = w_type.replace("i","I");
+        w_type = w_type.replace("s","S");
+        w_type = w_type.replace("c","C");
+        if(w_type.length() > 2){
+            w_type = w_type.substring(0,2);
+        }
+
 
         Spannable sb = new SpannableString(w_type);
         ArrayList<String> summary = new ArrayList<>();
@@ -256,12 +288,21 @@ public class EvaluationFragment extends BaseFragment {
 
         txvManner1.setText(sb);
 
-        txvMannerDesc1.setText(mEstimateUser.ideal_character);
+        String idelCharacter = mEstimateUser.ideal_character;
+        String[] charText = idelCharacter.split(",");
+        if(charText.length > 1){
+            txvMannerDesc1.setText(charText[0]+"");
+            txvMannerDesc2.setText(charText[1]+"");
+        }else{
+            txvMannerDesc1.setText(charText[0]+"");
+        }
+
     }
 
     private void showEmptyUser() {
         llMainEstimate.setVisibility(View.GONE);
         tvStatus.setVisibility(View.INVISIBLE);
+        layout_vpCover.setVisibility(View.GONE);
         clEmptyUser.setVisibility(View.VISIBLE);
     }
 
@@ -277,12 +318,12 @@ public class EvaluationFragment extends BaseFragment {
         loadCurrentEstimateUser();
     }
 
-    @OnClick({R.id.vpProfiles})
-    void onClickProfileView() {
-        if (mUsersAdapter.mProfileUrls.isEmpty()) {
-            goCurrentUserProfilePage();
-        }
-    }
+//    @OnClick({R.id.vpProfiles})
+//    void onClickProfileView() {
+//        if (mUsersAdapter.mProfileUrls.isEmpty()) {
+//            goCurrentUserProfilePage();
+//        }
+//    }
 
     int mark = 0;
 
@@ -291,15 +332,6 @@ public class EvaluationFragment extends BaseFragment {
 //        sendEstimatedScore(mark);
     }
 
-    @OnClick(R.id.btn_blame)
-    void OnClickBlame() {
-        new BlameDialog(getActivity(), new BlameDialog.ActionListener() {
-            @Override
-            public void onSucess(int type) {
-                reqBlame(BLAME_REASON[type - 1]);
-            }
-        }).show();
-    }
 
     @OnClick({R.id.cb_heart0, R.id.cb_heart1, R.id.cb_heart2, R.id.cb_heart3, R.id.cb_heart4})
     void onClickHeartBtn(CheckBox checkBox) {
@@ -347,6 +379,7 @@ public class EvaluationFragment extends BaseFragment {
         mark = clicked + 1;
 
         tvStatus.setVisibility(View.VISIBLE);
+        layout_vpCover.setVisibility(View.VISIBLE);
     }
 
     private void clearScore() {
@@ -456,6 +489,7 @@ public class EvaluationFragment extends BaseFragment {
                         MyInfo.getInstance().star_value = 0;
                         mark = MyInfo.getInstance().star_value;
                         tvStatus.setVisibility(View.INVISIBLE);
+                        layout_vpCover.setVisibility(View.GONE);
                         ratingBar.setRating(0);
                     }
 
@@ -533,12 +567,13 @@ public class EvaluationFragment extends BaseFragment {
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View itemView = inflater.inflate(R.layout.item_eval_user, container, false);
 
-            ImageView imgProfile = itemView.findViewById(R.id.iv_profile);
-            GlideApp.with(mParent).load(mProfileUrls.get(position)).into(imgProfile);
+            RoundedImage imgProfile = (RoundedImage) itemView.findViewById(R.id.iv_profile);
+            imgProfile.setRoundedRadius(50);
+                       GlideApp.with(mParent).load(mProfileUrls.get(position)).into(imgProfile);
             imgProfile.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    goCurrentUserProfilePage();
+                   // goCurrentUserProfilePage();
                 }
             });
 

@@ -2,6 +2,7 @@ package com.character.microblogapp.ui.page.main.fragment;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -179,7 +180,23 @@ public class MyCharInfoFragment extends BaseFragment {
 
     }
 
+    @OnClick(R.id.btn_share)
+    void btn_shareClicked() {
+        Intent intent = new Intent(android.content.Intent.ACTION_SEND);
 
+        intent.setType("text/plain");
+
+
+        String text = "http://www.personalitism.com/resultDI--.html";
+
+        intent.putExtra(Intent.EXTRA_TEXT, text);
+
+
+        Intent chooser = Intent.createChooser(intent, "공유하기");
+        startActivity(chooser);
+
+
+    }
     @OnClick(R.id.rlt_back)
     public void rlt_backClicked() {
         MainActivity mainActivity = (MainActivity) getActivity();

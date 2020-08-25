@@ -1,6 +1,11 @@
 package com.character.microblogapp.data;
 
+import android.support.v4.content.ContextCompat;
+
 import com.character.microblogapp.BuildConfig;
+import com.character.microblogapp.R;
+
+import static com.facebook.FacebookSdk.getApplicationContext;
 
 public interface Constant {
 
@@ -69,10 +74,10 @@ public interface Constant {
     String CHARACTER_S = "S";
     String CHARACTER_C = "C";
 
-    int CHARACTER_D_COLOR = 0xff333333;
-    int CHARACTER_I_COLOR = 0xfffe013c;
-    int CHARACTER_S_COLOR = 0xff0fc044;
-    int CHARACTER_C_COLOR = 0xff4267b2;
+    int CHARACTER_D_COLOR = ContextCompat.getColor(getApplicationContext(), R.color.char_d_color);;
+    int CHARACTER_I_COLOR = ContextCompat.getColor(getApplicationContext(), R.color.char_i_color);;
+    int CHARACTER_S_COLOR = ContextCompat.getColor(getApplicationContext(), R.color.char_s_color);;
+    int CHARACTER_C_COLOR = ContextCompat.getColor(getApplicationContext(), R.color.char_c_color);;
 
     String[] BLAME_REASON = new String[]{"불쾌감을 주는 언행", "불쾌감을 주는 사진", "사진 도용"};
 

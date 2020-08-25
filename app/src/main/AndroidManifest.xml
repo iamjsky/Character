@@ -25,6 +25,7 @@
     <uses-permission android:name="com.android.vending.BILLING" />
 
     <application
+        android:debuggable="false"
         android:name=".MyApplication"
         android:allowBackup="false"
         android:hardwareAccelerated="true"

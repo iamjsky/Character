@@ -5,10 +5,11 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout
+        android:elevation="@dimen/_10sdp"
         android:layout_width="match_parent"
         android:layout_height="270dp">
 
-        <ImageView
+        <com.jackandphantom.circularimageview.RoundedImage
             android:id="@+id/iv_profile"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

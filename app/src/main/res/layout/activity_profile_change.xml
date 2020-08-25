@@ -237,12 +237,14 @@
                         android:hint="@string/select_body" />
 
                     <com.character.microblogapp.ui.widget.CustomTextView
+                        android:visibility="gone"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
                         app:text="@string/hobby" />
 
                     <TextView
+                        android:visibility="gone"
                         android:id="@+id/tvHobby"
                         style="@style/SignupItemValue"
                         android:hint="@string/select_hobby" />

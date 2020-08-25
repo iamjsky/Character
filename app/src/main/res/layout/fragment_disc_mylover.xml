@@ -67,7 +67,7 @@
                     android:layout_marginTop="@dimen/_58sdp"
                     android:orientation="vertical"
                     android:paddingBottom="@dimen/_6sdp"
-                    android:visibility="gone">
+                    android:visibility="visible">
 
                     <LinearLayout
                         android:layout_marginLeft="@dimen/_7sdp"

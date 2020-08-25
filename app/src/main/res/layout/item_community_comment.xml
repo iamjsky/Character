@@ -5,26 +5,29 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout
+        android:gravity="center|top"
         android:id="@+id/rlBg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/color_white"
+        android:background="#f6f6f6"
         android:orientation="horizontal"
         android:paddingStart="18dp"
         android:paddingEnd="14dp"
-        android:paddingBottom="5dp">
+        android:paddingBottom="15dp">
 
         <ImageView
+            android:layout_marginTop="5dp"
+            android:adjustViewBounds="true"
             android:id="@+id/imgPhoto"
-            android:layout_width="34dp"
-            android:layout_height="34dp"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
             android:scaleType="centerCrop"
             android:src="@drawable/temp_item_2" />
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="13dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="9dp"
             android:layout_weight="1"
@@ -40,7 +43,7 @@
                 android:textColor="@color/color_black"
                 android:textSize="12sp"
                 android:textStyle="bold"
-                app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+                android:fontFamily="@font/nanum_square_b" />
 
             <TextView
                 android:id="@+id/tvContent"
@@ -50,24 +53,26 @@
                 android:text="기념일 선물로 제작해쓴데, 너머너머 망ㅁ에 들어오!!! \n 제가 원하는 스타일에 맞게 포인트를 잘 살려주셨어요 ㅎㅎㅎ 감사합니다."
                 android:textColor="@color/color_black"
                 android:textSize="12sp"
-                app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+                android:fontFamily="@font/nanum_square_r" />
 
         </LinearLayout>
 
         <LinearLayout
+            android:gravity="top|right"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:orientation="vertical">
 
             <TextView
+
                 android:id="@+id/tvTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="2019.6.17"
-                android:textColor="#a2a2a2"
+                android:textColor="#000000"
                 android:textSize="8sp"
-                app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+                android:fontFamily="@font/nanum_square_r" />
 
             <TextView
                 android:id="@+id/btnDelete"
@@ -80,7 +85,7 @@
                 android:textColor="@color/color_white"
                 android:textSize="12sp"
                 android:textStyle="bold"
-                app:fontname="@{`NotoSansCJKkr-Regular.otf`}" />
+                android:fontFamily="@font/nanum_square_b" />
 
         </LinearLayout>
 

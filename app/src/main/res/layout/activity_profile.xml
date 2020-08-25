@@ -676,13 +676,18 @@
                     android:layout_marginBottom="36dp"
                     android:gravity="center_horizontal">
 
-                    <RatingBar
+                    <com.willy.ratingbar.ScaleRatingBar
                         android:id="@+id/rate"
                         style="@style/ImageRatingStarBar"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:numStars="5"
-                        android:stepSize="1" />
+                        android:stepSize="1"
+                        app:srb_clickable="true"
+                        app:srb_drawableEmpty="@drawable/like_ico_nostar"
+                        app:srb_drawableFilled="@drawable/like_ico_star"
+                        app:srb_scrollable="true"
+                        app:srb_starPadding="4dp" />
 
                 </RelativeLayout>
 

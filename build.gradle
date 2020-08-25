@@ -35,10 +35,10 @@ allprojects {
         supportVersion = "28.0.0"
 
         versionMajor = 1
-        versionMinor = 4
+        versionMinor = 5
         versionPatch = 0
         versionBuild = 0
-        var = '1.5.0'
+        var = '1.6.0'
     }
 }
 

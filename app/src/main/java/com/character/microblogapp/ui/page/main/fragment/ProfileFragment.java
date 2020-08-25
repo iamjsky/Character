@@ -19,6 +19,9 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.character.microblogapp.GlideApp;
 import com.character.microblogapp.MyApplication;
 import com.character.microblogapp.R;
 import com.character.microblogapp.data.MyInfo;
@@ -39,6 +42,7 @@ import com.character.microblogapp.ui.page.setting.SettingActivity;
 import com.character.microblogapp.ui.page.setting.TypeActivity;
 import com.character.microblogapp.util.Toaster;
 import com.character.microblogapp.util.Util;
+import com.jackandphantom.circularimageview.CircleImage;
 import com.viewpagerindicator.CirclePageIndicator;
 
 import java.util.ArrayList;
@@ -70,6 +74,8 @@ public class ProfileFragment extends BaseFragment {
 
     @BindView(R.id.txv_manner_desc1)
     TextView txvMannerDesc1;
+    @BindView(R.id.txv_manner_desc2)
+    TextView txvMannerDesc2;
 
     @BindView(R.id.tv_nickname)
     TextView tvNickname;
@@ -80,11 +86,13 @@ public class ProfileFragment extends BaseFragment {
     @BindView(R.id.tv_age)
     TextView tv_age;
 
-    @BindView(R.id.tv_school)
-    TextView tv_school;
+
 
     @BindView(R.id.tv_job)
     TextView tv_job;
+
+    @BindView(R.id.tv_body_type)
+    TextView tv_body_type;
 
     @BindView(R.id.tvHint)
     TextView tvHint;
@@ -104,15 +112,13 @@ public class ProfileFragment extends BaseFragment {
     @BindView(R.id.rlSetting)
     RelativeLayout rlSetting;
 
-    @BindView(R.id.vpBanner)
-    ViewPager vpBanner;
+    @BindView(R.id.iv_userProfileImg)
+    CircleImage iv_userProfileImg;
 
-    @BindView(R.id.ciBanner)
-    CirclePageIndicator ciBanner;
 
     MyApplication mApp = null;
 
-    ImagePagerAdapter mTopAdapter;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -138,18 +144,18 @@ public class ProfileFragment extends BaseFragment {
     private void initUI(View p_view) {
 
         btnBack.setVisibility(View.GONE);
-        mTopAdapter = new ImagePagerAdapter();
-
-        vpBanner.setAdapter(mTopAdapter);
-        ciBanner.setViewPager(vpBanner);
 
 //        tvTitle.setText(MyInfo.getInstance().nickname);  //닉네임
         tvTitle.setText(R.string.tab_profile);
 
-        for (int i = 0; i < MyInfo.getInstance().profile.length; i++) {
-            mTopAdapter.mBanner.add(MyInfo.getInstance().profile[i]);
+        if(MyInfo.getInstance().profile != null){
+            Glide.with(iv_userProfileImg).load(MyInfo.getInstance().profile[0]).diskCacheStrategy(DiskCacheStrategy.NONE)
+                    .skipMemoryCache(true)
+                    .into(iv_userProfileImg);
         }
-        mTopAdapter.notifyDataSetChanged();
+
+
+
 
         if (IS_UITEST) {
             MyInfo.getInstance().character = "DS";
@@ -165,8 +171,22 @@ public class ProfileFragment extends BaseFragment {
             w_type = "S";
         } else if (w_type.equals("C=")) {
             w_type = "C";
+        } else if(w_type.equals("d")){
+            w_type = "D";
+        } else if(w_type.equals("i")){
+            w_type = "I";
+        } else if(w_type.equals("s")){
+            w_type = "S";
+        } else if(w_type.equals("c")){
+            w_type = "C";
         }
-
+        w_type = w_type.replace("d","D");
+        w_type = w_type.replace("i","I");
+        w_type = w_type.replace("s","S");
+        w_type = w_type.replace("c","C");
+        if(w_type.length() > 2){
+            w_type = w_type.substring(0,2);
+        }
         Spannable sb = new SpannableString(w_type);
         ArrayList<String> summary = new ArrayList<>();
 
@@ -193,29 +213,30 @@ public class ProfileFragment extends BaseFragment {
         }
 
         txvManner1.setText(sb);
-
-        txvMannerDesc1.setText(MyInfo.getInstance().ideal_character.replaceAll("\r", ""));
-
-        String strNmae = MyInfo.getInstance().nickname;
-        if (!(MyInfo.getInstance().age + "").isEmpty()) { // 나이
-            strNmae += ", " + MyInfo.getInstance().age + "세";
+        String idelCharacter = MyInfo.getInstance().ideal_character;
+        String[] charText = idelCharacter.split(",");
+        if(charText.length > 1){
+            txvMannerDesc1.setText(charText[0]+"");
+            txvMannerDesc2.setText(charText[1]+"");
+        }else{
+            txvMannerDesc1.setText(charText[0]+"");
         }
-        tvNickname.setText(strNmae);
+        txvMannerDesc1.setText(MyInfo.getInstance().ideal_character);
 
+        String strName = MyInfo.getInstance().nickname+"";
+        String strAge = MyInfo.getInstance().age+"";
+        String strJob = MyInfo.getInstance().job+"";
+        String strAddr = MyInfo.getInstance().address+"";
+        String strBody = MyInfo.getInstance().body_type+"";
 
-        String strJob = "";
-        if (MyInfo.getInstance().job != null && !MyInfo.getInstance().job.isEmpty()) { // 직업
-            strJob += MyInfo.getInstance().job + " | ";
-        }
-
-        //tvAddress.setText(MyInfo.getInstance().address); // 지역
-        strJob += MyInfo.getInstance().address;
-
-        if (MyInfo.getInstance().body_type != null && !MyInfo.getInstance().body_type.isEmpty()) { // 학교
-            strJob += " | " + MyInfo.getInstance().body_type;
-        }
-
+        tvNickname.setText(strName);
+        tv_age.setText(strAge);
         tv_job.setText(strJob);
+        tvAddress.setText(strAddr);
+        tv_body_type.setText(strBody);
+
+
+
 
     }
 
@@ -247,10 +268,11 @@ public class ProfileFragment extends BaseFragment {
             rlSetting.setVisibility(View.VISIBLE);
         }
 
-        mTopAdapter.notifyDataSetChanged();
+
     }
 
-    @OnClick({R.id.rlProfile, R.id.rlEnergy, R.id.rlType, R.id.rlAsk, R.id.rlSetting, R.id.flt_other_interest})
+//    @OnClick({R.id.rlProfile, R.id.rlEnergy, R.id.rlType, R.id.rlAsk, R.id.rlSetting, R.id.flt_other_interest})
+@OnClick({R.id.rlProfile, R.id.rlEnergy, R.id.rlType, R.id.rlAsk, R.id.rlSetting})
     void onClick(View view) {
         if (view.getId() == R.id.rlProfile) {
             getActivity().startActivity(new Intent(getActivity(), ProfileChangeActivity.class));
@@ -262,11 +284,13 @@ public class ProfileFragment extends BaseFragment {
             getActivity().startActivity(new Intent(getActivity(), AskActivity.class));
         } else if (view.getId() == R.id.rlSetting) {
             getActivity().startActivity(new Intent(getActivity(), SettingActivity.class));
-        } else if (view.getId() == R.id.flt_other_interest) {
-            Intent intent = new Intent(getActivity(), ProfileDISCActivity.class);
-            intent.putExtra("usr_uid", MyInfo.getInstance().uid);
-            startActivity(intent);
         }
+
+//        else if (view.getId() == R.id.flt_other_interest) {
+//            Intent intent = new Intent(getActivity(), ProfileDISCActivity.class);
+//            intent.putExtra("usr_uid", MyInfo.getInstance().uid);
+//            startActivity(intent);
+//        }
     }
 
     void apiInfo() {
