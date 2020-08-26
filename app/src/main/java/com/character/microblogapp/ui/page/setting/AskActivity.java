@@ -121,7 +121,7 @@ public class AskActivity extends BaseActivity {
 
         tvTitle.setText("관리자 문의");
         btnMenu.setVisibility(View.GONE);
-
+        btnBack.setVisibility(View.VISIBLE);
         mediaManager = new MediaManager(this);
         mediaManager.setMediaCallback(new MediaManager.MediaCallback() {
             @Override

@@ -67,7 +67,7 @@ public class AlarmActivity extends BaseActivity {
 
         tvTitle.setText("알림설정");
         btnMenu.setVisibility(View.GONE);
-
+        btnBack.setVisibility(View.VISIBLE);
         getAlarmSetting();
     }
 

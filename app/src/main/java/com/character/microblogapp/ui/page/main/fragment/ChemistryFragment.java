@@ -173,12 +173,12 @@ public class ChemistryFragment extends BaseFragment {
         intent.setType("text/plain");
 
 
-        String text = "http://www.personalitism.com/resultDI--.html";
+        String text = "https://play.google.com/store/apps/details?id=com.character.dating";
 
         intent.putExtra(Intent.EXTRA_TEXT, text);
 
 
-        Intent chooser = Intent.createChooser(intent, "공유하기");
+        Intent chooser = Intent.createChooser(intent, "성격궁합 측정 결과");
         startActivity(chooser);
 
 

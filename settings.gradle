@@ -1,1 +1,2 @@
+include ':viewpagerindicator'
 include ':app', /*':LibViewpagerIndicator',*/ ':LibWKVideoPlayer'/*, ':LibAdvancedRecycler'*/

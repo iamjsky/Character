@@ -119,8 +119,8 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:lineSpacingExtra="3dp"
-                            android:textColor="@color/color_dark"
-                            android:textSize="@dimen/_9sdp"
+                            android:textColor="#545454"
+                            android:textSize="@dimen/_8sdp"
                             android:fontFamily="@font/nanum_square_b"/>
                         <TextView
                             android:layout_marginTop="@dimen/_2sdp"
@@ -130,8 +130,8 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:lineSpacingExtra="3dp"
-                            android:textColor="@color/color_dark"
-                            android:textSize="@dimen/_9sdp"
+                            android:textColor="#545454"
+                            android:textSize="@dimen/_8sdp"
                             android:fontFamily="@font/nanum_square_b"/>
                     </LinearLayout>
 
@@ -156,7 +156,6 @@
                         android:id="@+id/pageIndicator"
                         android:layout_width="wrap_content"
                         android:layout_height="@dimen/_10sdp"
-                        android:layout_marginBottom="@dimen/_4sdp"
                         app:fillColor="@color/char_main_color"
                         android:layout_alignBottom="@+id/vpProfiles"
                         app:pageColor="#B3B3B3"

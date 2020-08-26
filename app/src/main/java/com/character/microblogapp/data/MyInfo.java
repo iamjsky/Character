@@ -11,6 +11,8 @@ public class MyInfo extends BaseUserInfo {
 
     private static MyInfo singleton;
 
+    /*0이메일 1페이스북 2네이버 3카카오*/
+    public int signUp_type = 0;
     public int uid;
     public String fcm_token;
     public String email;

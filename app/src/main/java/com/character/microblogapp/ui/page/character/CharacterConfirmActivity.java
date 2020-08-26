@@ -227,12 +227,12 @@ public class CharacterConfirmActivity extends BaseActivity {
         intent.setType("text/plain");
 
 
-        String text = "http://www.personalitism.com/resultDI--.html";
+        String text = "https://play.google.com/store/apps/details?id=com.character.dating";
 
         intent.putExtra(Intent.EXTRA_TEXT, text);
 
 
-        Intent chooser = Intent.createChooser(intent, "공유하기");
+        Intent chooser = Intent.createChooser(intent, "DISC 성격 테스트 결과");
         startActivity(chooser);
 
 

@@ -17,11 +17,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.character.microblogapp.R;
 import com.character.microblogapp.data.Constant;
+import com.character.microblogapp.data.MyInfo;
 import com.character.microblogapp.model.MBase;
 import com.character.microblogapp.model.MError;
 import com.character.microblogapp.net.Net;
@@ -73,8 +75,10 @@ public class SignupEmailFragment extends BaseFragment {
     TextView tvPasswordConfirmError;
     @BindView(R.id.btnRegistering)
     Button btnRegistering;
+    @BindView(R.id.layout_emailSignUpArea)
+    LinearLayout layout_emailSignUpArea;
 
-
+    public int signUpType;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -97,9 +101,15 @@ public class SignupEmailFragment extends BaseFragment {
 
         initPopup();
 
+        signUpType = MyInfo.getInstance().signUp_type;
+        if(signUpType != 0){
+            layout_emailSignUpArea.setVisibility(View.GONE);
+        }else{
+            layout_emailSignUpArea.setVisibility(View.VISIBLE);
+        }
         etEmail.setText(m_sEmail);
-        etEmail.setFocusable(m_sEmail.equals(""));
-        etEmail.setSelected(!m_sEmail.equals(""));
+//        etEmail.setFocusable(m_sEmail.equals(""));
+//        etEmail.setSelected(!m_sEmail.equals(""));
         tvInvalideEmailError.setVisibility(m_sEmail.equals("") ? View.VISIBLE : View.INVISIBLE);
 
         etEmail.addTextChangedListener(new TextWatcher() {
@@ -131,76 +141,76 @@ public class SignupEmailFragment extends BaseFragment {
             }
         });
 
-        etPassword.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (hasFocus) {
-                    tvPasswordError.setVisibility(View.INVISIBLE);
-                } else {
+        if(signUpType == 0) {
+            etPassword.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+                @Override
+                public void onFocusChange(View v, boolean hasFocus) {
+                    if (hasFocus) {
+                        tvPasswordError.setVisibility(View.INVISIBLE);
+                    } else {
+                        checkPassword();
+                    }
+                }
+            });
+
+            etPasswordConfirm.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+                @Override
+                public void onFocusChange(View v, boolean hasFocus) {
+                    if (hasFocus) {
+                        tvPasswordConfirmError.setVisibility(View.INVISIBLE);
+                    } else {
+                        checkPasswordConfirm();
+                    }
+                }
+            });
+            etPassword.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                }
+
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
                     checkPassword();
                 }
-            }
-        });
 
-        etPasswordConfirm.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (hasFocus) {
-                    tvPasswordConfirmError.setVisibility(View.INVISIBLE);
-                } else {
+                @Override
+                public void afterTextChanged(Editable s) {
+
+                }
+            });
+            etPasswordConfirm.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                }
+
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
                     checkPasswordConfirm();
                 }
-            }
-        });
-        etPassword.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-            }
+                @Override
+                public void afterTextChanged(Editable s) {
 
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                checkPassword();
-            }
+                }
+            });
 
-            @Override
-            public void afterTextChanged(Editable s) {
+            SignupActivity signupActivity = (SignupActivity) mParent;
+            if (signupActivity == null || signupActivity.gender.isEmpty())
+                return;
 
-            }
-        });
-        etPasswordConfirm.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
+            if (signupActivity.gender.equals("male")) {
+                tvMale.setSelected(true);
+                tvFemale.setSelected(false);
+            } else {
+                tvMale.setSelected(false);
+                tvFemale.setSelected(true);
             }
 
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                checkPasswordConfirm();
-            }
 
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
-
-        SignupActivity signupActivity = (SignupActivity) mParent;
-        if (signupActivity == null || signupActivity.gender.isEmpty())
-            return;
-
-
-        if (signupActivity.gender.equals("male")) {
-            tvMale.setSelected(true);
-            tvFemale.setSelected(false);
-        } else {
-            tvMale.setSelected(false);
-            tvFemale.setSelected(true);
         }
-
-        tvMale.setOnClickListener(null);
-        tvFemale.setOnClickListener(null);
-
     }
 
     @OnClick(R.id.btnRegistering)
@@ -238,8 +248,8 @@ public class SignupEmailFragment extends BaseFragment {
         signupActivity.email = etEmail.getText().toString();
 
         //TODO: 본인인증 (이때 전화번호와 생년월일 정보를 가져온다)
-        signupActivity.phone = "123123213";
-        signupActivity.birthday = "19940502";
+//        signupActivity.phone = "123123213";
+//        signupActivity.birthday = "19940502";
 
 
 
@@ -247,11 +257,6 @@ public class SignupEmailFragment extends BaseFragment {
         signupActivity.showProfileRegisterFragment();
 
 
-
-
-        //TODO: 본인인증 (이때 전화번호와 생년월일 정보를 가져온다)
-//        signupActivity.phone = "123123213";
-//        signupActivity.birthday = "19940502";
 
 
     }
@@ -271,29 +276,33 @@ public class SignupEmailFragment extends BaseFragment {
             tvInvalideEmailError.setVisibility(View.VISIBLE);
             return;
         }
-        if (tvMale.isSelected())
-            ((SignupActivity)getActivity()).sex = GENDER.MALE;
-        else if (tvFemale.isSelected())
-            ((SignupActivity)getActivity()).sex = GENDER.FEMALE;
-        else {
-            Toaster.showShort(mParent, R.string.select_gender);
-            return;
-        }
 
-        String password = etPassword.getText().toString();
-        //if (!StringUtil.hasData(password)) {
-        if (password.isEmpty()) {
-            Toaster.showShort(mParent, R.string.input_password);
-            return;
-        }
-        ((SignupActivity)getActivity()).password = password;
 
-        checkPassword();
-        checkPasswordConfirm();
+        if(signUpType == 0) {
+            if (tvMale.isSelected())
+                ((SignupActivity) getActivity()).sex = GENDER.MALE;
+            else if (tvFemale.isSelected())
+                ((SignupActivity) getActivity()).sex = GENDER.FEMALE;
+            else {
+                Toaster.showShort(mParent, R.string.select_gender);
+                return;
+            }
 
-        if (tvPasswordError.getVisibility() == View.VISIBLE
-                || tvPasswordConfirmError.getVisibility() == View.VISIBLE) {
-            return;
+            String password = etPassword.getText().toString();
+            //if (!StringUtil.hasData(password)) {
+            if (password.isEmpty()) {
+                Toaster.showShort(mParent, R.string.input_password);
+                return;
+            }
+            ((SignupActivity) getActivity()).password = password;
+
+            checkPassword();
+            checkPasswordConfirm();
+
+            if (tvPasswordError.getVisibility() == View.VISIBLE
+                    || tvPasswordConfirmError.getVisibility() == View.VISIBLE) {
+                return;
+            }
         }
         mParent.showProgress(mParent);
         Net.instance().api.check_email_dup(email)

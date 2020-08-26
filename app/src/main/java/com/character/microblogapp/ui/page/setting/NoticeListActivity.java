@@ -61,7 +61,7 @@ public class NoticeListActivity extends BaseActivity {
 
         tvTitle.setText("공지사항");
         btnMenu.setVisibility(View.GONE);
-
+        btnBack.setVisibility(View.VISIBLE);
         adapter = new NoticeAdapter(NoticeListActivity.this, arrContent, new NoticeAdapter.OnItemClickListener() {
             @Override
             public void onDetail(int pos) {

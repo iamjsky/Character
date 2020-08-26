@@ -63,7 +63,7 @@ public class ResetPwdActivity extends BaseActivity {
 
         tvTitle.setText("비밀번호 변경");
         btnMenu.setVisibility(View.GONE);
-
+        btnBack.setVisibility(View.VISIBLE);
         etOldPassword.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {

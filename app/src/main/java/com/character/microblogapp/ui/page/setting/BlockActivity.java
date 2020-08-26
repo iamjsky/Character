@@ -65,7 +65,7 @@ public class BlockActivity extends BaseActivity {
 
         tvTitle.setText("연락처 지인차단");
         btnMenu.setVisibility(View.GONE);
-
+        btnBack.setVisibility(View.VISIBLE);
         adapter = new SwitchAdapter(BlockActivity.this, arrContent, new SwitchAdapter.OnItemClickListener() {
             @Override
             public void onDetail(int pos, boolean status) {

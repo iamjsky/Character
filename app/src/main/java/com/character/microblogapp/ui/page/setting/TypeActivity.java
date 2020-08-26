@@ -75,7 +75,7 @@ public class TypeActivity extends BaseActivity {
 
         tvTitle.setText("이상형 설정");
         btnMenu.setVisibility(View.GONE);
-
+        btnBack.setVisibility(View.VISIBLE);
         apiInfo();
     }
 

@@ -12,7 +12,7 @@ android:background="@color/color_white"
         android:orientation="vertical"
         tools:context=".ui.page.intro.IntroActivity">
 
-            <com.antonyt.infiniteviewpager.InfiniteViewPager
+            <android.support.v4.view.ViewPager
 android:layout_weight="1"
                 android:id="@+id/viewPager"
                 android:layout_width="match_parent"
@@ -22,21 +22,13 @@ android:layout_weight="1"
 
 
 <LinearLayout
+    android:layout_margin="@dimen/_10sdp"
+    android:id="@+id/pagesContainer"
     android:gravity="center|top"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <me.relex.circleindicator.CircleIndicator
-        android:layout_margin="@dimen/_10sdp"
-        android:id="@+id/pageIndicator"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_20sdp"
+    android:layout_height="@dimen/_20sdp">
 
-        app:ci_drawable="@drawable/img_selected_01"
-        app:ci_drawable_unselected="@drawable/img_unselected_01"
-        app:ci_width="5dp"
-        app:ci_height="5dp"
-        app:ci_margin="5dp" />
 </LinearLayout>
 
 

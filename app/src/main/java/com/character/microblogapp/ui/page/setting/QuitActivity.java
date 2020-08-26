@@ -52,7 +52,7 @@ public class QuitActivity extends BaseActivity {
 
         tvTitle.setText("회원탈퇴");
         btnMenu.setVisibility(View.GONE);
-
+        btnBack.setVisibility(View.VISIBLE);
         tvEmail.setText(MyInfo.getInstance().email);
     }
 

@@ -11,6 +11,7 @@ import android.support.v4.view.ViewPager;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -117,7 +118,7 @@ public class ProfileFragment extends BaseFragment {
 
 
     MyApplication mApp = null;
-
+    String myChar = "";
 
 
     @Override
@@ -126,7 +127,8 @@ public class ProfileFragment extends BaseFragment {
         createView(inflater, container, R.layout.fragment_profile);
 
         initData();
-        initUI(container);
+        apiInfo();
+//        initUI(container);
         return mRoot;
     }
 
@@ -134,14 +136,14 @@ public class ProfileFragment extends BaseFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        apiInfo();
+
     }
 
     private void initData() {
         mApp = (MyApplication) getActivity().getApplicationContext();
     }
 
-    private void initUI(View p_view) {
+    void setUI() {
 
         btnBack.setVisibility(View.GONE);
 
@@ -213,15 +215,18 @@ public class ProfileFragment extends BaseFragment {
         }
 
         txvManner1.setText(sb);
-        String idelCharacter = MyInfo.getInstance().ideal_character;
+        String idelCharacter = myChar;
         String[] charText = idelCharacter.split(",");
+
         if(charText.length > 1){
             txvMannerDesc1.setText(charText[0]+"");
             txvMannerDesc2.setText(charText[1]+"");
+            Log.e("char_debug", idelCharacter + " / " + charText[0] + charText[1]);
         }else{
             txvMannerDesc1.setText(charText[0]+"");
+            Log.e("char_debug", idelCharacter + " / " + charText[0]);
         }
-        txvMannerDesc1.setText(MyInfo.getInstance().ideal_character);
+
 
         String strName = MyInfo.getInstance().nickname+"";
         String strAge = MyInfo.getInstance().age+"";
@@ -229,21 +234,41 @@ public class ProfileFragment extends BaseFragment {
         String strAddr = MyInfo.getInstance().address+"";
         String strBody = MyInfo.getInstance().body_type+"";
 
-        tvNickname.setText(strName);
-        tv_age.setText(strAge);
-        tv_job.setText(strJob);
-        tvAddress.setText(strAddr);
-        tv_body_type.setText(strBody);
+
+        tvNickname.setText(checkTextLength(0,strName));
+        tv_age.setText(checkTextLength(1,strAge));
+        tv_job.setText(checkTextLength(1,strJob));
+        tvAddress.setText(checkTextLength(1, strAddr));
+        tv_body_type.setText(checkTextLength(1, strBody));
 
 
 
 
     }
 
+    private String checkTextLength(int type, String text){
+        String result = text;
+        switch (type){
+            case 0:
+                if(text.length()>=8){
+                    result = text.substring(0,8) + "...";
+                }
+                break;
+
+            case 1:
+                if(text.length()>=6){
+                    result = text.substring(0,6) + "...";
+                }
+                break;
+
+        }
+
+        return result;
+    }
     void initVC() {
         btnMenu.setVisibility(View.GONE);
 
-        initUI();
+        setUI();
 //        if (IS_UITEST) {
 //            MyInfo.getInstance().status = 2;
 //            MyInfo.getInstance().release_date = 34;
@@ -305,6 +330,7 @@ public class ProfileFragment extends BaseFragment {
                         MyInfo.getInstance().status = response.info.status;
                         MyInfo.getInstance().uid = response.info.uid;
                         MyInfo.getInstance().transformData(response);
+                        myChar = response.info.ideal_character;
 
                         initVC();
                     }

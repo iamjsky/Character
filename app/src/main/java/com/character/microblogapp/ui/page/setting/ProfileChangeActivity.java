@@ -216,7 +216,7 @@ public class ProfileChangeActivity extends BaseActivity {
 //        etArea.addTextChangedListener(new MyTextWatcher(etArea));
         etJob.addTextChangedListener(new MyTextWatcher(etJob));
         tvLove.addTextChangedListener(new MyTextWatcher(tvLove));
-        tvHobby.addTextChangedListener(new MyTextWatcher(tvHobby));
+       // tvHobby.addTextChangedListener(new MyTextWatcher(tvHobby));
         tvAge.addTextChangedListener(new MyTextWatcher(tvAge));
         etSchool.addTextChangedListener(new MyTextWatcher(etSchool));
         tvBody.addTextChangedListener(new MyTextWatcher(tvBody));
@@ -247,7 +247,7 @@ public class ProfileChangeActivity extends BaseActivity {
         tvDrinking.setText(MyInfo.getInstance().drink + "");
         tvSmoking.setText(MyInfo.getInstance().smoke + "");
         tvBody.setText(MyInfo.getInstance().body_type + "");
-        tvHobby.setText(MyInfo.getInstance().interest.equals("[]") ? "" : MyInfo.getInstance().interest);
+      //  tvHobby.setText(MyInfo.getInstance().interest.equals("[]") ? "" : MyInfo.getInstance().interest);
         tvLove.setText(MyInfo.getInstance().love_style + "");
         etSelfIntroduction.setText(MyInfo.getInstance().intro + "");
     }
@@ -303,23 +303,23 @@ public class ProfileChangeActivity extends BaseActivity {
         if (requestCode == 0x0110 && resultCode == RESULT_OK) {
             String type = data.getStringExtra("type");
 
-            if (type.equals("hobby")) {
-                interestList = new ArrayList<>();
-                interestList = data.getParcelableArrayListExtra("data");
-
-                ArrayList<String> parent = new ArrayList<>();
-                for (Interest item : interestList) {
-                    parent.add(item.name);
-                }
-                tvHobby.setText(TextUtils.join(",", parent));
-
-                bChanged = !tvHobby.getText().toString().equals(MyInfo.getInstance().interest);
-            } else {
+//            if (type.equals("hobby")) {
+//                interestList = new ArrayList<>();
+//                interestList = data.getParcelableArrayListExtra("data");
+//
+//                ArrayList<String> parent = new ArrayList<>();
+//                for (Interest item : interestList) {
+//                    parent.add(item.name);
+//                }
+//              //  tvHobby.setText(TextUtils.join(",", parent));
+//
+//                bChanged = !tvHobby.getText().toString().equals(MyInfo.getInstance().interest);
+//            } else {
                 String selected = data.getStringExtra("data");
                 tvLove.setText(selected);
 
                 bChanged = !tvLove.getText().toString().equals(MyInfo.getInstance().love_style);
-            }
+           // }
         }
     }
 
@@ -416,9 +416,9 @@ public class ProfileChangeActivity extends BaseActivity {
             case R.id.tvSmoking:
                 arrayList.addAll(Arrays.asList(smoking));
                 break;
-            case R.id.tvHobby:
-                arrayList.addAll(Arrays.asList(hobby));
-                break;
+//            case R.id.tvHobby:
+//                arrayList.addAll(Arrays.asList(hobby));
+//                break;
             case R.id.tvLove:
                 arrayList.addAll(Arrays.asList(love_style));
                 break;
@@ -459,11 +459,11 @@ public class ProfileChangeActivity extends BaseActivity {
         Intent intent = new Intent(this, SelectLoveActivity.class);
 
         switch (view.getId()) {
-            case R.id.tvHobby:
-                intent = new Intent(this, SelectInterestActivity.class);
-                intent.putExtra("type", "hobby");
-                intent.putParcelableArrayListExtra("data", interestList);
-                break;
+//            case R.id.tvHobby:
+//                intent = new Intent(this, SelectInterestActivity.class);
+//                intent.putExtra("type", "hobby");
+//                intent.putParcelableArrayListExtra("data", interestList);
+//                break;
             case R.id.tvLove:
                 intent.putExtra("type", "love");
                 intent.putExtra("data", tvLove.getText().toString());

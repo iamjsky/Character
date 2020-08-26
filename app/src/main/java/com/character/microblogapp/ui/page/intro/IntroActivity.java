@@ -1,67 +1,47 @@
 package com.character.microblogapp.ui.page.intro;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.res.TypedArray;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
-import com.antonyt.infiniteviewpager.InfinitePagerAdapter;
-import com.antonyt.infiniteviewpager.InfiniteViewPager;
 import com.character.microblogapp.R;
 import com.character.microblogapp.ui.page.BaseActivity;
 import com.character.microblogapp.ui.page.intro.fragment.IntroPageItem01Fragment;
 import com.character.microblogapp.ui.page.intro.fragment.IntroPageItem02Fragment;
 import com.character.microblogapp.ui.page.intro.fragment.IntroPageItem03Fragment;
-import com.character.microblogapp.ui.page.main.fragment.HistoryFragment;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.character.microblogapp.ui.widget.customindicator.MyPageIndicator;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-import me.relex.circleindicator.CircleIndicator;
 
 public class IntroActivity extends BaseActivity {
     @BindView(R.id.viewPager)
-    InfiniteViewPager viewPager;
+    ViewPager viewPager;
 
-    @BindView(R.id.pageIndicator)
-    CircleIndicator pageIndicator;
+
+    @BindView(R.id.pagesContainer)
+    LinearLayout pagesContainer;
+
+    MyPageIndicator pageIndicator;
 
     IntroPagerAdapter introPagerAdapter = null;
-    IntroPageItem02Fragment fragment;
     private int numPage = 3;
     private int nowPage = 0;
 
 
-    Animation fadeInAnimation;
-    int nowAnim = 0;
     FragmentManager manager;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ViewDataBinding binding = DataBindingUtil.setContentView(this,R.layout.activity_intro);
+        ViewDataBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_intro);
 
         setFinishAppWhenPressedBackKey();
         manager = getSupportFragmentManager();
@@ -69,7 +49,10 @@ public class IntroActivity extends BaseActivity {
         introPagerAdapter = new IntroPagerAdapter(manager, numPage);
 
         viewPager.setAdapter(introPagerAdapter);
-        pageIndicator.setViewPager(viewPager);
+
+        pageIndicator = new MyPageIndicator(this, pagesContainer, viewPager, R.drawable.indicator_circle);
+        pageIndicator.setPageCount(numPage);
+        pageIndicator.show();
 
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -91,7 +74,6 @@ public class IntroActivity extends BaseActivity {
         });
 
 
-
     }
 
     @OnClick(R.id.llyLogin)
@@ -102,6 +84,12 @@ public class IntroActivity extends BaseActivity {
     @OnClick(R.id.llySignup)
     void onSignup() {
         startActivity(IntroActivity.this, SignupReadyActivity.class);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        pageIndicator.cleanup();
     }
 
     class IntroPagerAdapter extends FragmentStatePagerAdapter {
@@ -126,18 +114,15 @@ public class IntroActivity extends BaseActivity {
         }
 
 
-
-
         @Override
         public int getCount() {
-            return mCount;
+            return Integer.MAX_VALUE;
         }
 
         public IntroPagerAdapter(FragmentManager manager, int count) {
             super(manager);
             mCount = count;
         }
-
 
 
         public int getRealPosition(int position) {

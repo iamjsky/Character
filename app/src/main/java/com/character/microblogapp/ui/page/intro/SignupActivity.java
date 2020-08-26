@@ -44,6 +44,7 @@ public class SignupActivity extends BaseActivity {
     public String gender = "";
     public String password = "111111";
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,7 +57,9 @@ public class SignupActivity extends BaseActivity {
         getSupportFragmentManager().addOnBackStackChangedListener(getListener());
 
         loginType = getIntent().getIntExtra("login_type", LOGIN_EMAIL);
+
         if (loginType != LOGIN_EMAIL) {
+
             email = getIntent().getStringExtra("email");
             sns_id = getIntent().getStringExtra("sns_id");
             realname = getIntent().getStringExtra("sns_name");

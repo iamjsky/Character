@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/color_white">
-        <com.antonyt.infiniteviewpager.InfiniteViewPager
+        <android.support.v4.view.ViewPager
             android:layout_weight="1"
             android:id="@+id/viewPager"
             android:layout_width="match_parent"
@@ -18,17 +18,14 @@
             />
 
 
-            <me.relex.circleindicator.CircleIndicator
+            <LinearLayout
+                android:orientation="horizontal"
+                android:gravity="center"
                 android:layout_margin="@dimen/_20sdp"
-                android:id="@+id/pageIndicator"
+                android:id="@+id/pagesContainer"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_20sdp"
-
-                app:ci_drawable="@drawable/img_selected_01"
-                app:ci_drawable_unselected="@drawable/img_unselected_01"
-                app:ci_width="5dp"
-                app:ci_height="5dp"
-                app:ci_margin="5dp" />
+ />
 
 
 

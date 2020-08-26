@@ -418,6 +418,12 @@
         <item>@layout/item_inspecting_page_02</item>
     </integer-array>
 
+    <integer-array name="character_img_array">
+        <item>@drawable/bg_badge</item>
+        <item>@drawable/bg_badge</item>
+        <item>@drawable/bg_badge</item>
+        <item>@drawable/bg_badge</item>
+    </integer-array>
 
 
 </resources>

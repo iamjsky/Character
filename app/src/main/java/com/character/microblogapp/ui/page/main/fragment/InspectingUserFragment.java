@@ -8,10 +8,12 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import com.antonyt.infiniteviewpager.InfinitePagerAdapter;
 import com.antonyt.infiniteviewpager.InfiniteViewPager;
@@ -19,6 +21,7 @@ import com.character.microblogapp.R;
 import com.character.microblogapp.ui.page.BaseFragment;
 import com.character.microblogapp.ui.page.intro.IntroActivity;
 import com.character.microblogapp.ui.page.main.MainActivity;
+import com.character.microblogapp.ui.widget.customindicator.MyPageIndicator;
 import com.character.microblogapp.util.PrefMgr;
 
 import butterknife.BindView;
@@ -30,10 +33,12 @@ import me.relex.circleindicator.CircleIndicator;
  */
 public class InspectingUserFragment extends BaseFragment {
     @BindView(R.id.viewPager)
-    InfiniteViewPager viewPager;
+    ViewPager viewPager;
 
-    @BindView(R.id.pageIndicator)
-    CircleIndicator pageIndicator;
+    @BindView(R.id.pagesContainer)
+    LinearLayout pagesContainer;
+
+    MyPageIndicator pageIndicator;
 
     TypedArray pageRes;
 
@@ -45,11 +50,14 @@ public class InspectingUserFragment extends BaseFragment {
         pageRes = getResources().obtainTypedArray(R.array.inspecting_xml_array);
 
         viewPager.setOffscreenPageLimit(pageRes.length());
-        inpectingUserPagerAdapter = new InpectingUserPagerAdapter();
+        inpectingUserPagerAdapter = new InpectingUserPagerAdapter(pageRes.length());
         inpectingUserPagerAdapter.res = pageRes;
-        PagerAdapter wrappedAdapter = new InfinitePagerAdapter(inpectingUserPagerAdapter);
-        viewPager.setAdapter(wrappedAdapter);
-        pageIndicator.setViewPager(viewPager);
+        viewPager.setAdapter(inpectingUserPagerAdapter);
+        pageIndicator = new MyPageIndicator(getContext(), pagesContainer, viewPager, R.drawable.indicator_circle);
+        pageIndicator.setPageCount(pageRes.length());
+        pageIndicator.show();
+
+
         return mRoot;
     }
 
@@ -67,13 +75,15 @@ public class InspectingUserFragment extends BaseFragment {
 
     class InpectingUserPagerAdapter extends PagerAdapter {
         TypedArray res;
+        public int mCount;
 
-        InpectingUserPagerAdapter() {
+        InpectingUserPagerAdapter(int count) {
+            mCount = count;
         }
 
         @Override
         public int getCount() {
-            return res.length();
+            return Integer.MAX_VALUE;
         }
 
         @Override
@@ -86,15 +96,17 @@ public class InspectingUserFragment extends BaseFragment {
 
             LayoutInflater inflater = (LayoutInflater) container.getContext()
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
-            View itemView = inflater.inflate(res.getResourceId(position, -1), container, false);
+            int index = getRealPosition(position);
+            View itemView = inflater.inflate(res.getResourceId(index, -1), container, false);
 
 
 
             container.addView(itemView, 0);
             return itemView;
         }
-
+        public int getRealPosition(int position) {
+            return position % mCount;
+        }
         @Override
         public void destroyItem(ViewGroup container, int position, Object object) {
             (container).removeView((View) object);

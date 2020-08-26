@@ -60,7 +60,7 @@ public class SettingActivity extends BaseActivity {
 
         tvTitle.setText("설정");
         btnMenu.setVisibility(View.GONE);
-
+        btnBack.setVisibility(View.VISIBLE);
 //        if (MyInfo.getInstance().sns_id == null || MyInfo.getInstance().sns_id.isEmpty()) {
             rlSns.setVisibility(View.GONE);
 //        }

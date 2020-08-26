@@ -118,13 +118,17 @@ public class SignupReadyActivity extends BaseActivity {
                                 intent1.putExtra("gender", str_cert_gender);
                                 intent1.putExtra("phone", str_cert_phone);
                                 intent1.putExtra("name", str_cert_name);
+                                MyInfo.getInstance().signUp_type = 0;
                                 startActivity(intent1);
                             } else if (nType == LOGIN_FACEBOOK) {
+                                MyInfo.getInstance().signUp_type = 1;
                                 onClickFacebook();
                             } else if (nType == LOGIN_NAVER) {
+                                MyInfo.getInstance().signUp_type = 2;
                                 mOAuthLoginModule.startOauthLoginActivity(SignupReadyActivity.this, mOAuthLoginHandler);
                             } else if (nType == LOGIN_KAKAO) {
 //                                btnKakaoLogin.performClick();
+                                MyInfo.getInstance().signUp_type = 3;
                                 Session.getCurrentSession().open(AuthType.KAKAO_TALK, SignupReadyActivity.this);
                             }
                         }

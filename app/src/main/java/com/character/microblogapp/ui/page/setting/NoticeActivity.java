@@ -64,7 +64,7 @@ public class NoticeActivity extends BaseActivity {
 
         tvTitle.setText("약관");
         btnMenu.setVisibility(View.GONE);
-
+        btnBack.setVisibility(View.VISIBLE);
         resetTap(getIntent().getIntExtra("type", 1));
     }
 
