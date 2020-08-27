@@ -148,8 +148,8 @@ public class EvaluationFragment extends BaseFragment {
         vpProfiles.setAdapter(mUsersAdapter);
         pageIndicator.setViewPager(vpProfiles);
 
-//        initStar();
-//        setStar();
+        initStar();
+        setStar();
     }
 
     private void setStar() {
@@ -172,7 +172,7 @@ public class EvaluationFragment extends BaseFragment {
     }
 
     private void initStar() {
-        String value = String.format("%.1f", Float.valueOf(mEstimateUser.score));
+        String value = String.format("%.1f", Float.valueOf(MyInfo.getInstance().star_value));
         tv_totalCount.setText(value);
         tv_totalCount.setGravity(Gravity.CENTER_VERTICAL);
         switch (MyInfo.getInstance().star_value) {

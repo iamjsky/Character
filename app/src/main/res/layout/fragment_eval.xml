@@ -167,7 +167,7 @@
                         app:layout_constraintStart_toStartOf="parent"/>
 
                     <RelativeLayout
-                        android:visibility="visible"
+                        android:visibility="gone"
                         android:id="@+id/layout_vpCover"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
@@ -179,10 +179,7 @@
                           />
 
                         <LinearLayout
-                            android:visibility="gone"
                             android:gravity="center"
-
-                            android:background="@color/color_transparent"
                             android:orientation="vertical"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
@@ -191,7 +188,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:text="현재 평균 점수"
+                                android:text="나의 평가 점수"
                                 android:textColor="#545454"
                                 android:textSize="@dimen/_14sdp"
                                 android:fontFamily="@font/nanum_square_r" />
