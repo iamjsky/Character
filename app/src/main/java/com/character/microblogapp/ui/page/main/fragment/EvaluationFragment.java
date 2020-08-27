@@ -121,10 +121,12 @@ public class EvaluationFragment extends BaseFragment {
     RelativeLayout clEmptyUser;
 
     @BindView(R.id.layout_vpCover)
-            LinearLayout layout_vpCover;
+    RelativeLayout layout_vpCover;
+    @BindView(R.id.iv_vpCoverBg)
+    RoundedImage iv_vpCoverBg;
 
     @BindView(R.id.tv_totalCount)
-            TextView tv_totalCount;
+    TextView tv_totalCount;
 
     MyApplication mApp = null;
     ImagePagerAdapter mUsersAdapter = null;
@@ -135,6 +137,7 @@ public class EvaluationFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         createView(inflater, container, R.layout.fragment_eval);
+        iv_vpCoverBg.setRoundedRadius(50);
         initData();
         return mRoot;
     }
@@ -145,8 +148,8 @@ public class EvaluationFragment extends BaseFragment {
         vpProfiles.setAdapter(mUsersAdapter);
         pageIndicator.setViewPager(vpProfiles);
 
-        initStar();
-        setStar();
+//        initStar();
+//        setStar();
     }
 
     private void setStar() {
@@ -156,7 +159,7 @@ public class EvaluationFragment extends BaseFragment {
 
             @Override
             public void onRatingChange(BaseRatingBar ratingBar, float rating) {
-                MyInfo.getInstance().star_value = (int)rating;
+                MyInfo.getInstance().star_value = (int) rating;
                 mark = MyInfo.getInstance().star_value;
                 initStar();
 
@@ -169,7 +172,7 @@ public class EvaluationFragment extends BaseFragment {
     }
 
     private void initStar() {
-        String value = String.format("%.1f", Float.valueOf(MyInfo.getInstance().star_value));
+        String value = String.format("%.1f", Float.valueOf(mEstimateUser.score));
         tv_totalCount.setText(value);
         tv_totalCount.setGravity(Gravity.CENTER_VERTICAL);
         switch (MyInfo.getInstance().star_value) {
@@ -221,7 +224,7 @@ public class EvaluationFragment extends BaseFragment {
         tvMessage.setText(mEstimateUser.intro);
         tvMessage.setVisibility(View.GONE);
         tvNickname.setText(mEstimateUser.nickname);
-        tv_age.setText(mEstimateUser.age+"세");
+        tv_age.setText(mEstimateUser.age + "세");
         tvAddress.setText(mEstimateUser.address); //  지역
         if (mEstimateUser.job != null && !mEstimateUser.job.isEmpty()) { // 직업
             tv_job.setText(mEstimateUser.job);
@@ -235,29 +238,29 @@ public class EvaluationFragment extends BaseFragment {
 //        }
 
         String w_type = mEstimateUser.character;
-        if(w_type.equals("D=")){
+        if (w_type.equals("D=")) {
             w_type = "D";
-        } else if(w_type.equals("I=")){
+        } else if (w_type.equals("I=")) {
             w_type = "I";
-        } else if(w_type.equals("S=")){
+        } else if (w_type.equals("S=")) {
             w_type = "S";
-        } else if(w_type.equals("C=")){
+        } else if (w_type.equals("C=")) {
             w_type = "C";
-        } else if(w_type.equals("d")){
+        } else if (w_type.equals("d")) {
             w_type = "D";
-        } else if(w_type.equals("i")){
+        } else if (w_type.equals("i")) {
             w_type = "I";
-        } else if(w_type.equals("s")){
+        } else if (w_type.equals("s")) {
             w_type = "S";
-        } else if(w_type.equals("c")){
+        } else if (w_type.equals("c")) {
             w_type = "C";
         }
-        w_type = w_type.replace("d","D");
-        w_type = w_type.replace("i","I");
-        w_type = w_type.replace("s","S");
-        w_type = w_type.replace("c","C");
-        if(w_type.length() > 2){
-            w_type = w_type.substring(0,2);
+        w_type = w_type.replace("d", "D");
+        w_type = w_type.replace("i", "I");
+        w_type = w_type.replace("s", "S");
+        w_type = w_type.replace("c", "C");
+        if (w_type.length() > 2) {
+            w_type = w_type.substring(0, 2);
         }
 
 
@@ -290,12 +293,15 @@ public class EvaluationFragment extends BaseFragment {
 
         String idelCharacter = mEstimateUser.ideal_character;
         String[] charText = idelCharacter.split(",");
-        if(charText.length > 1){
-            txvMannerDesc1.setText(charText[0]+"");
-            txvMannerDesc2.setText(charText[1]+"");
-        }else{
-            txvMannerDesc1.setText(charText[0]+"");
+        if (charText.length > 1) {
+            txvMannerDesc1.setText(charText[0] + "");
+            txvMannerDesc2.setText(charText[1] + "");
+        } else {
+            txvMannerDesc1.setText(charText[0] + "");
         }
+
+        initStar();
+        setStar();
 
     }
 
@@ -415,7 +421,7 @@ public class EvaluationFragment extends BaseFragment {
                         mEstimateUser.character = response.info.character;
                         mEstimateUser.profile = response.info.profile;
                         mEstimateUser.body_type = response.info.body_type;
-                        mEstimateUser.intro= response.info.intro;
+                        mEstimateUser.intro = response.info.intro;
 
                         showEstimateUser();
                     }
@@ -479,8 +485,8 @@ public class EvaluationFragment extends BaseFragment {
                             mEstimateUser.character = response.next_usr_info.character;
                             mEstimateUser.profile = response.next_usr_info.profile;
                             mEstimateUser.body_type = response.next_usr_info.body_type;
-                            mEstimateUser.intro= response.next_usr_info.intro;
-
+                            mEstimateUser.intro = response.next_usr_info.intro;
+                            mEstimateUser.score = response.next_usr_info.score;
                             showEstimateUser();
                         } else {
                             showEmptyUser();
@@ -497,7 +503,7 @@ public class EvaluationFragment extends BaseFragment {
                     public void onFailure(MError response) {
                         super.onFailure(response);
                         hideProgress();
-
+                        mEstimateUser.score = 5.0f;
                         if (IS_UITEST) {
                             showEstimateUser();
                         } else {
@@ -569,11 +575,11 @@ public class EvaluationFragment extends BaseFragment {
 
             RoundedImage imgProfile = (RoundedImage) itemView.findViewById(R.id.iv_profile);
             imgProfile.setRoundedRadius(50);
-                       GlideApp.with(mParent).load(mProfileUrls.get(position)).into(imgProfile);
+            GlideApp.with(mParent).load(mProfileUrls.get(position)).into(imgProfile);
             imgProfile.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                   // goCurrentUserProfilePage();
+                    // goCurrentUserProfilePage();
                 }
             });
 

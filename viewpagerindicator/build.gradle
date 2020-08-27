@@ -2,7 +2,6 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion parent.ext.compileSdkVersion
-    buildToolsVersion "23.0.3"
 
     defaultConfig {
         minSdkVersion 15
@@ -15,8 +14,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
+    lintOptions {
+        abortOnError false
+    }
 }
 
 dependencies {
-    compile 'com.android.support:support-v4:28.0.0'
+    implementation "com.android.support:support-v4:$supportVersion"
 }

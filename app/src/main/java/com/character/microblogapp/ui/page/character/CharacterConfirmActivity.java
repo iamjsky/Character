@@ -13,6 +13,7 @@ import android.text.style.ForegroundColorSpan;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -133,6 +134,11 @@ public class CharacterConfirmActivity extends BaseActivity {
     @BindView(R.id.layout_charType_secondArea)
     LinearLayout layout_charType_secondArea;
     String character = "";
+
+    @BindView(R.id.iv_charImg_01)
+    ImageView iv_charImg_01;
+    @BindView(R.id.iv_charImg_02)
+    ImageView iv_charImg_02;
 
     int go = 0;
     int nowPage = 0;

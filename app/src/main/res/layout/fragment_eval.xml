@@ -166,23 +166,35 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"/>
 
-                    <LinearLayout
-                        android:visibility="gone"
-                        android:gravity="center"
+                    <RelativeLayout
+                        android:visibility="visible"
                         android:id="@+id/layout_vpCover"
-                        android:background="#BFFFFFFF"
-                        android:orientation="vertical"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
-                        <TextView
-                            android:layout_marginBottom="@dimen/_15sdp"
+                        <com.jackandphantom.circularimageview.RoundedImage
+                            android:id="@+id/iv_vpCoverBg"
+                            android:src="#BFFFFFFF"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                          />
+
+                        <LinearLayout
+                            android:visibility="gone"
                             android:gravity="center"
-                            android:text="현재 평균 점수"
-                            android:textColor="#545454"
-                            android:textSize="@dimen/_14sdp"
-                            android:fontFamily="@font/nanum_square_r" />
+
+                            android:background="@color/color_transparent"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <TextView
+                                android:layout_marginBottom="@dimen/_15sdp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="현재 평균 점수"
+                                android:textColor="#545454"
+                                android:textSize="@dimen/_14sdp"
+                                android:fontFamily="@font/nanum_square_r" />
 
 
 
@@ -202,35 +214,36 @@
                                     android:orientation="vertical"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent">
-                                <TextView
-                                    android:gravity="center_vertical"
-                                    android:id="@+id/tv_totalCount"
-                                    android:textColor="@color/char_main_color"
-                                    android:textSize="@dimen/_24sdp"
-                                    android:fontFamily="@font/jalnan_n"
-                                    android:text="4.23"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"/>
+                                    <TextView
+                                        android:gravity="center_vertical"
+                                        android:id="@+id/tv_totalCount"
+                                        android:textColor="@color/char_main_color"
+                                        android:textSize="@dimen/_24sdp"
+                                        android:fontFamily="@font/jalnan_n"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"/>
                                 </LinearLayout>
                             </RelativeLayout>
 
 
 
 
-                        <TextView
-                            android:layout_marginTop="@dimen/_15sdp"
-                            android:text="제 스타일이네요!"
-                            android:id="@+id/tv_status"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/jalnan_n"
-                            android:gravity="center"
-                            android:textColor="#000000"
-                            android:textSize="@dimen/_20sdp"
-                            android:textStyle="bold" />
+                            <TextView
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:id="@+id/tv_status"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/jalnan_n"
+                                android:gravity="center"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/_20sdp"
+                                android:textStyle="bold" />
 
 
-                    </LinearLayout>
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
                 </android.support.constraint.ConstraintLayout>
 
                 <RelativeLayout

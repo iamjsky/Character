@@ -61,8 +61,9 @@ android:layout_weight="1"
                     android:src="@drawable/first_ico_login" />
 
                 <TextView
+                    android:gravity="center"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_marginStart="7dp"
                     android:text="@string/login"
                     android:textColor="@color/color_white"
@@ -87,8 +88,9 @@ android:layout_weight="1"
                     android:src="@drawable/first_ico_signin" />
 
                 <TextView
+                    android:gravity="center"
                     android:layout_width="wrap_content"
-                    android:layout_height="@dimen/_14sdp"
+                    android:layout_height="match_parent"
                     android:layout_marginStart="7dp"
                     android:text="@string/signup"
                     android:textColor="#ff056a"

@@ -122,6 +122,11 @@ public class MyCharInfoFragment extends BaseFragment {
     @BindView(R.id.layout_charType_secondArea)
             LinearLayout layout_charType_secondArea;
 
+    @BindView(R.id.iv_charImg_01)
+    ImageView iv_charImg_01;
+    @BindView(R.id.iv_charImg_02)
+    ImageView iv_charImg_02;
+
     PrefMgr m_prefMgr;
 
     String type = "";

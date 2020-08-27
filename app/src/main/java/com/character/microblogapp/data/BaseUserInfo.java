@@ -15,4 +15,5 @@ public class BaseUserInfo extends BaseInfo {
     public String ideal_character;
     public String body_type;
     public String intro;
+    public float score;
 }

@@ -124,6 +124,9 @@ public class DISCInfoTypeFragment extends BaseFragment {
     @BindView(R.id.layout_panel)
     LinearLayout layout_panel;
 
+    @BindView(R.id.iv_charImg_01)
+    ImageView iv_charImg_01;
+
     PrefMgr m_prefMgr;
 
     String type = "";
@@ -245,7 +248,23 @@ public class DISCInfoTypeFragment extends BaseFragment {
         tv_char_03.setText(personality1);
         tv_char_05.setText(personality1);
 
-        tv_charText_01.setText(personality_title1);
+        String charText = "";
+        switch (type){
+
+            case "D":
+                charText = "노빠꾸";
+                break;
+            case "I":
+                charText = "쌉관종";
+                break;
+            case "S":
+                charText = "핵고구마";
+                break;
+            case "C":
+                charText = "핵노잼";
+                break;
+        }
+        tv_charText_01.setText(charText);
         tv_charText_03.setText(name);
         tv_charText_05.setText(name);
 

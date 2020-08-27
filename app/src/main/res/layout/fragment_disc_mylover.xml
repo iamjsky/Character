@@ -102,7 +102,6 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/jalnan_n"
                                 android:gravity="center"
-                                android:text="D"
                                 android:textColor="#545454"
 
                                 android:textSize="@dimen/_26sdp" />
@@ -112,7 +111,6 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/jalnan_n"
                                 android:gravity="center"
-                                android:text="I"
                                 android:textColor="#545454"
 
                                 android:textSize="@dimen/_26sdp" />

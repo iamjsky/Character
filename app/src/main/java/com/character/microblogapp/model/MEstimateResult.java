@@ -14,6 +14,7 @@ public class MEstimateResult extends MBase {
         public String[] profile;// 프로필 이미지 String배렬
         public String body_type;
         public String intro;
+        public float score;
     }
 
     /**
