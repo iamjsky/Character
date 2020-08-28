@@ -26,7 +26,8 @@
                 >
 
                 <ImageView
-
+                    android:visibility="gone"
+                    android:id="@+id/iv_topBg"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_122sdp"
                     android:background="@drawable/bg_img" />
@@ -301,7 +302,7 @@
                     android:gravity="center|top"
                     android:orientation="vertical"
                     android:paddingBottom="@dimen/_6sdp"
-                    android:visibility="gone">
+                    android:visibility="visible">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -368,7 +369,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_15sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginBottom="@dimen/_5sdp"
                             android:gravity="center"
                             android:orientation="horizontal">
 
@@ -380,17 +382,17 @@
                                 android:gravity="center"
                                 android:text="D"
                                 android:textColor="@color/char_d_color"
-                                android:textSize="@dimen/_14sdp" />
+                                android:textSize="@dimen/_18sdp" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginRight="@dimen/_2sdp"
-                                android:fontFamily="@font/nanum_square_r"
+                                android:layout_marginRight="@dimen/_4sdp"
+                                android:fontFamily="@font/nanum_square_b"
                                 android:gravity="center"
                                 android:text="와"
                                 android:textColor="#000000"
-                                android:textSize="@dimen/_14sdp" />
+                                android:textSize="@dimen/_18sdp" />
 
                             <TextView
                                 android:id="@+id/tv_charWoman_02"
@@ -400,17 +402,17 @@
                                 android:gravity="center"
                                 android:text="S"
                                 android:textColor="@color/char_s_color"
-                                android:textSize="@dimen/_14sdp" />
+                                android:textSize="@dimen/_18sdp" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginRight="@dimen/_2sdp"
-                                android:fontFamily="@font/nanum_square_r"
+                                android:layout_marginRight="@dimen/_4sdp"
+                                android:fontFamily="@font/nanum_square_b"
                                 android:gravity="center"
                                 android:text="의 성격궁합은"
                                 android:textColor="#000000"
-                                android:textSize="@dimen/_14sdp" />
+                                android:textSize="@dimen/_18sdp" />
 
                             <TextView
                                 android:id="@+id/tv_charPercent"
@@ -420,16 +422,16 @@
                                 android:gravity="center"
                                 android:text="99%"
                                 android:textColor="@color/char_s_color"
-                                android:textSize="@dimen/_14sdp" />
+                                android:textSize="@dimen/_18sdp" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:fontFamily="@font/nanum_square_r"
+                                android:fontFamily="@font/nanum_square_b"
                                 android:gravity="center"
                                 android:text="입니다."
                                 android:textColor="#000000"
-                                android:textSize="@dimen/_14sdp" />
+                                android:textSize="@dimen/_18sdp" />
                         </LinearLayout>
 
                     </LinearLayout>
@@ -439,18 +441,21 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/bg_rounded_white_panel_03"
                         android:orientation="vertical"
-                        android:padding="@dimen/_30sdp">
+                        android:paddingTop="@dimen/_30sdp"
+                        android:paddingBottom="@dimen/_30sdp"
+                        android:paddingLeft="@dimen/_28sdp"
+                        android:paddingRight="@dimen/_28sdp">
 
                         <TextView
                             android:id="@+id/tv_desc"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/nanum_square_r"
+                            android:fontFamily="@font/nanum_square_b"
                             android:gravity="center|left"
                             android:lineSpacingExtra="@dimen/_3sdp"
                             android:text="D가 리더쉽을 발휘해 S를 주도해주면, 우유부단한 S는 잘 따르는 조화로운 커플 입니다.\n다만, d가 너무 강압적이면 s가 힘들어요ㅠ\n소통을 할 때 d는 D가 리더쉽을 발휘해 S를 주도해주면, 우유부단한 S는 잘 따르는 조화로운 커플 입니다.\n다만, d가 너무 강압적이면 s가 힘들어요ㅠ\n소통을 할 때 d는 "
                             android:textColor="#000000"
-                            android:textSize="@dimen/_10sdp" />
+                            android:textSize="@dimen/_12sdp" />
 
                     </LinearLayout>
 
@@ -527,18 +532,7 @@
                 android:orientation="horizontal">
 
 
-                <TextView
-                    android:id="@+id/tv_s"
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/_80sdp"
-                    android:layout_margin="@dimen/_5sdp"
-                    android:layout_weight="1"
-                    android:background="@drawable/bg_rounded_white_01"
-                    android:fontFamily="@font/jalnan_n"
-                    android:gravity="center"
-                    android:text="S"
-                    android:textColor="@color/char_s_color"
-                    android:textSize="@dimen/_30sdp" />
+
 
 
                 <TextView
@@ -553,7 +547,18 @@
                     android:text="C"
                     android:textColor="@color/char_c_color"
                     android:textSize="@dimen/_30sdp" />
-
+                <TextView
+                    android:id="@+id/tv_s"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_80sdp"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_rounded_white_01"
+                    android:fontFamily="@font/jalnan_n"
+                    android:gravity="center"
+                    android:text="S"
+                    android:textColor="@color/char_s_color"
+                    android:textSize="@dimen/_30sdp" />
 
             </LinearLayout>
         </LinearLayout>

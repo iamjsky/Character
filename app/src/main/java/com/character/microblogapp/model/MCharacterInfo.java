@@ -28,7 +28,7 @@ public class MCharacterInfo extends MBase {
         public String advice;
         public String job_env1;
         public String job_env2;
-
+        public String title;
     }
 
     public MCharacterInfo.Info character;

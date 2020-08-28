@@ -3,6 +3,7 @@ package com.character.microblogapp.ui.page.character;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
@@ -46,6 +47,8 @@ import butterknife.OnClick;
 
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
+
+import static com.facebook.FacebookSdk.getApplicationContext;
 
 public class CharacterConfirmActivity extends BaseActivity {
 
@@ -140,8 +143,36 @@ public class CharacterConfirmActivity extends BaseActivity {
     @BindView(R.id.iv_charImg_02)
     ImageView iv_charImg_02;
 
+    @BindView(R.id.iv_topBg)
+    ImageView iv_topBg;
+
+    @BindView(R.id.layout_panel)
+    LinearLayout layout_panel;
+    @BindView(R.id.layout_topCharPanel)
+    LinearLayout layout_topCharPanel;
+    @BindView(R.id.layout_bottomCharPanel)
+    LinearLayout layout_bottomCharPanel;
+    String linkCharString ="";
+
+    @BindView(R.id.tv_job)
+    TextView tv_job;
+    @BindView(R.id.tv_office)
+    TextView tv_office;
+    @BindView(R.id.tv_charInfoTitle)
+    TextView tv_charInfoTitle;
+
+    @BindView(R.id.btn_share)
+            TextView btn_share;
+
     int go = 0;
     int nowPage = 0;
+
+    String linkTitle;
+    String[] linkKeyword1Arr;
+    String linkFactor;
+    String linkName,linkName2;
+    String linkPersonality1, linkPersonality2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -232,13 +263,32 @@ public class CharacterConfirmActivity extends BaseActivity {
 
         intent.setType("text/plain");
 
+        String URL = "http://personalitism.com/result_";
 
-        String text = "https://play.google.com/store/apps/details?id=com.character.dating";
+        String charType = linkCharString.toLowerCase();
 
-        intent.putExtra(Intent.EXTRA_TEXT, text);
+        StringBuilder sb = new StringBuilder();
+        for(int i=0; i < linkKeyword1Arr.length; i++){
+            if(i == 0){
+                sb.append(linkKeyword1Arr[i]);
+            }else {
+                sb.append(", ").append(linkKeyword1Arr[i]);
+            }
+
+        }
+
+        String charType2 = "";
+        if(!linkPersonality2.equals("")){
+            charType2 = " +" + linkName2 + "(" + linkPersonality2 + ")";
+        }else {
+            charType2 = "";
+        }
+        String linkTextResult = linkTitle+"\n"+"친구의 성격유형은 " + linkName + "(" + linkPersonality1 + ")" +
+                charType2 + "\n" + "* 특징 : " + sb.toString() + "\n" + "* 동기요인 : " + linkFactor;
+        intent.putExtra(Intent.EXTRA_TEXT, linkTextResult + "\n" + URL+charType);
 
 
-        Intent chooser = Intent.createChooser(intent, "DISC 성격 테스트 결과");
+        Intent chooser = Intent.createChooser(intent, linkTextResult + "\n" + URL+charType);
         startActivity(chooser);
 
 
@@ -291,6 +341,29 @@ public class CharacterConfirmActivity extends BaseActivity {
         String job2 = result.job2;
         String job_env1 = result.job_env1;
         String job_env2 = result.job_env2;
+        String title = result.title;
+        linkPersonality1 = personality1;
+        linkPersonality2 = personality2+"";
+        linkName = name;
+        linkName2 = name2;
+        switch (personality1){
+            case "D":
+                linkTitle = "\"인생은 노빠꾸지!\"";
+                break;
+            case "I":
+                linkTitle = "\"관심과 사랑을 주세요~\"";
+                break;
+            case "S":
+                linkTitle = "\"싸우기 싫다고..\"";
+                break;
+            case "C":
+                linkTitle = "\"제게 팩트를 주세요!\"";
+                break;
+
+            default:
+
+        }
+        linkFactor = factor;
 
         layout_discResult.setVisibility(View.VISIBLE);
         layout_job.setVisibility(View.GONE);
@@ -313,31 +386,48 @@ public class CharacterConfirmActivity extends BaseActivity {
         tv_charFact_01.setText(factor);
 
 
+        iv_topBg.setBackground(getDISCBackground(personality1, 3));
+        iv_topBg.setVisibility(View.VISIBLE);
+
         layout_charTagArea_01.removeAllViews();
         layout_charTagArea_02.removeAllViews();
+        Drawable bgColor = getDISCBackground(personality1,4);
         if(!keyword1.equals("")) {
             String[] keyword1Arr = keyword1.split(",");
+            linkKeyword1Arr = keyword1Arr;
             for (int i = 0; i < keyword1Arr.length; i++) {
-                ViewGroup keywordView = (ViewGroup) getLayoutInflater().inflate(R.layout.view_charinfo_keyword_item, null, false);
-                TextView tv_keyword = (TextView) keywordView.findViewById(R.id.tv_keyword);
-                tv_keyword.setBackgroundResource(R.drawable.bg_rounded_char_01);
-                tv_keyword.setText(keyword1Arr[i].trim());
-                layout_charTagArea_01.addView(keywordView);
+                if(i<4){
+                    ViewGroup keywordView = (ViewGroup) getLayoutInflater().inflate(R.layout.view_charinfo_keyword_item, null, false);
+                    TextView tv_keyword = (TextView) keywordView.findViewById(R.id.tv_keyword);
+                    tv_keyword.setBackground(bgColor);
+                    tv_keyword.setText(keyword1Arr[i].trim());
+                    layout_charTagArea_01.addView(keywordView);
+                }
+
             }
         }
         if(!keyword2.equals("")){
             String[]  keyword2Arr = keyword2.split(",");
             for (int i=0; i < keyword2Arr.length; i++){
-                ViewGroup keywordView = (ViewGroup) getLayoutInflater().inflate(R.layout.view_charinfo_keyword_item, null, false);
-                TextView tv_keyword = (TextView) keywordView.findViewById(R.id.tv_keyword);
-                tv_keyword.setBackgroundResource(R.drawable.bg_rounded_char_02);
-                tv_keyword.setText(keyword2Arr[i].trim());
-                layout_charTagArea_02.addView(keywordView);
+                if(i<3){
+                    ViewGroup keywordView = (ViewGroup) getLayoutInflater().inflate(R.layout.view_charinfo_keyword_item, null, false);
+                    TextView tv_keyword = (TextView) keywordView.findViewById(R.id.tv_keyword);
+                    tv_keyword.setBackground(bgColor);
+                    tv_keyword.setText(keyword2Arr[i].trim());
+                    layout_charTagArea_02.addView(keywordView);
+                }
+
             }
         }
 
-
-
+        layout_topCharPanel.setBackground(getDISCBackground(personality1, 0));
+        layout_bottomCharPanel.setBackground(getDISCBackground(personality1, 1));
+        layout_panel.setBackground(getDISCBackground(personality1, 5));
+        tv_job.setTextColor(getDISCColor(personality1));
+        tv_office.setTextColor(getDISCColor(personality1));
+        tv_charInfoTitle.setTextColor(getDISCColor(personality1));
+        btn_share.setBackground(getDISCBackground(personality1, 6));
+        btn_share.setTextColor(getDISCColor(personality1));
 
         tv_charInfo.setText(personality_char);
         tv_charDis.setText(weakness);
@@ -356,7 +446,7 @@ public class CharacterConfirmActivity extends BaseActivity {
             layout_jobEnvList_02.setVisibility(View.GONE);
             layout_charTagArea_02.setVisibility(View.GONE);
             layout_charType_secondArea.setVisibility(View.GONE);
-
+            linkCharString = personality1+personality1+"";
 
         } else {
             tv_plus.setVisibility(View.VISIBLE);
@@ -377,7 +467,7 @@ public class CharacterConfirmActivity extends BaseActivity {
             tv_charType_04.setText(personality2);
             layout_charTagArea_02.setVisibility(View.VISIBLE);
             layout_charType_secondArea.setVisibility(View.VISIBLE);
-
+            linkCharString = personality1+personality2+"";
         }
         String[] personalityArr = {personality1, personality2};
         for (int ind = 0; ind < personalityArr.length; ind++) {
@@ -483,6 +573,118 @@ public class CharacterConfirmActivity extends BaseActivity {
                         }
                     }
                 });
+    }
+
+    private Drawable getDISCBackground(String type, int layout) {
+        Drawable drawable = null;
+        switch (type) {
+
+            case "D":
+                if (layout == 0) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_d_01);
+                } else if (layout == 1) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_d_02);
+                } else if (layout == 2) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_keyword_d_02);
+                } else if (layout == 3) {
+                    drawable = getResources().getDrawable(R.drawable.bg_d_img);
+                } else if (layout == 4) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_keyword_d_01);
+                } else if (layout == 5) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_panel_d_01);
+                } else if (layout == 6){
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_share_d);
+                }
+
+
+                break;
+            case "I":
+                if (layout == 0) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_i_01);
+                } else if (layout == 1) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_i_02);
+                } else if (layout == 2) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_keyword_i_02);
+                } else if (layout == 3) {
+                    drawable = getResources().getDrawable(R.drawable.bg_i_img);
+                } else if (layout == 4) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_keyword_i_01);
+                } else if (layout == 5) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_panel_i_01);
+                } else if (layout == 6){
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_share_i);
+                }
+
+
+                break;
+            case "C":
+                if (layout == 0) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_c_01);
+                } else if (layout == 1) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_c_02);
+                } else if (layout == 2) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_keyword_c_02);
+                } else if (layout == 3) {
+                    drawable = getResources().getDrawable(R.drawable.bg_c_img);
+                } else if (layout == 4) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_keyword_c_01);
+                } else if (layout == 5) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_panel_c_01);
+                } else if (layout == 6){
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_share_c);
+                }
+
+
+                break;
+            case "S":
+                if (layout == 0) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_s_01);
+                } else if (layout == 1) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_s_02);
+                } else if (layout == 2) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_keyword_s_02);
+                } else if (layout == 3) {
+                    drawable = getResources().getDrawable(R.drawable.bg_s_img);
+                } else if (layout == 4) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_keyword_s_01);
+                } else if (layout == 5) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_panel_s_01);
+                } else if (layout == 6){
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_share_s);
+                }
+
+                break;
+
+
+        }
+        return drawable;
+    }
+
+    private int getDISCColor(String type) {
+        int discColor;
+        switch (type) {
+
+            case "D":
+                discColor = ContextCompat.getColor(getApplicationContext(), R.color.char_d_color);
+
+                break;
+            case "I":
+                discColor = ContextCompat.getColor(getApplicationContext(), R.color.char_i_color);
+
+                break;
+            case "C":
+                discColor = ContextCompat.getColor(getApplicationContext(), R.color.char_c_color);
+
+                break;
+            case "S":
+                discColor = ContextCompat.getColor(getApplicationContext(), R.color.char_s_color);
+                break;
+            default:
+                discColor = ContextCompat.getColor(getApplicationContext(), R.color.color_char_gray);
+
+
+        }
+        return discColor;
     }
 
 }

@@ -2,9 +2,14 @@ package com.character.microblogapp.ui.page.main.fragment;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.style.ForegroundColorSpan;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -16,6 +21,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.character.microblogapp.R;
+import com.character.microblogapp.data.Constant;
 import com.character.microblogapp.data.MyInfo;
 import com.character.microblogapp.model.MCharacterInfo2;
 import com.character.microblogapp.model.MError;
@@ -26,6 +32,7 @@ import com.character.microblogapp.util.PrefMgr;
 import com.character.microblogapp.util.Toaster;
 import com.nex3z.flowlayout.FlowLayout;
 
+import butterknife.BindArray;
 import butterknife.BindView;
 import butterknife.OnClick;
 
@@ -49,8 +56,29 @@ public class DISCMyLoverFragment extends BaseFragment {
     TextView tv_charLover_02;
 
     @BindView(R.id.layout_result)
-            LinearLayout layout_result;
+    LinearLayout layout_result;
 
+    @BindView(R.id.tv_layer_01_char_01)
+    TextView tv_layer_01_char_01;
+    @BindView(R.id.tv_layer_01_char_02)
+    TextView tv_layer_01_char_02;
+    @BindView(R.id.tv_layer_02_char_01)
+    TextView tv_layer_02_char_01;
+    @BindView(R.id.tv_layer_02_char_02)
+    TextView tv_layer_02_char_02;
+    @BindView(R.id.tv_layer_03_char_01)
+    TextView tv_layer_03_char_01;
+    @BindView(R.id.tv_layer_03_char_02)
+    TextView tv_layer_03_char_02;
+
+    @BindArray(R.array.lover_d_array)
+    String[] lover_d_array;
+    @BindArray(R.array.lover_i_array)
+    String[] lover_i_array;
+    @BindArray(R.array.lover_s_array)
+    String[] lover_s_array;
+    @BindArray(R.array.lover_c_array)
+    String[] lover_c_array;
 
     PrefMgr m_prefMgr;
 
@@ -109,13 +137,40 @@ public class DISCMyLoverFragment extends BaseFragment {
 
     }
 
-    @OnClick(R.id.layout_charListArea)
-    public void layout_charListAreaClicked() {
+    @OnClick(R.id.layout_char_01)
+    public void layout_char_01Clicked() {
+        String selectChar =    tv_layer_01_char_01.getText().toString()+tv_layer_01_char_02.getText().toString() + "";
         MainActivity mainActivity = (MainActivity) getActivity();
-        mainActivity.parentFrag = "DISCMyLoverFragment";
+        mainActivity.charInfoPageNum = 2;
+        mainActivity.charListType = selectChar;
         mainActivity.selectLine(0);
-        mainActivity.selectTab(16);
+        mainActivity.selectTab(14);
     }
+    @OnClick(R.id.layout_char_02)
+    public void layout_char_02Clicked() {
+        String selectChar =    tv_layer_02_char_01.getText().toString()+tv_layer_02_char_02.getText().toString() + "";
+        MainActivity mainActivity = (MainActivity) getActivity();
+        mainActivity.charInfoPageNum = 2;
+        mainActivity.charListType = selectChar;
+        mainActivity.selectLine(0);
+        mainActivity.selectTab(14);
+    }
+    @OnClick(R.id.layout_char_03)
+    public void layout_char_03Clicked() {
+        String selectChar =    tv_layer_03_char_01.getText().toString()+tv_layer_03_char_02.getText().toString() + "";
+        MainActivity mainActivity = (MainActivity) getActivity();
+        mainActivity.charInfoPageNum = 2;
+        mainActivity.charListType = selectChar;
+        mainActivity.selectLine(0);
+        mainActivity.selectTab(14);
+    }
+//    @OnClick(R.id.layout_charListArea)
+//    public void layout_charListAreaClicked() {
+//        MainActivity mainActivity = (MainActivity) getActivity();
+//        mainActivity.parentFrag = "DISCMyLoverFragment";
+//        mainActivity.selectLine(0);
+//        mainActivity.selectTab(16);
+//    }
 
 
     void setUI() {
@@ -135,21 +190,150 @@ public class DISCMyLoverFragment extends BaseFragment {
 
         tv_char_01.setText(personality1);
         tv_char_01.setTextColor(getDISCColor(personality1));
-        tv_charLover_01.setText(gender1);
+        tv_charLover_01.setText(setDISCCharColor(gender1));
+        tv_charLover_01.setVisibility(View.VISIBLE);
 
         if (!personality2.equals("")) {
 
             tv_char_02.setText(personality2);
             tv_char_02.setTextColor(getDISCColor(personality2));
-            tv_charLover_02.setText(gender2);
+            tv_charLover_02.setText(setDISCCharColor(gender2));
             tv_char_02.setVisibility(View.VISIBLE);
             tv_charLover_02.setVisibility(View.VISIBLE);
         } else {
+
             tv_char_02.setVisibility(View.GONE);
             tv_charLover_02.setVisibility(View.GONE);
         }
 
+        String[] loverArray = getLoverArray(personality1 + personality2 + "");
+        for (int i = 0; i < loverArray.length; i++) {
+            String[] charArray = loverArray[i].split("/");
+            if (i == 0) {
+                tv_layer_01_char_01.setText(charArray[0] + "");
+                tv_layer_01_char_01.setTextColor(getDISCColor(charArray[0] + ""));
+                if (charArray.length > 1) {
+                    tv_layer_01_char_02.setText(charArray[1] + "");
+                    tv_layer_01_char_02.setTextColor(getDISCColor(charArray[1] + ""));
+                }
+
+
+            } else if (i == 1) {
+                tv_layer_02_char_01.setText(charArray[0] + "");
+                tv_layer_02_char_01.setTextColor(getDISCColor(charArray[0] + ""));
+                if (charArray.length > 1) {
+                    tv_layer_02_char_02.setText(charArray[1] + "");
+                    tv_layer_02_char_02.setTextColor(getDISCColor(charArray[1] + ""));
+                }
+
+
+            } else if (i == 2) {
+                tv_layer_03_char_01.setText(charArray[0] + "");
+                tv_layer_03_char_01.setTextColor(getDISCColor(charArray[0] + ""));
+                if (charArray.length > 1) {
+                    tv_layer_03_char_02.setTextColor(getDISCColor(charArray[1] + ""));
+                    tv_layer_03_char_02.setText(charArray[1] + "");
+                }
+
+
+            }
+
+
+        }
+
+
+
         layout_result.setVisibility(View.VISIBLE);
+
+
+    }
+
+    private Spannable setDISCCharColor(String desc){
+        Spannable sb = new SpannableString(desc);
+        for (int i = 0; i < desc.length(); i++) {
+            char temp = (desc.charAt(i));
+            switch (temp) {
+                case 'D':
+                    sb.setSpan(new ForegroundColorSpan(Constant.CHARACTER_D_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+                    break;
+                case 'I':
+                    sb.setSpan(new ForegroundColorSpan(Constant.CHARACTER_I_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+                    break;
+                case 'S':
+                    sb.setSpan(new ForegroundColorSpan(Constant.CHARACTER_S_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+                    break;
+                case 'C':
+                    sb.setSpan(new ForegroundColorSpan(Constant.CHARACTER_C_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+                    break;
+            }
+
+        }
+
+        return sb;
+    }
+
+
+    private String[] getLoverArray(String type) {
+        String upperType = type.toUpperCase();
+        String typeToArrayString = "";
+        String[] result;
+
+        switch (upperType) {
+            case "D":
+                typeToArrayString = lover_d_array[0];
+                break;
+            case "DI":
+                typeToArrayString = lover_d_array[1];
+                break;
+            case "DS":
+                typeToArrayString = lover_d_array[2];
+                break;
+            case "DC":
+                typeToArrayString = lover_d_array[3];
+                break;
+            case "I":
+                typeToArrayString = lover_i_array[0];
+                break;
+            case "ID":
+                typeToArrayString = lover_i_array[1];
+                break;
+            case "IS":
+                typeToArrayString = lover_i_array[2];
+                break;
+            case "IC":
+                typeToArrayString = lover_i_array[3];
+                break;
+            case "S":
+                typeToArrayString = lover_s_array[0];
+                break;
+            case "SD":
+                typeToArrayString = lover_s_array[1];
+                break;
+            case "SI":
+                typeToArrayString = lover_s_array[2];
+                break;
+            case "SC":
+                typeToArrayString = lover_s_array[3];
+                break;
+            case "C":
+                typeToArrayString = lover_c_array[0];
+                break;
+            case "CD":
+                typeToArrayString = lover_c_array[1];
+                break;
+            case "CI":
+                typeToArrayString = lover_c_array[2];
+                break;
+            case "CS":
+                typeToArrayString = lover_c_array[3];
+                break;
+
+
+        }
+
+        result = typeToArrayString.split(",");
+
+        return result;
     }
 
 

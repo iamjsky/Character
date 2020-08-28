@@ -7,12 +7,16 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
 import com.character.microblogapp.R;
+import com.character.microblogapp.data.Constant;
 import com.character.microblogapp.data.MyInfo;
 import com.character.microblogapp.model.MEnergy;
 import com.character.microblogapp.model.MError;
@@ -35,6 +39,10 @@ public class CharWorldFragment extends BaseFragment {
     @BindView(R.id.tv_my_point)
     TextView txvMyHeart;
 
+    @BindView(R.id.layout_popup)
+    LinearLayout layout_popup;
+
+
 
 
     PrefMgr m_prefMgr;
@@ -48,6 +56,22 @@ public class CharWorldFragment extends BaseFragment {
                 Context.MODE_PRIVATE);
         m_prefMgr = new PrefMgr(prefs);
 
+
+        if (MyInfo.getInstance().profile_status == Constant.PRFILE_STATUS_ACCEPT) {
+            if(!m_prefMgr.getBoolean("firstTimePopUp", false)){
+                m_prefMgr.put("firstTimePopUp", true);
+                layout_popup.setVisibility(View.VISIBLE);
+                layout_popup.setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent e) {
+
+                        return true;
+                    }
+                });
+            }else{
+                layout_popup.setVisibility(View.GONE);
+            }
+        }
         Log.e("char_debug", "MyInfo : " + MyInfo.getInstance().character);
         return mRoot;
     }
@@ -64,7 +88,6 @@ public class CharWorldFragment extends BaseFragment {
 
 
         updateBadgeCount();
-
 
 
 
@@ -106,6 +129,10 @@ public class CharWorldFragment extends BaseFragment {
 
     //add
 
+    @OnClick(R.id.iv_popUpClose)
+    public void iv_popUpCloseClicked(){
+        layout_popup.setVisibility(View.GONE);
+    }
 
     @OnClick(R.id.layout_charInfo)
     void layout_charInfoClicked(){

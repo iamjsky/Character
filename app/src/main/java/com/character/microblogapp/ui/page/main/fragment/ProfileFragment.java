@@ -3,8 +3,10 @@ package com.character.microblogapp.ui.page.main.fragment;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -12,6 +14,7 @@ import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -119,7 +122,7 @@ public class ProfileFragment extends BaseFragment {
 
     MyApplication mApp = null;
     String myChar = "";
-
+    private boolean mFinish = false;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -128,6 +131,36 @@ public class ProfileFragment extends BaseFragment {
 
         initData();
         apiInfo();
+        mRoot.setFocusableInTouchMode(true);
+        mRoot.requestFocus();
+        mRoot.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+
+                if (keyCode == KeyEvent.KEYCODE_BACK) {
+                    if (event.getAction() == KeyEvent.ACTION_UP) {
+                        if (!mFinish) {
+                            mFinish = true;
+                            Toaster.showShort(getContext(), R.string.app_finish_message);
+                            new Handler().postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    mFinish = false;
+                                }
+                            }, 2000);
+                        } else {
+                            ActivityCompat.finishAffinity(getActivity());
+                            System.runFinalizersOnExit(true);
+                            System.exit(0);
+
+                        }
+                        return true;
+                    }
+                }
+
+                return false;
+            }
+        });
 //        initUI(container);
         return mRoot;
     }

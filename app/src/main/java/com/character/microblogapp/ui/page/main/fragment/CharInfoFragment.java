@@ -70,6 +70,7 @@ public void layout_discInfoClicked(){
     @OnClick(R.id.layout_charInfo)
     public void layout_charInfoClicked(){
         MainActivity mainActivity = (MainActivity) getActivity();
+        mainActivity.charInfoPageNum = 0;
         mainActivity.selectLine(0);
         mainActivity.selectTab(14);
     }

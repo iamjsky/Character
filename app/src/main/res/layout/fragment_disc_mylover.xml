@@ -178,6 +178,7 @@
                             android:layout_height="wrap_content">
 
                             <LinearLayout
+                                android:id="@+id/layout_char_01"
                                 android:padding="@dimen/_8sdp"
                                 android:background="@drawable/bg_rounded_13"
                                 android:gravity="center"
@@ -186,22 +187,23 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content">
                                 <TextView
+                                    android:id="@+id/tv_layer_01_char_01"
                                     android:textColor="@color/char_d_color"
                                     android:textSize="@dimen/_28sdp"
                                     android:fontFamily="@font/jalnan_n"
-                                    android:text="D"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"/>
                                 <TextView
+                                    android:id="@+id/tv_layer_01_char_02"
                                     android:textColor="@color/char_i_color"
                                     android:textSize="@dimen/_28sdp"
                                     android:fontFamily="@font/jalnan_n"
-                                    android:text="I"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"/>
 
                             </LinearLayout>
                             <LinearLayout
+                                android:id="@+id/layout_char_02"
                                 android:layout_marginLeft="@dimen/_8sdp"
                                 android:layout_marginRight="@dimen/_8sdp"
                                 android:padding="@dimen/_8sdp"
@@ -213,21 +215,22 @@
                                 android:layout_height="wrap_content">
 
                                 <TextView
+                                    android:id="@+id/tv_layer_02_char_01"
                                     android:textColor="@color/char_i_color"
                                     android:textSize="@dimen/_28sdp"
                                     android:fontFamily="@font/jalnan_n"
-                                    android:text="I"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"/>
                                 <TextView
+                                    android:id="@+id/tv_layer_02_char_02"
                                     android:textColor="@color/char_d_color"
                                     android:textSize="@dimen/_28sdp"
                                     android:fontFamily="@font/jalnan_n"
-                                    android:text="D"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"/>
                             </LinearLayout>
                             <LinearLayout
+                                android:id="@+id/layout_char_03"
                                 android:padding="@dimen/_8sdp"
                                 android:background="@drawable/bg_rounded_13"
                                 android:gravity="center"
@@ -236,17 +239,17 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content">
                                 <TextView
+                                    android:id="@+id/tv_layer_03_char_01"
                                     android:textColor="@color/char_s_color"
                                     android:textSize="@dimen/_28sdp"
                                     android:fontFamily="@font/jalnan_n"
-                                    android:text="S"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"/>
                                 <TextView
+                                    android:id="@+id/tv_layer_03_char_02"
                                     android:textColor="@color/char_i_color"
                                     android:textSize="@dimen/_28sdp"
                                     android:fontFamily="@font/jalnan_n"
-                                    android:text="I"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"/>
 

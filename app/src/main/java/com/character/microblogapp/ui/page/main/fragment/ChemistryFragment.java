@@ -3,9 +3,14 @@ package com.character.microblogapp.ui.page.main.fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.style.ForegroundColorSpan;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -17,6 +22,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.character.microblogapp.R;
+import com.character.microblogapp.data.Constant;
 import com.character.microblogapp.data.MyInfo;
 import com.character.microblogapp.ui.page.BaseFragment;
 import com.character.microblogapp.ui.page.main.MainActivity;
@@ -62,6 +68,8 @@ public class ChemistryFragment extends BaseFragment {
     @BindView(R.id.tv_charSelectWoman)
     TextView tv_charSelectWoman;
 
+    @BindView(R.id.iv_topBg)
+    ImageView iv_topBg;
     PrefMgr m_prefMgr;
     /**
      * 0 main
@@ -173,12 +181,22 @@ public class ChemistryFragment extends BaseFragment {
         intent.setType("text/plain");
 
 
-        String text = "https://play.google.com/store/apps/details?id=com.character.dating";
-
-        intent.putExtra(Intent.EXTRA_TEXT, text);
+        String URL = "http://personalitism.com/measurement_";
 
 
-        Intent chooser = Intent.createChooser(intent, "성격궁합 측정 결과");
+        String char_01 = tv_charMan_01.getText().toString() + "";
+        String char_02 = tv_charWoman_01.getText().toString() + "";
+        String charType = (char_01 + char_02 + "").toLowerCase();
+        String gender = "_";
+        if (MyInfo.getInstance().gender == 1) {
+            gender = gender + "m";
+        } else if (MyInfo.getInstance().gender == 2) {
+            gender = gender + "w";
+        }
+        intent.putExtra(Intent.EXTRA_TEXT, "\"너와 나의 성격 코드는 잘 맞을까?\"\n\"우리의 성격 궁합 점수는?\"\n" + URL + charType + gender);
+
+
+        Intent chooser = Intent.createChooser(intent, "\"너와 나의 성격 코드는 잘 맞을까?\"\n\"우리의 성격 궁합 점수는?\"\n" + URL + charType + gender);
         startActivity(chooser);
 
 
@@ -204,9 +222,31 @@ public class ChemistryFragment extends BaseFragment {
             tv_charPercent.setText(chemistryModel.percent);
             tv_charPercent.setTextColor(chemistryModel.percentColor);
 
-            tv_desc.setText(chemistryModel.desc);
+
+            Spannable sb = new SpannableString(chemistryModel.desc);
+            for (int i = 0; i < chemistryModel.desc.length(); i++) {
+                char temp = (chemistryModel.desc.charAt(i));
+                switch (temp) {
+                    case 'D':
+                        sb.setSpan(new ForegroundColorSpan(Constant.CHARACTER_D_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+                        break;
+                    case 'I':
+                        sb.setSpan(new ForegroundColorSpan(Constant.CHARACTER_I_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+                        break;
+                    case 'S':
+                        sb.setSpan(new ForegroundColorSpan(Constant.CHARACTER_S_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+                        break;
+                    case 'C':
+                        sb.setSpan(new ForegroundColorSpan(Constant.CHARACTER_C_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+                        break;
+                }
+
+            }
+            tv_desc.setText(sb);
             layout_main.setVisibility(View.GONE);
             layout_result.setVisibility(View.VISIBLE);
+            iv_topBg.setBackground(getDISCBackground(chemistryModel.charMan, 3));
+            iv_topBg.setVisibility(View.VISIBLE);
             pageState = 3;
         } else {
             Toaster.showShort(mParent, "DISC 유형을 모두 선택해 주세요.");
@@ -621,4 +661,91 @@ public class ChemistryFragment extends BaseFragment {
 
         return percentColor;
     }
+
+
+    private Drawable getDISCBackground(String type, int layout) {
+        Drawable drawable = null;
+        switch (type) {
+
+            case "D":
+                if (layout == 0) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_d_01);
+                } else if (layout == 1) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_d_02);
+                } else if (layout == 2) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_keyword_d_02);
+                } else if (layout == 3) {
+                    drawable = getResources().getDrawable(R.drawable.bg_d_img);
+                } else if (layout == 4) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_keyword_d_01);
+                } else if (layout == 5) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_panel_d_01);
+                } else if (layout == 6) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_share_d);
+                }
+
+
+                break;
+            case "I":
+                if (layout == 0) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_i_01);
+                } else if (layout == 1) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_i_02);
+                } else if (layout == 2) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_keyword_i_02);
+                } else if (layout == 3) {
+                    drawable = getResources().getDrawable(R.drawable.bg_i_img);
+                } else if (layout == 4) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_keyword_i_01);
+                } else if (layout == 5) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_panel_i_01);
+                } else if (layout == 6) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_share_i);
+                }
+
+
+                break;
+            case "C":
+                if (layout == 0) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_c_01);
+                } else if (layout == 1) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_c_02);
+                } else if (layout == 2) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_keyword_c_02);
+                } else if (layout == 3) {
+                    drawable = getResources().getDrawable(R.drawable.bg_c_img);
+                } else if (layout == 4) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_keyword_c_01);
+                } else if (layout == 5) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_panel_c_01);
+                } else if (layout == 6) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_share_c);
+                }
+
+
+                break;
+            case "S":
+                if (layout == 0) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_s_01);
+                } else if (layout == 1) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_s_02);
+                } else if (layout == 2) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_keyword_s_02);
+                } else if (layout == 3) {
+                    drawable = getResources().getDrawable(R.drawable.bg_s_img);
+                } else if (layout == 4) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_keyword_s_01);
+                } else if (layout == 5) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_panel_s_01);
+                } else if (layout == 6) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_share_s);
+                }
+
+                break;
+
+
+        }
+        return drawable;
+    }
+
 }

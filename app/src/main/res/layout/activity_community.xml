@@ -9,6 +9,7 @@
     <include layout="@layout/view_top_bar" />
 
     <android.support.v7.widget.RecyclerView
+        android:visibility="gone"
         android:id="@+id/rcv_tabs"
         android:layout_width="match_parent"
         android:layout_height="50dp"

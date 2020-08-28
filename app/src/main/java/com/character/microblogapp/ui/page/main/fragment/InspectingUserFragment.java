@@ -7,9 +7,11 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +25,7 @@ import com.character.microblogapp.ui.page.intro.IntroActivity;
 import com.character.microblogapp.ui.page.main.MainActivity;
 import com.character.microblogapp.ui.widget.customindicator.MyPageIndicator;
 import com.character.microblogapp.util.PrefMgr;
+import com.character.microblogapp.util.Toaster;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -43,6 +46,7 @@ public class InspectingUserFragment extends BaseFragment {
     TypedArray pageRes;
 
     InpectingUserPagerAdapter inpectingUserPagerAdapter = null;
+    private boolean mFinish = false;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -56,7 +60,36 @@ public class InspectingUserFragment extends BaseFragment {
         pageIndicator = new MyPageIndicator(getContext(), pagesContainer, viewPager, R.drawable.indicator_circle);
         pageIndicator.setPageCount(pageRes.length());
         pageIndicator.show();
+        mRoot.setFocusableInTouchMode(true);
+        mRoot.requestFocus();
+        mRoot.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
 
+                if (keyCode == KeyEvent.KEYCODE_BACK) {
+                    if (event.getAction() == KeyEvent.ACTION_UP) {
+                        if (!mFinish) {
+                            mFinish = true;
+                            Toaster.showShort(getContext(), R.string.app_finish_message);
+                            new Handler().postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    mFinish = false;
+                                }
+                            }, 2000);
+                        } else {
+                            ActivityCompat.finishAffinity(getActivity());
+                            System.runFinalizersOnExit(true);
+                            System.exit(0);
+
+                        }
+                        return true;
+                    }
+                }
+
+                return false;
+            }
+        });
 
         return mRoot;
     }

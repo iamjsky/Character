@@ -94,7 +94,7 @@ public class CommunityWriteActivity extends BaseActivity {
         tvTitle.setText("커뮤니티");
         btnMenu.setVisibility(View.GONE);
         txvMenu.setVisibility(View.VISIBLE);
-
+        btnBack.setVisibility(View.VISIBLE);
         mediaManager = new MediaManager(this);
         mediaManager.setMediaCallback(new MediaManager.MediaCallback() {
             @Override
@@ -180,7 +180,7 @@ public class CommunityWriteActivity extends BaseActivity {
     }
 
     void addCommunity(String uploadedFiles) {
-        Net.instance().api.add_community(MyInfo.getInstance().uid, 0, type, etTitle.getText().toString(),
+        Net.instance().api.add_community(MyInfo.getInstance().uid, 0, 1, etTitle.getText().toString(),
                 etDetail.getText().toString(), uploadedFiles)
                 .enqueue(new Net.ResponseCallBack<MBase>() {
                     @Override
@@ -275,10 +275,10 @@ public class CommunityWriteActivity extends BaseActivity {
 
     @OnClick(R.id.txvMenu)
     void onSave() {
-        if (type == 0) {
-            Toaster.showShort(this, "게시판을 선택해주세요");
-            return;
-        }
+//        if (type == 0) {
+//            Toaster.showShort(this, "게시판을 선택해주세요");
+//            return;
+//        }
         if (etTitle.getText().toString().isEmpty()) {
             Toaster.showShort(this, "제목을 입력해주세요");
             return;

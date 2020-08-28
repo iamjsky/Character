@@ -105,6 +105,7 @@ public class DISCCharListFragment extends BaseFragment {
             , R.id.tv_showChar_13, R.id.tv_showChar_14, R.id.tv_showChar_15, R.id.tv_showChar_16 })
    public void tv_showCharClicked(View view){
         MainActivity mainActivity = (MainActivity) getActivity();
+        mainActivity.charInfoPageNum = 1;
         assert mainActivity != null;
         switch (view.getId()){
 

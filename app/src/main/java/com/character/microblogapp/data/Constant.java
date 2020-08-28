@@ -74,14 +74,14 @@ public interface Constant {
     String CHARACTER_S = "S";
     String CHARACTER_C = "C";
 
-    int CHARACTER_D_COLOR = ContextCompat.getColor(getApplicationContext(), R.color.char_d_color);;
-    int CHARACTER_I_COLOR = ContextCompat.getColor(getApplicationContext(), R.color.char_i_color);;
-    int CHARACTER_S_COLOR = ContextCompat.getColor(getApplicationContext(), R.color.char_s_color);;
-    int CHARACTER_C_COLOR = ContextCompat.getColor(getApplicationContext(), R.color.char_c_color);;
+    int CHARACTER_D_COLOR = ContextCompat.getColor(getApplicationContext(), R.color.char_d_color);
+    int CHARACTER_I_COLOR = ContextCompat.getColor(getApplicationContext(), R.color.char_i_color);
+    int CHARACTER_S_COLOR = ContextCompat.getColor(getApplicationContext(), R.color.char_s_color);
+    int CHARACTER_C_COLOR = ContextCompat.getColor(getApplicationContext(), R.color.char_c_color);
 
     String[] BLAME_REASON = new String[]{"불쾌감을 주는 언행", "불쾌감을 주는 사진", "사진 도용"};
 
-    boolean CERT_TEST = false; // 납기시에는 false로 설정해야 함.
+    boolean CERT_TEST = true; // 납기시에는 false로 설정해야 함.
     String SERVER_CERT_URL = "http://175.126.62.103/cert.php";
 //        String SERVER_CERT_URL = "http://175.126.62.103/cert_test1.php";
     int GO_ACT_CERT_PHONE = 2000;

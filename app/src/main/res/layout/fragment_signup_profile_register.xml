@@ -510,25 +510,14 @@
         android:fontFamily="@font/nanum_square_r"
         />
     <EditText
-        android:ellipsize="end"
-        android:singleLine="true"
+        style="@style/SignupItemValue"
         android:id="@+id/etSelfIntroduction"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_34sdp"
-        android:background="@drawable/underline"
-        android:drawableEnd="@drawable/ic_checkbox3"
+        android:layout_height="wrap_content"
+        android:lines="3"
         android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:hint="소개글을 입력하세요."
-        android:nestedScrollingEnabled="true"
-        android:overScrollMode="always"
-        android:scrollbarStyle="insideInset"
-        android:scrollbars="vertical"
-        android:paddingTop="@dimen/_4sdp"
-        android:paddingBottom="@dimen/_4sdp"
-        android:textColor="#545454"
-        android:textColorHint="@color/color_hint"
-        android:textSize="@dimen/_11sdp"/>
+        android:foreground="@color/color_transparent"
+        android:hint="소개글을 입력하세요."/>
     <Button
         android:id="@+id/btnRegistering"
         android:layout_width="@dimen/_100sdp"

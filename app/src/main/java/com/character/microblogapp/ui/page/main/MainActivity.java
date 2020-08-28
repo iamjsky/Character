@@ -75,6 +75,7 @@ public class MainActivity extends BaseActivity {
 
     public String parentFrag = "";
     public String charListType = "";
+    public int charInfoPageNum = 0;
 
 
 
@@ -394,9 +395,12 @@ public class MainActivity extends BaseActivity {
             case MAIN_CHAR_INFO_MY_CHAR:
                 fragment = new MyCharInfoFragment();
 
-                if(charListType.equals("")){
+                if(charInfoPageNum == 0){
                     tag = "myInfo";
-                }else{
+                }else if(charInfoPageNum == 1){
+                    tag = charListType;
+                    charListType = "";
+                }else if(charInfoPageNum == 2){
                     tag = charListType;
                     charListType = "";
                 }

@@ -425,5 +425,37 @@
         <item>@drawable/bg_badge</item>
     </integer-array>
 
+    <!--D(0),DI(1),DS(2),DC(3) -->
+    <string-array name="lover_d_array">
+        <item>D/,D/I,I/</item>
+        <item>D/I,I/D,S/I</item>
+        <item>D/,D/S,S/C</item>
+        <item>D/C,C/D,S/C</item>
+
+    </string-array>
+    <!--I(0),ID(1),IS(2),IC(3) -->
+    <string-array name="lover_i_array">
+        <item>I/,I/S,I/D</item>
+        <item>I/,I/D,I/S</item>
+        <item>I/,I/S,D/I</item>
+        <item>I/,I/S,I/C</item>
+
+    </string-array>
+    <!--S(0),SD(1),SI(2),SC(3) -->
+    <string-array name="lover_s_array">
+        <item>S/,C/,S/C</item>
+        <item>S/,S/D,S/C</item>
+        <item>S/,S/I,D/I</item>
+        <item>S/,S/C,D/S</item>
+
+    </string-array>
+    <!--C(0),CD(1),CI(2),CS(3) -->
+    <string-array name="lover_c_array">
+        <item>C/,S/,S/C</item>
+        <item>C/,C/D,C/S</item>
+        <item>C/,C/I,C/S</item>
+        <item>S/,C/,S/C</item>
+
+    </string-array>
 
 </resources>

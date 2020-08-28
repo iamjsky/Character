@@ -120,12 +120,31 @@ public class MyCharInfoFragment extends BaseFragment {
     FlowLayout layout_charTagArea_02;
 
     @BindView(R.id.layout_charType_secondArea)
-            LinearLayout layout_charType_secondArea;
+    LinearLayout layout_charType_secondArea;
 
     @BindView(R.id.iv_charImg_01)
     ImageView iv_charImg_01;
     @BindView(R.id.iv_charImg_02)
     ImageView iv_charImg_02;
+
+    @BindView(R.id.btn_share)
+    TextView btn_share;
+
+    @BindView(R.id.iv_topBg)
+    ImageView iv_topBg;
+
+    @BindView(R.id.layout_panel)
+    LinearLayout layout_panel;
+    @BindView(R.id.layout_topCharPanel)
+    LinearLayout layout_topCharPanel;
+    @BindView(R.id.layout_bottomCharPanel)
+    LinearLayout layout_bottomCharPanel;
+    @BindView(R.id.tv_job)
+    TextView tv_job;
+    @BindView(R.id.tv_office)
+    TextView tv_office;
+    @BindView(R.id.tv_charInfoTitle)
+    TextView tv_charInfoTitle;
 
     PrefMgr m_prefMgr;
 
@@ -133,7 +152,13 @@ public class MyCharInfoFragment extends BaseFragment {
     int nowPage = 0;
     int pageType = -1;
 
+    String linkCharString = "";
 
+    String linkTitle;
+    String[] linkKeyword1Arr;
+    String linkFactor;
+    String linkName, linkName2;
+    String linkPersonality1, linkPersonality2;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -144,13 +169,23 @@ public class MyCharInfoFragment extends BaseFragment {
                 Context.MODE_PRIVATE);
         m_prefMgr = new PrefMgr(prefs);
 
+        MainActivity mainActivity = (MainActivity) getActivity();
+        /*내 성격정보*/
+        if (getTag().equals("myInfo")) {
 
-        if(getTag().equals("myInfo")){
             type = MyInfo.getInstance().character;
             pageType = 0;
-        }else{
+            btn_share.setVisibility(View.VISIBLE);
+            /*성격 유형 리스트*/
+        } else if (mainActivity.charInfoPageNum == 1) {
             type = getTag();
             pageType = 1;
+            btn_share.setVisibility(View.GONE);
+            /*나와 잘 맞는 성격*/
+        } else if (mainActivity.charInfoPageNum == 2) {
+            type = getTag();
+            pageType = 2;
+            btn_share.setVisibility(View.GONE);
         }
 
 //You need to add the following line for this solution to work; thanks skayred
@@ -192,34 +227,59 @@ public class MyCharInfoFragment extends BaseFragment {
         intent.setType("text/plain");
 
 
-        String text = "https://play.google.com/store/apps/details?id=com.character.dating";
+        String URL = "http://personalitism.com/result_";
+        String charType = linkCharString.toLowerCase();
 
-        intent.putExtra(Intent.EXTRA_TEXT, text);
 
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < linkKeyword1Arr.length; i++) {
+            if (i == 0) {
+                sb.append(linkKeyword1Arr[i]);
+            } else {
+                sb.append(", ").append(linkKeyword1Arr[i]);
+            }
 
-        Intent chooser = Intent.createChooser(intent, "내 성격정보 결과");
+        }
+
+        String charType2 = "";
+        if(!linkPersonality2.equals("")){
+            charType2 = " +" + linkName2 + "(" + linkPersonality2 + ")";
+        }else {
+            charType2 = "";
+        }
+        String linkTextResult = linkTitle+"\n"+"친구의 성격유형은 " + linkName + "(" + linkPersonality1 + ")" +
+                charType2 + "\n" + "* 특징 : " + sb.toString() + "\n" + "* 동기요인 : " + linkFactor;
+
+        intent.putExtra(Intent.EXTRA_TEXT, linkTextResult + "\n" + URL + charType);
+        Intent chooser = Intent.createChooser(intent, linkTextResult + "\n" + URL+charType);
         startActivity(chooser);
 
 
     }
+
     @OnClick(R.id.rlt_back)
     public void rlt_backClicked() {
         MainActivity mainActivity = (MainActivity) getActivity();
         mainActivity.selectLine(0);
-        if(pageType == 0){
+        if (pageType == 0) {
             if (nowPage == 0) {
                 mainActivity.selectTab(8);
             } else {
                 setUI();
             }
-        }else{
+        } else if (pageType == 1) {
             if (nowPage == 0) {
                 mainActivity.selectTab(16);
             } else {
                 setUI();
             }
+        } else if (pageType == 2) {
+            if (nowPage == 0) {
+                mainActivity.selectTab(15);
+            } else {
+                setUI();
+            }
         }
-
 
 
     }
@@ -263,8 +323,11 @@ public class MyCharInfoFragment extends BaseFragment {
         sv_charTestResult.setScrollY(0);
         //add
         String personality1 = result.personality1 + "";
+
         String personality2 = result.personality2 + "";
+
         String personality_title1 = result.personality_title1;
+
         String personality_title2 = result.personality_title2;
         String name = result.name;
         String name2 = result.name2;
@@ -278,16 +341,39 @@ public class MyCharInfoFragment extends BaseFragment {
         String job2 = result.job2;
         String job_env1 = result.job_env1;
         String job_env2 = result.job_env2;
+        String title = result.title;
+        linkPersonality1 = personality1;
+        linkPersonality2 = personality2;
+        linkName = name;
+        linkName2 = name2;
+        switch (personality1){
+            case "D":
+                linkTitle = "\"인생은 노빠꾸지!\"";
+                break;
+            case "I":
+                linkTitle = "\"관심과 사랑을 주세요~\"";
+                break;
+            case "S":
+                linkTitle = "\"싸우기 싫다고..\"";
+                break;
+            case "C":
+                linkTitle = "\"제게 팩트를 주세요!\"";
+                break;
+
+            default:
+
+        }
+
+        linkFactor = factor;
 
         layout_discResult.setVisibility(View.VISIBLE);
         layout_job.setVisibility(View.GONE);
         layout_jobEnv.setVisibility(View.GONE);
-        if(pageType == 0){
+        if (pageType == 0) {
             tv_title.setText("내 성격정보 결과");
-        }else{
+        } else {
             tv_title.setText("성격정보 - " + type + "형");
         }
-
 
 
         tv_char_01.setText(personality1);
@@ -307,28 +393,53 @@ public class MyCharInfoFragment extends BaseFragment {
 
         layout_charTagArea_01.removeAllViews();
         layout_charTagArea_02.removeAllViews();
-        if(!keyword1.equals("")) {
+        String getColorString = "";
+        if (type.length() > 1) {
+            getColorString = type.substring(0, 1);
+            linkCharString = type;
+
+        } else {
+            getColorString = type;
+            linkCharString = type + type + "";
+        }
+        iv_topBg.setBackground(getDISCBackground(getColorString, 3));
+        iv_topBg.setVisibility(View.VISIBLE);
+        layout_topCharPanel.setBackground(getDISCBackground(getColorString, 0));
+        layout_bottomCharPanel.setBackground(getDISCBackground(getColorString, 1));
+        layout_panel.setBackground(getDISCBackground(getColorString, 5));
+        tv_job.setTextColor(getDISCColor(personality1));
+        tv_office.setTextColor(getDISCColor(personality1));
+        tv_charInfoTitle.setTextColor(getDISCColor(personality1));
+        btn_share.setBackground(getDISCBackground(personality1, 6));
+        btn_share.setTextColor(getDISCColor(personality1));
+        Drawable bgColor = getDISCBackground(getColorString, 4);
+        if (!keyword1.equals("")) {
             String[] keyword1Arr = keyword1.split(",");
+            linkKeyword1Arr = keyword1Arr;
             for (int i = 0; i < keyword1Arr.length; i++) {
-                ViewGroup keywordView = (ViewGroup) getLayoutInflater().inflate(R.layout.view_charinfo_keyword_item, null, false);
-                TextView tv_keyword = (TextView) keywordView.findViewById(R.id.tv_keyword);
-                tv_keyword.setBackgroundResource(R.drawable.bg_rounded_char_01);
-                tv_keyword.setText(keyword1Arr[i].trim());
-                layout_charTagArea_01.addView(keywordView);
+                if (i < 4) {
+                    ViewGroup keywordView = (ViewGroup) getLayoutInflater().inflate(R.layout.view_charinfo_keyword_item, null, false);
+                    TextView tv_keyword = (TextView) keywordView.findViewById(R.id.tv_keyword);
+                    tv_keyword.setBackground(bgColor);
+                    tv_keyword.setText(keyword1Arr[i].trim());
+                    layout_charTagArea_01.addView(keywordView);
+                }
+
             }
         }
-        if(!keyword2.equals("")){
-            String[]  keyword2Arr = keyword2.split(",");
-            for (int i=0; i < keyword2Arr.length; i++){
-                ViewGroup keywordView = (ViewGroup) getLayoutInflater().inflate(R.layout.view_charinfo_keyword_item, null, false);
-                TextView tv_keyword = (TextView) keywordView.findViewById(R.id.tv_keyword);
-                tv_keyword.setBackgroundResource(R.drawable.bg_rounded_char_02);
-                tv_keyword.setText(keyword2Arr[i].trim());
-                layout_charTagArea_02.addView(keywordView);
+        if (!keyword2.equals("")) {
+            String[] keyword2Arr = keyword2.split(",");
+            for (int i = 0; i < keyword2Arr.length; i++) {
+                if (i < 3) {
+                    ViewGroup keywordView = (ViewGroup) getLayoutInflater().inflate(R.layout.view_charinfo_keyword_item, null, false);
+                    TextView tv_keyword = (TextView) keywordView.findViewById(R.id.tv_keyword);
+                    tv_keyword.setBackground(bgColor);
+                    tv_keyword.setText(keyword2Arr[i].trim());
+                    layout_charTagArea_02.addView(keywordView);
+                }
+
             }
         }
-
-
 
 
         tv_charInfo.setText(personality_char);
@@ -348,7 +459,6 @@ public class MyCharInfoFragment extends BaseFragment {
             layout_jobEnvList_02.setVisibility(View.GONE);
             layout_charTagArea_02.setVisibility(View.GONE);
             layout_charType_secondArea.setVisibility(View.GONE);
-
 
 
         } else {
@@ -408,9 +518,6 @@ public class MyCharInfoFragment extends BaseFragment {
         }
 
 
-
-
-
     }
 
 
@@ -460,6 +567,8 @@ public class MyCharInfoFragment extends BaseFragment {
                     drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_keyword_d_01);
                 } else if (layout == 5) {
                     drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_panel_d_01);
+                } else if (layout == 6) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_share_d);
                 }
 
 
@@ -477,6 +586,8 @@ public class MyCharInfoFragment extends BaseFragment {
                     drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_keyword_i_01);
                 } else if (layout == 5) {
                     drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_panel_i_01);
+                } else if (layout == 6) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_share_i);
                 }
 
 
@@ -494,6 +605,8 @@ public class MyCharInfoFragment extends BaseFragment {
                     drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_keyword_c_01);
                 } else if (layout == 5) {
                     drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_panel_c_01);
+                } else if (layout == 6) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_share_c);
                 }
 
 
@@ -511,6 +624,8 @@ public class MyCharInfoFragment extends BaseFragment {
                     drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_keyword_s_01);
                 } else if (layout == 5) {
                     drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_panel_s_01);
+                } else if (layout == 6) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_share_s);
                 }
 
                 break;

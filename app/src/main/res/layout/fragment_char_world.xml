@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#f6f6f6"
@@ -398,12 +398,138 @@
                 </LinearLayout>
 
 
+
+
             </RelativeLayout>
 
         </android.support.v4.widget.NestedScrollView>
 
+        <LinearLayout
+            android:visibility="gone"
+            android:gravity="center"
+            android:id="@+id/layout_popup"
+            android:background="#B3000000"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:paddingBottom="@dimen/_40sdp"
+                    android:gravity="center|top"
+                    android:paddingRight="@dimen/_20sdp"
+                    android:paddingLeft="@dimen/_20sdp"
+                    android:paddingTop="@dimen/_20sdp"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:background="@drawable/bg_rounded_white_panel_03"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <ImageView
+                        android:id="@+id/iv_popUpClose"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:src="@drawable/close_btn_img_black"
+                        android:adjustViewBounds="true"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"/>
+
+                    <TextView
+                        android:fontFamily="@font/nanum_square_b"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_16sdp"
+                        android:textColor="#000000"
+                        android:gravity="center"
+                        android:text="성격지상주의"
+                        />
+                    <TextView
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:fontFamily="@font/nanum_square_r"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_16sdp"
+                        android:textColor="#000000"
+                        android:gravity="center"
+                        android:text="가입을 축하 드립니다."
+                        />
+                    <TextView
+                        android:lineSpacingExtra="@dimen/_4sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_marginBottom="@dimen/_20sdp"
+                        android:fontFamily="@font/nanum_square_r"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_14sdp"
+                        android:textColor="#000000"
+                        android:gravity="center"
+                        android:text="이용과 관련하여 두 가지\nTip을 안내해 드립니다."
+                        />
+                    <TextView
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:lineSpacingExtra="@dimen/_4sdp"
+                        android:layout_marginBottom="@dimen/_3sdp"
+                        android:fontFamily="@font/nanum_square_r"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_14sdp"
+                        android:textColor="#000000"
+                        android:gravity="center|left"
+                        android:text="1. 내 성격 정보를 확인 전에 성격 월드 > 성격 정보 > ’DISC란?‘의 D, I, S, C 각각의 유형에 대해 먼저 충분히 이해한 후 내 성격 정보를 확인하시기를 권해드려요!"
+                        />
+                    <TextView
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:lineSpacingExtra="@dimen/_4sdp"
+                        android:layout_marginBottom="@dimen/_3sdp"
+                        android:fontFamily="@font/nanum_square_r"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_14sdp"
+                        android:textColor="#000000"
+                        android:gravity="center|left"
+                        android:text="2. 성격지상주의는 성격 코드가 맞는 친구를 만들 수 있는 매칭(데이팅)앱이며 유저 간의 성격을 기반으로 한 매칭 기능(관심 표시, 채팅)이 곧 출시 예정입니다."
+                        />
+                    <TextView
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:lineSpacingExtra="@dimen/_4sdp"
+                        android:layout_marginBottom="@dimen/_3sdp"
+                        android:fontFamily="@font/nanum_square_r"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_14sdp"
+                        android:textColor="#000000"
+                        android:gravity="center"
+                        android:text="가입을 유지 해주신 모든 유저에 한하여\n2만원 상당의 에너지를 충전해드립니다."
+                        />
+                    <TextView
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:lineSpacingExtra="@dimen/_4sdp"
+                        android:layout_marginBottom="@dimen/_3sdp"
+                        android:fontFamily="@font/nanum_square_r"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_14sdp"
+                        android:textColor="#000000"
+                        android:gravity="center"
+                        android:text="그때까지 지인들과 함께 성격을 공유해 보아요! "
+                        />
+                </LinearLayout>
+
+
+        </LinearLayout>
+    </RelativeLayout>
 
 
 </layout>

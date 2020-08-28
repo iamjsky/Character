@@ -7,12 +7,15 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.constraint.ConstraintLayout;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
+import android.util.Log;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,6 +44,7 @@ import com.character.microblogapp.ui.page.main.MainActivity;
 import com.character.microblogapp.ui.page.model.ModelFindActivity;
 import com.character.microblogapp.ui.page.profile.ProfileActivity;
 import com.character.microblogapp.ui.page.setting.dialog.BlameDialog;
+import com.character.microblogapp.util.Toaster;
 import com.character.microblogapp.util.Util;
 import com.jackandphantom.circularimageview.RoundedImage;
 import com.viewpagerindicator.CirclePageIndicator;
@@ -132,12 +136,42 @@ public class EvaluationFragment extends BaseFragment {
     ImagePagerAdapter mUsersAdapter = null;
     BaseUserInfo mEstimateUser = null;
     boolean is_overflow_oneday_cnt = false;
-
+    private boolean mFinish = false;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         createView(inflater, container, R.layout.fragment_eval);
         iv_vpCoverBg.setRoundedRadius(50);
+        mRoot.setFocusableInTouchMode(true);
+        mRoot.requestFocus();
+        mRoot.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+
+                if (keyCode == KeyEvent.KEYCODE_BACK) {
+                    if (event.getAction() == KeyEvent.ACTION_UP) {
+                        if (!mFinish) {
+                            mFinish = true;
+                            Toaster.showShort(getContext(), R.string.app_finish_message);
+                            new Handler().postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    mFinish = false;
+                                }
+                            }, 2000);
+                        } else {
+                            ActivityCompat.finishAffinity(getActivity());
+                            System.runFinalizersOnExit(true);
+                            System.exit(0);
+
+                        }
+                        return true;
+                    }
+                }
+
+                return false;
+            }
+        });
         initData();
         return mRoot;
     }
@@ -576,6 +610,7 @@ public class EvaluationFragment extends BaseFragment {
             RoundedImage imgProfile = (RoundedImage) itemView.findViewById(R.id.iv_profile);
             imgProfile.setRoundedRadius(50);
             GlideApp.with(mParent).load(mProfileUrls.get(position)).into(imgProfile);
+          imgProfile.setScaleType(ImageView.ScaleType.CENTER_CROP);
             imgProfile.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

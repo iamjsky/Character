@@ -39,6 +39,9 @@ public class CommunityActivity extends BaseActivity {
     @BindView(R.id.rcv_tabs)
     RecyclerView rvTabs;
 
+    @BindView(R.id.btnBack)
+            ImageButton btnBack;
+
     int pageNum = 1;
     int pageCount = 0;
     boolean loadingEnd = false;
@@ -66,6 +69,7 @@ public class CommunityActivity extends BaseActivity {
         tvTitle.setText("커뮤니티");
         btnMenu.setVisibility(View.VISIBLE);
         btnMenu.setImageResource(R.drawable.ico_menu);
+        btnBack.setVisibility(View.VISIBLE);
 
         adapter = new CommunityAdapter(this, arrContent, new CommunityAdapter.OnItemClickListener() {
             @Override
