@@ -49,6 +49,7 @@
             android:visibility="gone" />
 
         <ImageButton
+            android:visibility="gone"
             android:fontFamily="@font/nanum_square_b"
             android:id="@+id/btnMenu"
             android:layout_width="@dimen/_40sdp"

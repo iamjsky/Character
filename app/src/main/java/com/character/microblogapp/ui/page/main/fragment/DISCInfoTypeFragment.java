@@ -320,27 +320,8 @@ public class DISCInfoTypeFragment extends BaseFragment {
         layout_bottomCharPanel.setBackground(getDISCBackground(type, 1));
         layout_panel.setBackground(getDISCBackground(type, 5));
 
-        Spannable sb = new SpannableString(personality_char2);
-        for (int i = 0; i < personality_char2.length(); i++) {
-            char temp = (personality_char2.charAt(i));
-            switch (temp) {
-                case '-':
-                    if(personality1.equals("D")){
-                        sb.setSpan(new ForegroundColorSpan(Constant.CHARACTER_D_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
-                    }else if(personality1.equals("I")){
-                        sb.setSpan(new ForegroundColorSpan(Constant.CHARACTER_I_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
-                    }else if(personality1.equals("S")){
-                        sb.setSpan(new ForegroundColorSpan(Constant.CHARACTER_S_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
-                    }else if(personality1.equals("C")){
-                        sb.setSpan(new ForegroundColorSpan(Constant.CHARACTER_C_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
-                    }
 
-                    break;
-
-            }
-
-        }
-        tv_charInfo.setText(sb);
+        tv_charInfo.setText(setDISCCharColor(personality_char2, personality1));
 
 
         tv_scared.setText(fear);
@@ -480,5 +461,41 @@ public class DISCInfoTypeFragment extends BaseFragment {
                 });
     }
 
+    private Spannable setDISCCharColor(String desc, String type){
+        Spannable sb = new SpannableString(desc);
+        for (int i = 0; i < desc.length(); i++) {
+            char temp = (desc.charAt(i));
+            switch (temp) {
+                case 'D':
+                    sb.setSpan(new ForegroundColorSpan(Constant.CHARACTER_D_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+                    break;
+                case 'I':
+                    sb.setSpan(new ForegroundColorSpan(Constant.CHARACTER_I_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+                    break;
+                case 'S':
+                    sb.setSpan(new ForegroundColorSpan(Constant.CHARACTER_S_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+                    break;
+                case 'C':
+                    sb.setSpan(new ForegroundColorSpan(Constant.CHARACTER_C_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+                    break;
 
+                case '-':
+                    if(type.equals("D")){
+                        sb.setSpan(new ForegroundColorSpan(Constant.CHARACTER_D_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+                    }else if(type.equals("I")){
+                        sb.setSpan(new ForegroundColorSpan(Constant.CHARACTER_I_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+                    }else if(type.equals("S")){
+                        sb.setSpan(new ForegroundColorSpan(Constant.CHARACTER_S_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+                    }else if(type.equals("C")){
+                        sb.setSpan(new ForegroundColorSpan(Constant.CHARACTER_C_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+                    }
+
+                    break;
+
+            }
+
+        }
+
+        return sb;
+    }
 }

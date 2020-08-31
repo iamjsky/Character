@@ -76,7 +76,8 @@
                         android:background="@drawable/bg_rounded_white_01"
                         android:gravity="center|top"
                         android:orientation="vertical"
-                        android:padding="@dimen/_25sdp">
+                        android:paddingTop="@dimen/_25sdp"
+                        android:paddingBottom="@dimen/_25sdp">
 
 
                         <LinearLayout
