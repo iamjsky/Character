@@ -378,7 +378,7 @@ public class MediaManager {
         // 여러 기기에서 이미지크롭시 앱이 크래시되는 이슈가 발생하여 이미지크롭을 CropImage 라이브러리를 이용하여 구현하도록 수정
         File file = createFile(false);
         mCropUri = getUri(mActivity, file);
-
+        Log.e("char_debug", "mCropUri : " + mCropUri);
         try {
             CropImage.activity(mUri)
                     .setOutputUri(mCropUri)
@@ -442,6 +442,7 @@ public class MediaManager {
         File thumbFile = createFile(false);
 
         Bitmap bmp = ThumbnailUtils.createVideoThumbnail(videoFile, MediaStore.Images.Thumbnails.MINI_KIND);
+
         Util.saveBitmapToFile((BaseActivity) mActivity, bmp, thumbFile.getPath());
 
         return thumbFile.getPath();
@@ -612,6 +613,7 @@ public class MediaManager {
 //            }
 
             if (mCallback != null)
+                Log.e("char_debug", "onSelected : " + newFile.getPath());
                 mCallback.onSelected(false, newFile, bitmap, "", "");
         } catch (Exception e) {
             e.printStackTrace();

@@ -26,7 +26,8 @@
                 >
 
                 <ImageView
-
+                    android:visibility="gone"
+                    android:id="@+id/iv_topBg"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_122sdp"
                     android:background="@drawable/bg_img" />
@@ -64,63 +65,82 @@
                     android:layout_marginBottom="@dimen/_10sdp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_58sdp"
+                    android:layout_marginTop="@dimen/_60sdp"
+
                     android:orientation="vertical"
                     android:paddingBottom="@dimen/_6sdp"
                     android:visibility="visible">
+<RelativeLayout
+    android:layout_marginBottom="@dimen/_15sdp"
+    android:layout_marginLeft="@dimen/_13sdp"
+    android:layout_marginRight="@dimen/_13sdp"
+    android:background="@drawable/bg_rounded_white_01"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_230sdp">
+    <ImageView
+        android:paddingRight="@dimen/_30sdp"
+        android:paddingLeft="@dimen/_30sdp"
+        android:visibility="visible"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/iv_worldImg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/relation_img" />
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:gravity="center|top"
+        android:orientation="vertical"
+        android:padding="@dimen/_25sdp">
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/_6sdp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_marginRight="@dimen/_4sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/color_transparent"
+                android:fontFamily="@font/jalnan_n"
+                android:gravity="center"
+                android:text="내 유형 :"
+                android:textColor="#545454"
+
+                android:textSize="@dimen/_26sdp" />
+            <TextView
+                android:id="@+id/tv_char_01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/jalnan_n"
+                android:gravity="center"
+                android:textColor="#545454"
+
+                android:textSize="@dimen/_26sdp" />
+            <TextView
+                android:id="@+id/tv_char_02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/jalnan_n"
+                android:gravity="center"
+                android:textColor="#545454"
+
+                android:textSize="@dimen/_26sdp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>
 
                     <LinearLayout
-                        android:layout_marginLeft="@dimen/_7sdp"
-                        android:layout_marginRight="@dimen/_7sdp"
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/_230sdp"
-                        android:background="@drawable/relation_img"
-                        android:gravity="center|top"
-                        android:orientation="vertical"
-                        android:padding="@dimen/_25sdp">
-
-                        <LinearLayout
-                            android:layout_marginTop="@dimen/_6sdp"
-                            android:gravity="center"
-                            android:orientation="horizontal"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-                            <TextView
-                                android:layout_marginRight="@dimen/_4sdp"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:background="@color/color_transparent"
-                                android:fontFamily="@font/jalnan_n"
-                                android:gravity="center"
-                                android:text="내 유형 :"
-                                android:textColor="#545454"
-
-                                android:textSize="@dimen/_26sdp" />
-                            <TextView
-                                android:id="@+id/tv_char_01"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/jalnan_n"
-                                android:gravity="center"
-                                android:textColor="#545454"
-
-                                android:textSize="@dimen/_26sdp" />
-                            <TextView
-                                android:id="@+id/tv_char_02"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/jalnan_n"
-                                android:gravity="center"
-                                android:textColor="#545454"
-
-                                android:textSize="@dimen/_26sdp" />
-                        </LinearLayout>
-
-
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_marginLeft="@dimen/_14sdp"
-                        android:layout_marginRight="@dimen/_14sdp"
+                        android:layout_marginLeft="@dimen/_13sdp"
+                        android:layout_marginRight="@dimen/_13sdp"
                         android:id="@+id/layout_jobEnvList_02"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

@@ -71,7 +71,7 @@
             </RelativeLayout>
             <FrameLayout
 
-                android:layout_marginTop="@dimen/_52sdp"
+                android:layout_marginTop="@dimen/_60sdp"
 
                 android:id="@+id/flContainer"
                 android:layout_width="match_parent"

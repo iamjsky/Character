@@ -198,6 +198,7 @@ public class ProfileFragment extends BaseFragment {
         }
 
         String w_type = MyInfo.getInstance().character;
+
         if (w_type.equals("D=")) {
             w_type = "D";
         } else if (w_type.equals("I=")) {
@@ -215,10 +216,7 @@ public class ProfileFragment extends BaseFragment {
         } else if(w_type.equals("c")){
             w_type = "C";
         }
-        w_type = w_type.replace("d","D");
-        w_type = w_type.replace("i","I");
-        w_type = w_type.replace("s","S");
-        w_type = w_type.replace("c","C");
+        w_type = w_type.toUpperCase();
         if(w_type.length() > 2){
             w_type = w_type.substring(0,2);
         }

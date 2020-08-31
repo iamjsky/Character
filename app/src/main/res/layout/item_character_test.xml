@@ -14,13 +14,13 @@
             android:visibility="visible"
             android:background="@drawable/bg_rounded_white_01"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_100sdp"/>
+            android:layout_height="@dimen/_95sdp"/>
 <ImageView
     android:id="@+id/iv_selected"
     android:visibility="invisible"
     android:background="@drawable/bg_rounded_test_selected_01"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/_100sdp"/>
+    android:layout_height="@dimen/_95sdp"/>
         <TextView
             android:padding="@dimen/_10sdp"
             android:lineSpacingExtra="@dimen/_2sdp"
@@ -34,7 +34,7 @@
             android:text="남을 격려하는남을 격려하fffffffffffdfdfadfdafds는남을 격려하는남을 격려하는남을 격려하는남을 격려하는남을 격려하는남을 격려하는"
            android:id="@+id/tv_question"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_100sdp"
+            android:layout_height="@dimen/_95sdp"
      />
 
 

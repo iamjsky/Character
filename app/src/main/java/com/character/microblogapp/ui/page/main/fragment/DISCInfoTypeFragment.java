@@ -6,6 +6,10 @@ import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.style.ForegroundColorSpan;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -17,6 +21,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.character.microblogapp.R;
+import com.character.microblogapp.data.Constant;
 import com.character.microblogapp.model.MCharacterInfo;
 import com.character.microblogapp.model.MCharacterInfo2;
 import com.character.microblogapp.model.MError;
@@ -315,8 +320,28 @@ public class DISCInfoTypeFragment extends BaseFragment {
         layout_bottomCharPanel.setBackground(getDISCBackground(type, 1));
         layout_panel.setBackground(getDISCBackground(type, 5));
 
+        Spannable sb = new SpannableString(personality_char2);
+        for (int i = 0; i < personality_char2.length(); i++) {
+            char temp = (personality_char2.charAt(i));
+            switch (temp) {
+                case '-':
+                    if(personality1.equals("D")){
+                        sb.setSpan(new ForegroundColorSpan(Constant.CHARACTER_D_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+                    }else if(personality1.equals("I")){
+                        sb.setSpan(new ForegroundColorSpan(Constant.CHARACTER_I_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+                    }else if(personality1.equals("S")){
+                        sb.setSpan(new ForegroundColorSpan(Constant.CHARACTER_S_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+                    }else if(personality1.equals("C")){
+                        sb.setSpan(new ForegroundColorSpan(Constant.CHARACTER_C_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+                    }
 
-        tv_charInfo.setText(personality_char2);
+                    break;
+
+            }
+
+        }
+        tv_charInfo.setText(sb);
+
 
         tv_scared.setText(fear);
 

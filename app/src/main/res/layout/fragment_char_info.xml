@@ -12,8 +12,7 @@
 
         <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
+            android:layout_height="match_parent">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -59,153 +58,165 @@
                 </LinearLayout>
 
 
-    <LinearLayout
+                <LinearLayout
 
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/_4sdp"
-        android:layout_marginTop="@dimen/_52sdp"
-        android:layout_marginRight="@dimen/_4sdp"
-        android:orientation="vertical"
-        android:paddingBottom="@dimen/_6sdp"
-        android:visibility="visible">
-
-        <LinearLayout
-            android:padding="@dimen/_12sdp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg_rounded_white_panel_01"
-            android:orientation="vertical"
-         >
-
-
-            <LinearLayout
-                android:id="@+id/layout_discInfo"
-                android:padding="@dimen/_15sdp"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <ImageView
-                    android:src="@drawable/info_ico_question"
-                    android:adjustViewBounds="true"
-                    android:layout_width="@dimen/_80sdp"
-                    android:layout_height="@dimen/_80sdp"/>
-                <TextView
-                    android:layout_marginTop="@dimen/_15sdp"
-                    android:gravity="center"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
-                    android:fontFamily="@font/nanum_square_r"
-                    android:lineSpacingExtra="@dimen/_15sdp"
-                    android:text="DISC란?"
-                    android:textColor="#000000"
-                    android:textSize="@dimen/_12sdp" />
-
-            </LinearLayout>
-<View
-    android:background="#dddddd"
-    android:layout_width="match_parent"
-    android:layout_height="@dimen/_1sdp"/>
-            <LinearLayout
-
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <LinearLayout
-                    android:id="@+id/layout_charInfo"
-                    android:paddingTop="@dimen/_15sdp"
-                    android:layout_weight="1"
-                    android:gravity="center"
+                    android:layout_marginLeft="@dimen/_13sdp"
+                    android:layout_marginTop="@dimen/_60sdp"
+                    android:layout_marginRight="@dimen/_13sdp"
                     android:orientation="vertical"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content">
-                    <ImageView
-                        android:src="@drawable/info_ico_myinfo"
-                        android:adjustViewBounds="true"
-                        android:layout_width="@dimen/_80sdp"
-                        android:layout_height="@dimen/_80sdp"/>
-                    <TextView
-                        android:layout_marginTop="@dimen/_15sdp"
-                        android:gravity="center"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/_6sdp"
+                    android:visibility="visible">
 
-                        android:fontFamily="@font/nanum_square_r"
-                        android:lineSpacingExtra="@dimen/_15sdp"
-                        android:text="내 성격 정보"
-                        android:textColor="#000000"
-                        android:textSize="@dimen/_12sdp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_rounded_white_01"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_3sdp">
+
+
+                        <LinearLayout
+                            android:id="@+id/layout_discInfo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_15sdp">
+
+                            <ImageView
+                                android:layout_width="@dimen/_80sdp"
+                                android:layout_height="@dimen/_80sdp"
+                                android:adjustViewBounds="true"
+                                android:src="@drawable/info_ico_question" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_15sdp"
+                                android:fontFamily="@font/nanum_square_r"
+
+                                android:gravity="center"
+                                android:lineSpacingExtra="@dimen/_15sdp"
+                                android:text="DISC란?"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/_12sdp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_1sdp"
+                            android:background="#dddddd" />
+
+                        <LinearLayout
+
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:paddingBottom="@dimen/_20sdp"
+                                android:id="@+id/layout_charInfo"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:paddingTop="@dimen/_15sdp">
+
+                                <ImageView
+                                    android:layout_width="@dimen/_80sdp"
+                                    android:layout_height="@dimen/_80sdp"
+                                    android:adjustViewBounds="true"
+                                    android:src="@drawable/info_ico_myinfo" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_15sdp"
+                                    android:fontFamily="@font/nanum_square_r"
+
+                                    android:gravity="center"
+                                    android:lineSpacingExtra="@dimen/_15sdp"
+                                    android:text="내 성격 정보"
+                                    android:textColor="#000000"
+                                    android:textSize="@dimen/_12sdp" />
+
+                            </LinearLayout>
+
+                            <View
+
+
+                                android:layout_width="@dimen/_1sdp"
+                                android:layout_height="match_parent"
+                                android:background="#dddddd" />
+
+                            <LinearLayout
+                                android:paddingBottom="@dimen/_20sdp"
+                                android:id="@+id/layout_loverInfo"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:paddingTop="@dimen/_15sdp">
+
+                                <ImageView
+                                    android:layout_width="@dimen/_80sdp"
+                                    android:layout_height="@dimen/_80sdp"
+                                    android:adjustViewBounds="true"
+                                    android:src="@drawable/info_ico_mylover" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_15sdp"
+                                    android:fontFamily="@font/nanum_square_r"
+
+                                    android:gravity="center"
+                                    android:lineSpacingExtra="@dimen/_15sdp"
+                                    android:text="나와 잘 맞는 성격"
+                                    android:textColor="#000000"
+                                    android:textSize="@dimen/_12sdp" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layout_charList"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:background="@drawable/bg_rounded_white_01"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/_20sdp">
+
+                        <ImageView
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="@dimen/_15sdp"
+                            android:layout_marginRight="@dimen/_8sdp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/info_ico_view" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/nanum_square_r"
+
+                            android:gravity="center"
+                            android:lineSpacingExtra="@dimen/_15sdp"
+                            android:text="다른 유형 성격 보기"
+                            android:textColor="#000000"
+                            android:textSize="@dimen/_12sdp" />
+
+                    </LinearLayout>
+
 
                 </LinearLayout>
-                <View
-
-
-                    android:background="#dddddd"
-                    android:layout_width="@dimen/_1sdp"
-                    android:layout_height="@dimen/_140sdp"/>
-                <LinearLayout
-                    android:id="@+id/layout_loverInfo"
-                    android:paddingTop="@dimen/_15sdp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content">
-                    <ImageView
-                        android:src="@drawable/info_ico_mylover"
-                        android:adjustViewBounds="true"
-                        android:layout_width="@dimen/_80sdp"
-                        android:layout_height="@dimen/_80sdp"/>
-                    <TextView
-                        android:layout_marginTop="@dimen/_15sdp"
-                        android:gravity="center"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-
-                        android:fontFamily="@font/nanum_square_r"
-                        android:lineSpacingExtra="@dimen/_15sdp"
-                        android:text="나와 잘 맞는 성격"
-                        android:textColor="#000000"
-                        android:textSize="@dimen/_12sdp" />
-
-                </LinearLayout>
-            </LinearLayout>
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/layout_charList"
-            android:padding="@dimen/_28sdp"
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg_rounded_white_panel_04"
-            android:orientation="horizontal"
-          >
-
-            <ImageView
-                android:layout_marginRight="@dimen/_8sdp"
-                android:src="@drawable/info_ico_view"
-                android:adjustViewBounds="true"
-                android:layout_width="@dimen/_15sdp"
-                android:layout_height="@dimen/_15sdp"/>
-            <TextView
-                android:gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:fontFamily="@font/nanum_square_r"
-                android:lineSpacingExtra="@dimen/_15sdp"
-                android:text="다른 유형 성격 보기"
-                android:textColor="#000000"
-                android:textSize="@dimen/_12sdp" />
-
-        </LinearLayout>
-
-
-
-</LinearLayout>
-
 
 
             </RelativeLayout>

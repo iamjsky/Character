@@ -10,6 +10,7 @@ import android.support.annotation.RequiresApi;
 import android.support.v4.content.ContextCompat;
 import android.text.Spannable;
 import android.text.SpannableString;
+import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
 import android.util.Log;
 import android.view.View;
@@ -429,7 +430,28 @@ public class CharacterConfirmActivity extends BaseActivity {
         btn_share.setBackground(getDISCBackground(personality1, 6));
         btn_share.setTextColor(getDISCColor(personality1));
 
-        tv_charInfo.setText(personality_char);
+        Spannable sb = new SpannableString(personality_char);
+        for (int i = 0; i < personality_char.length(); i++) {
+            char temp = (personality_char.charAt(i));
+            switch (temp) {
+                case '-':
+                    if(personality1.equals("D")){
+                        sb.setSpan(new ForegroundColorSpan(Constant.CHARACTER_D_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+                    }else if(personality1.equals("I")){
+                        sb.setSpan(new ForegroundColorSpan(Constant.CHARACTER_I_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+                    }else if(personality1.equals("S")){
+                        sb.setSpan(new ForegroundColorSpan(Constant.CHARACTER_S_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+                    }else if(personality1.equals("C")){
+                        sb.setSpan(new ForegroundColorSpan(Constant.CHARACTER_C_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+                    }
+
+                    break;
+
+            }
+
+        }
+        tv_charInfo.setText(sb);
+
         tv_charDis.setText(weakness);
         tv_charAdvice.setText(advice);
 

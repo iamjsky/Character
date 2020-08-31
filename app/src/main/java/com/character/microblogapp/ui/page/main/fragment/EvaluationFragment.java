@@ -19,6 +19,7 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -132,16 +133,38 @@ public class EvaluationFragment extends BaseFragment {
     @BindView(R.id.tv_totalCount)
     TextView tv_totalCount;
 
+    @BindView(R.id.layout_userImgArea)
+    ConstraintLayout layout_userImgArea;
+
     MyApplication mApp = null;
     ImagePagerAdapter mUsersAdapter = null;
     BaseUserInfo mEstimateUser = null;
     boolean is_overflow_oneday_cnt = false;
     private boolean mFinish = false;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         createView(inflater, container, R.layout.fragment_eval);
         iv_vpCoverBg.setRoundedRadius(50);
+
+
+        layout_userImgArea.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                layout_userImgArea.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                float density = mRoot.getResources().getDisplayMetrics().density;
+                int dpWidth = (int) ((float) layout_userImgArea.getWidth() / density);
+                int dpHeight = (int) ((float) layout_userImgArea.getHeight() / density);
+                Log.e("char_debug", "dpWidth : " + dpWidth + " / dpHeight : " + dpHeight);
+                ViewGroup.LayoutParams params = (ViewGroup.LayoutParams) layout_userImgArea.getLayoutParams();
+                params.width = layout_userImgArea.getWidth();
+                params.height = layout_userImgArea.getWidth();
+                layout_userImgArea.setLayoutParams(params);
+            }
+        });
+
+
         mRoot.setFocusableInTouchMode(true);
         mRoot.requestFocus();
         mRoot.setOnKeyListener(new View.OnKeyListener() {
@@ -239,8 +262,18 @@ public class EvaluationFragment extends BaseFragment {
     }
 
     private void showEstimateUser() {
+        txvManner1.setText("");
+        txvManner2.setText("");
+        txvMannerDesc1.setText("");
+        txvMannerDesc2.setText("");
         clEmptyUser.setVisibility(mEstimateUser == null ? View.VISIBLE : View.GONE);
         if (mEstimateUser == null) return;
+        if(mEstimateUser.nickname.equals("")){
+            clEmptyUser.setVisibility(View.VISIBLE);
+            return;
+        }else{
+            clEmptyUser.setVisibility(View.GONE);
+        }
         llMainEstimate.setVisibility(View.VISIBLE);
 //        tvStatus.setVisibility(View.INVISIBLE);
         clearScore();
@@ -280,19 +313,9 @@ public class EvaluationFragment extends BaseFragment {
             w_type = "S";
         } else if (w_type.equals("C=")) {
             w_type = "C";
-        } else if (w_type.equals("d")) {
-            w_type = "D";
-        } else if (w_type.equals("i")) {
-            w_type = "I";
-        } else if (w_type.equals("s")) {
-            w_type = "S";
-        } else if (w_type.equals("c")) {
-            w_type = "C";
         }
-        w_type = w_type.replace("d", "D");
-        w_type = w_type.replace("i", "I");
-        w_type = w_type.replace("s", "S");
-        w_type = w_type.replace("c", "C");
+
+        w_type = w_type.toUpperCase();
         if (w_type.length() > 2) {
             w_type = w_type.substring(0, 2);
         }
@@ -326,6 +349,7 @@ public class EvaluationFragment extends BaseFragment {
         txvManner1.setText(sb);
 
         String idelCharacter = mEstimateUser.ideal_character;
+
         String[] charText = idelCharacter.split(",");
         if (charText.length > 1) {
             txvMannerDesc1.setText(charText[0] + "");
@@ -610,7 +634,7 @@ public class EvaluationFragment extends BaseFragment {
             RoundedImage imgProfile = (RoundedImage) itemView.findViewById(R.id.iv_profile);
             imgProfile.setRoundedRadius(50);
             GlideApp.with(mParent).load(mProfileUrls.get(position)).into(imgProfile);
-          imgProfile.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            imgProfile.setScaleType(ImageView.ScaleType.CENTER_CROP);
             imgProfile.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

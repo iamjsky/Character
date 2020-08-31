@@ -36,9 +36,9 @@ allprojects {
 
         versionMajor = 1
         versionMinor = 5
-        versionPatch = 5
+        versionPatch = 6
         versionBuild = 0
-        var = '1.5.5'
+        var = '1.5.6'
     }
 }
 

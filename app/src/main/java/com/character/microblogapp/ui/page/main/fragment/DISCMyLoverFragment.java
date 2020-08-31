@@ -80,6 +80,8 @@ public class DISCMyLoverFragment extends BaseFragment {
     @BindArray(R.array.lover_c_array)
     String[] lover_c_array;
 
+    @BindView(R.id.iv_topBg)
+            ImageView iv_topBg;
     PrefMgr m_prefMgr;
 
     String type = "";
@@ -95,6 +97,10 @@ public class DISCMyLoverFragment extends BaseFragment {
                 Context.MODE_PRIVATE);
         m_prefMgr = new PrefMgr(prefs);
         type = MyInfo.getInstance().character;
+        type = type.toUpperCase();
+        if(type.length() > 2){
+            type = type.substring(0,2);
+        }
 //You need to add the following line for this solution to work; thanks skayred
 
         mRoot.setFocusableInTouchMode(true);
@@ -240,14 +246,96 @@ public class DISCMyLoverFragment extends BaseFragment {
 
 
         }
-
-
-
+        iv_topBg.setBackground(getDISCBackground(personality1, 3));
+        iv_topBg.setVisibility(View.VISIBLE);
         layout_result.setVisibility(View.VISIBLE);
 
 
     }
+    private Drawable getDISCBackground(String type, int layout) {
+        Drawable drawable = null;
+        switch (type) {
 
+            case "D":
+                if (layout == 0) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_d_01);
+                } else if (layout == 1) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_d_02);
+                } else if (layout == 2) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_keyword_d_02);
+                } else if (layout == 3) {
+                    drawable = getResources().getDrawable(R.drawable.bg_d_img);
+                } else if (layout == 4) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_keyword_d_01);
+                } else if (layout == 5) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_panel_d_01);
+                } else if (layout == 6) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_share_d);
+                }
+
+
+                break;
+            case "I":
+                if (layout == 0) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_i_01);
+                } else if (layout == 1) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_i_02);
+                } else if (layout == 2) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_keyword_i_02);
+                } else if (layout == 3) {
+                    drawable = getResources().getDrawable(R.drawable.bg_i_img);
+                } else if (layout == 4) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_keyword_i_01);
+                } else if (layout == 5) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_panel_i_01);
+                } else if (layout == 6) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_share_i);
+                }
+
+
+                break;
+            case "C":
+                if (layout == 0) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_c_01);
+                } else if (layout == 1) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_c_02);
+                } else if (layout == 2) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_keyword_c_02);
+                } else if (layout == 3) {
+                    drawable = getResources().getDrawable(R.drawable.bg_c_img);
+                } else if (layout == 4) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_keyword_c_01);
+                } else if (layout == 5) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_panel_c_01);
+                } else if (layout == 6) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_share_c);
+                }
+
+
+                break;
+            case "S":
+                if (layout == 0) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_s_01);
+                } else if (layout == 1) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_s_02);
+                } else if (layout == 2) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_keyword_s_02);
+                } else if (layout == 3) {
+                    drawable = getResources().getDrawable(R.drawable.bg_s_img);
+                } else if (layout == 4) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_keyword_s_01);
+                } else if (layout == 5) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_panel_s_01);
+                } else if (layout == 6) {
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_share_s);
+                }
+
+                break;
+
+
+        }
+        return drawable;
+    }
     private Spannable setDISCCharColor(String desc){
         Spannable sb = new SpannableString(desc);
         for (int i = 0; i < desc.length(); i++) {

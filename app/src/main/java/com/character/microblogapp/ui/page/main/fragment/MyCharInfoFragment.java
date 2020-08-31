@@ -7,6 +7,10 @@ import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.style.ForegroundColorSpan;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -18,6 +22,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.character.microblogapp.R;
+import com.character.microblogapp.data.Constant;
 import com.character.microblogapp.data.MyInfo;
 import com.character.microblogapp.model.MCharacterInfo2;
 import com.character.microblogapp.model.MError;
@@ -174,6 +179,10 @@ public class MyCharInfoFragment extends BaseFragment {
         if (getTag().equals("myInfo")) {
 
             type = MyInfo.getInstance().character;
+            type = type.toUpperCase();
+            if(type.length() > 2){
+                type = type.substring(0,2);
+            }
             pageType = 0;
             btn_share.setVisibility(View.VISIBLE);
             /*성격 유형 리스트*/
@@ -187,6 +196,8 @@ public class MyCharInfoFragment extends BaseFragment {
             pageType = 2;
             btn_share.setVisibility(View.GONE);
         }
+
+
 
 //You need to add the following line for this solution to work; thanks skayred
 
@@ -441,8 +452,28 @@ public class MyCharInfoFragment extends BaseFragment {
             }
         }
 
+        Spannable sb = new SpannableString(personality_char);
+        for (int i = 0; i < personality_char.length(); i++) {
+            char temp = (personality_char.charAt(i));
+            switch (temp) {
+                case '-':
+                    if(personality1.equals("D")){
+                        sb.setSpan(new ForegroundColorSpan(Constant.CHARACTER_D_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+                    }else if(personality1.equals("I")){
+                        sb.setSpan(new ForegroundColorSpan(Constant.CHARACTER_I_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+                    }else if(personality1.equals("S")){
+                        sb.setSpan(new ForegroundColorSpan(Constant.CHARACTER_S_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+                    }else if(personality1.equals("C")){
+                        sb.setSpan(new ForegroundColorSpan(Constant.CHARACTER_C_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+                    }
 
-        tv_charInfo.setText(personality_char);
+                    break;
+
+            }
+
+        }
+        tv_charInfo.setText(sb);
+
         tv_charDis.setText(weakness);
         tv_charAdvice.setText(advice);
 

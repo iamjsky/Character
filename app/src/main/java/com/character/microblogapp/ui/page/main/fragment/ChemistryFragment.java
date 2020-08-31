@@ -136,6 +136,8 @@ public class ChemistryFragment extends BaseFragment {
         tv_charSelectWoman.setText("");
         layout_charMan.setVisibility(View.VISIBLE);
         layout_charWoman.setVisibility(View.VISIBLE);
+        iv_topBg.setBackground(getDISCBackground("I", 3));
+        iv_topBg.setVisibility(View.VISIBLE);
         tv_charSelectMan.setVisibility(View.GONE);
         tv_charSelectWoman.setVisibility(View.GONE);
         layout_result.setVisibility(View.GONE);
@@ -152,6 +154,8 @@ public class ChemistryFragment extends BaseFragment {
             mainActivity.selectTab(0);
 
         } else if (pageState == 3) {
+            iv_topBg.setBackground(getDISCBackground("I", 3));
+            iv_topBg.setVisibility(View.VISIBLE);
             selectedCharMan = -1;
             selectedCharWoman = -1;
             layout_main.setVisibility(View.VISIBLE);
@@ -159,7 +163,8 @@ public class ChemistryFragment extends BaseFragment {
             pageState = 0;
 
         } else {
-
+            iv_topBg.setBackground(getDISCBackground("I", 3));
+            iv_topBg.setVisibility(View.VISIBLE);
             layout_charSelectPopup.setVisibility(View.GONE);
             pageState = 0;
             selectedCharMan = -1;
