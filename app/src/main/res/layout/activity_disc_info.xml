@@ -140,6 +140,7 @@
                             android:orientation="horizontal">
 
                             <TextView
+                                android:layout_marginRight="@dimen/_3sdp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="@dimen/_2sdp"
@@ -178,6 +179,7 @@
                             android:orientation="horizontal">
 
                             <TextView
+                                android:layout_marginRight="@dimen/_3sdp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/nanum_square_r"
