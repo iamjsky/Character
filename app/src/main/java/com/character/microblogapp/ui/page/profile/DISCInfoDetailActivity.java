@@ -6,6 +6,10 @@ import android.databinding.ViewDataBinding;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.style.ForegroundColorSpan;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +19,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.character.microblogapp.R;
+import com.character.microblogapp.data.Constant;
 import com.character.microblogapp.data.MyInfo;
 import com.character.microblogapp.model.MCharacterInfo;
 import com.character.microblogapp.model.MCharacterInfo2;
@@ -257,8 +262,8 @@ public class DISCInfoDetailActivity extends BaseActivity {
         layout_bottomCharPanel.setBackground(getDISCBackground(type, 1));
         layout_panel.setBackground(getDISCBackground(type, 5));
 
-
-        tv_charInfo.setText(personality_char2);
+        tv_charInfo.setText(setDISCCharColor(personality_char2, personality1));
+       // tv_charInfo.setText(personality_char2);
 
         tv_scared.setText(fear);
 
@@ -395,6 +400,45 @@ public class DISCInfoDetailActivity extends BaseActivity {
                         Toaster.showShort(getApplicationContext(), "등록된 데이터가 없습니다.");
                     }
                 });
+    }
+
+
+    private Spannable setDISCCharColor(String desc, String type){
+        Spannable sb = new SpannableString(desc);
+        for (int i = 0; i < desc.length(); i++) {
+            char temp = (desc.charAt(i));
+            switch (temp) {
+                case 'D':
+                    sb.setSpan(new ForegroundColorSpan(Constant.CHARACTER_D_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+                    break;
+                case 'I':
+                    sb.setSpan(new ForegroundColorSpan(Constant.CHARACTER_I_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+                    break;
+                case 'S':
+                    sb.setSpan(new ForegroundColorSpan(Constant.CHARACTER_S_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+                    break;
+                case 'C':
+                    sb.setSpan(new ForegroundColorSpan(Constant.CHARACTER_C_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+                    break;
+
+                case '-':
+                    if(type.equals("D")){
+                        sb.setSpan(new ForegroundColorSpan(Constant.CHARACTER_D_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+                    }else if(type.equals("I")){
+                        sb.setSpan(new ForegroundColorSpan(Constant.CHARACTER_I_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+                    }else if(type.equals("S")){
+                        sb.setSpan(new ForegroundColorSpan(Constant.CHARACTER_S_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+                    }else if(type.equals("C")){
+                        sb.setSpan(new ForegroundColorSpan(Constant.CHARACTER_C_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+                    }
+
+                    break;
+
+            }
+
+        }
+
+        return sb;
     }
 
 }

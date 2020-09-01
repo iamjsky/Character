@@ -163,7 +163,7 @@
                                 android:lineSpacingExtra="@dimen/_2sdp"
                                 android:text="나의 유형과 잘 어울리는 특징 설명이 들어갑니다.\n나의 유형과 잘 어울리는 특징 설명이 들어갑니다."
                                 android:textColor="#000000"
-                                android:textSize="@dimen/_10sdp" />
+                                android:textSize="@dimen/_12sdp" />
                             <TextView
                                 android:layout_marginTop="@dimen/_20sdp"
                                 android:id="@+id/tv_charLover_02"
@@ -174,7 +174,7 @@
                                 android:lineSpacingExtra="@dimen/_2sdp"
                                 android:text="나의 유형과 잘 어울리는 특징 설명이 들어갑니다.\n나의 유형과 잘 어울리는 특징 설명이 들어갑니다."
                                 android:textColor="#000000"
-                                android:textSize="@dimen/_10sdp" />
+                                android:textSize="@dimen/_12sdp" />
 
 
 
@@ -184,11 +184,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
 
-                            android:fontFamily="@font/nanum_square_r"
+                            android:fontFamily="@font/nanum_square_b"
                             android:lineSpacingExtra="@dimen/_2sdp"
                             android:text="나와 어울리는 성격을 확인 해보세요!"
                             android:textColor="@color/char_main_color"
-                            android:textSize="@dimen/_12sdp" />
+                            android:textSize="@dimen/_13sdp" />
 
                         <LinearLayout
                             android:id="@+id/layout_charListArea"

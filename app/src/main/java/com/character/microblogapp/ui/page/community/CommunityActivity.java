@@ -3,6 +3,7 @@ package com.character.microblogapp.ui.page.community;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -60,6 +61,7 @@ public class CommunityActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ViewDataBinding binding = DataBindingUtil.setContentView(this,R.layout.activity_community);
+
     }
 
     @Override
@@ -67,7 +69,7 @@ public class CommunityActivity extends BaseActivity {
         super.initUI();
 
         tvTitle.setText("커뮤니티");
-        btnMenu.setVisibility(View.VISIBLE);
+
         btnMenu.setImageResource(R.drawable.ico_menu);
         btnBack.setVisibility(View.VISIBLE);
 
@@ -113,6 +115,19 @@ public class CommunityActivity extends BaseActivity {
         });
         rvTabs.setAdapter(tabAdapter);
         tabAdapter.notifyDataSetChanged();
+
+
+
+        /*관리자 아이디 임시*/
+        int adminUid = MyInfo.getInstance().uid;
+        if(adminUid >= 6473 && adminUid <= 6475){
+            btnMenu.setVisibility(View.VISIBLE);
+        }else{
+            btnMenu.setVisibility(View.GONE);
+        }
+
+
+
     }
 
     ArrayList<MCommunityTab> getTabList() {
@@ -132,6 +147,14 @@ public class CommunityActivity extends BaseActivity {
     protected void onResume() {
         super.onResume();
         initCommunityList();
+
+        /*관리자 아이디 임시*/
+        int adminUid = MyInfo.getInstance().uid;
+        if(adminUid >= 6473 && adminUid <= 6475){
+            btnMenu.setVisibility(View.VISIBLE);
+        }else{
+            btnMenu.setVisibility(View.GONE);
+        }
     }
 
     @OnClick(R.id.btnMenu)

@@ -99,9 +99,9 @@
 
                                 android:orientation="vertical"
 
-                                android:paddingLeft="@dimen/_40sdp"
+                                android:paddingLeft="@dimen/_35sdp"
                                 android:paddingTop="@dimen/_30sdp"
-                                android:paddingRight="@dimen/_40sdp"
+                                android:paddingRight="@dimen/_35sdp"
                                 android:paddingBottom="@dimen/_38sdp">
 
                                 <LinearLayout
@@ -377,7 +377,7 @@
                                                     android:fontFamily="@font/nanum_square_r"
                                                     android:text="동기요인 :"
                                                     android:textColor="#000000"
-                                                    android:textSize="@dimen/_10sdp" />
+                                                    android:textSize="@dimen/_11sdp" />
 
                                                 <TextView
                                                     android:id="@+id/tv_charFact_01"
@@ -386,7 +386,7 @@
                                                     android:fontFamily="@font/nanum_square_b"
                                                     android:text="사회적 인정"
                                                     android:textColor="#000000"
-                                                    android:textSize="@dimen/_10sdp" />
+                                                    android:textSize="@dimen/_11sdp" />
 
 
                                             </LinearLayout>
@@ -424,7 +424,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginTop="@dimen/_24sdp"
-                                        android:fontFamily="@font/nanum_square_r"
+                                        android:fontFamily="@font/nanum_square_b"
                                         android:text="성격특징"
                                         android:textColor="#ff056a"
                                         android:textSize="@dimen/_14sdp" />
@@ -444,13 +444,13 @@
 - 적극적으로 남을 돕고 타고난 스승이자 상담사이다.\n\n
 - 대표적인 연예인은 장도연"
                                         android:textColor="#000000"
-                                        android:textSize="@dimen/_10sdp" />
+                                        android:textSize="@dimen/_12sdp" />
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginTop="@dimen/_16sdp"
-                                        android:fontFamily="@font/nanum_square_r"
+                                        android:fontFamily="@font/nanum_square_b"
                                         android:text="단점"
                                         android:textColor="#545454"
                                         android:textSize="@dimen/_14sdp" />
@@ -467,7 +467,7 @@
   악화 되기만 하는 문제도 무시할 수 있다.\n\n
 - 결과적으로는 관계가 틀어졌을 때 상처를 받거나 배신감을 느낀다."
                                         android:textColor="#000000"
-                                        android:textSize="@dimen/_10sdp" />
+                                        android:textSize="@dimen/_12sdp" />
 
                                     <LinearLayout
                                         android:layout_width="match_parent"
@@ -490,22 +490,22 @@
 
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"
-                                                android:fontFamily="@font/nanum_square_r"
+                                                android:fontFamily="@font/nanum_square_b"
                                                 android:text="조언"
-                                                android:textColor="#545454"
+                                                android:textColor="#000000"
                                                 android:textSize="@dimen/_14sdp" />
 
                                             <TextView
                                                 android:id="@+id/tv_charAdvice"
                                                 android:layout_width="wrap_content"
                                                 android:layout_height="wrap_content"
-                                                android:layout_marginTop="@dimen/_14sdp"
+                                                android:layout_marginTop="@dimen/_8sdp"
                                                 android:layout_marginBottom="@dimen/_4sdp"
-                                                android:fontFamily="@font/nanum_square_r"
+                                                android:fontFamily="@font/nanum_square_ac_r"
                                                 android:lineSpacingExtra="@dimen/_2sdp"
                                                 android:text="부드러움도 좋지만 때로는 확신을 줄 수 있는 명확함이 필요하다. 너무 퍼주거나 관심을 많이 주면 내가 피곤해짐을 기억하자."
                                                 android:textColor="#000000"
-                                                android:textSize="@dimen/_10sdp" />
+                                                android:textSize="@dimen/_11sdp" />
 
 
                                         </LinearLayout>

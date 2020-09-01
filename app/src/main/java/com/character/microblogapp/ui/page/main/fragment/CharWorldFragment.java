@@ -72,7 +72,7 @@ public class CharWorldFragment extends BaseFragment {
                 layout_popup.setVisibility(View.GONE);
             }
         }
-        Log.e("char_debug", "MyInfo : " + MyInfo.getInstance().character);
+
         return mRoot;
     }
 

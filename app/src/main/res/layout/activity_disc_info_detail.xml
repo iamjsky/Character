@@ -99,9 +99,9 @@
 
                                 android:orientation="vertical"
 
-                                android:paddingLeft="@dimen/_40sdp"
+                                android:paddingLeft="@dimen/_35sdp"
                                 android:paddingTop="@dimen/_30sdp"
-                                android:paddingRight="@dimen/_40sdp"
+                                android:paddingRight="@dimen/_35sdp"
                                 android:paddingBottom="@dimen/_38sdp">
 
                                 <LinearLayout
@@ -130,7 +130,7 @@
                                     android:id="@+id/layout_char"
                                     android:layout_width="match_parent"
                                     android:layout_height="@dimen/_125sdp"
-                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:layout_marginTop="@dimen/_5sdp"
 
                                     android:orientation="horizontal">
 
@@ -154,7 +154,7 @@
                                             android:gravity="center"
                                             android:text="쌉관종쌉관종쌉관종쌉관종쌉관종쌉관종"
                                             android:textColor="#545454"
-                                            android:textSize="@dimen/_14sdp" />
+                                            android:textSize="@dimen/_15sdp" />
 
                                         <ImageView
 
@@ -275,7 +275,7 @@
                                                     android:fontFamily="@font/nanum_square_r"
                                                     android:text="동기요인 :"
                                                     android:textColor="#000000"
-                                                    android:textSize="@dimen/_10sdp" />
+                                                    android:textSize="@dimen/_11sdp" />
 
                                                 <TextView
                                                     android:id="@+id/tv_charFact_01"
@@ -284,7 +284,7 @@
                                                     android:fontFamily="@font/nanum_square_b"
                                                     android:text="사회적 인정"
                                                     android:textColor="#000000"
-                                                    android:textSize="@dimen/_10sdp" />
+                                                    android:textSize="@dimen/_11sdp" />
 
 
                                             </LinearLayout>
@@ -317,7 +317,7 @@
                                                     android:fontFamily="@font/nanum_square_r"
                                                     android:text="대표적인 연예인 :"
                                                     android:textColor="#000000"
-                                                    android:textSize="@dimen/_10sdp" />
+                                                    android:textSize="@dimen/_11sdp" />
 
                                                 <TextView
                                                     android:id="@+id/tv_charStar"
@@ -326,7 +326,7 @@
                                                     android:fontFamily="@font/nanum_square_b"
                                                     android:text="(여) 이효리 / (남) 강호동"
                                                     android:textColor="#000000"
-                                                    android:textSize="@dimen/_10sdp" />
+                                                    android:textSize="@dimen/_11sdp" />
 
 
                                             </LinearLayout>
@@ -341,7 +341,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginTop="@dimen/_24sdp"
-                                        android:fontFamily="@font/nanum_square_r"
+                                        android:fontFamily="@font/nanum_square_b"
                                         android:text="성격특징"
                                         android:textColor="#545454"
                                         android:textSize="@dimen/_14sdp" />
@@ -358,7 +358,7 @@
 - 상황 판단이 빠르고 과단성이 있으며 결단력이 있다.\n
 - 타고난 자신감을 갖고 단호하고 확신에 찬 어투로 자신의 의견을 말하므로 카리스마와 리더쉽이 느껴진다."
                                         android:textColor="#000000"
-                                        android:textSize="@dimen/_10sdp" />
+                                        android:textSize="@dimen/_12sdp" />
 
 
 
@@ -391,14 +391,14 @@
                                                     android:fontFamily="@font/nanum_square_r"
                                                     android:text="두려워하는 것 :"
                                                     android:textColor="#000000"
-                                                    android:textSize="@dimen/_10sdp" />
+                                                    android:textSize="@dimen/_11sdp" />
                                                 <TextView
                                                     android:id="@+id/tv_scared"
                                                     android:layout_width="wrap_content"
                                                     android:layout_height="wrap_content"
                                                     android:fontFamily="@font/nanum_square_b"
                                                     android:textColor="#000000"
-                                                    android:textSize="@dimen/_10sdp" />
+                                                    android:textSize="@dimen/_11sdp" />
                                             </LinearLayout>
 
                                             <LinearLayout
