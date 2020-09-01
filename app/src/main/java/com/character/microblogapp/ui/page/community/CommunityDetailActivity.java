@@ -46,6 +46,10 @@ public class CommunityDetailActivity extends BaseActivity {
     @BindView(R.id.tv_time)
     TextView tvTime;
 
+    @BindView(R.id.iv_myProfile)
+    ImageView iv_myProfile;
+
+
     /*@BindView(R.id.vpBanner)
     ViewPager vpBanner;
 
@@ -103,7 +107,7 @@ public class CommunityDetailActivity extends BaseActivity {
             }
         });
         rcvComment.setAdapter(adapter);
-
+        GlideUtil.loadRoundImage(iv_myProfile, MyInfo.getInstance().profile[0], Util.dp2px(getApplicationContext(), 17));
         getCommunityDetail();
 
         initCommentList();

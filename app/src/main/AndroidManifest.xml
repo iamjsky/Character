@@ -39,7 +39,8 @@
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:allowBackup"
-        tools:targetApi="m">
+        tools:targetApi="m"
+        android:requestLegacyExternalStorage="true">
         <activity android:name=".ui.page.setting.ProfileChangeActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|adjustPan"/>

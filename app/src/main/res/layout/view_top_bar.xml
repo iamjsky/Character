@@ -38,7 +38,7 @@
             />
 
         <Button
-            android:fontFamily="@font/nanum_square_b"
+            android:fontFamily="@font/nanum_square_r"
             android:id="@+id/btnTitle"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -50,7 +50,7 @@
 
         <ImageButton
             android:visibility="gone"
-            android:fontFamily="@font/nanum_square_b"
+            android:fontFamily="@font/nanum_square_r"
             android:id="@+id/btnMenu"
             android:layout_width="@dimen/_40sdp"
             android:layout_height="match_parent"
@@ -58,7 +58,7 @@
             android:src="@drawable/ico_menu_right" />
 
         <TextView
-            android:fontFamily="@font/nanum_square_b"
+            android:fontFamily="@font/nanum_square_r"
             android:id="@+id/txvMenu"
             android:layout_width="@dimen/_40sdp"
             android:layout_height="match_parent"

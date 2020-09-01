@@ -4,9 +4,11 @@ import android.Manifest;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ResolveInfo;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.CompressFormat;
@@ -23,6 +25,7 @@ import android.support.annotation.NonNull;
 import android.support.v4.content.FileProvider;
 import android.util.Log;
 import android.widget.ArrayAdapter;
+import android.widget.Toast;
 
 import com.character.microblogapp.BuildConfig;
 import com.character.microblogapp.R;
@@ -38,6 +41,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.List;
 
 import static java.lang.StrictMath.max;
 
@@ -378,71 +382,81 @@ public class MediaManager {
         // 여러 기기에서 이미지크롭시 앱이 크래시되는 이슈가 발생하여 이미지크롭을 CropImage 라이브러리를 이용하여 구현하도록 수정
         File file = createFile(false);
         mCropUri = getUri(mActivity, file);
-        Log.e("char_debug", "mCropUri : " + mCropUri);
-        try {
-            CropImage.activity(mUri)
-                    .setOutputUri(mCropUri)
-                    .setAspectRatio(1, 1)
-                    // .setFixAspectRatio(true)
-                    .setInitialRotation(0)
-                    .setGuidelines(CropImageView.Guidelines.ON)
-                    .start(mActivity);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
-        // 아래의 부분이 이전의 디폴트크롭기능이다. 크래시와 관련하여 주석처리를 하였다.
-        /*Intent intent = new Intent("com.android.camera.action.CROP");
-        intent.setDataAndType(uri, "image*//*");
+//        try {
+//            CropImage.activity(mUri)
+//                    .setOutputUri(mCropUri)
+//                    .setAspectRatio(1, 1)
+//                    // .setFixAspectRatio(true)
+//                    .setInitialRotation(0)
+//                    .setGuidelines(CropImageView.Guidelines.ON)
+//                    .start(mActivity);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            cropImageAboveN();
+        } else {
+            cropImageBelowN();
+        }
+    }
+
+    private void cropImageAboveN() {
+        mActivity.grantUriPermission("com.android.camera", mUri, Intent.FLAG_GRANT_WRITE_URI_PERMISSION | Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        Intent intent = new Intent("com.android.camera.action.CROP");
+        intent.setDataAndType(mUri, "image/*");
 
         List<ResolveInfo> list = mActivity.getPackageManager().queryIntentActivities(intent, 0);
-        if (checkHighSDK()) {
-            mActivity.grantUriPermission(list.get(0).activityInfo.packageName, uri,
-                    Intent.FLAG_GRANT_WRITE_URI_PERMISSION | Intent.FLAG_GRANT_READ_URI_PERMISSION);
+
+        int size = 0;
+        if (list != null) {
+            mActivity.grantUriPermission(list.get(0).activityInfo.packageName, mUri, Intent.FLAG_GRANT_WRITE_URI_PERMISSION | Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            size = list.size();
         }
 
-        int size = list.size();
         if (size == 0) {
-            Log.d(TAG, "Can not find image crop app!");
-            return;
+            Toast.makeText(mActivity, "이미지 얻기에 실패하였습니다", Toast.LENGTH_SHORT).show();
         } else {
-            if (checkHighSDK()) {
-                intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-                intent.addFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
-            }
-
-            //intent.putExtra("aspectX", 1);
-            //intent.putExtra("aspectY", 1);
+            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            intent.addFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+            intent.putExtra("crop", "true");
             intent.putExtra("scale", true);
-
-            File file = createFile(false);
-            mCropUri = getUri(mActivity, file);
-
             intent.putExtra("return-data", false);
             intent.putExtra(MediaStore.EXTRA_OUTPUT, mCropUri);
-            intent.putExtra("outputFormat", CompressFormat.PNG.toString());
+            intent.putExtra("outputFormat", CompressFormat.JPEG.toString());
 
-            Intent newIntent = new Intent(intent);
+            Intent cropIntent = new Intent(intent);
             ResolveInfo res = list.get(0);
+            cropIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            cropIntent.addFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+            mActivity.grantUriPermission(res.activityInfo.packageName, mCropUri, Intent.FLAG_GRANT_WRITE_URI_PERMISSION | Intent.FLAG_GRANT_READ_URI_PERMISSION);
 
-            if (checkHighSDK()) {
-                newIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-                newIntent.addFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+            cropIntent.setComponent(new ComponentName(res.activityInfo.packageName, res.activityInfo.name));
+            mActivity.startActivityForResult(cropIntent, CROP_IMAGE);
+        }
+    }
 
-                mActivity.grantUriPermission(res.activityInfo.packageName, mCropUri,
-                        Intent.FLAG_GRANT_WRITE_URI_PERMISSION | Intent.FLAG_GRANT_READ_URI_PERMISSION);
-            }
+    private void cropImageBelowN() {
+        Intent intentCrop = new Intent("com.android.camera.action.CROP");
+        intentCrop.setFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+        intentCrop.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 
-            newIntent.setComponent(new ComponentName(res.activityInfo.packageName, res.activityInfo.name));
-            mActivity.startActivityForResult(newIntent, CROP_IMAGE);
-        }*/
+        intentCrop.setDataAndType(mUri, "image/*");
+
+        intentCrop.putExtra("crop", "true");
+        intentCrop.putExtra("scale", true);
+        intentCrop.putExtra("outputFormat", CompressFormat.JPEG.toString());
+        intentCrop.putExtra("noFaceDetection", true);
+        intentCrop.putExtra("return-data", false);
+        intentCrop.putExtra(MediaStore.EXTRA_OUTPUT, mCropUri);
+        mActivity.startActivityForResult(intentCrop, CROP_IMAGE);
     }
 
     private String getThumbnail(String videoFile) {
         File thumbFile = createFile(false);
 
         Bitmap bmp = ThumbnailUtils.createVideoThumbnail(videoFile, MediaStore.Images.Thumbnails.MINI_KIND);
-
         Util.saveBitmapToFile((BaseActivity) mActivity, bmp, thumbFile.getPath());
 
         return thumbFile.getPath();
@@ -604,8 +618,8 @@ public class MediaManager {
             Uri fileUri = Uri.fromFile(newFile);
 
             /*
-            * Commented by Crazy on 5/19/2018
-            * */
+             * Commented by Crazy on 5/19/2018
+             * */
 
 //            File file = new File(mCropUri.getPath());
 //            if (file.exists()) {
@@ -613,7 +627,6 @@ public class MediaManager {
 //            }
 
             if (mCallback != null)
-                Log.e("char_debug", "onSelected : " + newFile.getPath());
                 mCallback.onSelected(false, newFile, bitmap, "", "");
         } catch (Exception e) {
             e.printStackTrace();

@@ -152,19 +152,20 @@
             app:rcProgress="0"
 
             />
+
         <Button
             android:id="@+id/btn_character_next"
-            android:layout_marginBottom="@dimen/_30sdp"
-            android:layout_gravity="center"
             android:layout_width="@dimen/_100sdp"
             android:layout_height="@dimen/_38sdp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/_30sdp"
             android:background="@drawable/bg_rounded_07"
+            android:fontFamily="@font/nanum_square_r"
             android:text="@string/character_before"
             android:textColor="#545454"
-            android:textSize="@dimen/_12sdp"
-            android:fontFamily="@font/nanum_square_b" />
+            android:textSize="@dimen/_12sdp" />
 
-<!--        <Button-->
+        <!--        <Button-->
 <!--            android:id="@+id/btn_character_before"-->
 <!--            android:layout_marginBottom="@dimen/_30sdp"-->
 <!--            android:layout_gravity="center"-->

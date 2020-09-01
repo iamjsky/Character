@@ -177,7 +177,8 @@ public class ProfileFragment extends BaseFragment {
     }
 
     void setUI() {
-
+        txvMannerDesc1.setText("");
+        txvMannerDesc2.setText("");
         btnBack.setVisibility(View.GONE);
 
 //        tvTitle.setText(MyInfo.getInstance().nickname);  //닉네임

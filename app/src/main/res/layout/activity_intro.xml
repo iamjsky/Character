@@ -95,7 +95,7 @@ android:layout_weight="1"
                     android:text="@string/signup"
                     android:textColor="#ff056a"
                     android:textSize="@dimen/_10sdp"
-                    android:fontFamily="@font/nanum_square_b" />
+                    android:fontFamily="@font/nanum_square_r" />
 
             </LinearLayout>
 

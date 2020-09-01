@@ -308,7 +308,7 @@
                         android:layout_gravity="center"
                         android:layout_marginTop="@dimen/_20sdp"
                         android:background="@drawable/bg_rounded_03"
-                        android:fontFamily="@font/nanum_square_b"
+                        android:fontFamily="@font/nanum_square_r"
                         android:gravity="center"
                         android:text="궁합 확인"
                         android:textColor="@android:color/white"
