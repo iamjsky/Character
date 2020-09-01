@@ -147,6 +147,8 @@ public class SignupProfileRegisterFragment extends BaseFragment {
 
     SelectRegion dlgRegion = null;
 
+
+
     //private NewArrayAdapter mAdapter;
     private int imgPosition = 0;
     private List<NewImageInfo> profileImgList = new ArrayList<>();
@@ -486,7 +488,21 @@ public class SignupProfileRegisterFragment extends BaseFragment {
         String area = etArea.getText().toString();
 //        String age = tvAge.getText().toString();
         String school = etSchool.getText().toString();
+        boolean isMainProfileImgSelected = false;
+        for(int i=0; i < profileImgList.size(); i++){
+            if(profileImgList.get(i).imgPosition == 0){
+                isMainProfileImgSelected = true;
+            }
+        }
 
+        if(!isMainProfileImgSelected){
+            Toaster.showShort(mParent, "대표 사진을 업로드 해주세요.");
+            return;
+        }
+        if (profileImgList.size() < PHOTO_MIN_COUNT) {
+            Toaster.showShort(mParent, R.string.profile_upload_guide);
+            return;
+        }
         if (profileImgList.size() < PHOTO_MIN_COUNT) {
             Toaster.showShort(mParent, R.string.profile_upload_guide);
             return;

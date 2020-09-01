@@ -509,11 +509,12 @@
         android:textSize="@dimen/_12sdp"
         android:fontFamily="@font/nanum_square_r"
         />
+
     <EditText
         style="@style/SignupItemValue"
         android:id="@+id/etSelfIntroduction"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_34sdp"
         android:lines="3"
         android:focusable="true"
         android:foreground="@color/color_transparent"
