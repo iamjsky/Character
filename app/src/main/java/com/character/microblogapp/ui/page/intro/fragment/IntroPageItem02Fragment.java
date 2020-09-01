@@ -98,7 +98,6 @@ public class IntroPageItem02Fragment extends BaseFragment {
     @Override
     public void onResume() {
         super.onResume();
-        Log.e("char_debug", "onResume");
         if (getView() == null) {
             return;
         }
@@ -114,7 +113,6 @@ public class IntroPageItem02Fragment extends BaseFragment {
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         if (isVisibleToUser && nowAnim == 0) {
-            Log.e("char_debug", "isVisibleToUser : " + isVisibleToUser);
 
             startAnim();
         }

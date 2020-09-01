@@ -306,7 +306,6 @@ public class CharacterConfirmActivity extends BaseActivity {
                         hideProgress();
                         result = response.character;
                         MyInfo.getInstance().result = result;
-                        Log.e("char_debug", "result : " + result);
                         setUI();
                     }
 

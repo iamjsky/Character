@@ -156,7 +156,6 @@ public class EvaluationFragment extends BaseFragment {
                 float density = mRoot.getResources().getDisplayMetrics().density;
                 int dpWidth = (int) ((float) layout_userImgArea.getWidth() / density);
                 int dpHeight = (int) ((float) layout_userImgArea.getHeight() / density);
-                Log.e("char_debug", "dpWidth : " + dpWidth + " / dpHeight : " + dpHeight);
                 ViewGroup.LayoutParams params = (ViewGroup.LayoutParams) layout_userImgArea.getLayoutParams();
                 params.width = layout_userImgArea.getWidth();
                 params.height = layout_userImgArea.getWidth();

@@ -404,7 +404,6 @@ public class MainActivity extends BaseActivity {
                     tag = charListType;
                     charListType = "";
                 }
-                Log.e("char_debug", "charListType : " + charListType + " / tag : " + tag);
                 break;
             case MAIN_CHAR_INFO_LOVER:
                 fragment = new DISCMyLoverFragment();

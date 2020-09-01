@@ -63,7 +63,6 @@ public class IntroActivity extends BaseActivity {
 
             @Override
             public void onPageSelected(int i) {
-                Log.e("char_debug", "i : " + i);
 
             }
 

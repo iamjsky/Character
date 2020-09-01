@@ -464,7 +464,6 @@ public class DISCMyLoverFragment extends BaseFragment {
 
                         if (response.info != null) {
                             result = response.info;
-                            Log.e("char_debug", "type : " + type + " / info : " + result);
                             setUI();
                         }
                     }

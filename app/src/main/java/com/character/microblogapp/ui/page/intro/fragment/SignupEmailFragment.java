@@ -253,7 +253,6 @@ public class SignupEmailFragment extends BaseFragment {
 
 
 
-        Log.e("char_debug", "tvMale : " + tvMale.isSelected() + " / tvFemale : " + tvFemale.isSelected());
         signupActivity.showProfileRegisterFragment();
 
 

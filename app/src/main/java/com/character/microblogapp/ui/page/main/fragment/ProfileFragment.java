@@ -253,10 +253,8 @@ public class ProfileFragment extends BaseFragment {
         if(charText.length > 1){
             txvMannerDesc1.setText(charText[0]+"");
             txvMannerDesc2.setText(charText[1]+"");
-            Log.e("char_debug", idelCharacter + " / " + charText[0] + charText[1]);
         }else{
             txvMannerDesc1.setText(charText[0]+"");
-            Log.e("char_debug", idelCharacter + " / " + charText[0]);
         }
 
 

@@ -654,14 +654,11 @@ public class SignupProfileRegisterFragment extends BaseFragment {
 //        }
 
         mParent.showProgress(mParent);
-        Log.e("char_debug", new Gson().toJson(profileImgList));
-        Log.e("char_debug", new Gson().toJson(imageInfoList));
         for(int i=0; i < profileImgList.size(); i++){
             ImageInfo info = new ImageInfo(profileImgList.get(i).img_url);
             imageInfoList.add(info);
 
         }
-        Log.e("char_debug", new Gson().toJson(imageInfoList));
         Net.instance().api.signup(signupActivity.loginType,
                 signupActivity.sns_id,
                 signupActivity.email,
@@ -856,7 +853,6 @@ public class SignupProfileRegisterFragment extends BaseFragment {
     @OnClick(R.id.tv_info)
             public void tv_infoClicked(){
     for(int i=0; i < profileImgList.size(); i++){
-        Log.e("char_debug", "profileImgList" + profileImgList.get(i).imgPosition);
     }
 
     }
