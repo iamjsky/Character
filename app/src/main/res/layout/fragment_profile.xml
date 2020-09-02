@@ -92,10 +92,10 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center|top"
                             android:layout_marginTop="@dimen/_2sdp"
-                            android:fontFamily="@font/nanum_square_r"
+                            android:fontFamily="@font/nanum_square_b"
                             android:gravity="center"
                             android:lineSpacingExtra="3dp"
-                            android:textColor="@color/color_dark"
+                            android:textColor="#545454"
                             android:textSize="@dimen/_8sdp" />
 
                         <TextView

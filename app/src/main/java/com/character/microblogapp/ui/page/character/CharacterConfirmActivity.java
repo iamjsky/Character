@@ -20,6 +20,7 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.character.microblogapp.GlideApp;
 import com.character.microblogapp.R;
 import com.character.microblogapp.data.Constant;
 import com.character.microblogapp.data.MyInfo;
@@ -449,6 +450,8 @@ public class CharacterConfirmActivity extends BaseActivity {
             layout_charTagArea_02.setVisibility(View.GONE);
             layout_charType_secondArea.setVisibility(View.GONE);
             linkCharString = personality1+personality1+"";
+            GlideApp.with(iv_charImg_01).load(getDISCBackground(personality1,7)).into(iv_charImg_01);
+
 
         } else {
             tv_plus.setVisibility(View.VISIBLE);
@@ -470,6 +473,8 @@ public class CharacterConfirmActivity extends BaseActivity {
             layout_charTagArea_02.setVisibility(View.VISIBLE);
             layout_charType_secondArea.setVisibility(View.VISIBLE);
             linkCharString = personality1+personality2+"";
+            GlideApp.with(iv_charImg_01).load(getDISCBackground(personality1,7)).into(iv_charImg_01);
+            GlideApp.with(iv_charImg_02).load(getDISCBackground(personality2,7)).into(iv_charImg_02);
         }
         String[] personalityArr = {personality1, personality2};
         for (int ind = 0; ind < personalityArr.length; ind++) {
@@ -596,6 +601,8 @@ public class CharacterConfirmActivity extends BaseActivity {
                     drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_panel_d_01);
                 } else if (layout == 6){
                     drawable = getResources().getDrawable(R.drawable.bg_rounded_share_d);
+                } else if (layout == 7){
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_share_d);
                 }
 
 
@@ -614,6 +621,8 @@ public class CharacterConfirmActivity extends BaseActivity {
                 } else if (layout == 5) {
                     drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_panel_i_01);
                 } else if (layout == 6){
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_share_i);
+                }else if (layout == 7){
                     drawable = getResources().getDrawable(R.drawable.bg_rounded_share_i);
                 }
 
@@ -634,6 +643,8 @@ public class CharacterConfirmActivity extends BaseActivity {
                     drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_panel_c_01);
                 } else if (layout == 6){
                     drawable = getResources().getDrawable(R.drawable.bg_rounded_share_c);
+                }else if (layout == 7){
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_share_c);
                 }
 
 
@@ -652,6 +663,8 @@ public class CharacterConfirmActivity extends BaseActivity {
                 } else if (layout == 5) {
                     drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_panel_s_01);
                 } else if (layout == 6){
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_share_s);
+                }else if (layout == 7){
                     drawable = getResources().getDrawable(R.drawable.bg_rounded_share_s);
                 }
 

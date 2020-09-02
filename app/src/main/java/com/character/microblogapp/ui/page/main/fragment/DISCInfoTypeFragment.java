@@ -20,6 +20,7 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.character.microblogapp.GlideApp;
 import com.character.microblogapp.R;
 import com.character.microblogapp.data.Constant;
 import com.character.microblogapp.model.MCharacterInfo;
@@ -307,7 +308,7 @@ public class DISCInfoTypeFragment extends BaseFragment {
                 layout_limitArea.addView(limitView);
             }
         }
-
+        GlideApp.with(iv_charImg_01).load(getDISCBackground(personality1,7)).into(iv_charImg_01);
         tv_char_01.setTextColor(getDISCColor(type));
         tv_char_03.setTextColor(getDISCColor(type));
         tv_char_05.setTextColor(getDISCColor(type));
@@ -379,6 +380,8 @@ public class DISCInfoTypeFragment extends BaseFragment {
                     drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_keyword_d_01);
                 } else if (layout == 5) {
                     drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_panel_d_01);
+                } else if (layout == 7){
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_share_d);
                 }
 
 
@@ -396,6 +399,8 @@ public class DISCInfoTypeFragment extends BaseFragment {
                     drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_keyword_i_01);
                 } else if (layout == 5) {
                     drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_panel_i_01);
+                } else if (layout == 7){
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_share_d);
                 }
 
 
@@ -413,6 +418,8 @@ public class DISCInfoTypeFragment extends BaseFragment {
                     drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_keyword_c_01);
                 } else if (layout == 5) {
                     drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_panel_c_01);
+                } else if (layout == 7){
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_share_d);
                 }
 
 
@@ -430,6 +437,8 @@ public class DISCInfoTypeFragment extends BaseFragment {
                     drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_keyword_s_01);
                 } else if (layout == 5) {
                     drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_panel_s_01);
+                } else if (layout == 7){
+                    drawable = getResources().getDrawable(R.drawable.bg_rounded_share_d);
                 }
 
                 break;
