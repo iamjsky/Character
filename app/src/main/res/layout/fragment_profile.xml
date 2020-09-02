@@ -104,7 +104,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center|top"
-                            android:fontFamily="@font/nanum_square_r"
+                            android:fontFamily="@font/nanum_square_b"
                             android:gravity="center|top"
                             android:lineSpacingExtra="3dp"
                             android:textColor="@color/color_dark"

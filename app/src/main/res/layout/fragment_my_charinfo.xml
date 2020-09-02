@@ -171,7 +171,7 @@
                                             android:layout_height="@dimen/_90sdp"
                                             android:layout_marginTop="@dimen/_10sdp"
                                             android:adjustViewBounds="true"
-                                            android:src="@drawable/bg_badge" />
+                                            />
 
                                     </LinearLayout>
 

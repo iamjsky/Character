@@ -381,7 +381,7 @@ public class DISCInfoTypeFragment extends BaseFragment {
                 } else if (layout == 5) {
                     drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_panel_d_01);
                 } else if (layout == 7){
-                    drawable = getResources().getDrawable(R.drawable.bg_rounded_share_d);
+                    drawable = getResources().getDrawable(R.drawable.img_char_d);
                 }
 
 
@@ -400,7 +400,7 @@ public class DISCInfoTypeFragment extends BaseFragment {
                 } else if (layout == 5) {
                     drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_panel_i_01);
                 } else if (layout == 7){
-                    drawable = getResources().getDrawable(R.drawable.bg_rounded_share_d);
+                    drawable = getResources().getDrawable(R.drawable.img_char_i);
                 }
 
 
@@ -419,7 +419,7 @@ public class DISCInfoTypeFragment extends BaseFragment {
                 } else if (layout == 5) {
                     drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_panel_c_01);
                 } else if (layout == 7){
-                    drawable = getResources().getDrawable(R.drawable.bg_rounded_share_d);
+                    drawable = getResources().getDrawable(R.drawable.img_char_c);
                 }
 
 
@@ -438,7 +438,7 @@ public class DISCInfoTypeFragment extends BaseFragment {
                 } else if (layout == 5) {
                     drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_panel_s_01);
                 } else if (layout == 7){
-                    drawable = getResources().getDrawable(R.drawable.bg_rounded_share_d);
+                    drawable = getResources().getDrawable(R.drawable.img_char_s);
                 }
 
                 break;

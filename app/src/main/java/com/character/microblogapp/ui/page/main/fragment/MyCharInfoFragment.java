@@ -584,7 +584,7 @@ public class MyCharInfoFragment extends BaseFragment {
                 } else if (layout == 6) {
                     drawable = getResources().getDrawable(R.drawable.bg_rounded_share_d);
                 } else if (layout == 7){
-                    drawable = getResources().getDrawable(R.drawable.bg_rounded_share_d);
+                    drawable = getResources().getDrawable(R.drawable.img_char_d);
                 }
 
 
@@ -605,7 +605,7 @@ public class MyCharInfoFragment extends BaseFragment {
                 } else if (layout == 6) {
                     drawable = getResources().getDrawable(R.drawable.bg_rounded_share_i);
                 } else if (layout == 7){
-                    drawable = getResources().getDrawable(R.drawable.bg_rounded_share_d);
+                    drawable = getResources().getDrawable(R.drawable.img_char_i);
                 }
 
 
@@ -626,7 +626,7 @@ public class MyCharInfoFragment extends BaseFragment {
                 } else if (layout == 6) {
                     drawable = getResources().getDrawable(R.drawable.bg_rounded_share_c);
                 } else if (layout == 7){
-                    drawable = getResources().getDrawable(R.drawable.bg_rounded_share_d);
+                    drawable = getResources().getDrawable(R.drawable.img_char_c);
                 }
 
 
@@ -647,7 +647,7 @@ public class MyCharInfoFragment extends BaseFragment {
                 } else if (layout == 6) {
                     drawable = getResources().getDrawable(R.drawable.bg_rounded_share_s);
                 } else if (layout == 7){
-                    drawable = getResources().getDrawable(R.drawable.bg_rounded_share_d);
+                    drawable = getResources().getDrawable(R.drawable.img_char_s);
                 }
 
                 break;

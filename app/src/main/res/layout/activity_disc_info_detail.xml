@@ -143,8 +143,7 @@
                                         android:orientation="vertical">
 
                                         <TextView
-                                            android:maxLines="1"
-                                            android:ellipsize="end"
+
                                             android:layout_weight="1"
                                             android:lineSpacingExtra="@dimen/_2sdp"
                                             android:id="@+id/tv_charText_01"

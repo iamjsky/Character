@@ -18,6 +18,7 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.character.microblogapp.GlideApp;
 import com.character.microblogapp.R;
 import com.character.microblogapp.data.Constant;
 import com.character.microblogapp.data.MyInfo;
@@ -124,6 +125,9 @@ public class DISCInfoDetailActivity extends BaseActivity {
 
     @BindView(R.id.layout_panel)
     LinearLayout layout_panel;
+
+    @BindView(R.id.iv_charImg_01)
+            ImageView iv_charImg_01;
 
     String type = "";
     int nowPage = 0;
@@ -253,7 +257,7 @@ public class DISCInfoDetailActivity extends BaseActivity {
         tv_char_01.setTextColor(getDISCColor(type));
         tv_char_03.setTextColor(getDISCColor(type));
         tv_char_05.setTextColor(getDISCColor(type));
-
+        GlideApp.with(iv_charImg_01).load(getDISCBackground(personality1,7)).into(iv_charImg_01);
         tv_job.setTextColor(getDISCColor(type));
         tv_office.setTextColor(getDISCColor(type));
         tv_charInfoTitle.setTextColor(getDISCColor(type));
@@ -320,6 +324,8 @@ public class DISCInfoDetailActivity extends BaseActivity {
                     drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_keyword_d_01);
                 } else if (layout == 5) {
                     drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_panel_d_01);
+                } else if (layout == 7){
+                    drawable = getResources().getDrawable(R.drawable.img_char_d);
                 }
 
 
@@ -337,6 +343,8 @@ public class DISCInfoDetailActivity extends BaseActivity {
                     drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_keyword_i_01);
                 } else if (layout == 5) {
                     drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_panel_i_01);
+                } else if (layout == 7){
+                    drawable = getResources().getDrawable(R.drawable.img_char_i);
                 }
 
 
@@ -354,6 +362,8 @@ public class DISCInfoDetailActivity extends BaseActivity {
                     drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_keyword_c_01);
                 } else if (layout == 5) {
                     drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_panel_c_01);
+                } else if (layout == 7){
+                    drawable = getResources().getDrawable(R.drawable.img_char_c);
                 }
 
 
@@ -371,6 +381,8 @@ public class DISCInfoDetailActivity extends BaseActivity {
                     drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_keyword_s_01);
                 } else if (layout == 5) {
                     drawable = getResources().getDrawable(R.drawable.bg_rounded_charinfo_panel_s_01);
+                } else if (layout == 7){
+                    drawable = getResources().getDrawable(R.drawable.img_char_s);
                 }
 
                 break;
