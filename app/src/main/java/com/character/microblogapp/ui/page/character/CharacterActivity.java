@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.util.SparseArray;
 import android.view.View;
 import android.widget.Button;
@@ -114,6 +115,155 @@ public class CharacterActivity extends BaseActivity {
                 });
     }
 
+    class CharModel implements Comparable<CharModel>{
+        public int charCount;
+        public String charText;
+
+        public CharModel(int charCount, String charText){
+            this.charCount = charCount;
+            this.charText = charText;
+        }
+
+        public int getCharCount() {
+            return charCount;
+        }
+
+
+
+        @Override
+        public int compareTo(CharModel s) {
+            if (this.charCount < s.getCharCount()) {
+                return -1;
+            } else if (this.charCount > s.getCharCount()) {
+                return 1;
+            }
+            return 0;
+        }
+
+
+    }
+    private String calcNewCharacter(int d, int i, int s, int c) {
+        String ret = "";
+
+//        Log.e("char_debug", "disc count list : " + d + " / " + i + " / " + s + " / " + c);
+
+        //d
+        if(d >= 20){
+            ret = "D";
+        }
+        //i
+        else if(i >= 20){
+            ret = "I";
+        }
+        //s
+        else if(s >= 20) {
+            ret = "S";
+        }
+        //c
+        else if(c >= 20) {
+            ret = "C";
+        } else {
+
+            ArrayList<CharModel> charModelList = new ArrayList<>();
+            CharModel charModel_D = new CharModel(d, "D");
+            charModelList.add(charModel_D);
+            CharModel charModel_I = new CharModel(i, "I");
+            charModelList.add(charModel_I);
+            CharModel charModel_S = new CharModel(s, "S");
+            charModelList.add(charModel_S);
+            CharModel charModel_C = new CharModel(c, "C");
+            charModelList.add( charModel_C);
+
+            Collections.sort(charModelList, Collections.reverseOrder());
+//            Log.e("char_debug", "disc sort list : " + charModelList.get(0).charText + charModelList.get(0).charCount
+//                    + " / " + charModelList.get(1).charText + charModelList.get(1).charCount
+//                    + " / " + charModelList.get(2).charText + charModelList.get(2).charCount
+//                    + " / " + charModelList.get(3).charText + charModelList.get(3).charCount);
+
+//            Log.e("char_debug", "1순위 : " + charModelList.get(0).charText + charModelList.get(0).charCount
+//             + " / 2순위 : " + charModelList.get(1).charText + charModelList.get(1).charCount);
+
+            String charFirst = charModelList.get(0).charText;
+            String charSecond = charModelList.get(1).charText;
+
+//            Log.e("char_debug", "char result : " + charFirst + charSecond);
+            ret = charFirst + charSecond + "";
+        }
+
+
+
+
+
+
+
+
+
+//            //di
+//            if(d >= i && i >= s && i >= c){
+//               ret = "DI";
+//               break;
+//            }
+//            //ds
+//            if(d >= s && s >= i && s >= c) {
+//                ret = "DS";
+//                break;
+//            }
+//            //dc
+//            if(d >= c && c >= i && c >= s) {
+//                ret = "DC";
+//                break;
+//            }
+//
+//
+//            //id
+//            if(i >= d && d >= s && d >= c) {
+//                ret = "ID";
+//                break;
+//            }
+//            //is
+//            if(i >= s && s >= d && s >= c) {
+//                ret = "IS";
+//                break;
+//            }
+//            //ic
+//            if(i >= c && c >= d && c >= s) {
+//                ret = "IC";
+//                break;
+//            }
+//
+//
+//            //sd
+//            if(s >= d && d >= i && d >= c) {
+//                ret = "SD";
+//                break;
+//            }
+//            //si
+//            if(s >= i && i >= d && i >= c) {
+//                ret = "SI";
+//                break;
+//            }
+//            //sc
+//            if(s >= c && c >= d && c >= i) {
+//                ret = "SC";
+//                break;
+//            }
+//
+//
+//            //cd
+//            if(c >= d && d >= i && d >= s) {
+//                ret = "CD";
+//                break;
+//            }
+//            //cs
+//            if(c >= s && s >= d && s >= i) {
+//                ret = "CD";
+//                break;
+//            }
+//        } while (false);
+
+
+        return ret;
+    }
     private String calcCharacter(int d, int i, int s, int c) {
         String ret = "";
 
@@ -522,7 +672,7 @@ public class CharacterActivity extends BaseActivity {
 //            }
 
             Intent intent = new Intent(this, CharacterConfirmActivity.class);
-            intent.putExtra("result", calcCharacter(dSum, iSum, sSum, cSum));
+            intent.putExtra("result", calcNewCharacter(dSum, iSum, sSum, cSum));
             intent.putExtra("go", go);
             startActivity(intent);
             finish();
