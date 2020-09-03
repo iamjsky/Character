@@ -20,6 +20,10 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.RequestOptions;
+import com.bumptech.glide.request.target.DrawableImageViewTarget;
 import com.character.microblogapp.GlideApp;
 import com.character.microblogapp.R;
 import com.character.microblogapp.data.Constant;
@@ -450,8 +454,11 @@ public class CharacterConfirmActivity extends BaseActivity {
             layout_charTagArea_02.setVisibility(View.GONE);
             layout_charType_secondArea.setVisibility(View.GONE);
             linkCharString = personality1+personality1+"";
-            GlideApp.with(iv_charImg_01).load(getDISCBackground(personality1,7)).into(iv_charImg_01);
-
+            GlideApp.with(iv_charImg_01).load(getDISCBackground(personality1, 7)).into(iv_charImg_01);
+//            Glide.with(this)
+//                    .load(R.drawable.splash)
+//                    .apply(new RequestOptions().diskCacheStrategy(DiskCacheStrategy.NONE))
+//                    .into(new DrawableImageViewTarget(iv_charImg_01));
 
         } else {
             tv_plus.setVisibility(View.VISIBLE);
@@ -473,8 +480,16 @@ public class CharacterConfirmActivity extends BaseActivity {
             layout_charTagArea_02.setVisibility(View.VISIBLE);
             layout_charType_secondArea.setVisibility(View.VISIBLE);
             linkCharString = personality1+personality2+"";
-            GlideApp.with(iv_charImg_01).load(getDISCBackground(personality1,7)).into(iv_charImg_01);
-            GlideApp.with(iv_charImg_02).load(getDISCBackground(personality2,7)).into(iv_charImg_02);
+//            Glide.with(this)
+//                    .load(R.drawable.splash)
+//                    .apply(new RequestOptions().diskCacheStrategy(DiskCacheStrategy.NONE))
+//                    .into(new DrawableImageViewTarget(iv_charImg_01));
+//            Glide.with(this)
+//                    .load(R.drawable.splash)
+//                    .apply(new RequestOptions().diskCacheStrategy(DiskCacheStrategy.NONE))
+//                    .into(new DrawableImageViewTarget(iv_charImg_02));
+            GlideApp.with(iv_charImg_01).load(getDISCBackground(personality1, 7)).into(iv_charImg_01);
+            GlideApp.with(iv_charImg_02).load(getDISCBackground(personality1, 7)).into(iv_charImg_02);
         }
         String[] personalityArr = {personality1, personality2};
         for (int ind = 0; ind < personalityArr.length; ind++) {

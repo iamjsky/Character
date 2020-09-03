@@ -145,7 +145,7 @@ public class CharacterActivity extends BaseActivity {
     private String calcNewCharacter(int d, int i, int s, int c) {
         String ret = "";
 
-//        Log.e("char_debug", "disc count list : " + d + " / " + i + " / " + s + " / " + c);
+        Log.e("char_debug", "disc count list : " + d + " / " + i + " / " + s + " / " + c);
 
         //d
         if(d >= 20){
@@ -175,10 +175,10 @@ public class CharacterActivity extends BaseActivity {
             charModelList.add( charModel_C);
 
             Collections.sort(charModelList, Collections.reverseOrder());
-//            Log.e("char_debug", "disc sort list : " + charModelList.get(0).charText + charModelList.get(0).charCount
-//                    + " / " + charModelList.get(1).charText + charModelList.get(1).charCount
-//                    + " / " + charModelList.get(2).charText + charModelList.get(2).charCount
-//                    + " / " + charModelList.get(3).charText + charModelList.get(3).charCount);
+            Log.e("char_debug", "disc sort list : " + charModelList.get(0).charText + charModelList.get(0).charCount
+                    + " / " + charModelList.get(1).charText + charModelList.get(1).charCount
+                    + " / " + charModelList.get(2).charText + charModelList.get(2).charCount
+                    + " / " + charModelList.get(3).charText + charModelList.get(3).charCount);
 
 //            Log.e("char_debug", "1순위 : " + charModelList.get(0).charText + charModelList.get(0).charCount
 //             + " / 2순위 : " + charModelList.get(1).charText + charModelList.get(1).charCount);
