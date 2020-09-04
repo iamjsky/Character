@@ -158,11 +158,11 @@
                                         <ImageView
 
                                             android:id="@+id/iv_charImg_01"
-                                            android:layout_width="@dimen/_90sdp"
-                                            android:layout_height="@dimen/_90sdp"
+                                            android:layout_width="@dimen/_120sdp"
+                                            android:layout_height="@dimen/_120sdp"
                                             android:layout_marginTop="@dimen/_10sdp"
                                             android:adjustViewBounds="true"
-                                            android:src="@drawable/bg_badge" />
+                                            />
 
                                     </LinearLayout>
 
