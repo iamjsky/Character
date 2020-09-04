@@ -489,7 +489,7 @@ public class CharacterConfirmActivity extends BaseActivity {
 //                    .apply(new RequestOptions().diskCacheStrategy(DiskCacheStrategy.NONE))
 //                    .into(new DrawableImageViewTarget(iv_charImg_02));
             GlideApp.with(iv_charImg_01).load(getDISCBackground(personality1, 7)).into(iv_charImg_01);
-            GlideApp.with(iv_charImg_02).load(getDISCBackground(personality1, 7)).into(iv_charImg_02);
+            GlideApp.with(iv_charImg_02).load(getDISCBackground(personality2, 7)).into(iv_charImg_02);
         }
         String[] personalityArr = {personality1, personality2};
         for (int ind = 0; ind < personalityArr.length; ind++) {

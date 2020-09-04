@@ -75,12 +75,13 @@
                         android:orientation="horizontal">
 
                         <ImageView
+                            android:src="@drawable/img_char_d"
                             android:id="@+id/iv_charImg_01"
                             android:layout_width="@dimen/_40sdp"
                             android:layout_height="@dimen/_40sdp"
-                            android:layout_marginRight="@dimen/_15sdp"
+                            android:layout_marginRight="@dimen/_10sdp"
                             android:adjustViewBounds="true"
-                            android:src="@drawable/bg_badge" />
+                         />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -96,8 +97,8 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_1sdp"
-                        android:layout_marginTop="@dimen/_15sdp"
-                        android:layout_marginBottom="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
                         android:background="#dddddd" />
 
                     <LinearLayout
@@ -424,12 +425,13 @@
                         android:orientation="horizontal">
 
                         <ImageView
+                            android:src="@drawable/img_char_i"
                             android:id="@+id/iv_charImg_02"
                             android:layout_width="@dimen/_40sdp"
                             android:layout_height="@dimen/_40sdp"
-                            android:layout_marginRight="@dimen/_15sdp"
+                            android:layout_marginRight="@dimen/_10sdp"
                             android:adjustViewBounds="true"
-                            android:src="@drawable/bg_badge" />
+                       />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -445,8 +447,8 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_1sdp"
-                        android:layout_marginTop="@dimen/_15sdp"
-                        android:layout_marginBottom="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
                         android:background="#dddddd" />
 
                     <LinearLayout
@@ -776,9 +778,9 @@
                             android:id="@+id/iv_charImg_03"
                             android:layout_width="@dimen/_40sdp"
                             android:layout_height="@dimen/_40sdp"
-                            android:layout_marginRight="@dimen/_15sdp"
+                            android:layout_marginRight="@dimen/_10sdp"
                             android:adjustViewBounds="true"
-                            android:src="@drawable/bg_badge" />
+                            android:src="@drawable/img_char_s" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -794,8 +796,8 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_1sdp"
-                        android:layout_marginTop="@dimen/_15sdp"
-                        android:layout_marginBottom="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
                         android:background="#dddddd" />
 
                     <LinearLayout
@@ -1125,9 +1127,9 @@
                             android:id="@+id/iv_charImg_04"
                             android:layout_width="@dimen/_40sdp"
                             android:layout_height="@dimen/_40sdp"
-                            android:layout_marginRight="@dimen/_15sdp"
+                            android:layout_marginRight="@dimen/_10sdp"
                             android:adjustViewBounds="true"
-                            android:src="@drawable/bg_badge" />
+                            android:src="@drawable/img_char_c" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -1143,8 +1145,8 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_1sdp"
-                        android:layout_marginTop="@dimen/_15sdp"
-                        android:layout_marginBottom="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
                         android:background="#dddddd" />
 
                     <LinearLayout

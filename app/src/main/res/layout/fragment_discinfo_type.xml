@@ -128,8 +128,7 @@
 
                                     android:id="@+id/layout_char"
                                     android:layout_width="match_parent"
-                                    android:layout_height="@dimen/_125sdp"
-                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:layout_height="@dimen/_135sdp"
 
                                     android:orientation="horizontal">
 
@@ -143,11 +142,10 @@
 
                                         <TextView
 
-                                            android:layout_weight="1"
                                             android:lineSpacingExtra="@dimen/_2sdp"
                                             android:id="@+id/tv_charText_01"
                                             android:layout_width="match_parent"
-                                            android:layout_height="0dp"
+                                            android:layout_height="wrap_content"
                                             android:fontFamily="@font/jalnan_n"
                                             android:gravity="center"
                                             android:text="노빠꾸"
@@ -157,9 +155,9 @@
                                         <ImageView
 
                                             android:id="@+id/iv_charImg_01"
-                                            android:layout_width="@dimen/_120sdp"
-                                            android:layout_height="@dimen/_120sdp"
-                                            android:layout_marginTop="@dimen/_10sdp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="@dimen/_5sdp"
                                             android:adjustViewBounds="true"
                                             />
 
@@ -171,6 +169,7 @@
 
                                 </LinearLayout>
                                 <TextView
+
                                     android:layout_marginTop="@dimen/_10sdp"
                                     android:lineSpacingExtra="@dimen/_2sdp"
                                     android:id="@+id/tv_charTitle"
