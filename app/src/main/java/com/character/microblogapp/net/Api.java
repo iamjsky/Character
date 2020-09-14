@@ -533,7 +533,11 @@ public interface Api {
     Call<MCharacterInfo2> get_character_info_style2(
             @Field("character") String character
     );
-
+    @FormUrlEncoded
+    @POST("./User/get_character_info_chemistry")
+    Call<MCharacterInfo2> get_character_info_chemistry(
+            @Field("character") String character
+    );
     /**
      * 소통방법 얻기
      */

@@ -470,15 +470,47 @@
                         android:paddingTop="@dimen/_28sdp"
                         android:paddingRight="@dimen/_25sdp"
                         android:paddingBottom="@dimen/_28sdp">
-
                         <TextView
-                            android:id="@+id/tv_desc"
+                            android:layout_marginBottom="@dimen/_8sdp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/nanum_square_b"
                             android:gravity="center|left"
                             android:lineSpacingExtra="@dimen/_3sdp"
-                            android:text="D가 리더쉽을 발휘해 S를 주도해주면, 우유부단한 S는 잘 따르는 조화로운 커플 입니다.\n다만, d가 너무 강압적이면 s가 힘들어요ㅠ\n소통을 할 때 d는 D가 리더쉽을 발휘해 S를 주도해주면, 우유부단한 S는 잘 따르는 조화로운 커플 입니다.\n다만, d가 너무 강압적이면 s가 힘들어요ㅠ\n소통을 할 때 d는 "
+                            android:text="궁합 설명"
+                           android:textColor="@color/char_i_color"
+                            android:textSize="@dimen/_14sdp" />
+                        <TextView
+                            android:id="@+id/tv_chemistry1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/nanum_square_b"
+                            android:gravity="center|left"
+                            android:lineSpacingExtra="@dimen/_3sdp"
+                            android:text=""
+                            android:textColor="#000000"
+                            android:textSize="@dimen/_12sdp" />
+                        <TextView
+
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:layout_marginBottom="@dimen/_8sdp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/nanum_square_b"
+                            android:gravity="center|left"
+                            android:lineSpacingExtra="@dimen/_3sdp"
+                            android:text="소통 방법"
+                            android:textColor="@color/char_s_color"
+                            android:textSize="@dimen/_14sdp" />
+                        <TextView
+
+                            android:id="@+id/tv_chemistry2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/nanum_square_b"
+                            android:gravity="center|left"
+                            android:lineSpacingExtra="@dimen/_3sdp"
+                            android:text=""
                             android:textColor="#000000"
                             android:textSize="@dimen/_12sdp" />
 

@@ -24,6 +24,9 @@ import android.widget.TextView;
 import com.character.microblogapp.R;
 import com.character.microblogapp.data.Constant;
 import com.character.microblogapp.data.MyInfo;
+import com.character.microblogapp.model.MCharacterInfo2;
+import com.character.microblogapp.model.MError;
+import com.character.microblogapp.net.Net;
 import com.character.microblogapp.ui.page.BaseFragment;
 import com.character.microblogapp.ui.page.main.MainActivity;
 import com.character.microblogapp.util.PrefMgr;
@@ -56,8 +59,10 @@ public class ChemistryFragment extends BaseFragment {
     TextView tv_charWoman_02;
     @BindView(R.id.tv_charPercent)
     TextView tv_charPercent;
-    @BindView(R.id.tv_desc)
-    TextView tv_desc;
+    @BindView(R.id.tv_chemistry1)
+    TextView tv_chemistry1;
+    @BindView(R.id.tv_chemistry2)
+    TextView tv_chemistry2;
 
     @BindView(R.id.layout_charMan)
     LinearLayout layout_charMan;
@@ -211,48 +216,8 @@ public class ChemistryFragment extends BaseFragment {
     @OnClick(R.id.btn_checkChemistry)
     public void btn_checkChemistryClicked() {
         if (selectedCharMan != -1 && selectedCharWoman != -1) {
-            ChemistryModel chemistryModel = (ChemistryModel) getChemistryResult();
+            getInfo(getChChar(selectedCharMan, selectedCharWoman));
 
-            iv_percent.setImageDrawable(chemistryModel.imgRes);
-            tv_charMan_01.setText(chemistryModel.charMan);
-            tv_charMan_01.setTextColor(chemistryModel.manColor);
-            tv_charMan_02.setText(chemistryModel.charMan);
-            tv_charMan_02.setTextColor(chemistryModel.manColor);
-
-            tv_charWoman_01.setText(chemistryModel.charWoman);
-            tv_charWoman_01.setTextColor(chemistryModel.womanColor);
-            tv_charWoman_02.setText(chemistryModel.charWoman);
-            tv_charWoman_02.setTextColor(chemistryModel.womanColor);
-
-            tv_charPercent.setText(chemistryModel.percent);
-            tv_charPercent.setTextColor(chemistryModel.percentColor);
-
-
-            Spannable sb = new SpannableString(chemistryModel.desc);
-            for (int i = 0; i < chemistryModel.desc.length(); i++) {
-                char temp = (chemistryModel.desc.charAt(i));
-                switch (temp) {
-                    case 'D':
-                        sb.setSpan(new ForegroundColorSpan(Constant.CHARACTER_D_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
-                        break;
-                    case 'I':
-                        sb.setSpan(new ForegroundColorSpan(Constant.CHARACTER_I_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
-                        break;
-                    case 'S':
-                        sb.setSpan(new ForegroundColorSpan(Constant.CHARACTER_S_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
-                        break;
-                    case 'C':
-                        sb.setSpan(new ForegroundColorSpan(Constant.CHARACTER_C_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
-                        break;
-                }
-
-            }
-            tv_desc.setText(sb);
-            layout_main.setVisibility(View.GONE);
-            layout_result.setVisibility(View.VISIBLE);
-            iv_topBg.setBackground(getDISCBackground(chemistryModel.charMan, 3));
-            iv_topBg.setVisibility(View.VISIBLE);
-            pageState = 3;
         } else {
             Toaster.showShort(mParent, "DISC 유형을 모두 선택해 주세요.");
         }
@@ -271,6 +236,12 @@ public class ChemistryFragment extends BaseFragment {
         layout_charSelectPopup.setVisibility(View.VISIBLE);
     }
 
+    /**
+     * d,i,s,c     0,1,2,3
+     * selectedCharMan
+     *
+     *
+     */
     @OnClick(R.id.tv_d)
     public void tv_dClicked() {
         if (pageState == 1) {
@@ -349,184 +320,328 @@ public class ChemistryFragment extends BaseFragment {
         layout_charSelectPopup.setVisibility(View.GONE);
     }
 
-    private ChemistryModel getChemistryResult() {
-        int gender = MyInfo.getInstance().gender;
-        int percent = 0;
-        String desc = "";
-        if (gender == 1) {
-            if (selectedCharMan == 0) {
-                switch (selectedCharWoman) {
+    /**
+     * gender       성별
+     * 사용자의 성별에 따라 궁합도 퍼센트가 다름
+     *
+     * @return
+     */
+//    private ChemistryModel getChemistryResult() {
+//        int gender = MyInfo.getInstance().gender;
+//        int percent = 0;
+//        String desc = "";
+//        if (gender == 1) {
+//            if (selectedCharMan == 0) {
+//                switch (selectedCharWoman) {
+//                    case 0:
+//                        desc = getString(R.string.dd);
+//                        percent = 90;
+//                        break;
+//
+//                    case 1:
+//                        desc = getString(R.string.di);
+//                        percent = 80;
+//                        break;
+//                    case 2:
+//                        desc = getString(R.string.ds);
+//                        percent = 70;
+//                        break;
+//                    case 3:
+//                        desc = getString(R.string.dc);
+//                        percent = 10;
+//                        break;
+//
+//                }
+//            } else if (selectedCharMan == 1) {
+//                switch (selectedCharWoman) {
+//                    case 0:
+//                        desc = getString(R.string.id);
+//                        percent = 80;
+//                        break;
+//                    case 1:
+//                        desc = getString(R.string.ii);
+//                        percent = 99;
+//                        break;
+//                    case 2:
+//                        desc = getString(R.string.is);
+//                        percent = 70;
+//                        break;
+//                    case 3:
+//                        desc = getString(R.string.ic);
+//                        percent = 5;
+//                        break;
+//
+//                }
+//            } else if (selectedCharMan == 2) {
+//                switch (selectedCharWoman) {
+//                    case 0:
+//                        desc = getString(R.string.sd);
+//                        percent = 50;
+//                        break;
+//                    case 1:
+//                        desc = getString(R.string.si);
+//                        percent = 75;
+//                        break;
+//                    case 2:
+//                        desc = getString(R.string.ss);
+//                        percent = 99;
+//                        break;
+//                    case 3:
+//                        desc = getString(R.string.sc);
+//                        percent = 85;
+//                        break;
+//
+//                }
+//            } else if (selectedCharMan == 3) {
+//                switch (selectedCharWoman) {
+//                    case 0:
+//                        desc = getString(R.string.cd);
+//                        percent = 20;
+//                        break;
+//                    case 1:
+//                        desc = getString(R.string.ci);
+//                        percent = 10;
+//                        break;
+//                    case 2:
+//                        desc = getString(R.string.cs);
+//                        percent = 85;
+//                        break;
+//                    case 3:
+//                        desc = getString(R.string.cc);
+//                        percent = 80;
+//                        break;
+//
+//                }
+//            }
+//        } else if (gender == 2) {
+//            if (selectedCharMan == 0) {
+//                switch (selectedCharWoman) {
+//                    case 0:
+//                        desc = getString(R.string.dd);
+//                        percent = 98;
+//                        break;
+//                    case 1:
+//                        desc = getString(R.string.di);
+//                        percent = 80;
+//                        break;
+//                    case 2:
+//                        desc = getString(R.string.ds);
+//                        percent = 40;
+//                        break;
+//                    case 3:
+//                        desc = getString(R.string.dc);
+//                        percent = 20;
+//                        break;
+//
+//                }
+//            } else if (selectedCharMan == 1) {
+//                switch (selectedCharWoman) {
+//                    case 0:
+//                        desc = getString(R.string.id);
+//                        percent = 80;
+//                        break;
+//                    case 1:
+//                        desc = getString(R.string.ii);
+//                        percent = 99;
+//                        break;
+//                    case 2:
+//                        desc = getString(R.string.is);
+//                        percent = 40;
+//                        break;
+//                    case 3:
+//                        desc = getString(R.string.ic);
+//                        percent = 10;
+//                        break;
+//
+//                }
+//            } else if (selectedCharMan == 2) {
+//                switch (selectedCharWoman) {
+//                    case 0:
+//                        desc = getString(R.string.sd);
+//                        percent = 70;
+//                        break;
+//                    case 1:
+//                        desc = getString(R.string.si);
+//                        percent = 60;
+//                        break;
+//                    case 2:
+//                        desc = getString(R.string.ss);
+//                        percent = 99;
+//                        break;
+//                    case 3:
+//                        desc = getString(R.string.sc);
+//                        percent = 90;
+//                        break;
+//
+//                }
+//            } else if (selectedCharMan == 3) {
+//                switch (selectedCharWoman) {
+//                    case 0:
+//                        desc = getString(R.string.cd);
+//                        percent = 10;
+//                        break;
+//                    case 1:
+//                        desc = getString(R.string.ci);
+//                        percent = 5;
+//                        break;
+//                    case 2:
+//                        desc = getString(R.string.cs);
+//                        percent = 90;
+//                        break;
+//                    case 3:
+//                        desc = getString(R.string.cc);
+//                        percent = 80;
+//                        break;
+//
+//                }
+//            }
+//        }
+//
+//
+//        ChemistryModel chemistryModel = new ChemistryModel(getDISCChar(selectedCharMan), getDISCChar(selectedCharWoman),
+//                getDISCColor(selectedCharMan), getDISCColor(selectedCharWoman), percent + "%", getPercentColor(percent), getPercentImg(percent), desc);
+//        return chemistryModel;
+//
+//    }
+            private String getChChar(int manValue, int womanValue){
+                String manValueToString = "";
+                String womanValueToString = "";
+                switch (manValue){
                     case 0:
-                        desc = getString(R.string.dd);
-                        percent = 95;
+                        manValueToString = "D";
                         break;
 
                     case 1:
-                        desc = getString(R.string.di);
-                        percent = 80;
-                        break;
-                    case 2:
-                        desc = getString(R.string.ds);
-                        percent = 70;
-                        break;
-                    case 3:
-                        desc = getString(R.string.dc);
-                        percent = 10;
+                        manValueToString = "I";
                         break;
 
+                    case 2:
+                        manValueToString = "S";
+                        break;
+
+                    case 3:
+                        manValueToString = "C";
+                        break;
                 }
-            } else if (selectedCharMan == 1) {
-                switch (selectedCharWoman) {
+                switch (womanValue){
                     case 0:
-                        desc = getString(R.string.id);
-                        percent = 80;
-                        break;
-                    case 1:
-                        desc = getString(R.string.ii);
-                        percent = 99;
-                        break;
-                    case 2:
-                        desc = getString(R.string.is);
-                        percent = 60;
-                        break;
-                    case 3:
-                        desc = getString(R.string.ic);
-                        percent = 5;
+                        womanValueToString = "D";
                         break;
 
-                }
-            } else if (selectedCharMan == 2) {
-                switch (selectedCharWoman) {
-                    case 0:
-                        desc = getString(R.string.sd);
-                        percent = 40;
-                        break;
                     case 1:
-                        desc = getString(R.string.si);
-                        percent = 60;
-                        break;
-                    case 2:
-                        desc = getString(R.string.ss);
-                        percent = 99;
-                        break;
-                    case 3:
-                        desc = getString(R.string.sc);
-                        percent = 90;
+                        womanValueToString = "I";
                         break;
 
-                }
-            } else if (selectedCharMan == 3) {
-                switch (selectedCharWoman) {
-                    case 0:
-                        desc = getString(R.string.cd);
-                        percent = 20;
-                        break;
-                    case 1:
-                        desc = getString(R.string.ci);
-                        percent = 10;
-                        break;
                     case 2:
-                        desc = getString(R.string.cs);
-                        percent = 90;
-                        break;
-                    case 3:
-                        desc = getString(R.string.cc);
-                        percent = 80;
+                        womanValueToString = "S";
                         break;
 
+                    case 3:
+                        womanValueToString = "C";
+                        break;
                 }
+                if(manValueToString.equals(womanValueToString)){
+                    return manValueToString+"";
+                }else {
+                    return manValueToString+womanValueToString+"";
+                }
+
             }
-        } else if (gender == 2) {
-            if (selectedCharMan == 0) {
-                switch (selectedCharWoman) {
-                    case 0:
-                        desc = getString(R.string.dd);
-                        percent = 98;
-                        break;
-                    case 1:
-                        desc = getString(R.string.di);
-                        percent = 80;
-                        break;
-                    case 2:
-                        desc = getString(R.string.ds);
-                        percent = 40;
-                        break;
-                    case 3:
-                        desc = getString(R.string.dc);
-                        percent = 20;
-                        break;
+    MCharacterInfo2.Info result = null;
+    private void getInfo(String type) {
 
-                }
-            } else if (selectedCharMan == 1) {
-                switch (selectedCharWoman) {
-                    case 0:
-                        desc = getString(R.string.id);
-                        percent = 80;
-                        break;
-                    case 1:
-                        desc = getString(R.string.ii);
-                        percent = 99;
-                        break;
-                    case 2:
-                        desc = getString(R.string.is);
-                        percent = 40;
-                        break;
-                    case 3:
-                        desc = getString(R.string.ic);
-                        percent = 10;
-                        break;
+        Net.instance().api.get_character_info_chemistry(type)
+                .enqueue(new Net.ResponseCallBack<MCharacterInfo2>() {
+                    @Override
+                    public void onSuccess(MCharacterInfo2 response) {
 
-                }
-            } else if (selectedCharMan == 2) {
-                switch (selectedCharWoman) {
-                    case 0:
-                        desc = getString(R.string.sd);
-                        percent = 70;
-                        break;
-                    case 1:
-                        desc = getString(R.string.si);
-                        percent = 60;
-                        break;
-                    case 2:
-                        desc = getString(R.string.ss);
-                        percent = 99;
-                        break;
-                    case 3:
-                        desc = getString(R.string.sc);
-                        percent = 90;
-                        break;
+                        if (response.info != null) {
+                            result = response.info;
+                            int gender = MyInfo.getInstance().gender;
+                            int percent = 0;
+                            if(gender == 1){
+                                percent = Integer.parseInt(result.ch_man_per);
+                            }else if(gender == 2){
+                                percent = Integer.parseInt(result.ch_woman_per);
+                            }
+                            String chemistry1 = result.chemistry1;
+                            String chemistry2 = result.chemistry2;
 
-                }
-            } else if (selectedCharMan == 3) {
-                switch (selectedCharWoman) {
-                    case 0:
-                        desc = getString(R.string.cd);
-                        percent = 10;
-                        break;
-                    case 1:
-                        desc = getString(R.string.ci);
-                        percent = 5;
-                        break;
-                    case 2:
-                        desc = getString(R.string.cs);
-                        percent = 90;
-                        break;
-                    case 3:
-                        desc = getString(R.string.cc);
-                        percent = 80;
-                        break;
-
-                }
-            }
-        }
+                            ChemistryModel chemistryModel = new ChemistryModel(getDISCChar(selectedCharMan), getDISCChar(selectedCharWoman),
+                            getDISCColor(selectedCharMan), getDISCColor(selectedCharWoman),  percent + "%", getPercentColor(percent), getPercentImg(percent), chemistry1, chemistry2);
 
 
-        ChemistryModel chemistryModel = new ChemistryModel(getDISCChar(selectedCharMan), getDISCChar(selectedCharWoman),
-                getDISCColor(selectedCharMan), getDISCColor(selectedCharWoman), percent + "%", getPercentColor(percent), getPercentImg(percent), desc);
-        return chemistryModel;
+                            iv_percent.setImageDrawable(chemistryModel.imgRes);
+                            tv_charMan_01.setText(chemistryModel.charMan);
+                            tv_charMan_01.setTextColor(chemistryModel.manColor);
+                            tv_charMan_02.setText(chemistryModel.charMan);
+                            tv_charMan_02.setTextColor(chemistryModel.manColor);
 
+                            tv_charWoman_01.setText(chemistryModel.charWoman);
+                            tv_charWoman_01.setTextColor(chemistryModel.womanColor);
+                            tv_charWoman_02.setText(chemistryModel.charWoman);
+                            tv_charWoman_02.setTextColor(chemistryModel.womanColor);
+
+                            tv_charPercent.setText(chemistryModel.percent);
+                            tv_charPercent.setTextColor(chemistryModel.percentColor);
+
+
+                            Spannable sb1 = new SpannableString(chemistryModel.chemistry1);
+                            for (int i = 0; i < chemistryModel.chemistry1.length(); i++) {
+                                char temp = (chemistryModel.chemistry1.charAt(i));
+                                switch (temp) {
+                                    case 'D':
+                                        sb1.setSpan(new ForegroundColorSpan(Constant.CHARACTER_D_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+                                        break;
+                                    case 'I':
+                                        sb1.setSpan(new ForegroundColorSpan(Constant.CHARACTER_I_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+                                        break;
+                                    case 'S':
+                                        sb1.setSpan(new ForegroundColorSpan(Constant.CHARACTER_S_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+                                        break;
+                                    case 'C':
+                                        sb1.setSpan(new ForegroundColorSpan(Constant.CHARACTER_C_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+                                        break;
+                                }
+
+                            }
+                            tv_chemistry1.setText(sb1);
+                            Spannable sb2 = new SpannableString(chemistryModel.chemistry2);
+                            for (int i = 0; i < chemistryModel.chemistry2.length(); i++) {
+                                char temp = (chemistryModel.chemistry2.charAt(i));
+                                switch (temp) {
+                                    case 'D':
+                                        sb2.setSpan(new ForegroundColorSpan(Constant.CHARACTER_D_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+                                        break;
+                                    case 'I':
+                                        sb2.setSpan(new ForegroundColorSpan(Constant.CHARACTER_I_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+                                        break;
+                                    case 'S':
+                                        sb2.setSpan(new ForegroundColorSpan(Constant.CHARACTER_S_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+                                        break;
+                                    case 'C':
+                                        sb2.setSpan(new ForegroundColorSpan(Constant.CHARACTER_C_COLOR), i, i + 1, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+                                        break;
+                                }
+
+                            }
+                            tv_chemistry2.setText(sb2);
+
+                            layout_main.setVisibility(View.GONE);
+                            layout_result.setVisibility(View.VISIBLE);
+                            iv_topBg.setBackground(getDISCBackground(chemistryModel.charMan, 3));
+                            iv_topBg.setVisibility(View.VISIBLE);
+                            pageState = 3;
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(MError response) {
+
+                        Toaster.showShort(getActivity(), "등록된 데이터가 없습니다.");
+                    }
+                });
     }
-
     class ChemistryModel {
         public String charMan;
         public String charWoman;
@@ -535,10 +650,11 @@ public class ChemistryFragment extends BaseFragment {
         public String percent;
         public int percentColor;
         public Drawable imgRes;
-        public String desc;
+        public String chemistry1;
+        public String chemistry2;
 
         public ChemistryModel(String charMan, String charWoman, int manColor,
-                              int womanColor, String percent, int percentColor, Drawable imgRes, String desc) {
+                              int womanColor, String percent, int percentColor, Drawable imgRes, String chemistry1, String chemistry2) {
             this.charMan = charMan;
             this.charWoman = charWoman;
             this.manColor = manColor;
@@ -546,7 +662,8 @@ public class ChemistryFragment extends BaseFragment {
             this.percent = percent;
             this.percentColor = percentColor;
             this.imgRes = imgRes;
-            this.desc = desc;
+            this.chemistry1 = chemistry1;
+            this.chemistry2 = chemistry2;
         }
     }
 
@@ -620,14 +737,23 @@ public class ChemistryFragment extends BaseFragment {
             case 40:
                 drawable = getResources().getDrawable(R.drawable.relation_img_40);
                 break;
+            case 50:
+                drawable = getResources().getDrawable(R.drawable.relation_img_50);
+                break;
             case 60:
                 drawable = getResources().getDrawable(R.drawable.relation_img_60);
                 break;
             case 70:
                 drawable = getResources().getDrawable(R.drawable.relation_img_70);
                 break;
+            case 75:
+                drawable = getResources().getDrawable(R.drawable.relation_img_75);
+                break;
             case 80:
                 drawable = getResources().getDrawable(R.drawable.relation_img_80);
+                break;
+            case 85:
+                drawable = getResources().getDrawable(R.drawable.relation_img_85);
                 break;
             case 90:
                 drawable = getResources().getDrawable(R.drawable.relation_img_90);
@@ -653,8 +779,8 @@ public class ChemistryFragment extends BaseFragment {
         int percentColor;
         if (percent >= 90) {
             percentColor = ContextCompat.getColor(getApplicationContext(), R.color.chemistry_percent_color_90_99);
-        } else if (percent >= 80) {
-            percentColor = ContextCompat.getColor(getApplicationContext(), R.color.chemistry_percent_color_60_80);
+        } else if (percent >= 50) {
+            percentColor = ContextCompat.getColor(getApplicationContext(), R.color.chemistry_percent_color_50_85);
         } else if (percent >= 20) {
             percentColor = ContextCompat.getColor(getApplicationContext(), R.color.chemistry_percent_color_20_40);
         } else if (percent >= 5) {

@@ -33,6 +33,10 @@ public class MCharacterInfo2 extends MBase {
         public String celeb;
         public String fear;
         public String limit;
+        public String chemistry1;
+        public String chemistry2;
+        public String ch_man_per;
+        public String ch_woman_per;
 
     }
 
